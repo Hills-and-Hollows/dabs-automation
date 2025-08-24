@@ -1,0 +1,64 @@
+---
+alwaysApply: true
+description: Enforce DABS-specific business logic and Utah Package Agency compliance requirements
+---
+
+# DABS BUSINESS LOGIC & COMPLIANCE ENFORCEMENT
+Utah Package Agency requirements and DABS-specific business rules
+
+## DABS SYSTEM CONTEXT
+- **Client**: Hills & Hollows LLC (Utah Package Agency - Boulder, UT)
+- **Product Range**: 1,239 SKUs (spirits, wine, beer)
+- **Compliance**: Utah Package Agency 3-year contract requirements
+- **Critical Timing**: Monthly DABS price updates must complete within 1 hour
+
+## CRITICAL BUSINESS METRICS
+MANDATORY success criteria:
+- **Time Reduction**: 90% reduction (10+ hours → <1 hour weekly)
+- **Error Rate**: <0.1% error rate requirement (vs current ~2% manual rate)
+- **Processing Speed**: Complete 1,239 SKUs within 15 minutes
+- **System Availability**: 99% uptime requirement
+- **Compliance**: 100% on-time monthly DABS reporting
+
+## DABS FILE PROCESSING RULES
+### Required Data Validation
+MANDATORY checks for all DABS Excel files:
+- **Required Columns**: ["SKU", "ProductName", "RetailPrice", "Category"]
+- **Price Variance**: Alert if >20% change from previous price
+- **SKU Validation**: All 1,239 SKUs must be present
+- **Data Types**: Enforce correct data types for all fields
+- **Missing Data**: NEVER process files with missing required data
+
+### Processing Requirements
+- **Timeout**: 30-minute maximum processing time
+- **Backup**: Always backup original files before processing
+- **Checksum**: Validate file integrity before processing
+- **Audit Trail**: Log every price change with timestamp and source
+- **Rollback**: Maintain rollback capability for failed updates
+
+## UTAH PACKAGE AGENCY COMPLIANCE
+### Monthly Reporting Requirements
+MANDATORY compliance elements:
+- **Timing**: Monthly reports due by 10th of following month
+- **Format**: Exact DABS specifications required
+- **Content**: Complete sales data, inventory levels, purchase records
+- **Retention**: 7-year data retention for audit purposes
+- **Accuracy**: Zero tolerance for compliance reporting errors
+
+## STAKEHOLDER SUCCESS CRITERIA
+### Hills & Hollows LLC Requirements
+- **90% Time Reduction**: Eliminate 10+ hours weekly manual work
+- **Staff Relief**: Return Tessa and Heather to 40-hour weeks
+- **Error Elimination**: Reduce pricing errors from 2% to <0.1% error rate
+- **Compliance Assurance**: Zero Utah Package Agency violations
+
+## VIOLATION PREVENTION
+❌ NEVER process incomplete DABS files
+❌ NEVER skip price validation checks
+❌ NEVER allow >20% price variance without approval
+❌ NEVER process without complete audit trail
+❌ NEVER compromise Utah compliance requirements
+
+Reference: [docs/FUNCTIONAL_REQUIREMENTS.md](mdc:docs/FUNCTIONAL_REQUIREMENTS.md)
+Reference: [docs/ACCEPTANCE_CRITERIA.md](mdc:docs/ACCEPTANCE_CRITERIA.md)
+Reference: [config/dabs_config.json](mdc:config/dabs_config.json)

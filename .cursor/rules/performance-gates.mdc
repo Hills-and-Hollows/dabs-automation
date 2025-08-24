@@ -1,0 +1,87 @@
+---
+globs: src/**/*,*.py
+description: Critical performance gates and optimization requirements for DABS processing and system response
+---
+
+# PERFORMANCE GATES ENFORCEMENT
+Critical performance standards for DABS automation system
+
+## CRITICAL PERFORMANCE GATES
+MANDATORY performance gates that MUST be met before production:
+- **DABS Processing**: 1,239 SKUs processed in <15 minutes (900 seconds)
+- **Dashboard Response**: <2 seconds for 95% of queries
+- **System Availability**: >99% uptime (8.76 hours downtime/year maximum)
+- **QuickBooks Sync**: 15-minute intervals with <2% variance
+- **SSCS Integration**: Price updates visible in POS within 1 hour
+
+## DABS FILE PROCESSING PERFORMANCE
+### Processing Speed Requirements
+MANDATORY timing constraints:
+```python
+class DABSProcessor:
+    MAX_PROCESSING_TIME = 15 * 60  # 15 minutes in seconds
+    MAX_SKU_PROCESSING_TIME = 0.7   # 0.7 seconds per SKU maximum
+    
+    async def process_dabs_file(self, file_path: str) -> ProcessingResult:
+        """MANDATORY: Process 1,239 SKUs within 15 minutes"""
+        start_time = time.time()
+        
+        # ENFORCE: Hard limit on processing time
+        processing_time = time.time() - start_time
+        if processing_time > self.MAX_PROCESSING_TIME:
+            raise PerformanceException(
+                f"Processing took {processing_time}s, exceeds limit"
+            )
+```
+
+### Batch Processing Optimization
+MANDATORY parallel processing implementation:
+```python
+async def _process_products_batch(self, products: List[DABSProduct]):
+    """MANDATORY: Use batch processing for performance"""
+    batch_size = 100  # Process 100 SKUs per batch
+    semaphore = asyncio.Semaphore(4)  # Max 4 concurrent batches
+    
+    # Process all batches concurrently
+    batch_results = await asyncio.gather(
+        *[process_batch(batch) for batch in batches]
+    )
+```
+
+## API RESPONSE TIME ENFORCEMENT
+### Response Time Monitoring
+MANDATORY response time validation:
+```python
+class PerformanceMonitor:
+    DASHBOARD_QUERY_LIMIT = 2.0    # 2 seconds for dashboard queries
+    API_ENDPOINT_LIMIT = 1.0       # 1 second for simple CRUD operations
+    
+    @staticmethod
+    def monitor_performance(endpoint_type: str = "api"):
+        # ENFORCE response time limits
+        if response_time > limit:
+            logger.warning(f"Performance violation: {func.__name__} took {response_time:.2f}s")
+```
+
+## QUICKBOOKS INTEGRATION PERFORMANCE
+### Rate Limiting Compliance
+MANDATORY QuickBooks rate limiting:
+```python
+class QuickBooksRateLimiter:
+    def __init__(self):
+        self.max_requests_per_minute = 500
+    
+    async def acquire(self):
+        """MANDATORY: Respect 500 requests/minute limit"""
+        # Implementation with proper rate limiting
+```
+
+## VIOLATION PREVENTION
+❌ NEVER deploy without meeting processing time requirements
+❌ NEVER skip database query optimization
+❌ NEVER ignore memory usage limits
+❌ NEVER exceed API rate limits for external services
+❌ NEVER deploy without load testing validation
+
+Reference: [docs/NON_FUNCTIONAL_REQUIREMENTS.md](mdc:docs/NON_FUNCTIONAL_REQUIREMENTS.md)
+Reference: [config/dabs_config.json](mdc:config/dabs_config.json)

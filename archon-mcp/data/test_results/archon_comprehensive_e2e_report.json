@@ -1,0 +1,45 @@
+{
+  "test_start": "2025-08-22T09:11:43.308373",
+  "tests_passed": 0,
+  "tests_failed": 5,
+  "test_details": [
+    {
+      "test": "Local Server (Chromium)",
+      "status": "FAIL",
+      "endpoint": "http://localhost:8151",
+      "browser": "Chromium",
+      "error": "Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:8151/\nCall log:\n  - navigating to \"http://localhost:8151/\", waiting until \"domcontentloaded\"\n"
+    },
+    {
+      "test": "UI (Custom Port) (Chromium)",
+      "status": "FAIL",
+      "endpoint": "http://localhost:3837",
+      "browser": "Chromium",
+      "error": "Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3837/\nCall log:\n  - navigating to \"http://localhost:3837/\", waiting until \"domcontentloaded\"\n"
+    },
+    {
+      "test": "UI (Default Port) (Chromium)",
+      "status": "FAIL",
+      "endpoint": "http://localhost:3737",
+      "browser": "Chromium",
+      "error": "Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3737/\nCall log:\n  - navigating to \"http://localhost:3737/\", waiting until \"domcontentloaded\"\n"
+    },
+    {
+      "test": "Server (Custom Port) (Chromium)",
+      "status": "FAIL",
+      "endpoint": "http://localhost:8281",
+      "browser": "Chromium",
+      "error": "Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:8281/\nCall log:\n  - navigating to \"http://localhost:8281/\", waiting until \"domcontentloaded\"\n"
+    },
+    {
+      "test": "Server (Default Port) (Chromium)",
+      "status": "FAIL",
+      "endpoint": "http://localhost:8181",
+      "browser": "Chromium",
+      "error": "Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:8181/\nCall log:\n  - navigating to \"http://localhost:8181/\", waiting until \"domcontentloaded\"\n"
+    }
+  ],
+  "test_end": "2025-08-22T09:11:53.063313",
+  "total_tests": 5,
+  "success_rate": 0.0
+}

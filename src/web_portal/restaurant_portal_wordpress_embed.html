@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Order Portal - Hills & Hollows LLC</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6; 
+            color: #333; 
+            background: #f8f9fa;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container { 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            padding: 10px 15px;
+        }
+        
+        .header {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .header h1 { 
+            color: #4a5568; 
+            margin-bottom: 8px;
+            font-size: 2.5em;
+        }
+        
+        .header p { 
+            color: #718096; 
+            font-size: 1.1em;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 20px;
+            align-items: start;
+        }
+        
+        .catalog-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .order-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+        }
+        
+        .search-container {
+            margin-bottom: 20px;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .filters {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .filter-select {
+            padding: 8px 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            background: white;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .product-card {
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            background: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .product-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.1);
+            transform: translateY(-1px);
+        }
+        
+        .product-card.selected {
+            border-color: #667eea;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+        }
+        
+        .product-name {
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .product-sku {
+            font-size: 12px;
+            color: #718096;
+            margin-bottom: 5px;
+        }
+        
+        .product-category {
+            font-size: 12px;
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+            padding: 2px 8px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        
+        .product-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2d3748;
+        }
+        
+        .product-size {
+            font-size: 12px;
+            color: #718096;
+            margin-top: 4px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #718096;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #718096;
+        }
+        
+        .order-summary {
+            margin-bottom: 20px;
+        }
+        
+        .order-items {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f7fafc;
+        }
+        
+        .order-item:last-child {
+            border-bottom: none;
+        }
+        
+        .order-item-name {
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        .order-item-price {
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .order-total {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2d3748;
+            text-align: right;
+            padding-top: 10px;
+            border-top: 2px solid #e2e8f0;
+        }
+        
+        .form-group { 
+            margin-bottom: 20px; 
+        }
+        
+        label { 
+            display: block; 
+            margin-bottom: 8px; 
+            font-weight: 600; 
+            color: #4a5568;
+        }
+        
+        input[type="text"], 
+        input[type="email"], 
+        input[type="date"], 
+        input[type="number"], 
+        select, 
+        textarea {
+            width: 100%; 
+            padding: 12px 16px; 
+            border: 2px solid #e2e8f0; 
+            border-radius: 8px; 
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn:disabled {
+            background: #cbd5e0;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .catalog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .catalog-stats {
+            font-size: 14px;
+            color: #718096;
+        }
+        
+        /* Invoice Section Styles */
+        .invoice-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        .invoice-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .invoice-header h2 {
+            color: #4a5568;
+            margin-bottom: 8px;
+            font-size: 1.8em;
+        }
+
+        .invoice-header p {
+            color: #718096;
+            font-size: 1em;
+        }
+
+        .invoice-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .invoice-info h4 {
+            color: #4a5568;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 5px;
+        }
+
+        .invoice-info p {
+            color: #718096;
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+
+        .invoice-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .invoice-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .invoice-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #4a5568;
+            font-size: 0.9em;
+        }
+
+        .invoice-table tbody tr:hover {
+            background: #f8fafc;
+        }
+
+        .invoice-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .invoice-table .text-right {
+            text-align: right;
+        }
+
+        .invoice-table .text-center {
+            text-align: center;
+        }
+
+        .invoice-totals {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .totals-section {
+            min-width: 300px;
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            border: 2px solid #e2e8f0;
+        }
+
+        .total-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding: 5px 0;
+        }
+
+        .total-line.subtotal {
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+
+        .total-line.final-total {
+            border-top: 2px solid #667eea;
+            margin-top: 10px;
+            padding-top: 10px;
+            font-weight: 700;
+            font-size: 1.1em;
+            color: #4a5568;
+        }
+
+        .invoice-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .invoice-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .invoice-btn.print {
+            background: #48bb78;
+            color: white;
+        }
+
+        .invoice-btn.print:hover {
+            background: #38a169;
+            transform: translateY(-2px);
+        }
+
+        .invoice-btn.email {
+            background: #4299e1;
+            color: white;
+        }
+
+        .invoice-btn.email:hover {
+            background: #3182ce;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .order-section {
+                position: static;
+            }
+
+            .invoice-details {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .invoice-table {
+                font-size: 0.8em;
+            }
+
+            .invoice-table th,
+            .invoice-table td {
+                padding: 8px 6px;
+            }
+
+            .totals-section {
+                min-width: auto;
+                width: 100%;
+            }
+
+            .invoice-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍽️ Restaurant Order Portal</h1>
+            <p>Hills & Hollows LLC - Utah Package Agency | Boulder, UT</p>
+        </div>
+        
+        <div class="main-content">
+            <!-- DABS Product Catalog Section -->
+            <div class="catalog-section">
+                <div class="catalog-header">
+                    <h2>🍷 DABS Product Catalog</h2>
+                    <div class="catalog-stats" id="catalogStats">
+                        Loading products...
+                    </div>
+                </div>
+                
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        class="search-box" 
+                        id="productSearch" 
+                        placeholder="Search products by name, category, or SKU..."
+                    >
+                    
+                    <div class="filters">
+                        <select class="filter-select" id="categoryFilter">
+                            <option value="">All Categories</option>
+                        </select>
+                        
+                        <select class="filter-select" id="sortBy">
+                            <option value="name">Sort by Name</option>
+                            <option value="price_asc">Price: Low to High</option>
+                            <option value="price_desc">Price: High to Low</option>
+                            <option value="category">Category</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="products-grid" id="productsGrid">
+                    <div class="loading">
+                        🔄 Loading DABS products...
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Order Form Section -->
+            <div class="order-section">
+                <h3>📋 Your Order</h3>
+                
+                <div class="order-summary">
+                    <div class="order-items" id="orderItems">
+                        <div style="text-align: center; color: #718096; font-style: italic;">
+                            Select products from the catalog to add to your order
+                        </div>
+                    </div>
+                    
+                    <div class="order-total" id="orderTotal">
+                        Total: $0.00
+                    </div>
+                </div>
+                
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="restaurantName">Restaurant Name</label>
+                        <select id="restaurantName" name="restaurant_name" required>
+                            <option value="">Select Your Restaurant</option>
+                            <option value="Boulder Mountain Lodge">Boulder Mountain Lodge</option>
+                            <option value="Burr Trail Cafe">Burr Trail Cafe</option>
+                            <option value="Hell's Backbone Kitchen">Hell's Backbone Kitchen</option>
+                            <option value="High Noon Tacos">High Noon Tacos</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactName">Contact Name</label>
+                        <input type="text" id="contactName" name="contact_name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address</label>
+                        <input type="email" id="contactEmail" name="contact_email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="deliveryDate">Preferred Delivery Date</label>
+                        <input type="date" id="deliveryDate" name="delivery_date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="paymentMethod">Payment Method</label>
+                        <select id="paymentMethod" name="payment_method" required onchange="toggleCardInfo()">
+                            <option value="">Select Payment Method</option>
+                            <option value="cash">Cash (No Fee)</option>
+                            <option value="check">Check (No Fee)</option>
+                            <option value="credit_card">Credit Card (+2.5% Processing Fee)</option>
+                        </select>
+                    </div>
+                    
+                    <div id="cardInfo" style="display: none;">
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number</label>
+                            <input type="text" id="cardNumber" name="card_number" placeholder="1234 5678 9012 3456">
+                        </div>
+                        
+                        <div style="display: flex; gap: 10px;">
+                            <div class="form-group" style="flex: 1;">
+                                <label for="expiryDate">MM/YY</label>
+                                <input type="text" id="expiryDate" name="expiry_date" placeholder="12/25">
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="123">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="specialInstructions">Special Instructions (Optional)</label>
+                        <textarea id="specialInstructions" name="special_instructions" rows="3" 
+                                placeholder="Any special delivery instructions or notes..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" id="submitBtn" disabled>
+                        📤 Submit Order
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Itemized Order Invoice Section -->
+        <div class="invoice-section" id="invoiceSection" style="display: none;">
+            <div class="invoice-header">
+                <h2>📋 Order Invoice Preview</h2>
+                <p>Complete itemized order details for your records</p>
+            </div>
+            <div class="invoice-content" id="invoiceContent">
+                <!-- Invoice will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let products = [];
+        let filteredProducts = [];
+        let selectedProducts = [];
+        let categories = [];
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+        });
+
+        async function initializeApp() {
+            try {
+                // Load initial data
+                await loadCategories();
+                await loadProducts();
+                
+                // Setup event listeners
+                setupEventListeners();
+                
+                console.log('Restaurant portal initialized successfully');
+            } catch (error) {
+                console.error('Error initializing app:', error);
+                showError('Failed to load product catalog. Please refresh the page.');
+            }
+        }
+
+        function setupEventListeners() {
+            // Search functionality
+            const searchBox = document.getElementById('productSearch');
+            searchBox.addEventListener('input', debounce(handleSearch, 300));
+            
+            // Filter functionality
+            const categoryFilter = document.getElementById('categoryFilter');
+            categoryFilter.addEventListener('change', handleFilters);
+            
+            const sortBy = document.getElementById('sortBy');
+            sortBy.addEventListener('change', handleFilters);
+            
+            // Order form
+            const orderForm = document.getElementById('orderForm');
+            orderForm.addEventListener('submit', handleOrderSubmit);
+            
+            // Set minimum delivery date to tomorrow
+            const deliveryDate = document.getElementById('deliveryDate');
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            deliveryDate.min = tomorrow.toISOString().split('T')[0];
+            
+            // Add event listeners for form fields to update invoice in real-time
+            const formFields = ['restaurantName', 'contactName', 'contactEmail', 'deliveryDate', 'paymentMethod', 'specialInstructions'];
+            formFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (field) {
+                    field.addEventListener('change', updateInvoiceSection);
+                    field.addEventListener('input', debounce(updateInvoiceSection, 300));
+                }
+            });
+        }
+
+        async function loadCategories() {
+            try {
+                const response = await fetch('/dabs/catalog/categories');
+                const data = await response.json();
+                
+                if (data.success) {
+                    categories = data.categories;
+                    populateCategoryFilter();
+                }
+            } catch (error) {
+                console.error('Error loading categories:', error);
+            }
+        }
+
+        function populateCategoryFilter() {
+            const categoryFilter = document.getElementById('categoryFilter');
+            const currentValue = categoryFilter.value;
+            
+            // Clear existing options (except "All Categories")
+            categoryFilter.innerHTML = '<option value="">All Categories</option>';
+            
+            categories.forEach(category => {
+                const option = document.createElement('option');
+                option.value = category.name;
+                option.textContent = `${category.name} (${category.count})`;
+                categoryFilter.appendChild(option);
+            });
+            
+            // Restore previous selection
+            categoryFilter.value = currentValue;
+        }
+
+        async function loadProducts(search = '', category = '') {
+            try {
+                showLoading();
+                
+                let url = '/dabs/catalog/products?limit=100';
+                if (search) url += `&search=${encodeURIComponent(search)}`;
+                if (category) url += `&category=${encodeURIComponent(category)}`;
+                
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data.success) {
+                    products = data.products;
+                    filteredProducts = [...products];
+                    updateCatalogStats(data);
+                    displayProducts();
+                } else {
+                    showError(data.error || 'Failed to load products');
+                }
+            } catch (error) {
+                console.error('Error loading products:', error);
+                showError('Failed to load products. Please try again.');
+            }
+        }
+
+        function updateCatalogStats(data) {
+            const statsElement = document.getElementById('catalogStats');
+            statsElement.textContent = `${data.total_found} of ${data.total_available} products`;
+            
+            if (data.last_updated) {
+                const lastUpdated = new Date(data.last_updated).toLocaleDateString();
+                statsElement.textContent += ` • Updated ${lastUpdated}`;
+            }
+        }
+
+        function displayProducts() {
+            const grid = document.getElementById('productsGrid');
+            
+            if (filteredProducts.length === 0) {
+                grid.innerHTML = `
+                    <div class="no-results">
+                        <h3>No products found</h3>
+                        <p>Try adjusting your search or filter criteria.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filteredProducts.map(product => `
+                <div class="product-card ${isProductSelected(product.sku) ? 'selected' : ''}" 
+                     onclick="toggleProductSelection('${product.sku}')">
+                    <div class="product-name">${product.product_name}</div>
+                    <div class="product-sku">SKU: ${product.sku}</div>
+                    <div class="product-category">${product.category}</div>
+                    <div class="product-price">$${product.price.toFixed(2)}</div>
+                    ${product.size ? `<div class="product-size">${product.size}</div>` : ''}
+                </div>
+            `).join('');
+        }
+
+        function showLoading() {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = `
+                <div class="loading">
+                    🔄 Loading products...
+                </div>
+            `;
+        }
+
+        function showError(message) {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = `
+                <div class="no-results">
+                    <h3>⚠️ Error</h3>
+                    <p>${message}</p>
+                </div>
+            `;
+        }
+
+        async function handleSearch() {
+            const searchTerm = document.getElementById('productSearch').value;
+            const category = document.getElementById('categoryFilter').value;
+            await loadProducts(searchTerm, category);
+        }
+
+        async function handleFilters() {
+            await handleSearch(); // Reload with current search and filters
+            applySorting();
+        }
+
+        function applySorting() {
+            const sortBy = document.getElementById('sortBy').value;
+            
+            switch (sortBy) {
+                case 'name':
+                    filteredProducts.sort((a, b) => a.product_name.localeCompare(b.product_name));
+                    break;
+                case 'price_asc':
+                    filteredProducts.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price_desc':
+                    filteredProducts.sort((a, b) => b.price - a.price);
+                    break;
+                case 'category':
+                    filteredProducts.sort((a, b) => a.category.localeCompare(b.category));
+                    break;
+            }
+            
+            displayProducts();
+        }
+
+        function toggleProductSelection(sku) {
+            const product = products.find(p => p.sku === sku);
+            if (!product) return;
+
+            const existingIndex = selectedProducts.findIndex(p => p.sku === sku);
+            
+            if (existingIndex >= 0) {
+                // Remove product
+                selectedProducts.splice(existingIndex, 1);
+            } else {
+                // Add product with quantity 1
+                selectedProducts.push({
+                    sku: product.sku,
+                    product_name: product.product_name,
+                    price: product.price,
+                    quantity: 1
+                });
+            }
+            
+            updateOrderSummary();
+            displayProducts(); // Refresh to update selected state
+        }
+
+        function updateProductQuantity(sku, change) {
+            const existingIndex = selectedProducts.findIndex(p => p.sku === sku);
+            
+            if (existingIndex >= 0) {
+                selectedProducts[existingIndex].quantity += change;
+                
+                // Remove if quantity becomes 0 or less
+                if (selectedProducts[existingIndex].quantity <= 0) {
+                    selectedProducts.splice(existingIndex, 1);
+                }
+                
+                updateOrderSummary();
+                displayProducts();
+            }
+        }
+
+        function removeProduct(sku) {
+            const existingIndex = selectedProducts.findIndex(p => p.sku === sku);
+            if (existingIndex >= 0) {
+                selectedProducts.splice(existingIndex, 1);
+                updateOrderSummary();
+                displayProducts();
+            }
+        }
+
+        function isProductSelected(sku) {
+            return selectedProducts.some(p => p.sku === sku);
+        }
+
+        function updateOrderSummary() {
+            const orderItems = document.getElementById('orderItems');
+            const orderTotal = document.getElementById('orderTotal');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            if (selectedProducts.length === 0) {
+                orderItems.innerHTML = `
+                    <div style="text-align: center; color: #718096; font-style: italic;">
+                        Select products from the catalog to add to your order
+                    </div>
+                `;
+                orderTotal.textContent = 'Total: $0.00';
+                submitBtn.disabled = true;
+                return;
+            }
+
+            // Display selected items with quantity controls
+            orderItems.innerHTML = selectedProducts.map(item => `
+                <div class="order-item" style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="flex: 1;">
+                            <div class="order-item-name">${item.product_name}</div>
+                            <div style="font-size: 12px; color: #718096;">SKU: ${item.sku}</div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="display: flex; align-items: center; border: 1px solid #ddd; border-radius: 4px; overflow: hidden;">
+                                <button onclick="updateProductQuantity('${item.sku}', -1)" 
+                                        style="border: none; background: #f5f5f5; padding: 4px 8px; cursor: pointer; font-size: 14px;">−</button>
+                                <span style="padding: 4px 12px; background: white; border-left: 1px solid #ddd; border-right: 1px solid #ddd; min-width: 30px; text-align: center;">${item.quantity}</span>
+                                <button onclick="updateProductQuantity('${item.sku}', 1)" 
+                                        style="border: none; background: #f5f5f5; padding: 4px 8px; cursor: pointer; font-size: 14px;">+</button>
+                            </div>
+                            <div class="order-item-price" style="font-weight: 600; min-width: 60px; text-align: right;">
+                                $${(item.price * item.quantity).toFixed(2)}
+                            </div>
+                            <button onclick="removeProduct('${item.sku}')" 
+                                    style="border: none; background: #ff4757; color: white; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 12px;" 
+                                    title="Remove item">×</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Calculate total with quantities
+            const subtotal = selectedProducts.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            const processingFee = paymentMethod === 'credit_card' ? subtotal * 0.025 : 0;
+            const total = subtotal + processingFee;
+            
+            orderTotal.innerHTML = `
+                Subtotal: $${subtotal.toFixed(2)}<br>
+                ${processingFee > 0 ? `Processing Fee: $${processingFee.toFixed(2)}<br>` : ''}
+                <strong>Total: $${total.toFixed(2)}</strong>
+            `;
+            
+            submitBtn.disabled = false;
+            
+            // Update invoice section whenever order summary changes
+            updateInvoiceSection();
+        }
+
+        async function handleOrderSubmit(event) {
+            event.preventDefault();
+            
+            if (selectedProducts.length === 0) {
+                alert('Please select at least one product for your order.');
+                return;
+            }
+
+            const formData = new FormData(event.target);
+            const orderData = {
+                restaurant_name: formData.get('restaurant_name'),
+                contact_name: formData.get('contact_name'),
+                contact_email: formData.get('contact_email'),
+                delivery_date: formData.get('delivery_date'),
+                payment_method: formData.get('payment_method'),
+                special_instructions: formData.get('special_instructions'),
+                products: selectedProducts,
+                order_total: selectedProducts.reduce((sum, item) => sum + (item.price * item.quantity), 0)
+            };
+
+            // Add payment info if credit card
+            if (orderData.payment_method === 'credit_card') {
+                orderData.card_info = {
+                    card_number: formData.get('card_number'),
+                    expiry_date: formData.get('expiry_date'),
+                    cvv: formData.get('cvv')
+                };
+            }
+
+            try {
+                const submitBtn = document.getElementById('submitBtn');
+                submitBtn.disabled = true;
+                submitBtn.textContent = '⏳ Submitting...';
+
+                const response = await fetch('/restaurant/orders/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(orderData)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    alert(`🎉 Order submitted successfully!\n\nOrder ID: ${result.order_id}\n\nYou will receive a confirmation email shortly.`);
+                    
+                    // Reset form and selections
+                    event.target.reset();
+                    selectedProducts = [];
+                    updateOrderSummary();
+                    displayProducts();
+                } else {
+                    throw new Error(result.error || 'Failed to submit order');
+                }
+
+            } catch (error) {
+                console.error('Order submission error:', error);
+                alert(`❌ Error submitting order: ${error.message}\n\nPlease try again or contact support.`);
+            } finally {
+                const submitBtn = document.getElementById('submitBtn');
+                submitBtn.disabled = false;
+                submitBtn.textContent = '📤 Submit Order';
+            }
+        }
+
+        function toggleCardInfo() {
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            const cardInfo = document.getElementById('cardInfo');
+            
+            if (paymentMethod === 'credit_card') {
+                cardInfo.style.display = 'block';
+                // Make card fields required
+                document.getElementById('cardNumber').required = true;
+                document.getElementById('expiryDate').required = true;
+                document.getElementById('cvv').required = true;
+            } else {
+                cardInfo.style.display = 'none';
+                // Remove required from card fields
+                document.getElementById('cardNumber').required = false;
+                document.getElementById('expiryDate').required = false;
+                document.getElementById('cvv').required = false;
+            }
+            
+            // Update order total when payment method changes
+            updateOrderSummary();
+        }
+
+        function updateInvoiceSection() {
+            const invoiceSection = document.getElementById('invoiceSection');
+            const invoiceContent = document.getElementById('invoiceContent');
+            
+            if (selectedProducts.length === 0) {
+                invoiceSection.style.display = 'none';
+                return;
+            }
+            
+            // Get form data for invoice details
+            const restaurantName = document.getElementById('restaurantName').value || 'Not Selected';
+            const contactName = document.getElementById('contactName').value || 'Not Provided';
+            const contactEmail = document.getElementById('contactEmail').value || 'Not Provided';
+            const deliveryDate = document.getElementById('deliveryDate').value || 'Not Selected';
+            const paymentMethod = document.getElementById('paymentMethod').value || 'cash';
+            const specialInstructions = document.getElementById('specialInstructions').value || 'None';
+            
+            // Calculate totals
+            const subtotal = selectedProducts.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const processingFee = paymentMethod === 'credit_card' ? subtotal * 0.025 : 0;
+            const total = subtotal + processingFee;
+            
+            // Generate current date/time for invoice
+            const now = new Date();
+            const invoiceDate = now.toLocaleDateString();
+            const invoiceTime = now.toLocaleTimeString();
+            const invoiceNumber = 'INV-' + Date.now().toString().slice(-8);
+            
+            // Build invoice HTML
+            invoiceContent.innerHTML = `
+                <!-- Invoice Details -->
+                <div class="invoice-details">
+                    <div class="invoice-info">
+                        <h4>📋 Order Information</h4>
+                        <p><strong>Invoice #:</strong> ${invoiceNumber}</p>
+                        <p><strong>Date:</strong> ${invoiceDate}</p>
+                        <p><strong>Time:</strong> ${invoiceTime}</p>
+                        <p><strong>Status:</strong> Draft Order</p>
+                    </div>
+                    <div class="invoice-info">
+                        <h4>🏪 Customer Details</h4>
+                        <p><strong>Restaurant:</strong> ${restaurantName}</p>
+                        <p><strong>Contact:</strong> ${contactName}</p>
+                        <p><strong>Email:</strong> ${contactEmail}</p>
+                        <p><strong>Delivery:</strong> ${deliveryDate}</p>
+                        <p><strong>Payment:</strong> ${paymentMethod === 'credit_card' ? 'Credit Card (2.5% fee)' : paymentMethod.replace('_', ' ').toUpperCase()}</p>
+                    </div>
+                </div>
+                
+                <!-- Invoice Items Table -->
+                <table class="invoice-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 10%;">Item #</th>
+                            <th style="width: 12%;">SKU</th>
+                            <th style="width: 38%;">Product Name</th>
+                            <th style="width: 10%;" class="text-center">Qty</th>
+                            <th style="width: 15%;" class="text-right">Unit Price</th>
+                            <th style="width: 15%;" class="text-right">Total Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${selectedProducts.map((item, index) => `
+                            <tr>
+                                <td class="text-center">${index + 1}</td>
+                                <td>${item.sku}</td>
+                                <td>
+                                    <strong>${item.product_name}</strong>
+                                    <br>
+                                    <small style="color: #718096;">${item.category || 'General'} • ${item.size || 'Standard'}</small>
+                                </td>
+                                <td class="text-center">${item.quantity}</td>
+                                <td class="text-right">$${item.price.toFixed(2)}</td>
+                                <td class="text-right"><strong>$${(item.price * item.quantity).toFixed(2)}</strong></td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+                
+                <!-- Invoice Totals -->
+                <div class="invoice-totals">
+                    <div class="totals-section">
+                        <div class="total-line subtotal">
+                            <span>Subtotal:</span>
+                            <span>$${subtotal.toFixed(2)}</span>
+                        </div>
+                        ${processingFee > 0 ? `
+                            <div class="total-line">
+                                <span>Processing Fee (2.5%):</span>
+                                <span>$${processingFee.toFixed(2)}</span>
+                            </div>
+                        ` : ''}
+                        <div class="total-line final-total">
+                            <span>Total Amount:</span>
+                            <span>$${total.toFixed(2)}</span>
+                        </div>
+                    </div>
+                </div>
+                
+                ${specialInstructions !== 'None' ? `
+                    <div style="margin-top: 30px; padding: 15px; background: #f8fafc; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <h4 style="color: #4a5568; margin-bottom: 8px;">📝 Special Instructions:</h4>
+                        <p style="color: #718096; margin: 0;">${specialInstructions}</p>
+                    </div>
+                ` : ''}
+                
+                <!-- Invoice Actions -->
+                <div class="invoice-actions">
+                    <button class="invoice-btn print" onclick="printInvoice()">
+                        🖨️ Print Invoice
+                    </button>
+                    <button class="invoice-btn email" onclick="emailInvoice()">
+                        📧 Email Invoice
+                    </button>
+                </div>
+            `;
+            
+            invoiceSection.style.display = 'block';
+        }
+        
+        function printInvoice() {
+            const printContent = document.getElementById('invoiceContent').innerHTML;
+            const printWindow = window.open('', '', 'height=600,width=800');
+            
+            printWindow.document.write(`
+                <html>
+                <head>
+                    <title>Invoice - Hills & Hollows LLC</title>
+                    <style>
+                        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 20px; }
+                        .invoice-details { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 30px; padding: 20px; background: #f8fafc; border-radius: 8px; }
+                        .invoice-info h4 { color: #4a5568; margin-bottom: 10px; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; }
+                        .invoice-info p { margin-bottom: 5px; }
+                        .invoice-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+                        .invoice-table th { background: #667eea; color: white; padding: 15px 12px; text-align: left; }
+                        .invoice-table td { padding: 12px; border-bottom: 1px solid #e2e8f0; }
+                        .text-right { text-align: right; }
+                        .text-center { text-align: center; }
+                        .invoice-totals { display: flex; justify-content: flex-end; margin-top: 20px; }
+                        .totals-section { min-width: 300px; background: #f8fafc; border-radius: 8px; padding: 20px; border: 2px solid #e2e8f0; }
+                        .total-line { display: flex; justify-content: space-between; margin-bottom: 8px; padding: 5px 0; }
+                        .total-line.subtotal { border-bottom: 1px solid #e2e8f0; margin-bottom: 10px; padding-bottom: 10px; }
+                        .total-line.final-total { border-top: 2px solid #667eea; margin-top: 10px; padding-top: 10px; font-weight: 700; font-size: 1.1em; }
+                        .invoice-actions { display: none; }
+                    </style>
+                </head>
+                <body>
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <h1>🍽️ Hills & Hollows LLC</h1>
+                        <p>Utah Package Agency • Restaurant Order Invoice</p>
+                        <hr>
+                    </div>
+                    ${printContent}
+                </body>
+                </html>
+            `);
+            
+            printWindow.document.close();
+            printWindow.print();
+        }
+        
+        function emailInvoice() {
+            const contactEmail = document.getElementById('contactEmail').value;
+            const restaurantName = document.getElementById('restaurantName').value || 'Restaurant';
+            
+            if (!contactEmail) {
+                alert('Please enter an email address to send the invoice.');
+                return;
+            }
+            
+            // Create email content
+            const total = selectedProducts.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            const processingFee = paymentMethod === 'credit_card' ? total * 0.025 : 0;
+            const finalTotal = total + processingFee;
+            
+            const subject = `Restaurant Order Invoice - ${restaurantName}`;
+            const body = `Dear ${restaurantName} Team,
+
+Please find your order details below:
+
+ORDER SUMMARY:
+- Items: ${selectedProducts.length}
+- Subtotal: $${total.toFixed(2)}
+${processingFee > 0 ? `- Processing Fee: $${processingFee.toFixed(2)}\n` : ''}
+- Total: $${finalTotal.toFixed(2)}
+
+ITEMS ORDERED:
+${selectedProducts.map((item, index) => 
+    `${index + 1}. ${item.product_name} (SKU: ${item.sku})\n   Quantity: ${item.quantity} x $${item.price.toFixed(2)} = $${(item.price * item.quantity).toFixed(2)}`
+).join('\n\n')}
+
+Thank you for your order!
+
+Hills & Hollows LLC
+Utah Package Agency`;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        }
+
+        // Utility function to debounce search input
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+    </script>
+</body>
+</html>

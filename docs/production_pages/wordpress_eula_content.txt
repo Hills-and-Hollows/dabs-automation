@@ -1,0 +1,85 @@
+[COPY THIS CONTENT INTO A NEW WORDPRESS PAGE]
+
+Title: DABS EULA
+
+Content:
+<div style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6;">
+
+<div style="background: #ecf0f1; padding: 20px; border-radius: 5px; margin: 20px 0; text-align: center;">
+<h2>Hills & Hollows LLC - DABS Automation System</h2>
+<p><strong>Utah Package Agency Licensed Liquor Store</strong></p>
+<p>QuickBooks Online Integration for Inventory & Compliance Management</p>
+</div>
+
+<div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 5px; margin: 20px 0;">
+<strong>IMPORTANT:</strong> Please read this End User License Agreement ("Agreement") carefully before using the Hills & Hollows DABS Automation System. By using this software, you agree to be bound by the terms of this Agreement.
+</div>
+
+<h2>1. License Grant</h2>
+<p>Hills & Hollows LLC ("Licensor") grants you a limited, non-exclusive, non-transferable license to use the DABS (Department of Alcoholic Beverage Control) Automation System ("Software") solely for business operations related to Utah Package Agency compliance and inventory management.</p>
+
+<h2>2. Permitted Use</h2>
+<p>This Software is specifically designed for:</p>
+<ul>
+<li>Processing DABS Excel files for price updates and inventory management</li>
+<li>Integrating with QuickBooks Online for automated bookkeeping</li>
+<li>Generating Utah Package Agency compliance reports</li>
+<li>Automating inventory synchronization and pricing updates</li>
+<li>Managing liquor store operations in compliance with Utah state regulations</li>
+</ul>
+
+<h2>3. Restrictions</h2>
+<p>You may NOT:</p>
+<ul>
+<li>Modify, reverse engineer, or decompile the Software</li>
+<li>Use the Software for any illegal or unauthorized purpose</li>
+<li>Share your access credentials with unauthorized parties</li>
+<li>Use the Software in violation of Utah Package Agency regulations</li>
+<li>Attempt to circumvent any security measures</li>
+</ul>
+
+<h2>4. Data Security & Privacy</h2>
+<p>We implement industry-standard security measures including:</p>
+<ul>
+<li>Encrypted data storage and transmission (AES-256)</li>
+<li>Secure OAuth 2.0 authentication with QuickBooks Online</li>
+<li>Limited access controls and audit logging</li>
+<li>Regular security monitoring and updates</li>
+<li>Compliance with Utah state data protection requirements</li>
+</ul>
+
+<h2>5. Compliance & Regulatory</h2>
+<p>This Software is designed to assist with Utah Package Agency compliance. However:</p>
+<ul>
+<li>Users remain responsible for ensuring full regulatory compliance</li>
+<li>The Software provides tools but does not guarantee compliance</li>
+<li>Users must verify all automated processes meet current regulations</li>
+<li>Regular audits and manual verification are recommended</li>
+</ul>
+
+<h2>6. Limitation of Liability</h2>
+<p>Hills & Hollows LLC shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of this Software. Our total liability shall not exceed the amount paid for the Software license.</p>
+
+<h2>7. Support & Maintenance</h2>
+<p>Technical support is provided during business hours. Updates and maintenance will be performed to ensure continued compatibility with QuickBooks Online and Utah Package Agency requirements.</p>
+
+<h2>8. Termination</h2>
+<p>This license may be terminated by either party with 30 days written notice. Upon termination, you must cease all use of the Software and delete any stored data.</p>
+
+<div style="background: #d1ecf1; border: 1px solid #bee5eb; padding: 15px; border-radius: 5px; margin: 20px 0;">
+<h3>📞 Contact Information</h3>
+<p><strong>Technical Support:</strong> admin@hillshollows.com</p>
+<p><strong>Business Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM MST</p>
+<p><strong>Emergency Support:</strong> Available for critical compliance issues</p>
+</div>
+
+<div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #666;">
+<p><strong>Hills & Hollows LLC</strong><br>
+Utah Package Agency Licensed Liquor Store<br>
+<strong>Last Updated:</strong> January 2025<br>
+<strong>Version:</strong> 1.0</p>
+
+<p><em>This Agreement is governed by the laws of the State of Utah.</em></p>
+</div>
+
+</div>

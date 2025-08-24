@@ -1,0 +1,329 @@
+{
+  "name": "DABS Archon MCP Server",
+  "version": "1.0.0",
+  "description": "MCP server configuration for DABS Utah Package Agency Liquor Inventory Management System",
+  
+  "server": {
+    "name": "dabs-archon",
+    "version": "1.0.0",
+    "url": "http://localhost:8151",
+    "transport": "sse",
+    "capabilities": {
+      "tools": true,
+      "resources": true,
+      "prompts": true,
+      "logging": true
+    }
+  },
+  
+  "tools": [
+    {
+      "name": "search_dabs_knowledge",
+      "description": "Search DABS documentation, API specs, and integration guides",
+      "parameters": {
+        "query": {
+          "type": "string",
+          "description": "Search query for DABS knowledge base"
+        },
+        "source_filter": {
+          "type": "string",
+          "enum": ["all", "docs", "api_specs", "research", "code"],
+          "description": "Filter search by source type"
+        }
+      }
+    },
+    {
+      "name": "create_dabs_task",
+      "description": "Create a new task for DABS integration project",
+      "parameters": {
+        "title": {
+          "type": "string",
+          "description": "Task title"
+        },
+        "description": {
+          "type": "string", 
+          "description": "Detailed task description"
+        },
+        "phase": {
+          "type": "string",
+          "enum": ["foundation", "sscs_integration", "quickbooks", "verifone"],
+          "description": "DABS project phase"
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "critical"],
+          "description": "Task priority level"
+        }
+      }
+    },
+    {
+      "name": "get_dabs_project_status",
+      "description": "Get current status of DABS integration project phases",
+      "parameters": {
+        "phase": {
+          "type": "string",
+          "enum": ["all", "foundation", "sscs_integration", "quickbooks", "verifone"],
+          "description": "Specific phase to check or 'all' for overview"
+        }
+      }
+    },
+    {
+      "name": "update_dabs_documentation",
+      "description": "Update or create DABS project documentation",
+      "parameters": {
+        "document_type": {
+          "type": "string",
+          "enum": ["requirements", "architecture", "api_spec", "testing", "deployment"],
+          "description": "Type of document to update"
+        },
+        "content": {
+          "type": "string",
+          "description": "Document content or updates"
+        },
+        "section": {
+          "type": "string",
+          "description": "Specific section to update (optional)"
+        }
+      }
+    },
+    {
+      "name": "analyze_dabs_integration",
+      "description": "Analyze integration requirements and provide recommendations",
+      "parameters": {
+        "integration_type": {
+          "type": "string",
+          "enum": ["sscs_pos", "quickbooks", "verifone", "dabs_state"],
+          "description": "Type of integration to analyze"
+        },
+        "focus_area": {
+          "type": "string",
+          "enum": ["api_design", "data_flow", "error_handling", "security", "performance"],
+          "description": "Specific area to focus analysis on"
+        }
+      }
+    },
+    {
+      "name": "generate_dabs_code",
+      "description": "Generate code snippets for DABS integrations",
+      "parameters": {
+        "component": {
+          "type": "string",
+          "enum": ["api_client", "data_processor", "error_handler", "test_case", "config"],
+          "description": "Type of code component to generate"
+        },
+        "integration": {
+          "type": "string",
+          "enum": ["sscs", "quickbooks", "verifone", "dabs"],
+          "description": "Target integration system"
+        },
+        "language": {
+          "type": "string",
+          "enum": ["python", "sql", "yaml", "json"],
+          "description": "Programming language for code generation"
+        }
+      }
+    },
+    {
+      "name": "validate_dabs_requirements",
+      "description": "Validate DABS requirements against acceptance criteria",
+      "parameters": {
+        "requirement_id": {
+          "type": "string",
+          "description": "Specific requirement ID to validate"
+        },
+        "validation_type": {
+          "type": "string",
+          "enum": ["functional", "technical", "compliance", "performance"],
+          "description": "Type of validation to perform"
+        }
+      }
+    },
+    {
+      "name": "get_dabs_api_reference",
+      "description": "Get API reference information for DABS integrations",
+      "parameters": {
+        "api_system": {
+          "type": "string",
+          "enum": ["quickbooks", "verifone", "sscs", "dabs_state"],
+          "description": "API system to get reference for"
+        },
+        "endpoint": {
+          "type": "string",
+          "description": "Specific API endpoint (optional)"
+        },
+        "operation": {
+          "type": "string",
+          "enum": ["create", "read", "update", "delete", "list"],
+          "description": "API operation type (optional)"
+        }
+      }
+    },
+    {
+      "name": "track_dabs_compliance",
+      "description": "Track compliance requirements for DABS system",
+      "parameters": {
+        "compliance_area": {
+          "type": "string",
+          "enum": ["data_security", "audit_trail", "reporting", "access_control"],
+          "description": "Compliance area to track"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["not_started", "in_progress", "completed", "needs_review"],
+          "description": "Current compliance status"
+        }
+      }
+    },
+    {
+      "name": "optimize_dabs_performance",
+      "description": "Analyze and optimize DABS system performance",
+      "parameters": {
+        "component": {
+          "type": "string",
+          "enum": ["database", "api_calls", "file_processing", "caching", "network"],
+          "description": "System component to optimize"
+        },
+        "metric": {
+          "type": "string",
+          "enum": ["response_time", "throughput", "memory_usage", "cpu_usage", "error_rate"],
+          "description": "Performance metric to focus on"
+        }
+      }
+    }
+  ],
+  
+  "resources": [
+    {
+      "uri": "dabs://docs/functional-requirements",
+      "name": "DABS Functional Requirements",
+      "description": "Complete functional requirements for DABS system",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "dabs://docs/technical-architecture", 
+      "name": "DABS Technical Architecture",
+      "description": "System architecture and integration design",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "dabs://docs/acceptance-criteria",
+      "name": "DABS Acceptance Criteria", 
+      "description": "Detailed acceptance criteria for all features",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "dabs://api/quickbooks-reference",
+      "name": "QuickBooks API Reference",
+      "description": "QuickBooks Online API documentation and examples",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "dabs://api/verifone-reference",
+      "name": "Verifone API Reference", 
+      "description": "Verifone POS API documentation and integration guide",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "dabs://code/integration-patterns",
+      "name": "DABS Integration Patterns",
+      "description": "Code patterns and examples for system integrations",
+      "mimeType": "text/plain"
+    }
+  ],
+  
+  "prompts": [
+    {
+      "name": "dabs_integration_analysis",
+      "description": "Analyze DABS integration requirements and provide implementation guidance",
+      "arguments": [
+        {
+          "name": "integration_type",
+          "description": "Type of integration to analyze",
+          "required": true
+        },
+        {
+          "name": "current_status",
+          "description": "Current implementation status",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "dabs_code_review",
+      "description": "Review DABS code for best practices and integration patterns",
+      "arguments": [
+        {
+          "name": "code_component",
+          "description": "Code component to review",
+          "required": true
+        },
+        {
+          "name": "review_focus",
+          "description": "Specific areas to focus review on",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "dabs_testing_strategy",
+      "description": "Generate testing strategy for DABS integrations",
+      "arguments": [
+        {
+          "name": "test_scope",
+          "description": "Scope of testing (unit, integration, e2e)",
+          "required": true
+        },
+        {
+          "name": "integration_target",
+          "description": "Target integration system",
+          "required": true
+        }
+      ]
+    }
+  ],
+  
+  "client_configurations": {
+    "claude_desktop": {
+      "config_path": "~/.config/claude-desktop/config.json",
+      "server_config": {
+        "dabs-archon": {
+          "command": "curl",
+          "args": ["-N", "http://localhost:8151/sse"],
+          "env": {
+            "DABS_WORKSPACE": "/Volumes/Expansion/4. CURSOR/DABC Pricing - Inventory"
+          }
+        }
+      }
+    },
+    "cursor": {
+      "extension": "MCP Client",
+      "settings": {
+        "mcp.servers": [
+          {
+            "name": "DABS Archon",
+            "url": "http://localhost:8151",
+            "transport": "sse",
+            "description": "DABS task management and knowledge base"
+          }
+        ]
+      }
+    }
+  },
+  
+  "workspace_integration": {
+    "root_path": "/Volumes/Expansion/4. CURSOR/DABC Pricing - Inventory",
+    "watch_directories": [
+      "docs/",
+      "src/",
+      "tests/",
+      "scripts/"
+    ],
+    "ignore_patterns": [
+      "*.pyc",
+      "__pycache__/",
+      ".git/",
+      "node_modules/",
+      "*.log"
+    ]
+  }
+}

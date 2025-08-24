@@ -1,0 +1,197 @@
+<!-- FULL-WIDTH WordPress Page Content for hillsandhollowsmarket.com/restaurant-orders/ -->
+<!-- This version breaks out of WordPress theme constraints for full-screen experience -->
+
+<style>
+/* Full-Width Container CSS - Override WordPress Theme Constraints */
+.restaurant-ordering-fullwidth {
+    /* Break out of WordPress content constraints */
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    
+    /* Styling */
+    background: #f8f9fa;
+    padding: 20px 0;
+    position: relative;
+}
+
+.restaurant-ordering-fullwidth .container-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Full-Width Iframe */
+.restaurant-ordering-fullwidth iframe {
+    width: 100% !important;
+    min-height: 1200px !important;
+    height: 100vh !important;
+    max-height: 1200px !important;
+    border: none !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    display: block;
+}
+
+/* Header Styling */
+.restaurant-ordering-fullwidth h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.restaurant-ordering-fullwidth p {
+    text-align: center;
+    color: #6c757d;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+/* Responsive Full-Width */
+@media (max-width: 768px) {
+    .restaurant-ordering-fullwidth {
+        padding: 15px 0;
+    }
+    
+    .restaurant-ordering-fullwidth .container-inner {
+        padding: 0 10px;
+    }
+    
+    .restaurant-ordering-fullwidth iframe {
+        min-height: 800px !important;
+        height: 90vh !important;
+        max-height: 800px !important;
+    }
+    
+    .restaurant-ordering-fullwidth h2 {
+        font-size: 24px;
+    }
+}
+
+/* Alternative: Edge-to-Edge Full Screen */
+.restaurant-ordering-edge-to-edge {
+    /* Completely edge-to-edge */
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding: 0 !important;
+    background: transparent;
+}
+
+.restaurant-ordering-edge-to-edge iframe {
+    width: 100vw !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    display: block;
+}
+</style>
+
+<!-- OPTION 1: Full-Width with Padding (Recommended) -->
+<div class="restaurant-ordering-fullwidth">
+    <div class="container-inner">
+        <h2>🍽️ Professional Restaurant Order Portal</h2>
+        
+        <p>
+            <strong>🚀 New Automated System!</strong> Browse 1,244+ DABS products with live pricing, add items to cart, and submit orders instantly. <br>
+            <em>No more manual research or PDF forms required!</em>
+        </p>
+        
+        <!-- Need full-screen access? -->
+        <div style="text-align: center; margin-bottom: 20px;">
+            <a href="http://localhost:8000/restaurant/embed" 
+               target="_blank" 
+               style="display: inline-block; background: #007cba; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 14px;">
+                🖥️ Open Full-Screen Version
+            </a>
+        </div>
+    </div>
+    
+    <!-- Full-Width Iframe -->
+    <iframe 
+        src="http://localhost:8000/restaurant/embed" 
+        width="100%" 
+        height="1200px"
+        frameborder="0"
+        loading="lazy"
+        allow="fullscreen"
+        style="width: 100% !important; min-height: 1200px !important;">
+        <p>Your browser doesn't support iframes. 
+           <a href="http://localhost:8000/restaurant/embed" target="_blank" style="color: #0066cc;">
+           Click here to access the ordering system directly</a>
+        </p>
+    </iframe>
+    
+    <div class="container-inner" style="margin-top: 20px;">
+        <!-- Business Information -->
+        <div style="margin-top: 25px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #007cba;">
+            <h4 style="color: #2c3e50; margin-bottom: 10px;">📋 Ordering Information</h4>
+            <ul style="color: #4a5568; line-height: 1.8; margin-left: 20px;">
+                <li><strong>Delivery Schedule:</strong> Every other Tuesday</li>
+                <li><strong>Order Deadline:</strong> Thursday evening before delivery</li>
+                <li><strong>Authorized Customers:</strong> Boulder Mountain Lodge, Burr Trail Cafe, Hell's Backbone Kitchen, High Noon Tacos</li>
+                <li><strong>Support:</strong> Contact 435-335-7349 or hillshollowsmanager@gmail.com</li>
+            </ul>
+        </div>
+        
+        <!-- Professional Footer -->
+        <div style="margin-top: 20px; padding: 15px; background: #2c3e50; color: white; border-radius: 8px; text-align: center;">
+            <p style="margin: 0; font-size: 14px;">
+                <strong>Hills & Hollows LLC</strong> | 840 W Highway 12, Boulder, UT 84716 | 
+                <a href="tel:435-335-7349" style="color: #b8d4f0;">435-335-7349</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- OPTION 2: Complete Edge-to-Edge (Alternative) -->
+<!-- 
+<div class="restaurant-ordering-edge-to-edge">
+    <iframe 
+        src="http://localhost:8000/restaurant/embed" 
+        width="100%" 
+        height="100vh"
+        frameborder="0"
+        loading="lazy"
+        allow="fullscreen">
+    </iframe>
+</div>
+-->
+
+<!-- WordPress Theme Override Script -->
+<script>
+// Force full-width on WordPress themes that resist CSS
+document.addEventListener('DOMContentLoaded', function() {
+    const iframe = document.querySelector('.restaurant-ordering-fullwidth iframe');
+    const container = document.querySelector('.restaurant-ordering-fullwidth');
+    
+    if (iframe && container) {
+        // Ensure full width
+        iframe.style.width = '100%';
+        iframe.style.maxWidth = 'none';
+        
+        // Handle responsive height
+        function adjustHeight() {
+            const windowHeight = window.innerHeight;
+            const containerTop = container.getBoundingClientRect().top + window.scrollY;
+            const availableHeight = windowHeight - 100; // Account for header/footer
+            
+            if (window.innerWidth > 768) {
+                iframe.style.height = Math.max(1200, availableHeight) + 'px';
+            } else {
+                iframe.style.height = Math.max(800, availableHeight * 0.9) + 'px';
+            }
+        }
+        
+        // Adjust on load and resize
+        adjustHeight();
+        window.addEventListener('resize', adjustHeight);
+    }
+});
+</script>

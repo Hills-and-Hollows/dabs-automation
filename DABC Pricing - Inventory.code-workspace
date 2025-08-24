@@ -1,0 +1,68 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		// === DABS AUTOMATION PROJECT - WORKSPACE OPTIMIZED ===
+		// Inherits from .vscode/settings.json for detailed configuration
+		
+		// === DISABLE UNNECESSARY EXTENSIONS FOR THIS PROJECT ===
+		"extensions.ignoreRecommendations": true,
+		"roo-cline.newTaskRequireTodos": true,
+		"roo-cline.preventCompletionWithOpenTodos": true
+	},
+	"extensions": {
+		"recommendations": [
+			// === CORE PYTHON DEVELOPMENT ===
+			"ms-python.python",
+			"ms-python.debugpy",
+			
+			// === DOCUMENTATION & DIAGRAMS ===
+			"bierner.markdown-mermaid",
+			"yzhang.markdown-all-in-one",
+			"bierner.markdown-preview-github-styles",
+			"davidanson.vscode-markdownlint",
+			
+			// === DATA & CONFIGURATION ===
+			"mechatroner.rainbow-csv",
+			"redhat.vscode-yaml",
+			"mikestead.dotenv",
+			"editorconfig.editorconfig",
+			
+			// === VERSION CONTROL ===
+			"eamodio.gitlens",
+			
+			// === CODE QUALITY & PRODUCTIVITY ===
+			"streetsidesoftware.code-spell-checker",
+			"usernamehw.errorlens",
+			"gruntfuggly.todo-tree",
+			"christian-kohler.path-intellisense",
+			
+			// === DATABASE DEVELOPMENT ===
+			"ckolkman.vscode-postgres",
+			
+			// === API DEVELOPMENT ===
+			"humao.rest-client",
+			
+			// === VISUAL ENHANCEMENTS (MINIMAL) ===
+			"pkief.material-icon-theme",
+			"ibm.output-colorizer"
+		],
+		"unwantedRecommendations": [
+			// === REDUNDANT EXTENSIONS ===
+			"mermaidchart.vscode-mermaid-chart",
+			"mhutchie.git-graph",
+			"donjayamanne.githistory",
+			
+			// === WEB DEVELOPMENT (NOT NEEDED) ===
+			"bradlc.vscode-tailwindcss",
+			"christian-kohler.npm-intellisense",
+			"formulahendry.auto-close-tag",
+			"formulahendry.auto-rename-tag",
+			"ritwickdey.liveserver",
+			"esbenp.prettier-vscode"
+		]
+	}
+}

@@ -1,0 +1,211 @@
+[
+  {
+    "selector": "a",
+    "index": 0,
+    "tag": "A",
+    "type": "",
+    "name": "",
+    "id": "",
+    "className": "navbar-brand ng-scope",
+    "textContent": "",
+    "placeholder": "",
+    "value": "",
+    "visible": true,
+    "position": {
+      "x": 0,
+      "y": 0,
+      "width": 80,
+      "height": 50
+    }
+  },
+  {
+    "selector": "a",
+    "index": 1,
+    "tag": "A",
+    "type": "",
+    "name": "",
+    "id": "",
+    "className": "dropdown-toggle ng-binding",
+    "textContent": "Adjust",
+    "placeholder": "",
+    "value": "",
+    "visible": true,
+    "position": {
+      "x": 80,
+      "y": 0,
+      "width": 63,
+      "height": 50
+    }
+  },
+  {
+    "selector": "a",
+    "index": 7,
+    "tag": "A",
+    "type": "",
+    "name": "",
+    "id": "",
+    "className": "dropdown-toggle ng-binding",
+    "textContent": "Reports",
+    "placeholder": "",
+    "value": "",
+    "visible": true,
+    "position": {
+      "x": 143,
+      "y": 0,
+      "width": 72,
+      "height": 50
+    }
+  },
+  {
+    "selector": "a",
+    "index": 9,
+    "tag": "A",
+    "type": "",
+    "name": "",
+    "id": "",
+    "className": "dropdown-toggle ng-binding",
+    "textContent": "Setup",
+    "placeholder": "",
+    "value": "",
+    "visible": true,
+    "position": {
+      "x": 215,
+      "y": 0,
+      "width": 61,
+      "height": 50
+    }
+  },
+  {
+    "selector": "a",
+    "index": 15,
+    "tag": "A",
+    "type": "",
+    "name": "",
+    "id": "",
+    "className": "dropdown-toggle ng-binding",
+    "textContent": "Help",
+    "placeholder": "",
+    "value": "",
+    "visible": true,
+    "position": {
+      "x": 276,
+      "y": 0,
+      "width": 54,
+      "height": 50
+    }
+  },
+  {
+    "selector": "a",
+    "index": 18,
+    "tag": "A",
+    "type": "",
+    "name": "",
+    "id": "",
+    "className": "ng-binding",
+    "textContent": "Hello",
+    "placeholder": "",
+    "value": "",
+    "visible": true,
+    "position": {
+      "x": 1156,
+      "y": 0,
+      "width": 59,
+      "height": 50
+    }
+  },
+  {
+    "selector": "a",
+    "index": 19,
+    "tag": "A",
+    "type": "",
+    "name": "",
+    "id": "",
+    "className": "ng-scope",
+    "textContent": "Log In",
+    "placeholder": "",
+    "value": "",
+    "visible": true,
+    "position": {
+      "x": 1215,
+      "y": 0,
+      "width": 65,
+      "height": 50
+    }
+  },
+  {
+    "selector": "a",
+    "index": 21,
+    "tag": "A",
+    "type": "",
+    "name": "",
+    "id": "",
+    "className": "btn-social-icon btn-xs",
+    "textContent": "blog",
+    "placeholder": "",
+    "value": "",
+    "visible": true,
+    "position": {
+      "x": 1137,
+      "y": 689,
+      "width": 35,
+      "height": 20
+    }
+  },
+  {
+    "selector": "a",
+    "index": 22,
+    "tag": "A",
+    "type": "",
+    "name": "",
+    "id": "",
+    "className": "btn-social-icon btn-linkedin",
+    "textContent": "",
+    "placeholder": "",
+    "value": "",
+    "visible": true,
+    "position": {
+      "x": 1172,
+      "y": 689,
+      "width": 20,
+      "height": 20
+    }
+  },
+  {
+    "selector": "a",
+    "index": 23,
+    "tag": "A",
+    "type": "",
+    "name": "",
+    "id": "",
+    "className": "btn-social-icon btn-twitter",
+    "textContent": "",
+    "placeholder": "",
+    "value": "",
+    "visible": true,
+    "position": {
+      "x": 1192,
+      "y": 689,
+      "width": 21,
+      "height": 20
+    }
+  },
+  {
+    "selector": "a",
+    "index": 24,
+    "tag": "A",
+    "type": "",
+    "name": "",
+    "id": "",
+    "className": "btn-social-icon btn-facebook",
+    "textContent": "",
+    "placeholder": "",
+    "value": "",
+    "visible": true,
+    "position": {
+      "x": 1214,
+      "y": 689,
+      "width": 17,
+      "height": 20
+    }
+  }
+]

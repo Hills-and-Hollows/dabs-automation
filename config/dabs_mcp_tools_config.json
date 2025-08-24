@@ -1,0 +1,23 @@
+{
+  "mcp_tools": {
+    "dabs_ordering": {
+      "server_name": "dabs-ordering-server",
+      "executable": "python3",
+      "args": [
+        "src/mcp/dabs_ordering_mcp_server.py"
+      ],
+      "env": {
+        "PYTHONPATH": "./src"
+      },
+      "tools": [
+        "dabs_login_status",
+        "dabs_perform_login",
+        "dabs_process_restaurant_order",
+        "dabs_get_order_history",
+        "dabs_oauth_status",
+        "dabs_generate_oauth_url",
+        "dabs_system_health"
+      ]
+    }
+  }
+}

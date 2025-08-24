@@ -1,0 +1,130 @@
+[COPY THIS CONTENT INTO A NEW WORDPRESS PAGE]
+
+Title: DABS Privacy Policy
+
+Content:
+<div style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6;">
+
+<div style="background: #ecf0f1; padding: 20px; border-radius: 5px; margin: 20px 0; text-align: center;">
+<h2>Hills & Hollows LLC - DABS Automation System</h2>
+<p><strong>Utah Package Agency Licensed Liquor Store</strong></p>
+<p>QuickBooks Online Integration for Inventory & Compliance Management</p>
+</div>
+
+<div style="background: #ffebee; border: 1px solid #ffcdd2; padding: 15px; border-radius: 5px; margin: 20px 0;">
+<strong>PRIVACY COMMITMENT:</strong> Hills & Hollows LLC is committed to protecting your privacy and ensuring the security of your business data. This Privacy Policy explains how we collect, use, and protect information in our DABS Automation System.
+</div>
+
+<h2>1. Information We Collect</h2>
+<p>The DABS Automation System processes the following types of business data:</p>
+
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+<tr style="background-color: #f2f2f2;">
+<th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Data Type</th>
+<th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Source</th>
+<th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Purpose</th>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px;">QuickBooks Online Data</td>
+<td style="border: 1px solid #ddd; padding: 12px;">Your QuickBooks account via OAuth 2.0</td>
+<td style="border: 1px solid #ddd; padding: 12px;">Inventory management, pricing updates, financial reporting</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px;">DABS Excel Files</td>
+<td style="border: 1px solid #ddd; padding: 12px;">Utah Department of Alcoholic Beverage Control</td>
+<td style="border: 1px solid #ddd; padding: 12px;">Price updates, product information, compliance data</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px;">System Logs</td>
+<td style="border: 1px solid #ddd; padding: 12px;">Automated system operations</td>
+<td style="border: 1px solid #ddd; padding: 12px;">Monitoring, troubleshooting, audit trails</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px;">User Credentials</td>
+<td style="border: 1px solid #ddd; padding: 12px;">System authentication</td>
+<td style="border: 1px solid #ddd; padding: 12px;">Secure access control and authorization</td>
+</tr>
+</table>
+
+<h2>2. How We Use Your Information</h2>
+<p>Your business data is used exclusively for:</p>
+<ul>
+<li><strong>Business Process Automation:</strong> Streamlining inventory and pricing operations</li>
+<li><strong>Utah Package Agency Compliance:</strong> Ensuring regulatory requirements are met</li>
+<li><strong>Data Synchronization:</strong> Keeping QuickBooks and DABS data aligned</li>
+<li><strong>Financial Reporting:</strong> Generating required business and compliance reports</li>
+<li><strong>System Monitoring:</strong> Ensuring reliable operation and error detection</li>
+<li><strong>Technical Support:</strong> Troubleshooting and system maintenance</li>
+</ul>
+
+<div style="background: #e8f5e8; border: 1px solid #c8e6c9; padding: 15px; border-radius: 5px; margin: 20px 0;">
+<h2>3. Data Security Measures</h2>
+<p>We implement comprehensive security measures to protect your data:</p>
+<ul>
+<li><strong>Encryption:</strong> All data is encrypted in transit (TLS 1.3) and at rest (AES-256)</li>
+<li><strong>OAuth 2.0:</strong> Secure authentication with QuickBooks Online using industry standards</li>
+<li><strong>Access Controls:</strong> Limited access based on role and necessity</li>
+<li><strong>Audit Logging:</strong> Complete audit trails of all system activities</li>
+<li><strong>Regular Updates:</strong> Security patches and system updates applied promptly</li>
+<li><strong>Secure Infrastructure:</strong> Hosted on secure, monitored servers</li>
+</ul>
+</div>
+
+<h2>4. Data Sharing and Third Parties</h2>
+<p>We do NOT sell, trade, or rent your business data. Limited data sharing occurs only for:</p>
+<ul>
+<li><strong>QuickBooks Online:</strong> Via official Intuit APIs for authorized business operations</li>
+<li><strong>Utah Package Agency:</strong> Compliance reporting as required by state regulations</li>
+<li><strong>Technical Support:</strong> Authorized personnel for system maintenance only</li>
+<li><strong>Legal Requirements:</strong> When required by law or court order</li>
+</ul>
+
+<h2>5. Data Retention</h2>
+<p>We retain your data according to business and regulatory requirements:</p>
+<ul>
+<li><strong>Active Business Data:</strong> Retained while the system is in use</li>
+<li><strong>Compliance Records:</strong> Retained per Utah Package Agency requirements (typically 7 years)</li>
+<li><strong>System Logs:</strong> Retained for 2 years for security and troubleshooting</li>
+<li><strong>Backup Data:</strong> Securely stored and regularly purged according to retention policies</li>
+</ul>
+
+<h2>6. Your Rights</h2>
+<p>As a business user, you have the right to:</p>
+<ul>
+<li><strong>Access:</strong> Request information about data we process</li>
+<li><strong>Correction:</strong> Request correction of inaccurate data</li>
+<li><strong>Deletion:</strong> Request deletion of data (subject to legal requirements)</li>
+<li><strong>Portability:</strong> Request export of your data in standard formats</li>
+<li><strong>Disconnect:</strong> Revoke QuickBooks integration at any time</li>
+</ul>
+
+<h2>7. Utah Package Agency Compliance</h2>
+<p>This system is designed to support Utah Package Agency compliance requirements:</p>
+<ul>
+<li>All liquor inventory data is processed according to state regulations</li>
+<li>Pricing updates comply with Utah Department of Alcoholic Beverage Control requirements</li>
+<li>Audit trails are maintained for regulatory inspection</li>
+<li>Data retention follows state-mandated timelines</li>
+</ul>
+
+<h2>8. Changes to This Policy</h2>
+<p>We may update this Privacy Policy to reflect changes in our practices or legal requirements. We will notify you of any material changes via email or system notification.</p>
+
+<div style="background: #d1ecf1; border: 1px solid #bee5eb; padding: 15px; border-radius: 5px; margin: 20px 0;">
+<h3>📞 Privacy Contact Information</h3>
+<p><strong>Privacy Officer:</strong> admin@hillshollows.com</p>
+<p><strong>Business Address:</strong> Hills & Hollows LLC, Utah Package Agency</p>
+<p><strong>Phone:</strong> Available during business hours (9 AM - 5 PM MST)</p>
+<p><strong>Data Protection Requests:</strong> Send written requests to admin@hillshollows.com</p>
+</div>
+
+<div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #666;">
+<p><strong>Hills & Hollows LLC</strong><br>
+Utah Package Agency Licensed Liquor Store<br>
+<strong>Last Updated:</strong> January 2025<br>
+<strong>Version:</strong> 1.0</p>
+
+<p><em>This Privacy Policy is governed by the laws of the State of Utah and applicable federal regulations.</em></p>
+</div>
+
+</div>

@@ -1,0 +1,126 @@
+---
+alwaysApply: true
+description: "Automatic Archon-to-Chat todo synchronization for new chat sessions"
+---
+
+# ARCHON AUTO-SYNC RULE - MANDATORY FOR ALL NEW CHATS
+
+## 🔄 **AUTOMATIC TODO SYNCHRONIZATION REQUIREMENT**
+
+**CRITICAL**: At the start of EVERY new chat session, you MUST automatically sync chat todos with the current Archon project status to ensure accurate project visibility and task alignment.
+
+### **📋 MANDATORY STARTUP SEQUENCE**
+
+For ALL new chat sessions, execute this two-step synchronization process:
+
+#### **Step 1: Retrieve Current Archon Tasks**
+```javascript
+mcp_archon_list_tasks({
+    "project_id": "d010ff76-0202-48e4-8362-40c45e9de39a",
+    "include_closed": false,
+    "per_page": 50
+})
+```
+
+#### **Step 2: Transform and Sync to Chat Todos**
+```javascript
+todo_write({
+    "merge": false,
+    "todos": [
+        // Transformed task data using the rules below
+    ]
+})
+```
+
+### **🔧 TRANSFORMATION RULES**
+
+When processing Archon tasks for chat todos, apply these transformation rules:
+
+#### **Status Mapping:**
+- `todo` → `pending`
+- `doing` → `in_progress`  
+- `review` → `in_progress`
+- `done` → `completed`
+
+#### **Priority Emoji Assignment:**
+- **CRITICAL** (in title/description) → 🚨
+- **HIGH** (in title/description) → ⚡
+- **MEDIUM** (in title/description) → 📊
+- **Default/LOW** → 📝
+
+#### **Content Format:**
+```
+"[EMOJI] [TITLE] - [BRIEF_DESCRIPTION] ([ASSIGNEE])"
+```
+
+#### **ID Preservation:**
+- Use original Archon task ID as todo ID for cross-reference capability
+
+### **📊 PROJECT CONTEXT**
+
+**Project ID**: `d010ff76-0202-48e4-8362-40c45e9de39a`  
+**Project Name**: HH DABS Automation Complete  
+**Archon UI**: [http://localhost:3837](http://localhost:3837)  
+**Business Goal**: 90% time reduction for Tessa (10+ hours → <1 hour monthly)
+
+### **✅ SUCCESS CRITERIA**
+
+After synchronization, verify:
+- [ ] All active Archon tasks appear as chat todos
+- [ ] Priority levels are visually indicated with emojis
+- [ ] Original Archon task IDs are preserved in todo IDs
+- [ ] Status mapping is correctly applied
+- [ ] Assignee information is included where applicable
+
+### **🎯 BUSINESS JUSTIFICATION**
+
+This automatic synchronization ensures:
+- **Real-time project visibility** in every chat session
+- **No context switching** between Archon and chat interfaces  
+- **Perfect alignment** between project management and development workflow
+- **Enhanced productivity** through immediate task awareness
+- **Complete audit trail** with embedded Archon task IDs
+
+### **🔄 SYNCHRONIZATION WORKFLOW**
+
+```mermaid
+graph LR
+    A[New Chat Started] --> B[Execute mcp_archon_list_tasks]
+    B --> C[Transform Task Data]
+    C --> D[Apply Status Mapping]
+    D --> E[Add Priority Emojis]
+    E --> F[Execute todo_write]
+    F --> G[Chat Ready with Current Tasks]
+```
+
+### **⚠️ FAILURE HANDLING**
+
+If synchronization fails:
+1. **Log the error** but continue with chat session
+2. **Inform user** of sync failure and manual sync option
+3. **Provide fallback**: Reference [ARCHON_CHAT_SYNC_GUIDE.md](mdc:docs/ARCHON_CHAT_SYNC_GUIDE.md)
+
+### **🛠️ MANUAL SYNC COMMAND**
+
+Users can trigger manual sync anytime with:
+```
+Quick Command: Run the two-step process:
+1. mcp_archon_list_tasks()
+2. todo_write() with transformed data
+```
+
+### **📚 REFERENCE DOCUMENTATION**
+
+- **Full Guide**: [ARCHON_CHAT_SYNC_GUIDE.md](mdc:docs/ARCHON_CHAT_SYNC_GUIDE.md)
+- **Sync Tools**: [scripts/simple_archon_sync.py](mdc:scripts/simple_archon_sync.py)
+- **Project Requirements**: [FUNCTIONAL_REQUIREMENTS.md](mdc:docs/FUNCTIONAL_REQUIREMENTS.md)
+
+### **🎊 EXPECTED OUTCOME**
+
+Every new chat session will automatically start with:
+- ✅ **Current project status** visible as todos
+- ✅ **Priority tasks** clearly marked
+- ✅ **Cross-reference capability** via embedded Archon IDs
+- ✅ **Complete task coverage** for informed development decisions
+
+**Result**: Perfect alignment between Archon project management and Cursor chat development workflow, ensuring every conversation starts with accurate, up-to-date project context.

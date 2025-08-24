@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "generated_date": "2025-08-22T00:31:16.724024",
+    "source": "DABS-Hills-Hollows",
+    "total_exceptions": 7,
+    "report_version": "1.0"
+  },
+  "summary": {
+    "high_price_warning": 3,
+    "low_price_warning": 4
+  },
+  "exceptions": [
+    {
+      "type": "high_price_warning",
+      "sku": 49066,
+      "value": 4199.99,
+      "message": "Price above $1000.0 - verify if correct"
+    },
+    {
+      "type": "high_price_warning",
+      "sku": 929488,
+      "value": 1079.99,
+      "message": "Price above $1000.0 - verify if correct"
+    },
+    {
+      "type": "high_price_warning",
+      "sku": 929489,
+      "value": 1499.99,
+      "message": "Price above $1000.0 - verify if correct"
+    },
+    {
+      "type": "low_price_warning",
+      "sku": 808960,
+      "value": 4.99,
+      "message": "Price below $5.0 - verify if correct"
+    },
+    {
+      "type": "low_price_warning",
+      "sku": 929752,
+      "value": 3.09,
+      "message": "Price below $5.0 - verify if correct"
+    },
+    {
+      "type": "low_price_warning",
+      "sku": 929753,
+      "value": 3.09,
+      "message": "Price below $5.0 - verify if correct"
+    },
+    {
+      "type": "low_price_warning",
+      "sku": 989144,
+      "value": 3.37,
+      "message": "Price below $5.0 - verify if correct"
+    }
+  ]
+}

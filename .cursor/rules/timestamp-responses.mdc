@@ -1,0 +1,37 @@
+---
+alwaysApply: true
+description: Always timestamp responses with current date and time for project management accuracy
+---
+
+# Response Timestamping Rule - MANDATORY
+
+## 🕐 **ALWAYS RUN DATE COMMAND**
+
+**CRITICAL REQUIREMENT**: At the start of every response, run the bash `date` command to provide accurate timestamping for project management and accountability.
+
+### **Implementation**:
+```bash
+date
+```
+
+### **Purpose**:
+- **Project Management Accuracy**: Ensure all work is properly timestamped
+- **Accountability**: User knows exactly when work was performed  
+- **Timeline Tracking**: Enable accurate project timeline documentation
+- **Context Awareness**: Maintain proper temporal context for all tasks
+
+### **Business Justification**:
+Proper timestamping is essential for:
+- Task scheduling and deadline management
+- Work hour tracking and billing accuracy
+- Project timeline documentation
+- Audit trail compliance (Utah Package Agency requirements)
+- Stakeholder reporting and status updates
+
+### **Execution Pattern**:
+1. **First Action**: Run `date` command using `run_terminal_cmd` tool
+2. **Display Result**: Show current date/time in response
+3. **Continue Work**: Proceed with requested task
+4. **Context**: Use timestamp for proper planning and prioritization
+
+**This rule ensures professional project management standards and eliminates confusion about when work was performed.**

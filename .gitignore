@@ -1,0 +1,322 @@
+# DABS Automation System - Git Ignore Rules
+# Utah Package Agency Liquor Inventory Management
+
+# ============================================================================
+# SENSITIVE DATA & CREDENTIALS (CRITICAL - NEVER COMMIT)
+# ============================================================================
+.env
+.env.local
+.env.production
+.env.staging
+.env.development
+*.env
+
+# API Keys & Credentials
+config/secrets/
+credentials/
+*.key
+*.pem
+*.p12
+*.crt
+oauth_tokens/
+quickbooks_credentials.json
+sscs_api_keys.json
+verifone_config.json
+
+# Database passwords
+db_config.json
+database.ini
+
+# ============================================================================
+# DABS SPECIFIC DATA FILES (HIGH PRIORITY)
+# ============================================================================
+# DABS Excel files (contain sensitive pricing data)
+DABS_Price_Changes*.xlsx
+DABS_Price_Changes*.xls
+dabs_pricing_*.xlsx
+dabs_pricing_*.xls
+
+# SSCS POS data files
+sscs_pricing_update*.csv
+sscs_inventory_*.csv
+pos_data_*.json
+
+# QuickBooks data exports
+quickbooks_export_*.csv
+qbo_inventory_*.json
+qbo_backup_*.xml
+
+# Verifone transaction data
+verifone_*.log
+payment_data_*.json
+
+# ============================================================================
+# PYTHON ENVIRONMENT & DEPENDENCIES
+# ============================================================================
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# ============================================================================
+# DATABASE & CACHE
+# ============================================================================
+# PostgreSQL
+*.db
+*.sqlite3
+*.sqlite
+pgdata/
+postgres_data/
+
+# Redis
+redis_data/
+*.rdb
+redis.log
+
+# Database migrations (keep structure, ignore data)
+alembic/versions/data_*
+migrations/data/
+
+# ============================================================================
+# LOGS & MONITORING
+# ============================================================================
+logs/
+*.log
+*.log.*
+log_*.txt
+error_*.log
+access_*.log
+debug_*.log
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+celery_worker.log
+
+# ============================================================================
+# TESTING & COVERAGE
+# ============================================================================
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+test-results/
+test_output/
+
+# ============================================================================
+# DEVELOPMENT TOOLS
+# ============================================================================
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+*.ipynb
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pylint
+.pylint.d/
+
+# ============================================================================
+# TEMPORARY & BACKUP FILES
+# ============================================================================
+# Temporary files
+temp/
+tmp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*_backup
+*_old
+*_copy
+*_new
+
+# System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ============================================================================
+# DATA EXPORTS & REPORTS (GENERATED)
+# ============================================================================
+# Generated reports
+reports/generated/
+exports/automated/
+data/temp/
+data/processed/
+
+# PDF reports with sensitive data
+compliance_report_*.pdf
+inventory_report_*.pdf
+financial_report_*.pdf
+
+# ============================================================================
+# DEPLOYMENT & INFRASTRUCTURE
+# ============================================================================
+# Docker
+.dockerignore
+docker-compose.override.yml
+Dockerfile.local
+
+# Kubernetes
+k8s/secrets/
+kubernetes/production/
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# ============================================================================
+# DOCUMENTATION BUILD ARTIFACTS
+# ============================================================================
+docs/build/
+docs/_build/
+site/
+.sphinx-build/
+
+# ============================================================================
+# OPERATING SYSTEM
+# ============================================================================
+# Windows
+*.exe
+*.msi
+*.cab
+*.deb
+*.dmg
+
+# macOS
+.AppleDouble
+.LSOverride
+Icon
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ============================================================================
+# PACKAGE MANAGERS
+# ============================================================================
+# npm (if using any Node.js tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Conda
+.conda/
+.condarc
+
+# ============================================================================
+# COMPLIANCE & AUDIT TRAIL (KEEP STRUCTURE)
+# ============================================================================
+# Keep audit trail structure but ignore sensitive data
+# audit_logs/structure.json  # Keep
+# audit_logs/data/           # Ignore
+audit_logs/data/
+audit_logs/sensitive/
+compliance_data/sensitive/
+
+# ============================================================================
+# CUSTOM PROJECT PATTERNS
+# ============================================================================
+# Hero System generated files
+hero_dashboard_cache/
+streamlit_cache/
+
+# SSCS integration testing
+sscs_test_data/
+pos_simulation_data/
+
+# QuickBooks sandbox data
+qbo_sandbox/
+quickbooks_test/
+
+# ============================================================================
+# PERFORMANCE & PROFILING
+# ============================================================================
+.prof
+*.prof
+profiling/
+performance_logs/
+
+# ============================================================================
+# NOTES FOR DEVELOPMENT TEAM
+# ============================================================================
+# This .gitignore is designed for:
+# - Utah Package Agency compliance requirements
+# - Multi-system integration (DABS, SSCS, QuickBooks, Verifone)
+# - Protection of sensitive pricing and inventory data
+# - Professional development practices
+
+# CRITICAL REMINDERS:
+# 1. NEVER commit actual DABS Excel files
+# 2. NEVER commit API credentials or OAuth tokens  
+# 3. Use .env.example for sharing configuration templates
+# 4. All sensitive data should use environment variables
+# 5. Regular audit of ignored files for compliance

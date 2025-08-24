@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NAXML_PBIPriceChange xmlns="http://www.naxml.org/POSBO/Vocabulary/2003-10-16">
+  <TransmissionHeader>
+    <StoreLocationID>HILLS_HOLLOWS_BOULDER</StoreLocationID>
+    <TransmissionDate>2025-08-22</TransmissionDate>
+  </TransmissionHeader>
+  <ItemPriceChange>
+    <ItemID>DABS-056828</ItemID>
+    <ReceiptDescription>BACARDI MOJITO 1.75L</ReceiptDescription>
+    <PriceEffectiveDate>2025-08-22</PriceEffectiveDate>
+    <Price>19.99</Price>
+  </ItemPriceChange>
+</NAXML_PBIPriceChange>

@@ -1,0 +1,303 @@
+<!DOCTYPE html><html><head><style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css">.uib-time input{width:50px;}</style><style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style><style type="text/css">.uib-datepicker-popup.dropdown-menu{display:block;float:none;margin:0;}.uib-button-bar{padding:10px 9px 2px;}</style><style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style><style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-left,.uib-right{width:100%}</style><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Central Price Book - Welcome
+    </title>
+    <meta name="description" content="">
+	<meta charset="utf-8">
+	<title>SSCS</title>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" type="image/png" href="favicon.ico">
+
+	<link rel="stylesheet" href="styles/vendor-6c4c4a4a88.css">
+
+	<link rel="stylesheet" href="styles/app-5edf2d2ce4.css">
+
+	<!-- https://lokesh-coder.github.io/pretty-checkbox/#installation   -->
+	<!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" -->
+	<link rel="stylesheet" href="styles/pretty-checkbox.min.css">
+	<link rel="stylesheet" href="styles/ui-grid.css">
+<style type="text/css"></style></head>
+
+
+<body ng-app="app" ng-strict-di="" class="ng-scope">
+<!-- This spinner only shows if state changes. See app.js
+<span us-spinner spinner-theme="big" spinner-key="loading" spinner-start-active="true" ng-if="isPageLoading"></span>
+-->
+
+<!-- General purpsoe spinner often use to display 'busy' status as in backend call  -->
+<span us-spinner="" spinner-theme="big" spinner-key="plsWait" class="ng-scope"></span>
+
+	<!-- uiView: --><div ui-view="" style="display:inline" class="ng-scope"><div id="wrapper" ss-handle-http-errors="" ss-reload-on-deployment="" ss-keep-scroll-pos="" class="ng-scope">
+  <header id="header" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- ngInclude: 'app/layout/topnav.html' --><div data-ng-include="'app/layout/topnav.html'" class="ng-scope"><!-- topnav.html -->
+<nav class="ng-scope">
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse-1">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand ng-scope" href="http://www.sscsinc.com/" target="blank" translate="">
+        <!-- ngIf: isPageLoading -->
+    </a>
+    <div class="navbar-collapse collapse" id="main-navbar-collapse-1">
+      <!-- ngInclude: 'app/layout/mainmenu.html' --><div data-ng-include="'app/layout/mainmenu.html'" class="ng-scope"><!-- app/layout/mainmenu.html see shell.js, shell.html, topnav.html -->
+
+<div id="main-menu" class="ng-scope">
+	<div class="pull-left">
+	<ul class="nav navbar-nav navbar-left">
+		<!-- ngRepeat: item in vm.navRoutes --><li class="dropdown ng-scope" uib-dropdown="" data-ng-repeat="item in vm.navRoutes">
+			<a class="dropdown-toggle ng-binding" uib-dropdown-toggle="" role="button" aria-haspopup="true" aria-expanded="false" style="cursor:pointer !important">
+                                    Adjust <span class="caret"></span></a>
+			<ul class="dropdown-menu" uib-dropdown-menu="" role="menu">
+				<!-- ngRepeat: subItem in item.items --><li role="menuitem" ng-repeat=" subItem in item.items" style="margin-left: 5px; cursor: pointer !important" class="ng-scope">
+					<div ng-switch="subItem.mode">
+						<!-- ngSwitchWhen: change --><div ng-switch-when="change" class="ng-scope">
+				            <a ui-sref="main.itemAdjust" style="color: white !important" class="ng-binding" href="#/adjust/itemAdjust">Item Adjustment</a>
+						</div><!-- end ngSwitchWhen: -->
+						<!-- ngSwitchWhen: open -->
+						<!-- ngSwitchWhen: about -->
+					</div>
+
+				</li><!-- end ngRepeat: subItem in item.items --><li role="menuitem" ng-repeat=" subItem in item.items" style="margin-left: 5px; cursor: pointer !important" class="ng-scope">
+					<div ng-switch="subItem.mode">
+						<!-- ngSwitchWhen: change --><div ng-switch-when="change" class="ng-scope">
+				            <a ui-sref="main.addItem" style="color: white !important" class="ng-binding" href="#/adjust/addItem">Add Item</a>
+						</div><!-- end ngSwitchWhen: -->
+						<!-- ngSwitchWhen: open -->
+						<!-- ngSwitchWhen: about -->
+					</div>
+
+				</li><!-- end ngRepeat: subItem in item.items --><li role="menuitem" ng-repeat=" subItem in item.items" style="margin-left: 5px; cursor: pointer !important" class="ng-scope">
+					<div ng-switch="subItem.mode">
+						<!-- ngSwitchWhen: change --><div ng-switch-when="change" class="ng-scope">
+				            <a ui-sref="main.outsideUpd" style="color: white !important" class="ng-binding" href="#/adjust/outsideUpd">Outside Updates</a>
+						</div><!-- end ngSwitchWhen: -->
+						<!-- ngSwitchWhen: open -->
+						<!-- ngSwitchWhen: about -->
+					</div>
+
+				</li><!-- end ngRepeat: subItem in item.items --><li role="menuitem" ng-repeat=" subItem in item.items" style="margin-left: 5px; cursor: pointer !important" class="ng-scope">
+					<div ng-switch="subItem.mode">
+						<!-- ngSwitchWhen: change --><div ng-switch-when="change" class="ng-scope">
+				            <a ui-sref="main.negCostMgr" style="color: white !important" class="ng-binding" href="#/adjust/negCostMgr">Negotiated Cost Manager</a>
+						</div><!-- end ngSwitchWhen: -->
+						<!-- ngSwitchWhen: open -->
+						<!-- ngSwitchWhen: about -->
+					</div>
+
+				</li><!-- end ngRepeat: subItem in item.items --><li role="menuitem" ng-repeat=" subItem in item.items" style="margin-left: 5px; cursor: pointer !important" class="ng-scope">
+					<div ng-switch="subItem.mode">
+						<!-- ngSwitchWhen: change --><div ng-switch-when="change" class="ng-scope">
+				            <a ui-sref="main.pricingEventCal" style="color: white !important" class="ng-binding" href="#/adjust/pricingEventCal">Pricing Event Calendar</a>
+						</div><!-- end ngSwitchWhen: -->
+						<!-- ngSwitchWhen: open -->
+						<!-- ngSwitchWhen: about -->
+					</div>
+
+				</li><!-- end ngRepeat: subItem in item.items -->
+			</ul>
+		</li><!-- end ngRepeat: item in vm.navRoutes --><li class="dropdown ng-scope" uib-dropdown="" data-ng-repeat="item in vm.navRoutes">
+			<a class="dropdown-toggle ng-binding" uib-dropdown-toggle="" role="button" aria-haspopup="true" aria-expanded="false" style="cursor:pointer !important">
+                                    Reports <span class="caret"></span></a>
+			<ul class="dropdown-menu" uib-dropdown-menu="" role="menu">
+				<!-- ngRepeat: subItem in item.items --><li role="menuitem" ng-repeat=" subItem in item.items" style="margin-left: 5px; cursor: pointer !important" class="ng-scope">
+					<div ng-switch="subItem.mode">
+						<!-- ngSwitchWhen: change --><div ng-switch-when="change" class="ng-scope">
+				            <a ui-sref="main.negotiatedCostRpt" style="color: white !important" class="ng-binding" href="#/report/negotiatedCostRpt">Negotiated Cost Report</a>
+						</div><!-- end ngSwitchWhen: -->
+						<!-- ngSwitchWhen: open -->
+						<!-- ngSwitchWhen: about -->
+					</div>
+
+				</li><!-- end ngRepeat: subItem in item.items -->
+			</ul>
+		</li><!-- end ngRepeat: item in vm.navRoutes --><li class="dropdown ng-scope" uib-dropdown="" data-ng-repeat="item in vm.navRoutes">
+			<a class="dropdown-toggle ng-binding" uib-dropdown-toggle="" role="button" aria-haspopup="true" aria-expanded="false" style="cursor:pointer !important">
+                                    Setup <span class="caret"></span></a>
+			<ul class="dropdown-menu" uib-dropdown-menu="" role="menu">
+				<!-- ngRepeat: subItem in item.items --><li role="menuitem" ng-repeat=" subItem in item.items" style="margin-left: 5px; cursor: pointer !important" class="ng-scope">
+					<div ng-switch="subItem.mode">
+						<!-- ngSwitchWhen: change --><div ng-switch-when="change" class="ng-scope">
+				            <a ui-sref="main.preferences" style="color: white !important" class="ng-binding" href="#/setup/preferences">Preferences</a>
+						</div><!-- end ngSwitchWhen: -->
+						<!-- ngSwitchWhen: open -->
+						<!-- ngSwitchWhen: about -->
+					</div>
+
+				</li><!-- end ngRepeat: subItem in item.items --><li role="menuitem" ng-repeat=" subItem in item.items" style="margin-left: 5px; cursor: pointer !important" class="ng-scope">
+					<div ng-switch="subItem.mode">
+						<!-- ngSwitchWhen: change --><div ng-switch-when="change" class="ng-scope">
+				            <a ui-sref="main.vendorImportSetup" style="color: white !important" class="ng-binding" href="#/setup/vendorImportSetup">Vendor Import Setup</a>
+						</div><!-- end ngSwitchWhen: -->
+						<!-- ngSwitchWhen: open -->
+						<!-- ngSwitchWhen: about -->
+					</div>
+
+				</li><!-- end ngRepeat: subItem in item.items --><li role="menuitem" ng-repeat=" subItem in item.items" style="margin-left: 5px; cursor: pointer !important" class="ng-scope">
+					<div ng-switch="subItem.mode">
+						<!-- ngSwitchWhen: change --><div ng-switch-when="change" class="ng-scope">
+				            <a ui-sref="main.vendorImport" style="color: white !important" class="ng-binding" href="#/setup/vendorImport">Vendor Import</a>
+						</div><!-- end ngSwitchWhen: -->
+						<!-- ngSwitchWhen: open -->
+						<!-- ngSwitchWhen: about -->
+					</div>
+
+				</li><!-- end ngRepeat: subItem in item.items --><li role="menuitem" ng-repeat=" subItem in item.items" style="margin-left: 5px; cursor: pointer !important" class="ng-scope">
+					<div ng-switch="subItem.mode">
+						<!-- ngSwitchWhen: change --><div ng-switch-when="change" class="ng-scope">
+				            <a ui-sref="main.sitesImport" style="color: white !important" class="ng-binding" href="#/setup/sitesImport">Site Import</a>
+						</div><!-- end ngSwitchWhen: -->
+						<!-- ngSwitchWhen: open -->
+						<!-- ngSwitchWhen: about -->
+					</div>
+
+				</li><!-- end ngRepeat: subItem in item.items --><li role="menuitem" ng-repeat=" subItem in item.items" style="margin-left: 5px; cursor: pointer !important" class="ng-scope">
+					<div ng-switch="subItem.mode">
+						<!-- ngSwitchWhen: change --><div ng-switch-when="change" class="ng-scope">
+				            <a ui-sref="main.disttosite" style="color: white !important" class="ng-binding" href="#/setup/disttosite">Distribute To Sites</a>
+						</div><!-- end ngSwitchWhen: -->
+						<!-- ngSwitchWhen: open -->
+						<!-- ngSwitchWhen: about -->
+					</div>
+
+				</li><!-- end ngRepeat: subItem in item.items -->
+			</ul>
+		</li><!-- end ngRepeat: item in vm.navRoutes --><li class="dropdown ng-scope" uib-dropdown="" data-ng-repeat="item in vm.navRoutes">
+			<a class="dropdown-toggle ng-binding" uib-dropdown-toggle="" role="button" aria-haspopup="true" aria-expanded="false" style="cursor:pointer !important">
+                                    Help <span class="caret"></span></a>
+			<ul class="dropdown-menu" uib-dropdown-menu="" role="menu">
+				<!-- ngRepeat: subItem in item.items --><li role="menuitem" ng-repeat=" subItem in item.items" style="margin-left: 5px; cursor: pointer !important" class="ng-scope">
+					<div ng-switch="subItem.mode">
+						<!-- ngSwitchWhen: change -->
+						<!-- ngSwitchWhen: open --><div ng-switch-when="open" class="ng-scope">
+						    <span><a href="Help/index.html" target="_blank" style="color: white !important" class="ng-binding">Contents</a></span>
+						</div><!-- end ngSwitchWhen: -->
+						<!-- ngSwitchWhen: about -->
+					</div>
+
+				</li><!-- end ngRepeat: subItem in item.items --><li role="menuitem" ng-repeat=" subItem in item.items" style="margin-left: 5px; cursor: pointer !important" class="ng-scope">
+					<div ng-switch="subItem.mode">
+						<!-- ngSwitchWhen: change -->
+						<!-- ngSwitchWhen: open -->
+						<!-- ngSwitchWhen: about --><div ng-switch-when="about" class="ng-scope">
+							<span><a ng-click="vm.about()" style="color: white !important" class="ng-binding">About</a></span>
+						</div><!-- end ngSwitchWhen: -->
+					</div>
+
+				</li><!-- end ngRepeat: subItem in item.items -->
+			</ul>
+		</li><!-- end ngRepeat: item in vm.navRoutes -->
+	</ul>
+	</div>
+
+	<div class="pull-right">
+		<ul class="nav navbar-nav navbar-right">
+			<!--
+			<li class="dropdown" uib-dropdown>
+				<a class="dropdown-toggle" uib-dropdown-toggle role="button" aria-haspopup="true" aria-expanded="false" style="cursor:pointer !important;">
+					<span class="glyphicon glyphicon-user" style="color: red"></span> Hello {{vm.user.userName }}
+					<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu" uib-dropdown-menu role="menu">
+					<li role="menuitem" style="margin-left: 5px; cursor: pointer !important;"><a ui-sref="app.profile" translate>Profile</a></li>
+					<li role="menuitem" style="margin-left: 5px; cursor: pointer !important;"><a ui-sref="app.changePassword">Change Password</a></li>
+				</ul>
+			</li>
+			-->
+
+			<li><a href="" class="ng-binding"><span class="glyphicon glyphicon-user" style="color: red"></span> Hello </a></li>
+			<li><!-- ngIf: !vm.user.isAuthenticated --><a href="" ng-click="vm.logIn()" title="LogIn" ng-if="!vm.user.isAuthenticated" class="ng-scope"><span class="glyphicon glyphicon-log-in" style="color: red"></span> Log In</a><!-- end ngIf: !vm.user.isAuthenticated --></li>
+
+			<li><!-- ngIf: vm.user.isAuthenticated --></li>
+		</ul>
+	</div>
+</div>
+</div>
+    </div>
+</nav></div>
+    </div>
+  </header>
+  <section id="page-wrapper" class="content">
+
+    <!-- Content -->
+    <div class="full-pagecontent-wraper">
+      <ss-announcement></ss-announcement>
+      <div class="pagecontent">
+        <div class="container-fluid ui-view-container">
+            <div class="row" id="title">
+              <div class="page-header">
+                  <div class="col-md-9">
+                        <h3 class="ng-binding">  </h3>
+                   </div>
+                  <div class="col-md-2 col-md-offset-1 ng-hide" ng-hide="!vm.help" aria-hidden="true">
+                      <span class="pull-right" style="margin-right: 30px"><a href="" target="_blank"><i class="fa fa-question-circle fa-2x " aria-hidden="true"></i></a></span></div>
+              </div> <!-- page-header -->
+            </div> <!-- title -->
+            <!-- uiView: --><div ui-view="" class="xshuffle-animation ng-scope"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="page-push"></div>
+</div>
+<footer id="footer" class="footerclass ng-scope">
+  <!-- ngInclude: 'app/layout/footer.html' --><div data-ng-include="'app/layout/footer.html'" class="ng-scope"><div id="footer-content" class="ng-scope">
+
+    <div class="pull-right ng-binding">
+        © <!-- ngIf: vm.buildNumber -->
+    </div>
+    <div class="pull-right">
+        <!-- ngInclude: --><ng-include src="'app/layout/socialmedialinks.html'" class="ng-scope"><ul class="nav navbar-nav navbar-right socialmedialinks ng-scope">
+    <li><a href="http://blog.sscsinc.com/" target="blank" class="btn-social-icon btn-xs"><strong><span>blog</span></strong></a></li>
+    <li><a href="https://www.linkedin.com/company/sscs-inc" target="blank" class="btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></a></li>
+    <li><a href="https://twitter.com/sscsinc" target="blank" class="btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a></li>
+    <li><a href="https://www.facebook.com/sscsinc" target="blank" class="btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a></li>
+</ul></ng-include>
+    </div>
+
+</div>
+</div>
+</footer>
+
+
+<script type="text/ng-template" id="validation.html" class="ng-scope">
+    <div ng-message="required">This field is required</div>
+    <div ng-message="uniqueness">AlreadyExist</div>
+    <div ng-message="minlength">Too short</div>
+    <div ng-message="maxlength">Max Length Exceeded</div>
+    <div ng-message="email">Invalid email address</div>
+    <div ng-message="totalpercentage">Total Percentage must be 100%</div>
+    <div ng-message="totalgreaterthanzero">Total must be greater than zero</div>
+    <div ng-message="greaterthanzero">Value must be greater than zero</div>
+    <div ng-message="percent">Percent must be between 0 and 100</div>
+    <div ng-message="siterange">Value must be between 1 and 999</div>
+    <div ng-message="upcchkdigit">Invalid UPC Check Digit</div>
+    <div ng-message="alreadyexists">ID Already Exists</div>
+</script></div>
+	<div id="splash-page" data-ng-show="false" aria-hidden="true" class="ng-hide">
+		<div class="page-splash">
+			<div class="page-splash-message">
+				please wait...
+			</div>
+			<div class="progress progress-striped active page-progress-bar">
+				<div class="bar"></div>
+			</div>
+		</div>
+	</div>
+
+
+<script src="scripts/vendor-70f971f3f0.js"></script>
+
+<script src="scripts/app-8def406a52.js"></script>
+
+<!-- pdf make broken when minified, see http://ui-grid.info/docs/#/tutorial/206_exporting_data -->
+<script src="assets/pdfmake.min.js"></script>
+<script src="assets/vfs_fonts.js"></script>
+<script src="assets/jszip.min.js"></script>
+<script src="assets/excel-builder.dist.js"></script>
+<div id="toast-container" class="toast-top-right"><div class="toast toast-error" aria-live="assertive" style="display: block;"><div class="toast-message">Your session has expired. Please login.</div></div></div></body></html>

@@ -1,0 +1,4 @@
+SKU,ProductName,RetailPrice,Category,OnSpecialPricing,EffectiveDate,Status,UpdatedOn,Size
+012345,Test Whiskey 750ml,29.99,Spirits,No,2025-01-01,Active,2025-08-22 06:52:58,750
+067890,Test Vodka 1L,24.99,Spirits,Yes,2025-01-01,Active,2025-08-22 06:52:58,1000.0
+011111,Test Rum 750ml,32.99,Spirits,No,2025-01-01,Active,2025-08-22 06:52:58,750

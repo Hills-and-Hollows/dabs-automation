@@ -1,0 +1,63 @@
+{
+  "mcp_server_access": {
+    "mcp_tools_accessible": false,
+    "mcp_error": "Tools exist but not accessible through MCP protocol",
+    "mcp_processes": 7,
+    "mcp_process_details": [
+      "shawnowen        52896  41.2  0.0 411299792  39808 s019  S+   10:58AM   0:00.16 /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python dabs_diagnostic_with_screenshots.py",
+      "shawnowen         6298   0.0  0.0 410748800  19856 s009  TN    8:59AM   0:00.06 /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python src/mcp/dabs_simple_mcp_server.py",
+      "shawnowen        57128   0.0  0.1 412414768  53296   ??  S     8:08AM   0:00.18 node /Users/shawnowen/.npm/_npx/de2bd410102f5eda/node_modules/.bin/mcp-server-sequential-thinking"
+    ],
+    "working_ports": [],
+    "total_ports_tested": 5
+  },
+  "network_connectivity": {
+    "http_status": 200,
+    "response_size": 19611,
+    "response_headers": {
+      "Cache-Control": "no-cache, no-store",
+      "Pragma": "no-cache",
+      "Transfer-Encoding": "chunked",
+      "Content-Type": "text/html; charset=utf-8",
+      "Server": "Microsoft-IIS/10.0",
+      "Strict-Transport-Security": "max-age=2592000",
+      "Set-Cookie": ".AspNetCore.Antiforgery.Te3LkMoX6UY=CfDJ8Oem6dFpXfBIiPQf8N8YgTtHw9ZL0zIYTS-3Ju1A9uBYz4KWlsifP__fxMklcwmJd4VsUQBNSrklYgSR0EVOvzHe8AzInVT-BjH6D5qFZJAPYfMtYky0s2_ub4aDtfinUcVgWE8QbxikSjPUR-W-gWM; path=/ProdApps/OnlineOrders; samesite=strict; httponly, .AspNetCore.Mvc.CookieTempDataProvider=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/ProdApps/OnlineOrders; samesite=lax; httponly",
+      "X-Frame-Options": "SAMEORIGIN",
+      "X-Powered-By": "ASP.NET",
+      "Date": "Sun, 24 Aug 2025 16:58:59 GMT"
+    },
+    "security_headers": [
+      "x-frame-options"
+    ],
+    "dns_resolution": "168.180.168.6"
+  },
+  "authentication_analysis": {
+    "initial_load": "success",
+    "page_title": "Licensee Orders",
+    "login_form_found": true,
+    "post_submit_url": "https://webapps2.abc.utah.gov/ProdApps/OnlineOrders/Orders",
+    "login_result": "success_or_redirect",
+    "final_page_size": 62745,
+    "security_indicators": {
+      "captcha_present": true,
+      "blocked_message": false,
+      "timeout_message": false,
+      "maintenance_mode": false
+    },
+    "screenshots_captured": 5
+  },
+  "browser_security": {
+    "default_chromium": {
+      "status": 200,
+      "success": true
+    },
+    "stealth_mode": {
+      "status": 200,
+      "success": true
+    },
+    "mobile_user_agent": {
+      "error": "launch() got an unexpected keyword argument 'user_agent'",
+      "success": false
+    }
+  }
+}

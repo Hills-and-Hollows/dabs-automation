@@ -1,0 +1,71 @@
+{
+  "dabs_processor": {
+    "data_directory": "/Volumes/Expansion/4. CURSOR/DABC Pricing - Inventory/data",
+    "export_directory": "/Volumes/Expansion/4. CURSOR/DABC Pricing - Inventory/exports", 
+    "max_price_variance_percent": 20.0,
+    "required_columns": ["SKU", "ProductName", "RetailPrice", "Category"],
+    "naxml_version": "2.0",
+    "export_formats": ["naxml", "csv", "json"],
+    "validate_prices": true,
+    "backup_files": true,
+    "processing_timeout_minutes": 30
+  },
+  "sscs_integration": {
+    "default_method": "file",
+    "file_configurations": {
+      "naxml": {
+        "format": "naxml",
+        "upload_method": "local",
+        "upload_directory": "/Volumes/Expansion/4. CURSOR/DABC Pricing - Inventory/exports/sscs_naxml",
+        "file_naming_pattern": "hills_hollows_itemsynch_{timestamp}.xml"
+      },
+      "csv": {
+        "format": "csv", 
+        "upload_method": "local",
+        "upload_directory": "/Volumes/Expansion/4. CURSOR/DABC Pricing - Inventory/exports/sscs_csv",
+        "file_naming_pattern": "hills_hollows_pricing_{timestamp}.csv"
+      },
+      "json": {
+        "format": "json",
+        "upload_method": "local", 
+        "upload_directory": "/Volumes/Expansion/4. CURSOR/DABC Pricing - Inventory/exports/sscs_json",
+        "file_naming_pattern": "hills_hollows_products_{timestamp}.json"
+      }
+    },
+    "api_configuration": {
+      "base_url": "TBD_AWAITING_SSCS_VENDOR_DOCS",
+      "api_key": "TBD_AWAITING_SSCS_VENDOR_DOCS",
+      "version": "v1",
+      "timeout_seconds": 300
+    },
+    "ftp_configuration": {
+      "host": "TBD_AWAITING_SSCS_VENDOR_DOCS",
+      "username": "TBD_AWAITING_SSCS_VENDOR_DOCS", 
+      "password": "TBD_AWAITING_SSCS_VENDOR_DOCS",
+      "directory": "/incoming"
+    },
+    "validation": {
+      "validate_before_upload": true,
+      "max_retry_attempts": 3,
+      "backup_failed_uploads": true
+    }
+  },
+  "performance": {
+    "target_processing_time_minutes": 15,
+    "max_concurrent_processes": 4,
+    "chunk_size_for_large_files": 1000,
+    "enable_async_processing": true
+  },
+  "logging": {
+    "level": "INFO",
+    "log_directory": "/Volumes/Expansion/4. CURSOR/DABC Pricing - Inventory/logs",
+    "max_log_size_mb": 100,
+    "backup_count": 5
+  },
+  "compliance": {
+    "audit_trail_enabled": true,
+    "backup_original_files": true,
+    "checksum_validation": true,
+    "processing_history_retention_days": 365
+  }
+}

@@ -1,0 +1,71 @@
+---
+globs: src/integration_hub/**/*,src/processors/**/*
+description: Integration hub patterns and coordination standards for DABS, SSCS, and QuickBooks integration
+---
+
+# INTEGRATION HUB ENFORCEMENT
+Central coordination patterns for DABS system integrations
+
+## INTEGRATION HUB ARCHITECTURE
+MANDATORY hub pattern for system coordination:
+```python
+class IntegrationCoordinator:
+    """Central coordinator for all DABS integrations"""
+    
+    def __init__(self):
+        self.dabs_processor = DABSProcessor()
+        self.sscs_client = SSCSIntegrator()
+        self.qbo_client = QuickBooksClient()
+        self.audit_logger = AuditLogger()
+        
+    async def process_monthly_update(self, dabs_file: UploadFile) -> ProcessingResult:
+        """MANDATORY coordinated processing workflow"""
+        processing_id = self._generate_processing_id()
+        
+        try:
+            # 1. Process DABS file
+            dabs_result = await self.dabs_processor.process(dabs_file)
+            
+            # 2. Update SSCS POS  
+            sscs_result = await self.sscs_client.update_prices(dabs_result.products)
+            
+            # 3. Sync to QuickBooks
+            qbo_result = await self.qbo_client.sync_inventory(dabs_result.products)
+            
+            return ProcessingResult(
+                processing_id=processing_id,
+                dabs_result=dabs_result,
+                sscs_result=sscs_result,
+                qbo_result=qbo_result
+            )
+        except Exception as e:
+            await self._handle_processing_failure(processing_id, e)
+            raise
+```
+
+## DATA FLOW COORDINATION
+### Primary Data Flow Pattern
+ENFORCE this exact coordination pattern:
+```
+DABS Price Updates → Integration Hub → SSCS POS
+                                   ↓
+                           QuickBooks ← Inventory Sync
+                                   ↓
+                           DABS Reports ← Compliance Module
+```
+
+## PROCESSING RULES ENFORCEMENT
+MANDATORY processing coordination:
+- **Sequential Processing**: DABS → SSCS → QuickBooks → Compliance
+- **Error Isolation**: Failure in one system doesn't corrupt others
+- **Rollback Capability**: Ability to rollback failed updates
+- **Audit Coordination**: Complete audit trail across all systems
+
+## VIOLATION PREVENTION
+❌ NEVER process systems in parallel without coordination
+❌ NEVER skip error isolation between integrations
+❌ NEVER proceed without verifying previous step success
+❌ NEVER skip audit trail coordination
+
+Reference: [src/integration_hub/](mdc:src/integration_hub/)
+Reference: [docs/DATA_FLOW_SPECIFICATION.md](mdc:docs/DATA_FLOW_SPECIFICATION.md)

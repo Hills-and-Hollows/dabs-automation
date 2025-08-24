@@ -1,0 +1,63 @@
+{
+  "mcp_access": {
+    "method": "MCP Tools",
+    "timestamp": "2025-08-24T11:03:21.786677",
+    "stages": [
+      {
+        "stage": "health_check",
+        "status": "failed",
+        "error": "MCP tools not accessible through Cursor protocol",
+        "details": "mcp_dabs-ordering_dabs_system_health returns no result"
+      },
+      {
+        "stage": "login_status",
+        "status": "failed",
+        "error": "MCP tools not accessible through Cursor protocol",
+        "details": "mcp_dabs-ordering_dabs_login_status returns no result"
+      }
+    ],
+    "overall_result": "mcp_tools_not_accessible",
+    "reached_captcha": false,
+    "reached_authentication": false,
+    "blocking_point": "protocol_level"
+  },
+  "playwright_diagnostic": {
+    "method": "Playwright Diagnostic",
+    "timestamp": "2025-08-24T11:03:21.786696",
+    "stages": [
+      {
+        "stage": "page_load",
+        "status": "success",
+        "url": "https://webapps2.abc.utah.gov/ProdApps/OnlineOrders/",
+        "title": "Licensee Orders"
+      },
+      {
+        "stage": "authentication",
+        "status": "completed",
+        "final_url": "https://webapps2.abc.utah.gov/ProdApps/OnlineOrders/Orders",
+        "captcha_detected": true,
+        "page_size": 62745
+      }
+    ],
+    "reached_authentication": true,
+    "reached_captcha": true,
+    "overall_result": "captcha_present"
+  },
+  "playwright_automation": {
+    "method": "Playwright Automation Framework",
+    "timestamp": "2025-08-24T11:03:29.227209",
+    "stages": [
+      {
+        "stage": "initialization",
+        "status": "success"
+      },
+      {
+        "stage": "authentication_attempt",
+        "status": "success",
+        "result": true
+      }
+    ],
+    "reached_authentication": true,
+    "overall_result": "authentication_success"
+  }
+}

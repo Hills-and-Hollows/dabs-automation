@@ -1,0 +1,76 @@
+---
+globs: tests/**/*,test_*,*_test.py
+description: Enforce comprehensive testing requirements including 90% code coverage and DABS test scenarios
+---
+
+# TESTING STRATEGY ENFORCEMENT
+Comprehensive testing requirements for DABS automation system
+
+## MANDATORY TESTING REQUIREMENTS
+ENFORCE 90% code coverage minimum across ALL modules:
+- **Unit Tests**: Test individual functions and classes
+- **Integration Tests**: Test API and database interactions
+- **System Tests**: Test complete end-to-end workflows
+- **User Acceptance Tests**: Validate business requirements fulfillment
+
+## TEST PYRAMID ENFORCEMENT
+MANDATORY test pyramid distribution:
+```
+        /\
+       /  \    E2E Tests (10%)
+      /____\   
+     /      \  Integration Tests (20%)
+    /________\ 
+   /          \ Unit Tests (70%)
+  /__________\
+```
+
+## DABS-SPECIFIC TEST SCENARIOS
+### Critical Test Coverage
+MANDATORY test implementation for ALL test scenarios:
+
+#### TS-001: Standard DABS Processing
+```python
+def test_standard_dabs_processing():
+    """Test normal monthly DABS file processing"""
+    # Load sample DABS file with 1,239 SKUs
+    # Verify all SKUs processed correctly
+    # Verify price changes within acceptable variance
+    assert processing_time < 15 * 60  # 15 minute requirement
+    assert error_rate < 0.001  # <0.1% error rate requirement
+```
+
+#### TS-002: Price Variance Detection
+```python
+def test_price_variance_detection():
+    """Test detection of significant price changes"""
+    # Create DABS file with >20% price changes
+    # Verify system alerts for variance
+    assert variance_alerts_triggered == True
+```
+
+## PERFORMANCE TESTING REQUIREMENTS
+### Load Testing Mandates
+MANDATORY performance validation:
+- **Processing Speed**: 1,239 SKUs processed in <15 minutes
+- **API Response**: <2 seconds for dashboard queries
+- **Concurrent Users**: Support 5 concurrent users without degradation
+
+## TESTING FRAMEWORK STANDARDS
+### Required Testing Libraries
+```python
+import pytest                    # Primary testing framework
+import pytest_asyncio           # Async test support
+import pytest_cov               # Coverage reporting
+from fastapi.testclient import TestClient
+```
+
+## VIOLATION PREVENTION
+❌ NEVER deploy code without 90% test coverage
+❌ NEVER skip performance testing for critical workflows
+❌ NEVER mock Utah compliance requirements
+❌ NEVER skip integration testing for external APIs
+
+Reference: [docs/TESTING_STRATEGY.md](mdc:docs/TESTING_STRATEGY.md)
+Reference: [tests/](mdc:tests/)
+Reference: [scripts/test_automation.py](mdc:scripts/test_automation.py)

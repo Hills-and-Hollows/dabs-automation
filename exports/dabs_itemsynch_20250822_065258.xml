@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ItemSynch version="2.0" timestamp="2025-08-22T06:52:58.342359" xmlns="http://www.naxml.org/NAXML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Header>
+    <Source>DABS-Hills-Hollows</Source>
+    <Destination>SSCS-POS</Destination>
+    <MessageID>DABS_20250822_065258</MessageID>
+    <RecordCount>3</RecordCount>
+    <GeneratedDate>2025-08-22 06:52:58</GeneratedDate>
+    <ProcessingMode>UPDATE</ProcessingMode>
+    <DataSource>DABS_PRICE_CHANGES</DataSource>
+    <Statistics>
+      <TotalItems>3</TotalItems>
+      <ActiveItems>3</ActiveItems>
+      <SpecialPricingItems>1</SpecialPricingItems>
+    </Statistics>
+  </Header>
+  <Items>
+    <Item action="update">
+      <SKU>012345</SKU>
+      <UPC />
+      <Description>Test Whiskey 750ml</Description>
+      <Category>Spirits</Category>
+      <Status>Active</Status>
+      <LastModified>2025-08-22 06:52:58</LastModified>
+      <Pricing>
+        <RetailPrice>29.99</RetailPrice>
+        <Currency>USD</Currency>
+        <EffectiveDate>2025-01-01</EffectiveDate>
+        <OnSpecial>false</OnSpecial>
+        <Tax>
+          <Taxable>true</Taxable>
+          <TaxCategory>ALCOHOL</TaxCategory>
+        </Tax>
+      </Pricing>
+      <Attributes>
+        <Size>750ml</Size>
+        <Department>LIQUOR</Department>
+        <Vendor>DABS</Vendor>
+      </Attributes>
+      <Inventory>
+        <Trackable>true</Trackable>
+        <Serialized>false</Serialized>
+        <AgeRestricted>true</AgeRestricted>
+      </Inventory>
+    </Item>
+    <Item action="update">
+      <SKU>067890</SKU>
+      <UPC />
+      <Description>Test Vodka 1L</Description>
+      <Category>Spirits</Category>
+      <Status>Active</Status>
+      <LastModified>2025-08-22 06:52:58</LastModified>
+      <Pricing>
+        <RetailPrice>24.99</RetailPrice>
+        <Currency>USD</Currency>
+        <EffectiveDate>2025-01-01</EffectiveDate>
+        <OnSpecial>true</OnSpecial>
+        <Tax>
+          <Taxable>true</Taxable>
+          <TaxCategory>ALCOHOL</TaxCategory>
+        </Tax>
+      </Pricing>
+      <Attributes>
+        <Size>1000.0ml</Size>
+        <Department>LIQUOR</Department>
+        <Vendor>DABS</Vendor>
+      </Attributes>
+      <Inventory>
+        <Trackable>true</Trackable>
+        <Serialized>false</Serialized>
+        <AgeRestricted>true</AgeRestricted>
+      </Inventory>
+    </Item>
+    <Item action="update">
+      <SKU>011111</SKU>
+      <UPC />
+      <Description>Test Rum 750ml</Description>
+      <Category>Spirits</Category>
+      <Status>Active</Status>
+      <LastModified>2025-08-22 06:52:58</LastModified>
+      <Pricing>
+        <RetailPrice>32.99</RetailPrice>
+        <Currency>USD</Currency>
+        <EffectiveDate>2025-01-01</EffectiveDate>
+        <OnSpecial>false</OnSpecial>
+        <Tax>
+          <Taxable>true</Taxable>
+          <TaxCategory>ALCOHOL</TaxCategory>
+        </Tax>
+      </Pricing>
+      <Attributes>
+        <Size>750ml</Size>
+        <Department>LIQUOR</Department>
+        <Vendor>DABS</Vendor>
+      </Attributes>
+      <Inventory>
+        <Trackable>true</Trackable>
+        <Serialized>false</Serialized>
+        <AgeRestricted>true</AgeRestricted>
+      </Inventory>
+    </Item>
+  </Items>
+</ItemSynch>

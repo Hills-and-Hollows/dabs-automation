@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "generated_date": "2025-08-22T06:52:25.374202",
+    "source": "DABS-Hills-Hollows",
+    "total_items": 3,
+    "format_version": "1.0"
+  },
+  "products": [
+    {
+      "sku": "012345",
+      "product_name": "Test Whiskey 750ml",
+      "retail_price": 29.99,
+      "category": "Spirits",
+      "on_special_pricing": false,
+      "effective_date": "2025-01-01T00:00:00",
+      "status": "Active",
+      "updated_on": "2025-08-22T06:52:25.370047",
+      "size_ml": "750",
+      "upc": null,
+      "vendor_code": null,
+      "cost_price": null,
+      "markup_percent": null
+    },
+    {
+      "sku": "067890",
+      "product_name": "Test Vodka 1L",
+      "retail_price": 24.99,
+      "category": "Spirits",
+      "on_special_pricing": true,
+      "effective_date": "2025-01-01T00:00:00",
+      "status": "Active",
+      "updated_on": "2025-08-22T06:52:25.370301",
+      "size_ml": "1000.0",
+      "upc": null,
+      "vendor_code": null,
+      "cost_price": null,
+      "markup_percent": null
+    },
+    {
+      "sku": "011111",
+      "product_name": "Test Rum 750ml",
+      "retail_price": 32.99,
+      "category": "Spirits",
+      "on_special_pricing": false,
+      "effective_date": "2025-01-01T00:00:00",
+      "status": "Active",
+      "updated_on": "2025-08-22T06:52:25.370452",
+      "size_ml": "750",
+      "upc": null,
+      "vendor_code": null,
+      "cost_price": null,
+      "markup_percent": null
+    }
+  ]
+}

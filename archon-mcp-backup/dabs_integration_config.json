@@ -1,0 +1,221 @@
+{
+  "dabs_archon_integration": {
+    "version": "1.0.0",
+    "description": "Archon MCP Server configuration for DABS workspace",
+    "workspace_root": "/Volumes/Expansion/4. CURSOR/DABC Pricing - Inventory",
+    
+    "services": {
+      "archon_ui": {
+        "port": 3837,
+        "url": "http://localhost:3837",
+        "description": "Archon web interface for knowledge and task management"
+      },
+      "archon_server": {
+        "port": 8281,
+        "url": "http://localhost:8281",
+        "health_endpoint": "/health",
+        "description": "Core Archon API server with FastAPI and SocketIO"
+      },
+      "archon_mcp": {
+        "port": 8151,
+        "url": "http://localhost:8151",
+        "sse_endpoint": "/sse",
+        "description": "MCP server for AI coding assistant integration"
+      },
+      "archon_agents": {
+        "port": 8152,
+        "url": "http://localhost:8152",
+        "description": "AI agents service for document processing and RAG"
+      }
+    },
+    
+    "dabs_integration_points": {
+      "existing_services": {
+        "dabs_api": {
+          "port": 8000,
+          "description": "Existing DABS FastAPI service",
+          "integration": "Knowledge base can reference DABS API documentation"
+        },
+        "postgresql": {
+          "description": "Existing DABS PostgreSQL database",
+          "integration": "Separate Supabase database for Archon to avoid conflicts"
+        },
+        "redis": {
+          "description": "Existing DABS Redis caching",
+          "integration": "Archon uses internal caching, no conflicts"
+        }
+      },
+      
+      "knowledge_base_sources": [
+        {
+          "type": "local_docs",
+          "path": "docs/",
+          "description": "All DABS documentation files",
+          "files": [
+            "FUNCTIONAL_REQUIREMENTS.md",
+            "TECHNICAL_ARCHITECTURE.md", 
+            "ACCEPTANCE_CRITERIA.md",
+            "USER_STORIES.md",
+            "TESTING_STRATEGY.md",
+            "RISK_ASSESSMENT.md"
+          ]
+        },
+        {
+          "type": "api_documentation",
+          "sources": [
+            {
+              "name": "QuickBooks Online API",
+              "url": "https://developer.intuit.com/app/developer/qbo/docs/api/accounting",
+              "description": "QuickBooks integration documentation"
+            },
+            {
+              "name": "Verifone API",
+              "url": "https://developer.verifone.com/",
+              "description": "Verifone POS integration documentation"
+            }
+          ]
+        },
+        {
+          "type": "research_papers",
+          "files": [
+            "research-paper-qbo-mcp.md"
+          ],
+          "description": "MCP integration research and analysis"
+        }
+      ],
+      
+      "project_structure": {
+        "dabs_integration": {
+          "description": "Main DABS integration project",
+          "phases": [
+            {
+              "name": "Phase 1 - Foundation",
+              "status": "COMPLETE",
+              "tasks": [
+                "Business Requirements Analysis",
+                "DABS Data Structure Analysis",
+                "QuickBooks API Research", 
+                "Verifone Access Verification",
+                "Technical Specifications"
+              ]
+            },
+            {
+              "name": "Phase 2 - SSCS Integration",
+              "status": "IN_PROGRESS",
+              "tasks": [
+                "SSCS POS API Integration",
+                "Real-time Inventory Sync",
+                "Price Update Automation",
+                "Error Handling & Logging"
+              ]
+            },
+            {
+              "name": "Phase 3 - QuickBooks Integration", 
+              "status": "PLANNED",
+              "tasks": [
+                "OAuth 2.0 Implementation",
+                "Inventory Sync to QuickBooks",
+                "Financial Reporting Integration",
+                "Rate Limiting & Error Handling"
+              ]
+            },
+            {
+              "name": "Phase 4 - Verifone Integration",
+              "status": "PLANNED", 
+              "tasks": [
+                "Payment Processing Integration",
+                "Transaction Reporting",
+                "Compliance Monitoring",
+                "Performance Optimization"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    
+    "mcp_tools_configuration": {
+      "knowledge_search": {
+        "enabled": true,
+        "description": "Search DABS documentation and API specifications",
+        "sources": ["local_docs", "api_documentation", "research_papers"]
+      },
+      "task_management": {
+        "enabled": true,
+        "description": "Create and track DABS integration tasks",
+        "default_project": "dabs_integration"
+      },
+      "project_operations": {
+        "enabled": true,
+        "description": "Manage DABS phases and milestones",
+        "templates": ["integration_task", "api_implementation", "testing_checklist"]
+      },
+      "document_management": {
+        "enabled": true,
+        "description": "Version control for DABS specifications",
+        "watch_directories": ["docs/", "src/"]
+      },
+      "code_context": {
+        "enabled": true,
+        "description": "Search and reference existing DABS codebase",
+        "source_directories": ["src/", "tests/", "scripts/"]
+      }
+    },
+    
+    "ai_client_configurations": {
+      "claude_desktop": {
+        "config_path": "~/.config/claude-desktop/config.json",
+        "mcp_server_config": {
+          "dabs-archon": {
+            "command": "curl",
+            "args": ["-N", "http://localhost:8151/sse"],
+            "description": "DABS Archon MCP Server for task management and knowledge base"
+          }
+        }
+      },
+      "cursor_vscode": {
+        "extension": "MCP Extension",
+        "configuration": {
+          "server_url": "http://localhost:8151",
+          "transport": "sse",
+          "name": "DABS Archon"
+        }
+      }
+    },
+    
+    "development_workflow": {
+      "hot_reload": {
+        "backend_command": "docker-compose up archon-server archon-mcp archon-agents --build",
+        "frontend_command": "cd archon-ui-main && npm run dev"
+      },
+      "integration_steps": [
+        "1. Start Archon services",
+        "2. Upload DABS documentation to knowledge base",
+        "3. Create DABS integration project structure", 
+        "4. Configure AI coding assistant with MCP server",
+        "5. Begin development with AI assistance"
+      ]
+    },
+    
+    "troubleshooting": {
+      "common_issues": [
+        {
+          "issue": "Port conflicts",
+          "solution": "Check ports 3837, 8281, 8151, 8152 are available"
+        },
+        {
+          "issue": "Database connection failed",
+          "solution": "Verify Supabase credentials and service_role key"
+        },
+        {
+          "issue": "Docker services not starting",
+          "solution": "Ensure Docker Desktop is running and has sufficient resources"
+        },
+        {
+          "issue": "MCP server not responding",
+          "solution": "Check service dependencies and wait for full startup (60+ seconds)"
+        }
+      ]
+    }
+  }
+}

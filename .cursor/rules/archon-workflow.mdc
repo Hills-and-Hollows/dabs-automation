@@ -1,0 +1,55 @@
+---
+alwaysApply: true
+description: Enforce Archon-first development workflow and MCP integration patterns for DABS project
+---
+
+# ARCHON MCP WORKFLOW ENFORCEMENT
+Critical Archon-first development workflow for DABS automation system
+Always use the 25 arcon tools in our archon project ID d010ff76-0202-48e4-8362-40c45e9de39a to plan and focus the correct context needed for each text so we never get confused about what we are woking on, what problem we are solving, and how it fits in to the final requirments of the PRP,PRD, and all final requirments.
+
+## CRITICAL: ARCHON-FIRST DEVELOPMENT
+MANDATORY workflow order:
+1. **Check Archon Status**: Verify http://localhost:8151/health before any development
+2. **Task Management**: Use Archon MCP task management as PRIMARY system
+3. **Research Phase**: Use archon:perform_rag_query and archon:search_code_examples
+4. **Code Operations**: Use Serena MCP tools for ALL code search/edit operations
+5. **Status Updates**: Update task status in Archon after every step
+
+## ARCHON MCP SERVER CONFIGURATION
+- **Server URL**: http://localhost:8151
+- **MCP Endpoint**: http://localhost:8151/mcp/sse  
+- **Health Check**: http://localhost:8151/health
+- **Transport**: SSE (Server-Sent Events)
+
+## REQUIRED ARCHON WORKFLOW CYCLE
+BEFORE any coding:
+```
+1. archon:manage_task(action="get", task_id="current_task")
+2. archon:search_code_examples(query="relevant_pattern") 
+3. archon:perform_rag_query(query="architecture_guidance")
+4. [Implement using Serena MCP tools]
+5. archon:manage_task(action="update", status="review")
+```
+
+## SERENA MCP CODE OPERATIONS
+MANDATORY for ALL code operations:
+### Code Search (Primary)
+- `serena:find_symbol(name_path="ClassName", include_body=true)`
+- `serena:find_referencing_symbols(name_path="methodName")`
+- `serena:search_for_pattern(substring_pattern="pattern")`
+- `serena:get_symbols_overview(relative_path="src/")`
+
+### Code Editing (Primary)  
+- `serena:replace_symbol_body(name_path="functionName", body="new_code")`
+- `serena:insert_before_symbol(name_path="className", body="imports")`
+- `serena:insert_after_symbol(name_path="methodName", body="new_method")`
+- `serena:replace_regex(regex="pattern", repl="replacement")`
+
+## VIOLATION PREVENTION
+❌ NEVER use traditional tools (grep, search_replace) as primary method
+❌ NEVER use TodoWrite before checking Archon availability
+❌ NEVER skip task status updates in Archon
+❌ NEVER code without research phase
+
+Reference: [config/dabs_config.json](mdc:config/dabs_config.json)
+Reference: [cursor_mcp_config.json](mdc:cursor_mcp_config.json)

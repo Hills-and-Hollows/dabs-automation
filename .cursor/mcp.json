@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "dabs-ordering": {
+      "command": "python3",
+      "args": [
+        "src/mcp/dabs_simple_mcp_server.py"
+      ],
+      "cwd": "/Volumes/Expansion/4. CURSOR/DABC Pricing - Inventory",
+      "env": {
+        "PYTHONPATH": "/Volumes/Expansion/4. CURSOR/DABC Pricing - Inventory/src",
+        "DABS_ORDERING_USERNAME": "hillshollows",
+        "DABS_ORDERING_PASSWORD": "Hills2025!@",
+        "DABS_ORDERING_LOGIN_URL": "https://webapps2.abc.utah.gov/ProdApps/OnlineOrders/",
+        "DABS_SESSION_TIMEOUT_MINUTES": "30",
+        "DABS_MAX_OPEN_ORDERS": "5",
+        "DABS_AUDIT_TRAIL_ENABLED": "true",
+        "DABS_AUTOMATED_ORDERING_ENABLED": "true"
+      }
+    }
+  }
+}

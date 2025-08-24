@@ -1,0 +1,110 @@
+---
+alwaysApply: true
+description: Enforces Archon MCP tools usage for project context and requirement alignment
+---
+
+# ARCHON CONTEXT MANAGEMENT RULE - MANDATORY ENFORCEMENT
+
+## CRITICAL: ARCHON-FIRST PROJECT CONTEXT
+
+### 🎯 PROJECT IDENTITY
+**ALWAYS** reference and work within:
+- **Project ID**: `d010ff76-0202-48e4-8362-40c45e9de39a`
+- **Project Name**: HH DABS Automation Complete
+- **Business Goal**: 90% time reduction for Tessa (10+ hours → <1 hour monthly)
+- **Critical Success**: $28,000 annual value delivery through automation
+
+### 🛠️ MANDATORY MCP ARCHON TOOL USAGE
+
+**BEFORE any development work**, use these Archon MCP tools in sequence:
+
+1. **Context Gathering**:
+   ```
+   mcp_archon_get_project(project_id="d010ff76-0202-48e4-8362-40c45e9de39a")
+   mcp_archon_list_tasks(project_id="d010ff76-0202-48e4-8362-40c45e9de39a")
+   ```
+
+2. **Knowledge Research**:
+   ```
+   mcp_archon_perform_rag_query(query="[specific_technical_question]")
+   mcp_archon_search_code_examples(query="[relevant_pattern]")
+   ```
+
+3. **Task Management**:
+   ```
+   mcp_archon_get_task(task_id="current_task_id")
+   mcp_archon_update_task(task_id="current_task_id", status="doing")
+   ```
+
+### 📋 REQUIREMENT ALIGNMENT CHECKLIST
+
+**EVERY response must align with these core requirements**:
+
+#### Primary Requirements (PRP/PRD):
+- ✅ **Time Reduction**: Deliver 90% reduction in Tessa's monthly work
+- ✅ **Error Rate**: Achieve <0.1% error rate (vs current 2%)
+- ✅ **Processing Speed**: Complete 1,239 SKUs in <60 minutes
+- ✅ **Compliance**: 100% Utah Package Agency compliance
+- ✅ **Integration**: Complete DABS → SSCS → POS automation
+
+#### Technical Requirements:
+- ✅ **DABS Processing**: Excel automation with NAXML generation
+- ✅ **SSCS CPB Integration**: Vendor import automation
+- ✅ **QuickBooks Sync**: OAuth 2.0 inventory synchronization
+- ✅ **Audit Trail**: 7-year retention with complete traceability
+- ✅ **Performance**: Sub-second processing capability
+
+### 🧠 CONTEXT CLARITY ENFORCEMENT
+
+**NEVER proceed without confirming**:
+1. **What Problem**: Specific issue being addressed
+2. **Business Impact**: How it delivers the 90% time reduction
+3. **Technical Approach**: Implementation strategy
+4. **Success Criteria**: Measurable outcomes
+5. **Requirement Mapping**: Which PRP/PRD requirement this fulfills
+
+### 🎯 FOCUS MAINTENANCE
+
+**Always maintain focus on**:
+- **Stakeholder Value**: Tessa's time savings and error reduction
+- **Business Priority**: Monthly DABS processing automation
+- **Technical Excellence**: Robust, scalable, maintainable solution
+- **Compliance First**: Utah Package Agency requirements
+- **Integration Success**: End-to-end workflow automation
+
+### 📊 PROJECT DOCUMENTATION CONTEXT
+
+Reference these core documents for context:
+- [FUNCTIONAL_REQUIREMENTS.md](mdc:docs/FUNCTIONAL_REQUIREMENTS.md)
+- [ACCEPTANCE_CRITERIA.md](mdc:docs/ACCEPTANCE_CRITERIA.md)
+- [TECHNICAL_ARCHITECTURE.md](mdc:docs/TECHNICAL_ARCHITECTURE.md)
+- [DABS_AUTOMATION_COMPLETE_PRP.md](mdc:PRPs/DABS_Automation_Complete_PRP.md)
+
+### 🚨 VIOLATION PREVENTION
+
+**NEVER**:
+- ❌ Work without consulting Archon project context
+- ❌ Skip requirement alignment verification
+- ❌ Proceed without understanding business impact
+- ❌ Lose focus on core automation goals
+- ❌ Ignore Utah Package Agency compliance needs
+
+### ⚡ ARCHON TOOL INTEGRATION WORKFLOW
+
+1. **Start**: Query project status and current priorities
+2. **Research**: Use RAG for technical guidance and examples
+3. **Plan**: Create or update tasks with clear success criteria
+4. **Implement**: Execute with full context awareness
+5. **Validate**: Confirm alignment with requirements
+6. **Update**: Mark progress and next steps in Archon
+
+### 🎊 SUCCESS METRICS ALIGNMENT
+
+Every action must contribute to:
+- **Time Savings**: Reducing Tessa's 10+ hour monthly burden
+- **Error Prevention**: Eliminating manual entry mistakes
+- **Process Automation**: End-to-end DABS workflow
+- **Compliance Assurance**: Utah Package Agency requirements
+- **Business Value**: $28,000 annual impact delivery
+
+This rule ensures that every development decision is made with full project context, proper requirement alignment, and clear business value delivery through the comprehensive use of Archon MCP tools.

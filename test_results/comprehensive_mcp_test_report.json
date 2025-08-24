@@ -1,0 +1,115 @@
+{
+  "timestamp": 1755910573,
+  "overall_status": "MOSTLY_PASS",
+  "categories": {
+    "infrastructure": {
+      "passed": 3,
+      "failed": 1,
+      "tests": {
+        "archon_ui": {
+          "success": true,
+          "status": 200
+        },
+        "archon_server": {
+          "success": false,
+          "error": "[Errno 54] Connection reset by peer"
+        },
+        "archon_mcp": {
+          "success": true,
+          "status": 406
+        },
+        "archon_agents": {
+          "success": true,
+          "status": 200
+        }
+      }
+    },
+    "mcp_protocol": {
+      "passed": 2,
+      "failed": 0,
+      "tests": {
+        "sse_protocol": {
+          "success": true,
+          "message": "JSON-RPC detected"
+        },
+        "jsonrpc_errors": {
+          "success": true,
+          "message": "Proper error handling"
+        }
+      }
+    },
+    "dabs_tools": {
+      "passed": 2,
+      "failed": 0,
+      "tests": {
+        "tool_handling": {
+          "success": true,
+          "message": "Tool requests handled"
+        },
+        "expected_tools": {
+          "success": true,
+          "tools": [
+            "search_dabs_knowledge",
+            "create_dabs_task",
+            "get_dabs_project_status",
+            "perform_rag_query",
+            "manage_task",
+            "manage_project"
+          ]
+        }
+      }
+    },
+    "knowledge_base": {
+      "passed": 1,
+      "failed": 1,
+      "tests": {
+        "documentation": {
+          "success": true,
+          "found": [
+            "docs/FUNCTIONAL_REQUIREMENTS.md",
+            "docs/TECHNICAL_ARCHITECTURE.md",
+            "docs/ACCEPTANCE_CRITERIA.md",
+            "docs/USER_STORIES.md"
+          ],
+          "missing": []
+        },
+        "kb_api": {
+          "success": false,
+          "error": "[Errno 54] Connection reset by peer"
+        }
+      }
+    },
+    "cursor_integration": {
+      "passed": 1,
+      "failed": 1,
+      "tests": {
+        "config_file": {
+          "success": true,
+          "checks_passed": "4/4"
+        },
+        "endpoint_test": {
+          "success": false,
+          "response": "Not Found404"
+        }
+      }
+    },
+    "workflow_validation": {
+      "passed": 3,
+      "failed": 0,
+      "tests": {
+        "step_1": {
+          "success": true,
+          "message": "Services running"
+        },
+        "step_2": {
+          "success": true,
+          "message": "Documentation ready"
+        },
+        "step_4": {
+          "success": true,
+          "message": "Cursor config ready"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+---
+alwaysApply: true
+description: Enforce DABS project organization and file placement standards
+---
+
+# PROJECT STRUCTURE ENFORCEMENT
+DABS project organization and file placement standards
+
+## MANDATORY DIRECTORY STRUCTURE
+ENFORCE this exact structure - ZERO tolerance for deviations:
+```
+/DABS Pricing - Inventory/
+├── src/
+│   ├── integration_hub/     # Central coordination system
+│   ├── processors/          # DABS, SSCS, QuickBooks processors  
+│   └── api/                 # FastAPI endpoints and routes
+├── docs/                    # ALL documentation files
+├── data/
+│   ├── dabs_backups/        # Original DABS files (7-year retention)
+│   └── exports/             # Processed output files
+├── tests/                   # ALL test files
+├── config/                  # Configuration files only
+├── scripts/                 # Automation and utility scripts
+├── logs/                    # System logs and audit trails
+├── archon-mcp/             # Archon MCP server integration
+└── .cursor/                # Cursor rules and configuration
+```
+
+## FILE PLACEMENT RULES
+AUTOMATIC file organization based on type and purpose:
+
+### Python Code Files
+- **Source Code**: ALL `.py` files → `src/` subdirectories
+- **Test Files**: `test_*.py` OR `*_test.py` → `tests/`
+- **Scripts**: Utility/automation `.py` → `scripts/`
+- **Configuration**: Settings/config `.py` → `config/`
+
+### Data Files
+- **DABS Input**: `.xlsx`, `.csv` DABS files → `data/dabs_backups/`
+- **Processed Output**: Export files → `data/exports/`
+- **Test Data**: Sample files → `data/test_samples/`
+- **Audit Logs**: Processing logs → `logs/`
+
+## NAMING CONVENTIONS
+### File Naming Standards
+ENFORCE consistent naming:
+- **Python modules**: `snake_case.py`
+- **Classes**: `PascalCase` in file names like `DABSProcessor`
+- **Functions**: `snake_case` 
+- **Constants**: `UPPER_SNAKE_CASE`
+- **Test files**: `test_module_name.py`
+
+## STRUCTURE ENFORCEMENT AUTOMATION
+### Pre-commit Validation
+MANDATORY structure check before any commit:
+- Run `make check-structure` before ALL commits
+- BLOCK commits with structure violations
+- Auto-fix with `make fix-structure` when possible
+
+## VIOLATION PREVENTION
+❌ NEVER place files in wrong directories
+❌ NEVER commit files without structure validation
+❌ NEVER create directories outside defined structure
+❌ NEVER use spaces in file or directory names
+❌ NEVER mix test files with source code
+
+Reference: [Makefile](mdc:Makefile)
+Reference: [scripts/enforce_structure.py](mdc:scripts/enforce_structure.py)

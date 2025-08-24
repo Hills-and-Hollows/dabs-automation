@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "archon-direct-api": {
+      "command": "python3",
+      "args": [
+        "/Volumes/Expansion/4. CURSOR/DABC Pricing - Inventory/scripts/archon_mcp_bridge.py"
+      ],
+      "env": {
+        "ARCHON_SERVER_URL": "http://localhost:8281",
+        "ARCHON_MCP_URL": "http://localhost:8151", 
+        "ARCHON_PROJECT_ID": "d010ff76-0202-48e4-8362-40c45e9de39a",
+        "DABS_WORKSPACE": "/Volumes/Expansion/4. CURSOR/DABC Pricing - Inventory"
+      }
+    }
+  }
+}

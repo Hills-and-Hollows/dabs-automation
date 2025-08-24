@@ -1,0 +1,24 @@
+{
+  "archon_mcp_server": {
+    "command": "python",
+    "args": [
+      "-m",
+      "src.mcp_server"
+    ],
+    "env": {
+      "ARCHON_SERVER_URL": "http://localhost:8281",
+      "ARCHON_PROJECT_ID": "d010ff76-0202-48e4-8362-40c45e9de39a",
+      "ARCHON_MCP_PORT": "8151"
+    },
+    "working_directory": "/Volumes/Expansion/4. CURSOR/DABC Pricing - Inventory/archon-mcp"
+  },
+  "tools_available": [
+    "mcp_archon_get_project",
+    "mcp_archon_list_tasks",
+    "mcp_archon_create_task",
+    "mcp_archon_update_task",
+    "mcp_archon_perform_rag_query",
+    "mcp_archon_search_code_examples",
+    "mcp_archon_get_project_status"
+  ]
+}

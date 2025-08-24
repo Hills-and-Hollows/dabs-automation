@@ -1,0 +1,45 @@
+{
+  "cursor_mcp_configuration": {
+    "description": "MCP configuration for Cursor to connect to DABS Archon server",
+    "server_url": "http://localhost:8281",
+    "mcp_endpoint": "http://localhost:8281/api",
+    "health_endpoint": "http://localhost:8281/health",
+    
+    "archon_services": {
+      "archon_server": "http://localhost:8281",
+      "archon_mcp": "http://localhost:8151", 
+      "archon_ui": "http://localhost:3837",
+      "archon_agents": "http://localhost:8152"
+    },
+    
+    "enforcement_rules": {
+      "mandatory_archon_check": true,
+      "block_todo_write_first": true,
+      "require_task_sync": true,
+      "validate_before_commit": true
+    },
+    
+    "available_tools": [
+      {
+        "name": "mcp_archon_create_task",
+        "description": "Create tasks in Archon project management",
+        "endpoint": "http://localhost:8281/api/tasks"
+      },
+      {
+        "name": "mcp_archon_update_task", 
+        "description": "Update task status in Archon",
+        "endpoint": "http://localhost:8281/api/tasks/{task_id}"
+      },
+      {
+        "name": "mcp_archon_get_project_status",
+        "description": "Get current project status",
+        "endpoint": "http://localhost:8281/api/tasks"
+      },
+      {
+        "name": "mcp_archon_perform_rag_query",
+        "description": "Search knowledge base",
+        "endpoint": "http://localhost:8152/rag/query"
+      }
+    ]
+  }
+}

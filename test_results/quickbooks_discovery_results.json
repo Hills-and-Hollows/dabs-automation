@@ -1,0 +1,167 @@
+{
+  "test_timestamp": "2025-08-22T17:05:31.207844",
+  "connection_status": "connected",
+  "company_info": {
+    "raw_data": {
+      "CompanyInfo": {
+        "CompanyName": "Hills and Hollows LLC",
+        "LegalName": "Hills and Hollows LLC",
+        "CompanyAddr": {
+          "Id": "1",
+          "Line1": "1499 W 120th Ave Ste 110",
+          "City": "Westminster",
+          "Country": "USA",
+          "CountrySubDivisionCode": "CO",
+          "PostalCode": "80234"
+        },
+        "CustomerCommunicationAddr": {
+          "Id": "11019",
+          "Line1": "840 W Hwy 12",
+          "City": "Boulder",
+          "Country": "US",
+          "CountrySubDivisionCode": "UT",
+          "PostalCode": "80234"
+        },
+        "LegalAddr": {
+          "Id": "11838",
+          "Line1": "1499 W 120th Ave Ste 110",
+          "City": "Westminster",
+          "Country": "USA",
+          "CountrySubDivisionCode": "CO",
+          "PostalCode": "802342719"
+        },
+        "CustomerCommunicationEmailAddr": {
+          "Address": "dean@owenent.com"
+        },
+        "PrimaryPhone": {
+          "FreeFormNumber": "3032290881"
+        },
+        "CompanyStartDate": "2023-01-11",
+        "EmployerId": "38-3987383",
+        "FiscalYearStartMonth": "January",
+        "Country": "US",
+        "Email": {
+          "Address": "dean@owenent.com"
+        },
+        "WebAddr": {
+          "URI": "www.hillsandhollowsmarket.com"
+        },
+        "SupportedLanguages": "en",
+        "NameValue": [
+          {
+            "Name": "NeoEnabled",
+            "Value": "true"
+          },
+          {
+            "Name": "IsQbdtMigrated",
+            "Value": "true"
+          },
+          {
+            "Name": "MigrationDate",
+            "Value": "Jan 25, 2023, 4:05:33 PM"
+          },
+          {
+            "Name": "MigrationSource",
+            "Value": "QuickBooks-Unknown ActiveX"
+          },
+          {
+            "Name": "IndustryType",
+            "Value": "Supermarkets and other grocery (except convenience) stores"
+          },
+          {
+            "Name": "CompanyType",
+            "Value": "Partnership"
+          },
+          {
+            "Name": "IndustryCode",
+            "Value": "445110"
+          },
+          {
+            "Name": "SubscriptionStatus",
+            "Value": "SUBSCRIBED"
+          },
+          {
+            "Name": "OfferingSku",
+            "Value": "QuickBooks Online Plus"
+          },
+          {
+            "Name": "PayrollFeature",
+            "Value": "true"
+          },
+          {
+            "Name": "AccountantFeature",
+            "Value": "false"
+          },
+          {
+            "Name": "QBOIndustryType",
+            "Value": "All Other Miscellaneous Services"
+          },
+          {
+            "Name": "ItemCategoriesFeature",
+            "Value": "true"
+          },
+          {
+            "Name": "AssignedTime",
+            "Value": "2023-01-11T14:16:24-08:00"
+          }
+        ],
+        "domain": "QBO",
+        "sparse": false,
+        "Id": "1",
+        "SyncToken": "42",
+        "MetaData": {
+          "CreateTime": "2023-01-11T13:16:24-08:00",
+          "LastUpdatedTime": "2025-05-02T12:22:02-07:00"
+        }
+      },
+      "time": "2025-08-22T16:05:33.185-07:00"
+    }
+  },
+  "available_data": {
+    "Items": 5,
+    "Customers": 5,
+    "Vendors": 5,
+    "Accounts": 10,
+    "Invoices": 5,
+    "Bills": 5,
+    "Payments": 5,
+    "Purchases": 5
+  },
+  "api_capabilities": {
+    "inventory_items": 0,
+    "account_structure": {
+      "Other Current Liability": 8,
+      "Bank": 2,
+      "Accounts Receivable": 1,
+      "Credit Card": 3,
+      "Accounts Payable": 1,
+      "Fixed Asset": 4,
+      "Other Expense": 8,
+      "Expense": 19,
+      "Long Term Liability": 3,
+      "Other Current Asset": 24,
+      "Income": 6,
+      "Other Income": 3,
+      "Cost of Goods Sold": 18
+    },
+    "key_accounts": {
+      "inventory_asset": "401",
+      "income": "274",
+      "cogs": "449"
+    },
+    "customers_count": 5,
+    "vendors_count": 5,
+    "financial_data": {
+      "Invoices": 3,
+      "Bills": 3,
+      "Payments": 3,
+      "Journal Entries": 0
+    }
+  },
+  "errors": [],
+  "token_info": {
+    "expires_at": "2025-08-22T18:04:05.328734",
+    "company_id": "9130355762729646",
+    "is_expired": false
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "version": "1.0.0",
+  "enforced_structure": {
+    "src/": {
+      "purpose": "Core application code ONLY",
+      "allowed_files": ["*.py"],
+      "max_depth": 3,
+      "subdirs": {
+        "integration_hub/": {"required": true},
+        "processors/": {"required": true},
+        "api/": {"required": true}
+      }
+    },
+    "docs/": {
+      "purpose": "Documentation ONLY",
+      "allowed_files": ["*.md"],
+      "naming_pattern": "UPPERCASE_WITH_UNDERSCORES.md"
+    },
+    "data/": {
+      "purpose": "Data files ONLY",
+      "allowed_files": ["*.csv", "*.xlsx", "*.json"],
+      "subdirs": {
+        "dabs_backups/": {"required": true},
+        "exports/": {"required": true}
+      }
+    },
+    "tests/": {
+      "purpose": "Test files ONLY",
+      "allowed_files": ["test_*.py", "*_test.py"]
+    }
+  },
+  "forbidden_patterns": [
+    "temp*", "backup*", "old*", "copy*", "new*",
+    "*_old", "*_backup", "*_copy", "*_new",
+    "untitled*", "draft*"
+  ],
+  "required_files": [
+    "README.md",
+    "requirements.txt",
+    ".gitignore",
+    "PROJECT_SUMMARY.md"
+  ]
+}

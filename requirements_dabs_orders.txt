@@ -1,0 +1,56 @@
+# DABS Order Automation System Requirements
+# Hills & Hollows LLC - Utah Package Agency
+# Dependencies for automated order extraction and analysis
+
+# Core Dependencies
+asyncio>=3.4.3
+aiofiles>=23.1.0
+aiohttp>=3.8.4
+pandas>=2.0.2
+numpy>=1.24.3
+
+# Web Automation
+selenium>=4.10.0
+beautifulsoup4>=4.12.2
+requests>=2.31.0
+
+# PDF Processing
+pdfplumber>=0.9.0
+PyPDF2>=3.0.1
+
+# Data Analysis and Visualization
+matplotlib>=3.7.1
+seaborn>=0.12.2
+openpyxl>=3.1.2
+xlsxwriter>=3.1.2
+
+# Environment and Configuration
+python-dotenv>=1.0.0
+
+# Utility and System
+pathlib2>=2.3.7
+python-dateutil>=2.8.2
+pytz>=2023.3
+
+# Logging and Monitoring
+loguru>=0.7.0
+
+# Optional Chrome Driver Management
+webdriver-manager>=3.8.6
+
+# Data Validation
+pydantic>=2.0.0
+marshmallow>=3.19.0
+
+# Retry Logic and Error Handling
+tenacity>=8.2.2
+
+# Cron Job Management (for scheduling)
+python-crontab>=2.7.1
+
+# Performance Monitoring
+psutil>=5.9.5
+
+# Security (for credential management)
+cryptography>=41.0.1
+keyring>=24.2.0

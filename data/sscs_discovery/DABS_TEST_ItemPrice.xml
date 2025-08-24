@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NAXML_PBIPriceChange xmlns="http://www.naxml.org/POSBO/Vocabulary/2003-10-16">
+  <TransmissionHeader>
+    <StoreLocationID>HILLS_HOLLOWS_BOULDER</StoreLocationID>
+    <VendorZone>ZONE0_GLOBAL</VendorZone>
+    <TransmissionDate>2025-08-21T23:55:57.701043</TransmissionDate>
+    <SourceIdentifier>DABS_AUTOMATION_SYSTEM</SourceIdentifier>
+  </TransmissionHeader>
+  <ItemPriceChange>
+    <ItemID>DABS-056828</ItemID>
+    <ReceiptDescription>BACARDI MOJITO 1750ml</ReceiptDescription>
+    <Price>19.99</Price>
+    <PriceEffectiveDate>2025-08-21</PriceEffectiveDate>
+    <Department>PREMIXED - MISC</Department>
+    <UPC>080480008628</UPC>
+  </ItemPriceChange>
+  <ItemPriceChange>
+    <ItemID>DABS-123456</ItemID>
+    <ReceiptDescription>TEST BEER 12oz</ReceiptDescription>
+    <Price>14.99</Price>
+    <PriceEffectiveDate>2025-08-21</PriceEffectiveDate>
+    <Department>BEER</Department>
+    <UPC>123456789012</UPC>
+  </ItemPriceChange>
+</NAXML_PBIPriceChange>

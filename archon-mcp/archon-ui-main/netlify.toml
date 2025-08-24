@@ -1,0 +1,113 @@
+# Netlify Configuration for Hills & Hollows DABS Frontend
+# This file configures the build and deployment settings for Netlify
+
+[build]
+  # Build settings
+  base = "."
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Node.js version
+  NODE_VERSION = "18"
+  # Build environment
+  NODE_ENV = "production"
+
+# Production environment variables
+[context.production.environment]
+  VITE_API_URL = "https://api.hillsandhollowsmarket.com"
+  VITE_APP_NAME = "Hills & Hollows DABS System"
+  VITE_APP_VERSION = "1.0.0"
+  VITE_ENVIRONMENT = "production"
+
+# Development/preview environment variables  
+[context.deploy-preview.environment]
+  VITE_API_URL = "https://your-app.railway.app"
+  VITE_APP_NAME = "Hills & Hollows DABS System (Preview)"
+  VITE_ENVIRONMENT = "preview"
+
+# Redirects and rewrites
+[[redirects]]
+  # Proxy API calls to Railway backend
+  from = "/api/*"
+  to = "https://api.hillsandhollowsmarket.com/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  # Handle client-side routing (SPA)
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # CORS headers for API communication
+    Access-Control-Allow-Origin = "https://api.hillsandhollowsmarket.com"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"
+
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    # Cache static assets for 1 year
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    # Cache JavaScript files for 1 year
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    # Cache CSS files for 1 year  
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Edge functions (if needed in the future)
+# [[edge_functions]]
+#   function = "auth-check"
+#   path = "/admin/*"
+
+# Form handling (if needed)
+# [forms]
+#   [forms.contact]
+#     action = "/api/contact"
+#     method = "POST"
+
+# Plugin configuration
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+  
+  [plugins.inputs.thresholds]
+    performance = 0.9
+    accessibility = 0.9
+    best-practices = 0.9
+    seo = 0.9
+
+# Build processing
+[build.processing]
+  skip_processing = false
+  
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true

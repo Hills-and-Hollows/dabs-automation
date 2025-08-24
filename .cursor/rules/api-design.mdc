@@ -1,0 +1,89 @@
+---
+globs: src/api/**/*,*.py
+description: RESTful API design principles and integration standards for DABS, SSCS, and QuickBooks
+---
+
+# API DESIGN & INTEGRATION STANDARDS
+RESTful design principles and integration requirements for DABS system
+
+## FASTAPI IMPLEMENTATION STANDARDS
+### Required FastAPI Configuration
+MANDATORY FastAPI setup pattern:
+```python
+from fastapi import FastAPI, HTTPException, Depends, status
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.security import HTTPBearer
+
+app = FastAPI(
+    title="DABS Automation API",
+    description="Utah Package Agency Liquor Inventory Management System",
+    version="1.0.0",
+    docs_url="/api/docs",
+    redoc_url="/api/redoc"
+)
+```
+
+## RESTFUL DESIGN PRINCIPLES
+### Resource Naming Conventions
+MANDATORY resource naming standards:
+```python
+# ✅ CORRECT - Resource-based URLs
+GET /api/v1/products                    # List products
+GET /api/v1/products/{sku}             # Get specific product
+POST /api/v1/products                   # Create new product
+PUT /api/v1/products/{sku}             # Update product
+
+# ❌ WRONG - Verb-based URLs
+GET /api/v1/getProducts                # Don't use verbs
+```
+
+### Request/Response Models
+ENFORCE Pydantic models for ALL endpoints:
+```python
+from pydantic import BaseModel, Field, validator
+from decimal import Decimal
+
+class DABSProductRequest(BaseModel):
+    sku: str = Field(..., regex=r'^[A-Z0-9]{6,12}$')
+    product_name: str = Field(..., min_length=1, max_length=100)
+    retail_price: Decimal = Field(..., gt=0, le=10000, decimal_places=2)
+    category: str = Field(..., min_length=1, max_length=50)
+```
+
+## EXTERNAL API INTEGRATION STANDARDS
+### QuickBooks Integration Performance
+MANDATORY QuickBooks integration with rate limiting:
+```python
+class QuickBooksClient:
+    async def sync_inventory(self, products: List[DABSProduct]):
+        """MANDATORY: Respect 500 requests/minute rate limit"""
+        rate_limiter = AsyncRateLimiter(max_calls=500, time_window=60)
+        
+        for product in products:
+            async with rate_limiter:
+                await self._update_qb_item(product)
+```
+
+### SSCS Integration with Fallback
+MANDATORY SSCS integration pattern:
+```python
+class SSCSIntegrator:
+    async def update_prices(self, products: List[DABSProduct]) -> bool:
+        """Primary API method with file fallback"""
+        try:
+            if self.api_client.is_available():
+                return await self._api_update(products)
+        except SSCSAPIException:
+            # Fallback to file-based integration
+            return await self._file_update(products)
+```
+
+## VIOLATION PREVENTION
+❌ NEVER skip Pydantic model validation for requests/responses
+❌ NEVER hardcode external API URLs or credentials
+❌ NEVER skip rate limiting for external API calls
+❌ NEVER use synchronous code for external API calls
+
+Reference: [docs/TECHNICAL_ARCHITECTURE.md](mdc:docs/TECHNICAL_ARCHITECTURE.md)
+Reference: [src/api/](mdc:src/api/)
+Reference: [requirements.txt](mdc:requirements.txt)
