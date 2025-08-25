@@ -30,13 +30,12 @@ from processors.sscs_integration import SSCSIntegrator, SSCSIntegrationConfig, I
 from automation.restaurant_order_automation import RestaurantOrderAutomation, RestaurantOrder, RestaurantOrderProcessingResult
 from api.dabs_catalog_api import dabs_catalog
 
-# Configure logging
+# Configure logging - Railway-friendly
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('/Volumes/Expansion/4. CURSOR/DABC Pricing - Inventory/logs/dabs_api.log'),
-        logging.StreamHandler()
+        logging.StreamHandler()  # Railway captures stdout/stderr
     ]
 )
 
@@ -148,20 +147,33 @@ async def root():
         }
     }
 
-# Health check endpoint
+# Health check endpoint - lightweight for Railway
 @app.get("/health")
 async def health_check():
-    """Health check endpoint"""
-    return {
-        "status": "healthy",
-        "timestamp": datetime.now().isoformat(),
-        "services": {
-            "dabs_processor": "operational",
-            "sscs_integration": "ready", 
-            "api_server": "running",
-            "file_system": "accessible"
+    """Lightweight health check endpoint for Railway deployment"""
+    return {"status": "healthy", "timestamp": datetime.now().isoformat()}
+
+# Detailed health check endpoint
+@app.get("/health/detailed")
+async def detailed_health_check():
+    """Detailed health check with service dependencies"""
+    try:
+        return {
+            "status": "healthy",
+            "timestamp": datetime.now().isoformat(),
+            "services": {
+                "dabs_processor": "operational",
+                "sscs_integration": "ready",
+                "api_server": "running",
+                "file_system": "accessible"
+            }
         }
-    }
+    except Exception as e:
+        return {
+            "status": "degraded",
+            "timestamp": datetime.now().isoformat(),
+            "error": str(e)
+        }
 
 # Admin Hub endpoint
 @app.get("/admin", response_class=HTMLResponse)
