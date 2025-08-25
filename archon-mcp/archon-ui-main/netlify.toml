@@ -2,9 +2,9 @@
 # This file configures the build and deployment settings for Netlify
 
 [build]
-  # Build settings
-  base = "."
-  command = "npm run build"
+  # Build settings - target frontend directory
+  base = "archon-mcp/archon-ui-main"
+  command = "npm ci && npm run build"
   publish = "dist"
 
 [build.environment]
