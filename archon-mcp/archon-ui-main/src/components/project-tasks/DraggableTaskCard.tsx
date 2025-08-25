@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
 import { Edit, Trash2, RefreshCw, Tag, User, Bot, Clipboard } from 'lucide-react';
 import { Task } from './TaskTableView';
-import { ItemTypes, getAssigneeIcon, getAssigneeGlow, getOrderColor, getOrderGlow } from '../../lib/task-utils';
+import { ItemTypes, getAssigneeIcon, getAssigneeGlow, getOrderColor, getOrderGlow } from '@/lib/task-utils';
 
 export interface DraggableTaskCardProps {
   task: Task;

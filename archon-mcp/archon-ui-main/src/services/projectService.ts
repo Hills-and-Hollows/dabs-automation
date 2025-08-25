@@ -20,7 +20,7 @@ import {
   validateUpdateTask,
   validateUpdateTaskStatus,
   formatValidationErrors
-} from '../lib/projectSchemas';
+} from '@/lib/projectSchemas';
 
 import { dbTaskToUITask, uiStatusToDBStatus } from '../types/project';
 

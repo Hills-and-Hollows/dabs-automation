@@ -4,7 +4,7 @@ import { Check, Trash2, Edit, Tag, User, Bot, Clipboard, Save, Plus } from 'luci
 import { useToast } from '../../contexts/ToastContext';
 import { DeleteConfirmModal } from '../../pages/ProjectPage';
 import { projectService } from '../../services/projectService';
-import { ItemTypes, getAssigneeIcon, getAssigneeGlow, getOrderColor, getOrderGlow } from '../../lib/task-utils';
+import { ItemTypes, getAssigneeIcon, getAssigneeGlow, getOrderColor, getOrderGlow } from '@/lib/task-utils';
 import { DraggableTaskCard } from './DraggableTaskCard';
 
 export interface Task {
