@@ -79,4 +79,5 @@ async def api_status():
 if __name__ == "__main__":
     import uvicorn
     port = int(os.getenv("PORT", 8000))
+    logger.info(f"Starting DABS API on 0.0.0.0:{port}")
     uvicorn.run(app, host="0.0.0.0", port=port)

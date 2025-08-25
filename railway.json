@@ -4,7 +4,7 @@
     "dockerfilePath": "Dockerfile.railway"
   },
   "deploy": {
-    "startCommand": "uvicorn src.api.railway_main:app --host 0.0.0.0 --port $PORT",
+    "startCommand": "python src/api/railway_main.py",
     "healthcheckPath": "/health",
     "healthcheckTimeout": 300,
     "restartPolicyType": "ON_FAILURE",
