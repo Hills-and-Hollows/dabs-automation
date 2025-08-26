@@ -729,7 +729,7 @@
             try {
                 showLoading();
                 
-                let url = '/dabs/catalog/products?limit=100';
+                let url = '/api/dabs/catalog/products?limit=100';
                 if (search) url += `&search=${encodeURIComponent(search)}`;
                 if (category) url += `&category=${encodeURIComponent(category)}`;
                 

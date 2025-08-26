@@ -1,0 +1,151 @@
+<!-- PRODUCTION WordPress Page Content for hillsandhollowsmarket.com/restaurant-orders/ -->
+<!-- Updated for Netlify deployment: dabs-automation.netlify.app -->
+
+<style>
+/* Full-Width Container CSS - Override WordPress Theme Constraints */
+.restaurant-ordering-fullwidth {
+    /* Break out of WordPress content constraints */
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    
+    /* Styling */
+    background: #f8f9fa;
+    padding: 20px 0;
+    position: relative;
+}
+
+.restaurant-ordering-fullwidth .container-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.restaurant-ordering-fullwidth h2 {
+    color: #2c3e50;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.restaurant-ordering-fullwidth p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #34495e;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.restaurant-ordering-fullwidth iframe {
+    width: 100% !important;
+    min-height: 1200px !important;
+    height: 1200px !important;
+    border: none !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    background: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .restaurant-ordering-fullwidth iframe {
+        min-height: 800px !important;
+        height: 800px !important;
+    }
+    
+    .restaurant-ordering-fullwidth h2 {
+        font-size: 1.8em;
+    }
+    
+    .restaurant-ordering-fullwidth .container-inner {
+        padding: 0 15px;
+    }
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .restaurant-ordering-fullwidth iframe {
+        min-height: 1000px !important;
+        height: 1000px !important;
+    }
+}
+</style>
+
+<!-- PRODUCTION Full-Width Container -->
+<div class="restaurant-ordering-fullwidth">
+    <div class="container-inner">
+        <h2>🍽️ Professional Restaurant Order Portal</h2>
+        
+        <p>
+            <strong>🚀 Fully Automated DABS Integration!</strong> Browse 1,244+ DABS products with live pricing, add items to cart, and submit orders instantly.<br>
+            <em>Direct integration with Utah DABS system - No more manual research or PDF forms required!</em>
+        </p>
+        
+        <!-- Full-Screen Access Button -->
+        <div style="text-align: center; margin-bottom: 20px;">
+            <a href="https://dabs-automation.netlify.app/portal" 
+               target="_blank" 
+               style="display: inline-block; background: #007cba; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 14px; margin-right: 10px;">
+                🖥️ Open Full-Screen Version
+            </a>
+            <a href="https://dabs-automation.netlify.app/admin" 
+               target="_blank" 
+               style="display: inline-block; background: #28a745; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 14px;">
+                ⚙️ Admin Dashboard
+            </a>
+        </div>
+    </div>
+    
+    <!-- PRODUCTION Iframe - Points to Netlify deployment -->
+    <iframe 
+        src="https://dabs-automation.netlify.app/src/web_portal/restaurant_portal_wordpress_embed.html" 
+        width="100%" 
+        height="1200px"
+        frameborder="0"
+        loading="lazy"
+        allow="fullscreen"
+        style="width: 100% !important; min-height: 1200px !important;">
+        <p>Your browser doesn't support iframes. 
+           <a href="https://dabs-automation.netlify.app/portal" target="_blank" style="color: #0066cc;">
+           Click here to access the ordering system directly</a>
+        </p>
+    </iframe>
+</div>
+
+<!-- WordPress Theme Override Script -->
+<script>
+// Force full-width on WordPress themes that resist CSS
+document.addEventListener('DOMContentLoaded', function() {
+    const iframe = document.querySelector('.restaurant-ordering-fullwidth iframe');
+    const container = document.querySelector('.restaurant-ordering-fullwidth');
+    
+    if (iframe && container) {
+        // Ensure full width
+        iframe.style.width = '100%';
+        iframe.style.maxWidth = 'none';
+        
+        // Handle responsive height
+        function adjustHeight() {
+            const windowHeight = window.innerHeight;
+            const availableHeight = windowHeight - 100; // Account for header/footer
+            
+            if (window.innerWidth > 768) {
+                iframe.style.height = Math.max(1200, availableHeight) + 'px';
+            } else {
+                iframe.style.height = Math.max(800, availableHeight * 0.9) + 'px';
+            }
+        }
+        
+        // Adjust on load and resize
+        adjustHeight();
+        window.addEventListener('resize', adjustHeight);
+        
+        // Handle iframe load errors
+        iframe.addEventListener('error', function() {
+            console.log('Iframe failed to load, redirecting to direct access');
+            window.open('https://dabs-automation.netlify.app/portal', '_blank');
+        });
+    }
+});
+</script>
