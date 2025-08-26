@@ -1,6 +1,18 @@
 # Netlify Headers Configuration
-# Allow iframe embedding for WordPress integration
+# Restaurant portal specific cache headers - PRIORITY RULES
 
+# For the specific restaurant portal HTML file - 5 minute cache
+/src/web_portal/restaurant_portal_with_catalog.html
+  Cache-Control: public, max-age=300, must-revalidate
+
+# For restaurant portal vanity URLs - no cache
+/restaurant-portal
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/restaurant-portal/*
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# Allow iframe embedding for WordPress integration
 /*
   # Remove X-Frame-Options to allow iframe embedding
   ! X-Frame-Options
