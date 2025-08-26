@@ -693,15 +693,27 @@
 
         async function loadCategories() {
             try {
-                const response = await fetch('./static_catalog.json');
+                console.log('Loading categories from static catalog...');
+                const response = await fetch('/src/web_portal/static_catalog.json');
+                console.log('Categories response status:', response.status);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
                 const data = await response.json();
+                console.log('Categories data loaded:', data);
 
                 if (data.success) {
                     categories = data.categories;
                     populateCategoryFilter();
+                    console.log('Categories populated:', categories);
+                } else {
+                    console.error('Categories data indicates failure:', data);
                 }
             } catch (error) {
                 console.error('Error loading categories:', error);
+                showError('Failed to load product categories. Please refresh the page.');
             }
         }
 
@@ -725,10 +737,18 @@
 
         async function loadProducts(search = '', category = '') {
             try {
+                console.log('Loading products with search:', search, 'category:', category);
                 showLoading();
 
-                const response = await fetch('./static_catalog.json');
+                const response = await fetch('/src/web_portal/static_catalog.json');
+                console.log('Products response status:', response.status);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
                 const data = await response.json();
+                console.log('Products data loaded:', data);
 
                 if (data.success) {
                     // Filter products based on search and category
