@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Catalog Loading</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Catalog Loading Test</h1>
+        <p>This page tests if the static catalog JSON file can be loaded properly.</p>
+        
+        <div id="status"></div>
+        <div id="results"></div>
+        
+        <button onclick="testCatalogLoading()">🔄 Test Catalog Loading</button>
+        <button onclick="testRelativePath()">📁 Test Relative Path</button>
+        <button onclick="testAbsolutePath()">🌐 Test Absolute Path</button>
+    </div>
+
+    <script>
+        function addStatus(message, type = 'info') {
+            const statusDiv = document.getElementById('status');
+            const div = document.createElement('div');
+            div.className = `status ${type}`;
+            div.innerHTML = `<strong>${new Date().toLocaleTimeString()}</strong>: ${message}`;
+            statusDiv.appendChild(div);
+        }
+
+        function showResults(data) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `
+                <h3>📊 Catalog Data</h3>
+                <div class="status success">
+                    <strong>Success!</strong> Loaded ${data.total_found} products
+                </div>
+                <p><strong>Categories:</strong> ${data.categories.join(', ')}</p>
+                <p><strong>Last Updated:</strong> ${data.last_updated}</p>
+                
+                <h4>🍷 Sample Products:</h4>
+                ${data.products.slice(0, 5).map(product => `
+                    <div class="product">
+                        <strong>${product.product_name}</strong> - $${product.price}<br>
+                        <small>SKU: ${product.sku} | Category: ${product.category} | Size: ${product.size}</small>
+                    </div>
+                `).join('')}
+                
+                <details>
+                    <summary>📋 Full JSON Data</summary>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                </details>
+            `;
+        }
+
+        async function testCatalogLoading() {
+            addStatus('🚀 Starting catalog loading test...', 'info');
+            
+            try {
+                // Test both paths
+                await testAbsolutePath();
+                await testRelativePath();
+            } catch (error) {
+                addStatus(`❌ Test failed: ${error.message}`, 'error');
+            }
+        }
+
+        async function testAbsolutePath() {
+            addStatus('🌐 Testing absolute path: /src/web_portal/static_catalog.json', 'info');
+            
+            try {
+                const response = await fetch('/src/web_portal/static_catalog.json');
+                addStatus(`📡 Response status: ${response.status} ${response.statusText}`, response.ok ? 'success' : 'error');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                addStatus(`✅ Absolute path successful! Loaded ${data.products.length} products`, 'success');
+                showResults(data);
+                
+                return data;
+            } catch (error) {
+                addStatus(`❌ Absolute path failed: ${error.message}`, 'error');
+                throw error;
+            }
+        }
+
+        async function testRelativePath() {
+            addStatus('📁 Testing relative path: ./static_catalog.json', 'info');
+            
+            try {
+                const response = await fetch('./static_catalog.json');
+                addStatus(`📡 Response status: ${response.status} ${response.statusText}`, response.ok ? 'success' : 'error');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                addStatus(`✅ Relative path successful! Loaded ${data.products.length} products`, 'success');
+                
+                return data;
+            } catch (error) {
+                addStatus(`❌ Relative path failed: ${error.message}`, 'error');
+                throw error;
+            }
+        }
+
+        // Auto-run test on page load
+        window.addEventListener('load', () => {
+            addStatus('🔧 Page loaded, ready for testing', 'info');
+            testCatalogLoading();
+        });
+    </script>
+</body>
+</html>
