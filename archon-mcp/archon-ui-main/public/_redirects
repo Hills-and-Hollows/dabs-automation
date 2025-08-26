@@ -1,11 +1,11 @@
 # Netlify Redirects for Hills & Hollows DABS Frontend
 # Proxy API calls to Railway backend
-
 # API proxy - redirect all /api/* calls to Railway backend
 /api/*  https://dabs-automation-production.up.railway.app/api/:splat  200
-
 # Health check proxy
 /health  https://dabs-automation-production.up.railway.app/health  200
-
+# Restaurant portal redirects
+/restaurant-portal  /src/web_portal/restaurant_portal_with_catalog.html  200
+/restaurant-portal/*  /src/web_portal/restaurant_portal_with_catalog.html  200
 # SPA fallback - serve index.html for all other routes (client-side routing)
 /*  /index.html  200
