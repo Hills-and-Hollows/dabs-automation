@@ -158,6 +158,58 @@
             color: #718096;
             margin-top: 4px;
         }
+
+        .product-codes {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .product-upc {
+            font-size: 11px;
+            color: #718096;
+            background: #f7fafc;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .product-details {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 6px;
+            align-items: center;
+        }
+
+        .product-packaging {
+            margin-bottom: 8px;
+        }
+
+        .case-info {
+            font-size: 11px;
+            color: #805ad5;
+            background: #faf5ff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .product-pricing {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .unit-price {
+            font-size: 14px;
+            font-weight: 700;
+            color: #38a169;
+        }
+
+        .case-price {
+            font-size: 11px;
+            color: #718096;
+            font-weight: 500;
+        }
         
         .loading {
             text-align: center;
@@ -666,6 +718,39 @@
         let selectedProducts = [];
         let categories = [];
 
+        // Case sizing function based on DABS packaging standards
+        function getCaseSize(product) {
+            const size = product.size?.toLowerCase() || '';
+            const category = product.category?.toLowerCase() || '';
+
+            // Based on Order 233813 packaging analysis
+            if (size.includes('3000ml') || size.includes('3l') || size.includes('3 l')) {
+                return 4; // 3L boxed wines: 4 boxes per case
+            }
+            if (size.includes('1000ml') || size.includes('1l') || size.includes('1 l')) {
+                return 6; // 1L spirits: 6 bottles per case
+            }
+            if (size.includes('750ml') || size.includes('750')) {
+                return 12; // 750ml bottles: 12 per case (spirits, wine, liqueurs)
+            }
+            if (size.includes('500ml') || size.includes('500')) {
+                return 12; // 500ml bottles: 12 per case (craft beer)
+            }
+            if (size.includes('355ml') || size.includes('355') || size.includes('can')) {
+                return 24; // 355ml cans: 24 per case (beer, cider)
+            }
+
+            // Default case sizes by category
+            if (category.includes('beer') || category.includes('cider')) {
+                return 24; // Default for beer/cider
+            }
+            if (category.includes('wine') || category.includes('spirit') || category.includes('liquor')) {
+                return 12; // Default for wine/spirits
+            }
+
+            return 12; // Default case size
+        }
+
         // Order tracking function - sends copy to shawn@owenent.com
         async function sendOrderTracking(actionType, orderData = null, errorInfo = null) {
             try {
@@ -706,16 +791,23 @@ ORDER DETAILS:
 - Order Total: $${orderTotal.toFixed(2)}
 
 PRODUCTS ORDERED:
-${selectedProducts.map((item, index) => `
+${selectedProducts.map((item, index) => {
+    const product = products.find(p => p.sku === item.sku);
+    const caseSize = product ? getCaseSize(product) : 12;
+    const casesNeeded = Math.ceil(item.quantity / caseSize);
+    return `
 ${index + 1}. ${item.product_name}
    - SKU: ${item.sku}
    - UPC: ${item.upc || 'N/A'}
-   - Category: ${item.category}
-   - Size: ${item.size}
-   - Quantity: ${item.quantity}
+   - Category: ${product?.category || 'N/A'}
+   - Size: ${product?.size || 'N/A'}
+   - Case Size: ${caseSize} units per case
+   - Quantity: ${item.quantity} units (${casesNeeded} case${casesNeeded !== 1 ? 's' : ''})
    - Unit Price: $${item.price.toFixed(2)}
+   - Case Price: $${(item.price * caseSize).toFixed(2)}
    - Total: $${(item.price * item.quantity).toFixed(2)}
-`).join('')}
+`;
+}).join('')}
 
 TECHNICAL INFO:
 - Browser: ${navigator.userAgent}
@@ -935,13 +1027,24 @@ ${errorInfo ? `ERROR INFO:\n${errorInfo}` : ''}
             }
 
             grid.innerHTML = filteredProducts.map(product => `
-                <div class="product-card ${isProductSelected(product.sku) ? 'selected' : ''}" 
+                <div class="product-card ${isProductSelected(product.sku) ? 'selected' : ''}"
                      onclick="toggleProductSelection('${product.sku}')">
                     <div class="product-name">${product.product_name}</div>
-                    <div class="product-sku">SKU: ${product.sku}</div>
-                    <div class="product-category">${product.category}</div>
-                    <div class="product-price">$${product.price.toFixed(2)}</div>
-                    ${product.size ? `<div class="product-size">${product.size}</div>` : ''}
+                    <div class="product-codes">
+                        <span class="product-sku">SKU: ${product.sku}</span>
+                        <span class="product-upc">UPC: ${product.upc || 'N/A'}</span>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">${product.category}</span>
+                        ${product.size ? `<span class="product-size">${product.size}</span>` : ''}
+                    </div>
+                    <div class="product-packaging">
+                        <span class="case-info">Case: ${getCaseSize(product)} units</span>
+                    </div>
+                    <div class="product-pricing">
+                        <div class="unit-price">$${product.price.toFixed(2)}/unit</div>
+                        <div class="case-price">$${(product.price * getCaseSize(product)).toFixed(2)}/case</div>
+                    </div>
                 </div>
             `).join('');
         }
@@ -1264,17 +1367,24 @@ ${errorInfo ? `ERROR INFO:\n${errorInfo}` : ''}
                 <table class="invoice-table">
                     <thead>
                         <tr>
-                            <th style="width: 8%;">Item #</th>
-                            <th style="width: 10%;">SKU</th>
-                            <th style="width: 12%;">UPC</th>
-                            <th style="width: 32%;">Product Name</th>
+                            <th style="width: 6%;">Item #</th>
+                            <th style="width: 8%;">SKU</th>
+                            <th style="width: 10%;">UPC</th>
+                            <th style="width: 28%;">Product Name</th>
                             <th style="width: 8%;" class="text-center">Qty</th>
-                            <th style="width: 15%;" class="text-right">Unit Price</th>
-                            <th style="width: 15%;" class="text-right">Total Price</th>
+                            <th style="width: 8%;" class="text-center">Cases</th>
+                            <th style="width: 12%;" class="text-right">Unit Price</th>
+                            <th style="width: 12%;" class="text-right">Case Price</th>
+                            <th style="width: 12%;" class="text-right">Total Price</th>
                         </tr>
                     </thead>
                     <tbody>
-                        ${selectedProducts.map((item, index) => `
+                        ${selectedProducts.map((item, index) => {
+                            const product = products.find(p => p.sku === item.sku);
+                            const caseSize = product ? getCaseSize(product) : 12;
+                            const casesNeeded = Math.ceil(item.quantity / caseSize);
+                            const casePrice = item.price * caseSize;
+                            return `
                             <tr>
                                 <td class="text-center">${index + 1}</td>
                                 <td>${item.sku}</td>
@@ -1282,13 +1392,16 @@ ${errorInfo ? `ERROR INFO:\n${errorInfo}` : ''}
                                 <td>
                                     <strong>${item.product_name}</strong>
                                     <br>
-                                    <small style="color: #718096;">${item.category || 'General'} • ${item.size || 'Standard'}</small>
+                                    <small style="color: #718096;">${product?.category || 'General'} • ${product?.size || 'Standard'} • ${caseSize}/case</small>
                                 </td>
                                 <td class="text-center">${item.quantity}</td>
+                                <td class="text-center">${casesNeeded}</td>
                                 <td class="text-right">$${item.price.toFixed(2)}</td>
+                                <td class="text-right">$${casePrice.toFixed(2)}</td>
                                 <td class="text-right"><strong>$${(item.price * item.quantity).toFixed(2)}</strong></td>
                             </tr>
-                        `).join('')}
+                            `;
+                        }).join('')}
                     </tbody>
                 </table>
                 
