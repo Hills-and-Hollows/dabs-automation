@@ -84,13 +84,13 @@
         
         <!-- Full-Screen Access Button -->
         <div style="text-align: center; margin-bottom: 20px;">
-            <a href="https://dabs-automation.netlify.app/portal" 
-               target="_blank" 
+            <a href="https://dabs-automation.netlify.app/src/web_portal/restaurant_portal_with_catalog.html"
+               target="_blank"
                style="display: inline-block; background: #007cba; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 14px; margin-right: 10px;">
                 🖥️ Open Full-Screen Version
             </a>
-            <a href="https://dabs-automation.netlify.app/admin" 
-               target="_blank" 
+            <a href="https://dabs-automation.netlify.app/src/web_portal/admin_hub.html"
+               target="_blank"
                style="display: inline-block; background: #28a745; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 14px;">
                 ⚙️ Admin Dashboard
             </a>
@@ -98,16 +98,16 @@
     </div>
     
     <!-- PRODUCTION Iframe - Points to Netlify deployment -->
-    <iframe 
-        src="https://dabs-automation.netlify.app/src/web_portal/restaurant_portal_wordpress_embed.html" 
-        width="100%" 
+    <iframe
+        src="https://dabs-automation.netlify.app/src/web_portal/restaurant_portal_with_catalog.html"
+        width="100%"
         height="1200px"
         frameborder="0"
         loading="lazy"
         allow="fullscreen"
         style="width: 100% !important; min-height: 1200px !important;">
-        <p>Your browser doesn't support iframes. 
-           <a href="https://dabs-automation.netlify.app/portal" target="_blank" style="color: #0066cc;">
+        <p>Your browser doesn't support iframes.
+           <a href="https://dabs-automation.netlify.app/src/web_portal/restaurant_portal_with_catalog.html" target="_blank" style="color: #0066cc;">
            Click here to access the ordering system directly</a>
         </p>
     </iframe>
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Handle iframe load errors
         iframe.addEventListener('error', function() {
             console.log('Iframe failed to load, redirecting to direct access');
-            window.open('https://dabs-automation.netlify.app/portal', '_blank');
+            window.open('https://dabs-automation.netlify.app/src/web_portal/restaurant_portal_with_catalog.html', '_blank');
         });
     }
 });
