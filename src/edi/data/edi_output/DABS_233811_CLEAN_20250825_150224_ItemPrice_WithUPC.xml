@@ -1,0 +1,165 @@
+<?xml version="1.0" ?>
+<NAXMLDocument version="1.0">
+  <Header>
+    <VendorID>HILLS_HOLLOWS_LLC</VendorID>
+    <LocationID>BOULDER_UT</LocationID>
+    <DocumentType>ItemPrice</DocumentType>
+    <Timestamp>2025-08-25T15:02:24.802064</Timestamp>
+    <OrderID>233811_CLEAN</OrderID>
+  </Header>
+  <Items>
+    <ItemCount>10</ItemCount>
+    <Item>
+      <PLU>039593</PLU>
+      <ItemName>SUGAR HOUSE VODKA 1750ml</ItemName>
+      <Price>227.94</Price>
+      <Quantity>1</Quantity>
+      <Category>SPIRITS</Category>
+      <Size>1750ml</Size>
+      <UPC format="UPC-A">615260026006</UPC>
+      <VerifoneUPC format="11-digit">61526002600</VerifoneUPC>
+      <UPCVerification>
+        <Confidence>1.00</Confidence>
+        <Sources>utah_abs_price_list</Sources>
+        <Verified>true</Verified>
+      </UPCVerification>
+    </Item>
+    <Item>
+      <PLU>087123</PLU>
+      <ItemName>ARETTE CLASICA BLANCO TEQUILA 1000ml</ItemName>
+      <Price>395.88</Price>
+      <Quantity>1</Quantity>
+      <Category>SPIRITS</Category>
+      <Size>1000ml</Size>
+      <UPC format="UPC-A">234884409929</UPC>
+      <VerifoneUPC format="11-digit">23488440992</VerifoneUPC>
+      <UPCVerification>
+        <Confidence>0.40</Confidence>
+        <Sources>specialized_alcohol_db</Sources>
+        <Verified>false</Verified>
+      </UPCVerification>
+    </Item>
+    <Item>
+      <PLU>523110</PLU>
+      <ItemName>WILLAMETTE VLY PINOT NOIR WL CLST 750ml</ItemName>
+      <Price>299.88</Price>
+      <Quantity>1</Quantity>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <UPC format="UPC-A">234884409929</UPC>
+      <VerifoneUPC format="11-digit">23488440992</VerifoneUPC>
+      <UPCVerification>
+        <Confidence>0.40</Confidence>
+        <Sources>specialized_alcohol_db</Sources>
+        <Verified>false</Verified>
+      </UPCVerification>
+    </Item>
+    <Item>
+      <PLU>580790</PLU>
+      <ItemName>KING ESTATE PINOT GRIS SIGNATURE 750ml</ItemName>
+      <Price>252.96</Price>
+      <Quantity>1</Quantity>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <UPC format="UPC-A">234884409929</UPC>
+      <VerifoneUPC format="11-digit">23488440992</VerifoneUPC>
+      <UPCVerification>
+        <Confidence>0.40</Confidence>
+        <Sources>specialized_alcohol_db</Sources>
+        <Verified>false</Verified>
+      </UPCVerification>
+    </Item>
+    <Item>
+      <PLU>733238</PLU>
+      <ItemName>SEGURA VIUDAS BRUT 750ml</ItemName>
+      <Price>167.88</Price>
+      <Quantity>1</Quantity>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <UPC format="UPC-A">234884409929</UPC>
+      <VerifoneUPC format="11-digit">23488440992</VerifoneUPC>
+      <UPCVerification>
+        <Confidence>0.40</Confidence>
+        <Sources>specialized_alcohol_db</Sources>
+        <Verified>false</Verified>
+      </UPCVerification>
+    </Item>
+    <Item>
+      <PLU>908418</PLU>
+      <ItemName>BUCKLIN BAMBINO ZIN'22 750ml</ItemName>
+      <Price>287.88</Price>
+      <Quantity>1</Quantity>
+      <Category>LIQUOR</Category>
+      <Size>750ml</Size>
+      <UPC format="UPC-A">234884409929</UPC>
+      <VerifoneUPC format="11-digit">23488440992</VerifoneUPC>
+      <UPCVerification>
+        <Confidence>0.40</Confidence>
+        <Sources>specialized_alcohol_db</Sources>
+        <Verified>false</Verified>
+      </UPCVerification>
+    </Item>
+    <Item>
+      <PLU>918761</PLU>
+      <ItemName>POE ROSÉ'23 750ml</ItemName>
+      <Price>251.88</Price>
+      <Quantity>1</Quantity>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <UPC format="UPC-A">234884409929</UPC>
+      <VerifoneUPC format="11-digit">23488440992</VerifoneUPC>
+      <UPCVerification>
+        <Confidence>0.40</Confidence>
+        <Sources>specialized_alcohol_db</Sources>
+        <Verified>false</Verified>
+      </UPCVerification>
+    </Item>
+    <Item>
+      <PLU>918951</PLU>
+      <ItemName>LARCHAGO RIOJA RESERVE 750ml</ItemName>
+      <Price>275.88</Price>
+      <Quantity>1</Quantity>
+      <Category>LIQUOR</Category>
+      <Size>750ml</Size>
+      <UPC format="UPC-A">234884409929</UPC>
+      <VerifoneUPC format="11-digit">23488440992</VerifoneUPC>
+      <UPCVerification>
+        <Confidence>0.40</Confidence>
+        <Sources>specialized_alcohol_db</Sources>
+        <Verified>false</Verified>
+      </UPCVerification>
+    </Item>
+    <Item>
+      <PLU>919829</PLU>
+      <ItemName>LORENZA ROSE 750ml</ItemName>
+      <Price>239.88</Price>
+      <Quantity>1</Quantity>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <UPC format="UPC-A">234884409929</UPC>
+      <VerifoneUPC format="11-digit">23488440992</VerifoneUPC>
+      <UPCVerification>
+        <Confidence>0.40</Confidence>
+        <Sources>specialized_alcohol_db</Sources>
+        <Verified>false</Verified>
+      </UPCVerification>
+    </Item>
+    <Item>
+      <PLU>926272</PLU>
+      <ItemName>HELPER BEER CIRCLE BACK IPA 473ml</ItemName>
+      <Price>108.00</Price>
+      <Quantity>1</Quantity>
+      <Category>BEER</Category>
+      <Size>473ml</Size>
+      <UPC status="not_found">MANUAL_REVIEW_REQUIRED</UPC>
+    </Item>
+  </Items>
+  <Summary>
+    <TotalItems>10</TotalItems>
+    <ItemsWithUPC>9</ItemsWithUPC>
+    <ItemsVerified>1</ItemsVerified>
+    <TotalValue>2508.06</TotalValue>
+    <UPCCoverageRate>90.0%</UPCCoverageRate>
+    <VerificationRate>10.0%</VerificationRate>
+  </Summary>
+</NAXMLDocument>

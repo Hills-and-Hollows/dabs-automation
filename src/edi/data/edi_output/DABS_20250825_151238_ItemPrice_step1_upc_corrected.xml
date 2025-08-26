@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ItemSynch version="2.0" timestamp="2025-08-25T15:12:38.424493Z" vendor="DABS">
+  <VendorInfo>
+    <VendorID>DABS</VendorID>
+    <VendorName>Utah Division of Alcoholic Beverage Control</VendorName>
+    <InvoiceNumber>DABS_20250825_001</InvoiceNumber>
+    <InvoiceDate>2025-08-25</InvoiceDate>
+    <TotalItems>10</TotalItems>
+    <StoreLocationID>HILLS_HOLLOWS_BOULDER</StoreLocationID>
+    <TransmissionDate>2025-08-25</TransmissionDate>
+    <CustomerNumber>6242</CustomerNumber>
+
+    <EDIDeliveryEmail>v6242s1@edidelivery.com</EDIDeliveryEmail>
+  </VendorInfo>
+  <Items>
+    <Item>
+      <PLU>039593</PLU>
+      <ItemName>SUGAR HOUSE VODKA 1750ml</ItemName>
+      <Price>227.94</Price>
+      <Cost>182.35</Cost>
+      <Category>SPIRITS</Category>
+      <Size>1750ml</Size>
+      <VendorItemCode>039593</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>615260026006</UPC>
+      <VerifoneUPC>61526002600</VerifoneUPC>
+      <UPCVerified>true</UPCVerified>
+    <UPCSources>Utah DABS Numeric Price List</UPCSources><UPCStatus>VERIFIED</UPCStatus></Item>
+    <Item>
+      <PLU>087123</PLU>
+      <ItemName>ARETTE CLASICA BLANCO TEQUILA 1000ml</ItemName>
+      <Price>395.88</Price>
+      <Cost>316.70</Cost>
+      <Category>SPIRITS</Category>
+      <Size>1000ml</Size>
+      <VendorItemCode>087123</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>704228011212</UPC>
+      <VerifoneUPC>70422801121</VerifoneUPC>
+      <UPCVerified>true</UPCVerified>
+    <UPCSources>Wine Made Easy, WineTransit, Willow Spirits</UPCSources><UPCStatus>VERIFIED</UPCStatus></Item>
+    <Item>
+      <PLU>523110</PLU>
+      <ItemName>WILLAMETTE VLY PINOT NOIR WL CLST 750ml</ItemName>
+      <Price>299.88</Price>
+      <Cost>239.90</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>523110</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>088534002492</UPC>
+      <UPCVerified>true</UPCVerified>
+      <UPCNote>Verified from BC Liquor Stores, UPCItemDB</UPCNote>
+    <VerifoneUPC>08853400249</VerifoneUPC><UPCSources>BC Liquor Stores, UPCItemDB</UPCSources><UPCStatus>VERIFIED</UPCStatus></Item>
+    <Item>
+      <PLU>580790</PLU>
+      <ItemName>KING ESTATE PINOT GRIS SIGNATURE 750ml</ItemName>
+      <Price>252.96</Price>
+      <Cost>202.37</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>580790</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>768675960127</UPC>
+      <UPCVerified>true</UPCVerified>
+      <UPCNote>Verified from Amazon, Kroger, BC Liquor, Fridley Liquor</UPCNote>
+    <VerifoneUPC>76867596012</VerifoneUPC><UPCSources>Amazon, Kroger, BC Liquor, Fridley Liquor</UPCSources><UPCStatus>VERIFIED</UPCStatus></Item>
+    <Item>
+      <PLU>733238</PLU>
+      <ItemName>SEGURA VIUDAS BRUT 750ml</ItemName>
+      <Price>167.88</Price>
+      <Cost>134.30</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>733238</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>033293690009</UPC>
+      <UPCVerified>true</UPCVerified>
+      <UPCNote>Verified from Target, WineDeals, Liquor Barn, WineMadeEasy</UPCNote>
+    <VerifoneUPC>03329369000</VerifoneUPC><UPCSources>Target, WineDeals, Liquor Barn, WineMadeEasy</UPCSources><UPCStatus>VERIFIED</UPCStatus></Item>
+    <Item>
+      <PLU>908418</PLU>
+      <ItemName>BUCKLIN BAMBINO ZIN'22 750ml</ItemName>
+      <Price>287.88</Price>
+      <Cost>230.30</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>908418</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>000004613947</UPC>
+      <UPCVerified>false</UPCVerified>
+      <UPCNote>Medium confidence - Community source only; seek retail verification or scan on receipt</UPCNote>
+    <VerifoneUPC>00000461394</VerifoneUPC><UPCConfidence>MEDIUM</UPCConfidence><UPCStatus>UNVERIFIED</UPCStatus></Item>
+    <Item>
+      <PLU>918761</PLU>
+      <ItemName>POE ROSÉ'23 750ml</ItemName>
+      <Price>251.88</Price>
+      <Cost>201.50</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>918761</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>PENDING_LOOKUP</UPC>
+      <UPCVerified>false</UPCVerified>
+      <UPCNote>Manual UPC lookup required for DABS code 918761</UPCNote>
+    <UPCStatus>REQUIRES_MANUAL_LOOKUP</UPCStatus></Item>
+    <Item>
+      <PLU>918951</PLU>
+      <ItemName>LARCHAGO RIOJA RESERVE 750ml</ItemName>
+      <Price>275.88</Price>
+      <Cost>220.70</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>918951</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>8427646100864</UPC>
+      <UPCVerified>true</UPCVerified>
+      <UPCNote>Verified from Idaho ABC, PrivateCeller.es, CellarTracker</UPCNote>
+    <VerifoneUPC>842764610086</VerifoneUPC><UPCSources>Idaho ABC, PrivateCeller.es, CellarTracker</UPCSources><UPCStatus>VERIFIED</UPCStatus></Item>
+    <Item>
+      <PLU>919829</PLU>
+      <ItemName>LORENZA ROSE 750ml</ItemName>
+      <Price>239.88</Price>
+      <Cost>191.90</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>919829</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>865866000027</UPC>
+      <UPCVerified>true</UPCVerified>
+      <UPCNote>Verified from Primo Liquors (multiple locations)</UPCNote>
+    <VerifoneUPC>86586600002</VerifoneUPC><UPCSources>Primo Liquors (multiple locations)</UPCSources><UPCStatus>VERIFIED</UPCStatus></Item>
+    <Item>
+      <PLU>926272</PLU>
+      <ItemName>HELPER BEER CIRCLE BACK IPA 473ml</ItemName>
+      <Price>108.00</Price>
+      <Cost>86.40</Cost>
+      <Category>BEER</Category>
+      <Size>473ml</Size>
+      <VendorItemCode>926272</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>PENDING_LOOKUP</UPC>
+      <UPCVerified>false</UPCVerified>
+      <UPCNote>Manual UPC lookup required for DABS code 926272</UPCNote>
+    <UPCStatus>REQUIRES_MANUAL_LOOKUP</UPCStatus></Item>
+  </Items>
+  <InvoiceTotals>
+    <SubTotal>2006.42</SubTotal>
+    <Tax>0.00</Tax>
+    <Total>2006.42</Total>
+    <ItemCount>10</ItemCount>
+    <RetailTotal>2508.06</RetailTotal>
+  </InvoiceTotals>
+  <ProcessingInstructions>
+    <ImportType>ItemPrice</ImportType>
+    <UpdateExisting>true</UpdateExisting>
+    <CreateNew>false</CreateNew>
+    <NotifyOnCompletion>true</NotifyOnCompletion>
+    <UPCCoverage>80.0%</UPCCoverage>
+  </ProcessingInstructions>
+</ItemSynch>

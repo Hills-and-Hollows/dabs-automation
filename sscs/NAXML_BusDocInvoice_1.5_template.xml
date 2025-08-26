@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Clean, vendor-agnostic Conexxus NAXML BusDocInvoice 1.5 template -->
+<!-- IMPORTANT: Do not include example values here. Fill only with production data. -->
+<NAXML-BusDoc
+  xmlns="http://www.naxml.org/Retail-EDI/Vocabulary/2003-10-16"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.naxml.org/Retail-EDI/Vocabulary/2003-10-16 NAXML-BusDocInvoice15.xsd">
+
+  <TransmissionHeader>
+    <!-- REQUIRED: unique ID per file -->
+    <TransmissionId></TransmissionId>
+    <!-- REQUIRED: YYYY-MM-DD -->
+    <TransmissionDate></TransmissionDate>
+    <!-- REQUIRED: HH:MM:SS (24-hour) -->
+    <TransmissionTime></TransmissionTime>
+    <!-- REQUIRED: e.g., original | duplicate | cancel (choose one, do not include examples in value) -->
+    <TransmissionStatus></TransmissionStatus>
+  </TransmissionHeader>
+
+  <Parties>
+    <Supplier>
+      <!-- REQUIRED: supplier legal name -->
+      <Name></Name>
+      <!-- OPTIONAL: supplier identifier -->
+      <OrganizationId ident=""></OrganizationId>
+    </Supplier>
+
+    <Buyer>
+      <!-- REQUIRED: buyer legal name -->
+      <Name></Name>
+      <!-- OPTIONAL: buyer identifier -->
+      <OrganizationId ident=""></OrganizationId>
+    </Buyer>
+
+    <ShipTo ident="">
+      <!-- REQUIRED: ship-to/store display name -->
+      <Name></Name>
+    </ShipTo>
+  </Parties>
+
+  <Invoice>
+    <Location>
+      <!-- REQUIRED: site/store name with stable ident -->
+      <Name ident=""></Name>
+    </Location>
+
+    <!-- REQUIRED: vendor's invoice number -->
+    <InvoiceNumber></InvoiceNumber>
+
+    <!-- REQUIRED: YYYY-MM-DD -->
+    <InvoiceDate></InvoiceDate>
+
+    <!-- REQUIRED: ISO-4217 currency code in 'code' attribute; element can be self-closed -->
+    <Currency code=""/>
+
+    <InvoiceDetail>
+      <!-- REPEAT THIS <LineItem> block per item -->
+      <LineItem>
+        <InvoiceUnit>
+          <!-- REQUIRED: GTIN-14 (left-pad to 14 if starting from UPC-A 12) -->
+          <InvoiceUnitId identType="GTIN"></InvoiceUnitId>
+
+          <!-- REQUIRED: item description -->
+          <InvoiceUnitDescription></InvoiceUnitDescription>
+
+          <!-- REQUIRED: delivered quantity; set the cstoreUOMBasis to the correct unit (e.g., each/case/pack) without examples in value -->
+          <InvoiceUnitQty cstoreUOMBasis=""></InvoiceUnitQty>
+
+          <!-- REQUIRED: unit cost; currency attribute required -->
+          <InvoiceUnitCost currency=""></InvoiceUnitCost>
+
+          <!-- REQUIRED: extended amount before allowances -->
+          <LineItemGrossAmt></LineItemGrossAmt>
+
+          <!-- REQUIRED: net amount after allowances/charges (if none, equals gross) -->
+          <LineItemNetAmt></LineItemNetAmt>
+        </InvoiceUnit>
+
+        <!-- OPTIONAL retail pricing (do not include if unknown) -->
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN"></RetailUnitId>
+          <RetailUnitQty></RetailUnitQty>
+          <RetailPrice currency=""></RetailPrice>
+        </RetailUnitPricing>
+      </LineItem>
+      <!-- /repeat -->
+    </InvoiceDetail>
+
+    <InvoiceSummary>
+      <InvoiceTotals>
+        <!-- REQUIRED: sum of all InvoiceUnitQty values -->
+        <TotalInvoiceUnits></TotalInvoiceUnits>
+        <!-- REQUIRED: currency attribute + sum of LineItemNetAmt -->
+        <TotalLineItemNetAmt currency=""></TotalLineItemNetAmt>
+        <!-- REQUIRED: total taxes on invoice (0 if none) -->
+        <TotalTaxes></TotalTaxes>
+        <!-- REQUIRED: grand total due -->
+        <TotalInvoiceDueAmt currency=""></TotalInvoiceDueAmt>
+      </InvoiceTotals>
+    </InvoiceSummary>
+
+    <Terms>
+      <!-- OPTIONAL/RECOMMENDED: payment terms -->
+      <TermsType ident=""></TermsType>
+      <!-- OPTIONAL/RECOMMENDED: due date YYYY-MM-DD -->
+      <InvoiceDueDate></InvoiceDueDate>
+    </Terms>
+  </Invoice>
+</NAXML-BusDoc>

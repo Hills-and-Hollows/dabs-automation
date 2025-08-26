@@ -37,6 +37,11 @@ class DABSOrderDeletor:
         self.dabs_username = os.getenv("DABS_ORDERING_USERNAME")
         self.dabs_password = os.getenv("DABS_ORDERING_PASSWORD")
         self.auth_storage_path = Path("dabs_auth.json")
+        # Optional: target a specific order id for row-scoped operations
+        self.target_order_id = os.getenv("DABS_ORDER_ID")
+        # Artifacts directory
+        self.artifacts_dir = Path("data/playwright_screenshots")
+        self.artifacts_dir.mkdir(parents=True, exist_ok=True)
 
     async def delete_pending_order(self):
         """Delete the current pending DABS order"""
@@ -57,9 +62,9 @@ class DABSOrderDeletor:
             try:
                 page = await context.new_page()
                 
-                # Navigate to DABS ordering system
+                # Navigate to DABS ordering system home
                 logger.info(f"🌐 Navigating to DABS: {self.dabs_base_url}")
-                await page.goto(self.dabs_base_url)
+                await page.goto(self.dabs_base_url, wait_until='domcontentloaded')
                 await page.wait_for_load_state('networkidle')
                 
                 # Check if we need to login
@@ -67,16 +72,48 @@ class DABSOrderDeletor:
                     logger.info("🔓 Performing DABS login...")
                     await self._perform_login(page)
                 
-                # Look for existing orders
+                # Ensure we're on the Orders page
+                logger.info("🧭 Opening Licensee Orders list...")
+                await page.goto(f"{self.dabs_base_url}Orders", wait_until='domcontentloaded')
+                # Try to wait for a recognizable heading or table; if it times out, still capture DOM for diagnostics
+                try:
+                    await page.wait_for_selector(
+                        "div.tableOpen table tbody tr",
+                        timeout=20000
+                    )
+                except Exception as e:
+                    logger.warning(f"⚠️ Orders page marker not found within timeout: {e}")
+                    try:
+                        await page.screenshot(path=str(self.artifacts_dir / "orders_list_headed.png"))
+                        html_now = await page.content()
+                        (self.artifacts_dir / "orders_list_headed.html").write_text(html_now, encoding='utf-8')
+                    except Exception:
+                        pass
+
+                # Additional headless stabilization: wait for hooks and delete trigger to be available
+                try:
+                    await page.wait_for_function(
+                        "() => document && document.querySelector('div.tableOpen tbody tr') !== null",
+                        timeout=15000
+                    )
+                    await page.wait_for_function(
+                        "() => document.querySelector('div.tableOpen tbody tr a.open-AddDialog.delete') !== null || document.querySelector('a[href=\"#DeleteOrder\"]') !== null",
+                        timeout=15000
+                    )
+                except Exception:
+                    # Not fatal; proceed with retries in finder
+                    pass
+
+                # Look for existing orders and perform deletion (or confirm none exist)
                 logger.info("🔍 Checking for pending orders...")
-                pending_deleted = await self._find_and_delete_pending_order(page)
+                pending_cleared = await self._find_and_delete_pending_order(page)
                 
-                if pending_deleted:
-                    logger.info("✅ Successfully deleted pending DABS order")
-                    return {"success": True, "message": "Pending order deleted successfully"}
+                if pending_cleared:
+                    logger.info("✅ Pending order state is clear (deleted or none present)")
+                    return {"success": True, "message": "Pending order state clear"}
                 else:
-                    logger.info("ℹ️ No pending orders found to delete")
-                    return {"success": True, "message": "No pending orders found"}
+                    logger.error("❌ Pending order still present or page not ready. See artifacts.")
+                    return {"success": False, "error": "pending_order_not_cleared"}
                     
             except Exception as e:
                 logger.error(f"❌ Failed to delete DABS order: {str(e)}")
@@ -91,7 +128,11 @@ class DABSOrderDeletor:
     async def _needs_login(self, page) -> bool:
         """Check if login is required"""
         try:
-            # Look for login form elements
+            # If already on Orders page or title indicates Orders, skip login
+            current_title = (await page.title() or "").strip().lower()
+            if "/OnlineOrders/Orders" in page.url or current_title.startswith("licensee orders"):
+                return False
+            # Look for login form fields
             username_field = await page.query_selector("input[type='text'], input[name*='user'], input[id*='user']")
             password_field = await page.query_selector("input[type='password']")
             return username_field is not None and password_field is not None
@@ -103,21 +144,24 @@ class DABSOrderDeletor:
         try:
             # Fill username
             username_selector = "input[type='text'], input[name*='user'], input[id*='user']"
+            await page.wait_for_selector(username_selector, timeout=20000)
             await page.fill(username_selector, self.dabs_username)
             
             # Fill password  
             password_selector = "input[type='password']"
+            await page.wait_for_selector(password_selector, timeout=20000)
             await page.fill(password_selector, self.dabs_password)
             
             # Click login button
-            login_button = await page.query_selector("input[type='submit'], button[type='submit'], button:has-text('Login')")
-            if login_button:
-                await login_button.click()
+            login_button = await page.wait_for_selector("input[type='submit'], button[type='submit'], button:has-text('Login')", timeout=20000)
+            await login_button.click()
+            # Wait for redirect/readiness after login
+            try:
                 await page.wait_for_load_state('networkidle')
-                logger.info("✅ Login successful")
-            else:
-                raise Exception("Could not find login button")
-                
+                await page.wait_for_selector("#menu nav, a.nav-link, body", timeout=20000)
+            except Exception:
+                pass
+            logger.info("✅ Login successful")
         except Exception as e:
             logger.error(f"❌ Login failed: {str(e)}")
             raise
@@ -126,121 +170,134 @@ class DABSOrderDeletor:
         """Find and delete any pending orders"""
         try:
             # Take a screenshot for debugging
-            await page.screenshot(path="debug_dabs_interface.png")
-            logger.info("📷 Screenshot saved as debug_dabs_interface.png")
+            await page.screenshot(path=str(self.artifacts_dir / "debug_dabs_interface.png"))
+            logger.info("📷 Screenshot saved: debug_dabs_interface.png")
             
             # Print current page HTML for debugging
             page_html = await page.content()
             logger.info(f"🌐 Current page URL: {page.url}")
             logger.info(f"📄 Page title: {await page.title()}")
             
-            # Look for pending order indicators first
-            pending_indicators = await page.query_selector_all("text=pending")
-            if pending_indicators:
-                logger.info(f"⏳ Found {len(pending_indicators)} 'pending' text elements")
+            # Ensure DOM is hydrated in headless before scanning
+            try:
+                await page.wait_for_function(
+                    "() => document && document.querySelector('div.tableOpen tbody tr') !== null",
+                    timeout=10000
+                )
+            except Exception:
+                pass
+
+            # Determine current open order row and id
+            row = None
+            current_order_id = None
+            if self.target_order_id:
+                row = await page.query_selector(f'div.tableOpen tbody tr:has(td:has-text("{self.target_order_id}"))')
+                if row:
+                    current_order_id = self.target_order_id
+                    logger.info(f"🎯 Targeting order row with id {current_order_id}")
+            if row is None:
+                row = await page.query_selector('div.tableOpen tbody tr')
+                if row:
+                    first_td = await row.query_selector('td:nth-child(1)')
+                    if first_td:
+                        current_order_id = (await first_td.text_content() or '').strip()
+                        logger.info(f"🎯 Discovered open order id from page: {current_order_id}")
             
-            # Look for order management elements - try Edit button first (based on successful pattern)
-            edit_buttons = await page.query_selector_all("button:has-text('Edit'), a:has-text('Edit'), input[value*='Edit'], i[data-bs-original-title='Edit']")
-            if edit_buttons:
-                logger.info(f"✏️ Found {len(edit_buttons)} edit option(s)")
-                
-                # Click Edit button first (this is required for DABS order management)
-                edit_button = edit_buttons[0]
-                is_edit_visible = await edit_button.is_visible()
-                logger.info(f"👁️ Edit button visible: {is_edit_visible}")
-                
-                if is_edit_visible:
-                    logger.info("📝 Clicking Edit button to access order management...")
-                    await edit_button.click()
-                    await page.wait_for_load_state('networkidle')
-                    
-                    # Now look for delete options on the edit page
-                    await page.wait_for_timeout(2000)
-                    delete_buttons_edit = await page.query_selector_all("button:has-text('Delete'), a:has-text('Delete'), input[value*='Delete']")
-                    
-                    if delete_buttons_edit:
-                        logger.info(f"🗑️ Found {len(delete_buttons_edit)} delete option(s) on edit page")
-                        delete_button = delete_buttons_edit[0]
-                        is_delete_visible = await delete_button.is_visible()
-                        logger.info(f"👁️ Delete button on edit page visible: {is_delete_visible}")
-                        
-                        if is_delete_visible:
-                            logger.info("🗑️ Clicking Delete button...")
-                            await delete_button.click()
-                            await page.wait_for_timeout(1000)
-                            
-                            # Handle confirmation
-                            confirmation = await page.query_selector("button:has-text('Yes'), button:has-text('Confirm'), button:has-text('OK')")
-                            if confirmation:
-                                logger.info("✔️ Confirming deletion...")
-                                await confirmation.click()
-                                await page.wait_for_load_state('networkidle')
-                                
-                            return True
+            # Helper: click a button and confirm in modal (Delete/Yes/Confirm)
+            async def click_and_confirm_delete():
+                # Wait for Delete modal and click the input submit with value Delete
+                await page.wait_for_selector('#DeleteOrder', timeout=10000)
+                confirm_delete = await page.wait_for_selector(
+                    "#DeleteOrder input[type='submit'][value='Delete']",
+                    timeout=10000
+                )
+                await confirm_delete.click()
+                await page.wait_for_load_state('networkidle')
+
+            # Helper: short retry for a selector
+            async def retry_query(selector: str, attempts: int = 3, delay_ms: int = 800):
+                for i in range(attempts):
+                    el = await page.query_selector(selector)
+                    if el:
+                        return el
+                    await page.wait_for_timeout(delay_ms)
+                return None
+
+            # First attempt: main list row-scoped Delete
+            if row:
+                # The Delete action is an anchor with class 'open-AddDialog delete' that opens the #DeleteOrder modal
+                delete_in_row = await row.query_selector("a.open-AddDialog.delete, a[href='#DeleteOrder']")
+                if delete_in_row and await delete_in_row.is_visible():
+                    logger.info("🗑️ Clicking row-scoped Delete on Orders list...")
+                    await delete_in_row.click()
+                    await click_and_confirm_delete()
+                else:
+                    # Fallback to Edit from the targeted row
+                    edit_in_row = await row.query_selector(
+                        "button:has-text('Edit'), a:has-text('Edit'), input[value*='Edit'], i[data-bs-original-title='Edit']"
+                    )
+                    if edit_in_row:
+                        logger.info("✏️ Opening Edit page from targeted row...")
+                        await edit_in_row.click()
+                        await page.wait_for_load_state('networkidle')
+                        # Try Delete on edit page (same modal trigger link may be present)
+                        delete_on_edit_trigger = await page.wait_for_selector(
+                            "a.open-AddDialog.delete, a[href='#DeleteOrder']",
+                            timeout=10000
+                        )
+                        await delete_on_edit_trigger.click()
+                        await click_and_confirm_delete()
                     else:
-                        logger.info("ℹ️ No delete buttons found on edit page, trying cancel approach...")
-                        
-                        # Look for Cancel buttons (DABS may use cancel instead of delete)
-                        cancel_buttons_edit = await page.query_selector_all("button:has-text('Cancel'), a:has-text('Cancel'), input[value*='Cancel']")
-                        
-                        if cancel_buttons_edit:
-                            logger.info(f"❌ Found {len(cancel_buttons_edit)} cancel option(s) on edit page")
-                            cancel_button = cancel_buttons_edit[0]
-                            is_cancel_visible = await cancel_button.is_visible()
-                            logger.info(f"👁️ Cancel button visible: {is_cancel_visible}")
-                            
-                            if is_cancel_visible:
-                                logger.info("❌ Clicking Cancel button to delete order...")
-                                await cancel_button.click()
-                                await page.wait_for_timeout(1000)
-                                
-                                # Handle confirmation dialog
-                                confirmation = await page.query_selector("button:has-text('Yes'), button:has-text('Confirm'), button:has-text('OK'), button:has-text('Delete')")
-                                if confirmation:
-                                    logger.info("✔️ Confirming order cancellation...")
-                                    await confirmation.click()
-                                    await page.wait_for_load_state('networkidle')
-                                    
-                                return True
-                        
-                        logger.info("ℹ️ No cancel buttons found either")
+                        logger.info("ℹ️ Edit control not found in targeted row; will try global search")
+            else:
+                # No specific id; attempt to locate first pending row's Delete
+                delete_trigger = await retry_query("div.tableOpen tbody tr a.open-AddDialog.delete, a[href='#DeleteOrder']")
+                if delete_trigger:
+                    logger.info("🗑️ Clicking Delete trigger in pending row...")
+                    await delete_trigger.click()
+                    await click_and_confirm_delete()
+                else:
+                    # Try Edit then Delete path
+                    edit_buttons = await page.query_selector_all(
+                        "tr:has-text('Pending') button:has-text('Edit'), tr:has-text('Pending') a:has-text('Edit'), i[data-bs-original-title='Edit']"
+                    )
+                    if edit_buttons:
+                        logger.info("✏️ Opening Edit page from pending row...")
+                        await edit_buttons[0].click()
+                        await page.wait_for_load_state('networkidle')
+                        delete_on_edit_trigger = await page.wait_for_selector(
+                            "a.open-AddDialog.delete, a[href='#DeleteOrder']",
+                            timeout=10000
+                        )
+                        await delete_on_edit_trigger.click()
+                        await click_and_confirm_delete()
+                    else:
+                        logger.info("ℹ️ No Delete or Edit controls found on Orders list")
             
-            # Fallback: Look for common DABS order interface elements on main page
-            delete_buttons = await page.query_selector_all("button:has-text('Delete'), a:has-text('Delete'), input[value*='Delete']")
-            
-            if delete_buttons:
-                logger.info(f"🗑️ Found {len(delete_buttons)} delete option(s) on main page")
-                # Try the original delete approach
-                await delete_buttons[0].click()
-                await page.wait_for_timeout(1000)
-                
-                confirmation = await page.query_selector("button:has-text('Yes'), button:has-text('Confirm'), button:has-text('OK')")
-                if confirmation:
-                    logger.info("✔️ Confirming deletion...")
-                    await confirmation.click()
-                    await page.wait_for_load_state('networkidle')
-                
-                return True
-                
-            # Alternative: Look for "Cancel Order" or similar options
-            cancel_buttons = await page.query_selector_all("button:has-text('Cancel'), a:has-text('Cancel'), input[value*='Cancel']")
-            
-            if cancel_buttons:
-                logger.info(f"❌ Found {len(cancel_buttons)} cancel option(s)")
-                await cancel_buttons[0].click()
-                await page.wait_for_timeout(1000)
-                
-                # Handle confirmation
-                confirmation = await page.query_selector("button:has-text('Yes'), button:has-text('Confirm'), button:has-text('OK')")
-                if confirmation:
-                    logger.info("✔️ Confirming cancellation...")
-                    await confirmation.click()
-                    await page.wait_for_load_state('networkidle')
-                
-                return True
-                
-            logger.info("ℹ️ No delete or cancel options found")
-            return False
+            # Post-condition verification: reload Orders list and assert
+            await page.goto(f"{self.dabs_base_url}Orders")
+            await page.wait_for_load_state('networkidle')
+            # Save artifacts after action
+            await page.screenshot(path=str(self.artifacts_dir / "debug_dabs_interface_after.png"))
+            try:
+                html_after = await page.content()
+                (self.artifacts_dir / "orders_list_after.html").write_text(html_after, encoding='utf-8')
+            except Exception:
+                pass
+
+            if current_order_id:
+                remaining = await page.query_selector(f'div.tableOpen tbody tr:has(td:has-text("{current_order_id}"))')
+                if remaining is not None:
+                    logger.error("❌ Post-check: order row still present after deletion attempt")
+                    return False
+
+            banner = await page.query_selector("text=Pending order must be submitted or deleted before a new order can be created.")
+            if banner is not None:
+                logger.error("❌ Post-check: pending-order banner still present")
+                return False
+
+            logger.info("✅ Post-check passed: order removed and banner gone")
+            return True
             
         except Exception as e:
             logger.error(f"❌ Failed to find/delete pending order: {str(e)}")
@@ -251,7 +308,9 @@ async def main():
     print("🚀 DABS Order Deletion Tool")
     print("=" * 50)
     
-    deletor = DABSOrderDeletor(headless=False)  # Run visible for debugging
+    # Read headless mode from env (default true). Set DABS_HEADLESS=false to run headed diagnostics
+    headless_env = os.getenv("DABS_HEADLESS", "true").lower() in ("1", "true", "yes", "on")
+    deletor = DABSOrderDeletor(headless=headless_env)
     result = await deletor.delete_pending_order()
     
     print("\n" + "=" * 50)

@@ -36,7 +36,7 @@ Sales Team: sales@sscsinc.com
 
 Hills & Hollows Account Information
 Customer Account Details
-Customer Number: #7208 (confirmed from shipping records)
+Customer Number: #6242 (confirmed EDI customer number)
 
 Previous Customer Number: #6242 (historical reference)
 
@@ -137,7 +137,7 @@ Hardware & Equipment
 Current SSCS Hardware
 Primary Computer: Desktop system confirmed in operation
 
-Backup Computer: Ordered February 2023 (Customer #7208 shipment)
+Backup Computer: Ordered February 2023 (Customer #6242 shipment)
 
 Shipping Records:
 

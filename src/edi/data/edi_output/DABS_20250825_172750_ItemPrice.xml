@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ItemSynch version="2.0" timestamp="2025-08-25T15:12:38.424493Z" vendor="DABS">
+  <VendorInfo>
+    <VendorID>DABS</VendorID>
+    <VendorName>Utah Division of Alcoholic Beverage Control</VendorName>
+    <InvoiceNumber>233817</InvoiceNumber>
+    <InvoiceDate>2025-08-25</InvoiceDate>
+    <TotalItems>10</TotalItems>
+    <StoreLocationID>HILLS_HOLLOWS_BOULDER</StoreLocationID>
+    <TransmissionDate>2025-08-25</TransmissionDate>
+    <CustomerNumber>6242</CustomerNumber>
+
+    <EDIDeliveryEmail>v6242s1@edidelivery.com</EDIDeliveryEmail>
+  <DeliveryDate>2025-08-25</DeliveryDate><PurchaseOrderNumber>DABS_PO_20250825_001</PurchaseOrderNumber><Terms>NET30</Terms><BackupContactEmail>shawn@owenent.com</BackupContactEmail><VendorContactPhone>(801) 977-6800</VendorContactPhone><LocationID>01</LocationID><ProcessingStatus>Pending</ProcessingStatus></VendorInfo>
+  <Items>
+    <Item>
+      <PLU>039593</PLU>
+      <ItemName>SUGAR HOUSE VODKA 1750ml</ItemName>
+      <Price>227.94</Price>
+      <Cost>182.35</Cost>
+      <Category>SPIRITS</Category>
+      <Size>1750ml</Size>
+      <VendorItemCode>039593</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>615260026006</UPC>
+      </Item>
+    <Item>
+      <PLU>087123</PLU>
+      <ItemName>ARETTE CLASICA BLANCO TEQUILA 1000ml</ItemName>
+      <Price>395.88</Price>
+      <Cost>316.70</Cost>
+      <Category>SPIRITS</Category>
+      <Size>1000ml</Size>
+      <VendorItemCode>087123</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>704228011212</UPC>
+      </Item>
+    <Item>
+      <PLU>523110</PLU>
+      <ItemName>WILLAMETTE VLY PINOT NOIR WL CLST 750ml</ItemName>
+      <Price>299.88</Price>
+      <Cost>239.90</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>523110</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>088534002492</UPC>
+      </Item>
+    <Item>
+      <PLU>580790</PLU>
+      <ItemName>KING ESTATE PINOT GRIS SIGNATURE 750ml</ItemName>
+      <Price>252.96</Price>
+      <Cost>202.37</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>580790</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>768675960127</UPC>
+      </Item>
+    <Item>
+      <PLU>733238</PLU>
+      <ItemName>SEGURA VIUDAS BRUT 750ml</ItemName>
+      <Price>167.88</Price>
+      <Cost>134.30</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>733238</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>033293690009</UPC>
+      </Item>
+    <Item>
+      <PLU>908418</PLU>
+      <ItemName>BUCKLIN BAMBINO ZIN'22 750ml</ItemName>
+      <Price>287.88</Price>
+      <Cost>230.30</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>908418</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>000004613947</UPC>
+      </Item>
+    <Item>
+      <PLU>918761</PLU>
+      <ItemName>POE ROSÉ'23 750ml</ItemName>
+      <Price>251.88</Price>
+      <Cost>201.50</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>918761</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      </Item>
+    <Item>
+      <PLU>918951</PLU>
+      <ItemName>LARCHAGO RIOJA RESERVE 750ml</ItemName>
+      <Price>275.88</Price>
+      <Cost>220.70</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>918951</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>8427646100864</UPC>
+      </Item>
+    <Item>
+      <PLU>919829</PLU>
+      <ItemName>LORENZA ROSE 750ml</ItemName>
+      <Price>239.88</Price>
+      <Cost>191.90</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>919829</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>865866000027</UPC>
+      </Item>
+    <Item>
+      <PLU>926272</PLU>
+      <ItemName>HELPER BEER CIRCLE BACK IPA 473ml</ItemName>
+      <Price>108.00</Price>
+      <Cost>86.40</Cost>
+      <Category>BEER</Category>
+      <Size>473ml</Size>
+      <VendorItemCode>926272</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      </Item>
+  </Items>
+  <InvoiceTotals>
+    <SubTotal>2006.42</SubTotal>
+    <Tax>0.00</Tax>
+    <Total>2006.42</Total>
+    <ItemCount>10</ItemCount>
+    <RetailTotal>2508.06</RetailTotal>
+  <TotalExtendedCost>2006.42</TotalExtendedCost><TotalExtendedPrice>2508.06</TotalExtendedPrice><TotalMargin>501.64</TotalMargin><OverallMarginPercent>25.0</OverallMarginPercent></InvoiceTotals>
+  <ProcessingInstructions>
+    <ImportType>ItemPrice</ImportType>
+    <UpdateExisting>true</UpdateExisting>
+    <CreateNew>false</CreateNew>
+    <NotifyOnCompletion>true</NotifyOnCompletion>
+    <UPCCoverage>80.0%</UPCCoverage>
+  </ProcessingInstructions>
+<ComplianceInformation><UtahPackageAgencyLicense>PA-539</UtahPackageAgencyLicense><ComplianceOfficer>Tessa Owen</ComplianceOfficer><AuditTrailID>AUDIT_20250825_164511</AuditTrailID><RetentionPeriod>7_YEARS</RetentionPeriod><ComplianceVersion>2025.08</ComplianceVersion><LastAuditDate>2025-08-01</LastAuditDate><NextAuditDue>2026-08-01</NextAuditDue><RegulatoryContact>shawn@owenent.com</RegulatoryContact><ComplianceFramework>UTAH_PACKAGE_AGENCY</ComplianceFramework><DataClassification>REGULATED_ALCOHOL_SALES</DataClassification><PrivacyLevel>BUSINESS_CONFIDENTIAL</PrivacyLevel><AuditFrequency>ANNUAL</AuditFrequency><ComplianceStatus>ACTIVE</ComplianceStatus><LastComplianceReview>2025-08-25</LastComplianceReview><ComplianceNotes>Automated DABS processing with full audit trail</ComplianceNotes><RegulatoryRequirements><MonthlyReporting>REQUIRED</MonthlyReporting><ReportingDeadline>10th_OF_FOLLOWING_MONTH</ReportingDeadline><AuditTrailRetention>7_YEARS</AuditTrailRetention><PriceChangeDocumentation>REQUIRED</PriceChangeDocumentation><InventoryReconciliation>MONTHLY</InventoryReconciliation><ComplianceReporting>AUTOMATED</ComplianceReporting><ErrorToleranceLevel>ZERO_TOLERANCE</ErrorToleranceLevel><DataIntegrityChecks>ENABLED</DataIntegrityChecks><BackupVerification>REQUIRED</BackupVerification></RegulatoryRequirements></ComplianceInformation></ItemSynch>

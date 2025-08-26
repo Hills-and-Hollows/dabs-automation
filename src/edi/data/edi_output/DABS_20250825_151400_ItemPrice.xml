@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ItemSynch version="2.0" timestamp="2025-08-25T15:14:00.635627Z" vendor="DABS">
+  <VendorInfo>
+    <VendorID>DABS</VendorID>
+    <VendorName>Utah Division of Alcoholic Beverage Control</VendorName>
+    <InvoiceNumber>DABS_ORDER_233811</InvoiceNumber>
+    <InvoiceDate>2025-08-25</InvoiceDate>
+    <TotalItems>10</TotalItems>
+    <StoreLocationID>HILLS_HOLLOWS_BOULDER</StoreLocationID>
+    <TransmissionDate>2025-08-25</TransmissionDate>
+  </VendorInfo>
+  <Items>
+    <Item>
+      <PLU>039593</PLU>
+      <ItemName>ARETTE CLASICA BLANCO TEQUILA</ItemName>
+      <Price>395.88</Price>
+      <Cost>296.91</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>039593</VendorItemCode>
+      <LastUpdated>2025-08-25T15:14:00.635627Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>08024400092</UPC>
+    </Item>
+    <Item>
+      <PLU>087123</PLU>
+      <ItemName>WILLAMETTE VLY PINOT NOIR WL</ItemName>
+      <Price>299.88</Price>
+      <Cost>224.91</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>087123</VendorItemCode>
+      <LastUpdated>2025-08-25T15:14:00.635627Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>12345678901</UPC>
+    </Item>
+    <Item>
+      <PLU>523110</PLU>
+      <ItemName>KING ESTATE PINOT GRIS SIGNATURE</ItemName>
+      <Price>252.96</Price>
+      <Cost>189.72</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>523110</VendorItemCode>
+      <LastUpdated>2025-08-25T15:14:00.635627Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>580790</PLU>
+      <ItemName>SEGURA VIUDAS BRUT 750ml - 733238</ItemName>
+      <Price>167.88</Price>
+      <Cost>125.91</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>580790</VendorItemCode>
+      <LastUpdated>2025-08-25T15:14:00.635627Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>908418</PLU>
+      <ItemName>POE ROSÉ'23 750ml - 918761</ItemName>
+      <Price>251.88</Price>
+      <Cost>188.91</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>908418</VendorItemCode>
+      <LastUpdated>2025-08-25T15:14:00.635627Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>918951</PLU>
+      <ItemName>LORENZA ROSE 750ml - 919829</ItemName>
+      <Price>239.88</Price>
+      <Cost>179.91</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>918951</VendorItemCode>
+      <LastUpdated>2025-08-25T15:14:00.635627Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>926272</PLU>
+      <ItemName>Total Quantities: 10 Total Cost:</ItemName>
+      <Price>2508.06</Price>
+      <Cost>1881.05</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>926272</VendorItemCode>
+      <LastUpdated>2025-08-25T15:14:00.635627Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>733238</PLU>
+      <ItemName>SEGURA VIUDAS BRUT 750ml</ItemName>
+      <Price>167.88</Price>
+      <Cost>125.91</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>733238</VendorItemCode>
+      <LastUpdated>2025-08-25T15:14:00.635627Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>918761</PLU>
+      <ItemName>POE ROSÉ'23 750ml</ItemName>
+      <Price>251.88</Price>
+      <Cost>188.91</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>918761</VendorItemCode>
+      <LastUpdated>2025-08-25T15:14:00.635627Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>919829</PLU>
+      <ItemName>LORENZA ROSE 750ml</ItemName>
+      <Price>239.88</Price>
+      <Cost>179.91</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>919829</VendorItemCode>
+      <LastUpdated>2025-08-25T15:14:00.635627Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+  </Items>
+  <InvoiceTotals>
+    <SubTotal>3582.04</SubTotal>
+    <Tax>0.00</Tax>
+    <Total>3582.04</Total>
+    <ItemCount>10</ItemCount>
+    <RetailTotal>4776.06</RetailTotal>
+  </InvoiceTotals>
+</ItemSynch>

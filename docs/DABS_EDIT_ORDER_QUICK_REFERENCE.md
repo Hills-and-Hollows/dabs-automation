@@ -23,8 +23,14 @@ used with tool call `dabs_edit_open_order` from MCP Tools also along with the pl
 
 ### **STEP 1: Click Edit Button** ✏️
 ```python
-# Primary selector from user's HTML element
+# Primary selector from user's HTML element (Edit path)
 await page.click('i.material-icons.blue[data-bs-original-title="Edit"]')
+
+# Delete flow (preferred when asked to delete the open order)
+# 1) On Orders list, click row-scoped Delete trigger
+await page.click('div.tableOpen tbody tr a.open-AddDialog.delete')
+# 2) In modal, confirm Delete (not Cancel)
+await page.click('#DeleteOrder input[type="submit"][value="Delete"]')
 ```
 
 ### **STEP 2: Verify EditOrder Page** 📄

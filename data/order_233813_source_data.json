@@ -1,0 +1,179 @@
+{
+  "order_metadata": {
+    "order_id": "233813",
+    "licensee": "Tessa Barkan - PA-539",
+    "delivery_date": "8/22/2025",
+    "sales_order": "SOO03078391",
+    "store": "Warehouse",
+    "status": "Created",
+    "total_items": 13,
+    "total_cases": 31,
+    "total_cost": 3942.78,
+    "processing_timestamp": "2025-08-26T01:48:47-06:00"
+  },
+  "items": [
+    {
+      "id": "017088",
+      "name": "BULLEIT BOURBON FRONTIER WHISK 750ml",
+      "category": "Spirits",
+      "quantity": 2,
+      "unit_price": 395.88,
+      "total_price": 791.76,
+      "case_size": 12,
+      "unit_cost_per_bottle": 32.99,
+      "container_type": "bottle",
+      "container_size": "750ml"
+    },
+    {
+      "id": "039271",
+      "name": "SUGAR HOUSE VODKA 1000ml",
+      "category": "Spirits",
+      "quantity": 1,
+      "unit_price": 131.94,
+      "total_price": 131.94,
+      "case_size": 6,
+      "unit_cost_per_bottle": 21.99,
+      "container_type": "bottle",
+      "container_size": "1000ml"
+    },
+    {
+      "id": "068838",
+      "name": "ST GERMAIN ELDERFLOWER LIQUEUR 750ml",
+      "category": "Liqueur",
+      "quantity": 1,
+      "unit_price": 221.94,
+      "total_price": 221.94,
+      "case_size": 6,
+      "unit_cost_per_bottle": 36.99,
+      "container_type": "bottle",
+      "container_size": "750ml"
+    },
+    {
+      "id": "087619",
+      "name": "ESPOLON BLANCO TEQUILA 750ml",
+      "category": "Spirits",
+      "quantity": 2,
+      "unit_price": 393.88,
+      "total_price": 787.76,
+      "case_size": 12,
+      "unit_cost_per_bottle": 32.82,
+      "container_type": "bottle",
+      "container_size": "750ml"
+    },
+    {
+      "id": "418330",
+      "name": "MATUA SAUVIGNON BLANC 750ml",
+      "category": "Wine",
+      "quantity": 2,
+      "unit_price": 155.88,
+      "total_price": 311.76,
+      "case_size": 12,
+      "unit_cost_per_bottle": 12.99,
+      "container_type": "bottle",
+      "container_size": "750ml"
+    },
+    {
+      "id": "419951",
+      "name": "19 CRIMES CABERNET SAUVIGNON 750ml",
+      "category": "Wine",
+      "quantity": 3,
+      "unit_price": 155.88,
+      "total_price": 467.64,
+      "case_size": 12,
+      "unit_cost_per_bottle": 12.99,
+      "container_type": "bottle",
+      "container_size": "750ml"
+    },
+    {
+      "id": "445303",
+      "name": "BOTA BOX NIGHTHAWK BLACK RED 3000ml",
+      "category": "Wine",
+      "quantity": 3,
+      "unit_price": 71.97,
+      "total_price": 215.91,
+      "case_size": 4,
+      "unit_cost_per_box": 17.99,
+      "container_type": "box",
+      "container_size": "3000ml"
+    },
+    {
+      "id": "547295",
+      "name": "BOGLE CHARDONNAY 750ml",
+      "category": "Wine",
+      "quantity": 2,
+      "unit_price": 119.88,
+      "total_price": 239.76,
+      "case_size": 12,
+      "unit_cost_per_bottle": 9.99,
+      "container_type": "bottle",
+      "container_size": "750ml"
+    },
+    {
+      "id": "581015",
+      "name": "BOTA BOX PINOT GRIGIO 3000ml",
+      "category": "Wine",
+      "quantity": 3,
+      "unit_price": 71.97,
+      "total_price": 215.91,
+      "case_size": 4,
+      "unit_cost_per_box": 17.99,
+      "container_type": "box",
+      "container_size": "3000ml"
+    },
+    {
+      "id": "917817",
+      "name": "RED ROCK ELEPHINO IPA 500ml",
+      "category": "Beer",
+      "quantity": 4,
+      "unit_price": 48.48,
+      "total_price": 193.92,
+      "case_size": 12,
+      "unit_cost_per_bottle": 4.04,
+      "container_type": "bottle",
+      "container_size": "500ml"
+    },
+    {
+      "id": "927483",
+      "name": "HIGHPOINT TRANSPLANT CIDER 355ml",
+      "category": "Cider",
+      "quantity": 2,
+      "unit_price": 61.20,
+      "total_price": 122.40,
+      "case_size": 24,
+      "unit_cost_per_can": 2.55,
+      "container_type": "can",
+      "container_size": "355ml"
+    },
+    {
+      "id": "989396",
+      "name": "GRAND TETON SWEETGRASS APA 355ml",
+      "category": "Beer",
+      "quantity": 3,
+      "unit_price": 38.88,
+      "total_price": 116.64,
+      "case_size": 24,
+      "unit_cost_per_can": 1.62,
+      "container_type": "can",
+      "container_size": "355ml"
+    },
+    {
+      "id": "989418",
+      "name": "RED ROCK FROHLICH PILS 500ml",
+      "category": "Beer",
+      "quantity": 3,
+      "unit_price": 48.48,
+      "total_price": 145.44,
+      "case_size": 12,
+      "unit_cost_per_bottle": 4.04,
+      "container_type": "bottle",
+      "container_size": "500ml"
+    }
+  ],
+  "validation_checksum": {
+    "total_items": 13,
+    "total_cases": 31,
+    "calculated_total": 3942.78,
+    "source_total": 3942.78,
+    "validation_passed": true
+  }
+}

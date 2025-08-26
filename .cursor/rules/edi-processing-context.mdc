@@ -1,0 +1,37 @@
+---
+description: EDI processing workflow and SSCS integration context
+globs: src/edi/**,scripts/*edi*,**/DABS_*.xml
+---
+
+# EDI PROCESSING CONTEXT RULE
+
+## CURRENT STATUS
+- **Proven Format**: Conexxus BusDocInvoice (NAXML Invoice 1.5)
+- **Successful Orders**: 233817 (processed by SSCS), 233808 (ready)
+- **SSCS Confirmation**: Email delivery officially supported per Raymond Lugo
+
+## KEY FILES
+- **Conversion**: [convert_itemsynch_to_busdocinvoice.py](mdc:scripts/convert_itemsynch_to_busdocinvoice.py)
+- **Validation**: [validate_busdocinvoice_compliance.py](mdc:scripts/validate_busdocinvoice_compliance.py)
+- **Formatting**: [fix_busdocinvoice_formatting.py](mdc:scripts/fix_busdocinvoice_formatting.py)
+- **Current Order**: [DABS_20250825_184407_ItemPrice.xml](mdc:src/edi/data/edi_output/DABS_20250825_184407_ItemPrice.xml)
+
+## SSCS REQUIREMENTS
+- **Format**: NAXML Invoice 1.5 schema
+- **Namespace**: `xmlns="http://www.naxml.org/Retail-EDI/Vocabulary/2003-10-16"`
+- **Delivery**: Email to v6242s1@edidelivery.com
+- **Elements**: InvoiceNumber, InvoiceDate, LineItems with GTINs
+
+## PROVEN WORKFLOW
+1. Extract order data from PDF
+2. Convert ItemSynch → BusDocInvoice
+3. Fix formatting and GTINs
+4. Validate compliance (100% required)
+5. Add namespace declarations
+6. Deliver via email
+
+## VALIDATION REQUIREMENTS
+- All GTINs must pass Mod10 check digit validation
+- No summary data in LineItem elements
+- Currency attributes on all monetary fields
+- 100% compliance score required

@@ -23,14 +23,14 @@ This is **NOT a request for help** - this is **notification that we're ready to 
 
 ### **Subject Line**
 ```
-URGENT: Hills & Hollows LLC (#7208) - Technical Integration Configuration Required - SYSTEM READY FOR DEPLOYMENT
+URGENT: Hills & Hollows LLC (#6242) - Technical Integration Configuration Required - SYSTEM READY FOR DEPLOYMENT
 ```
 
 ### **Email Content**
 
 **Dear SSCS Technical Team,**
 
-Hills & Hollows LLC (Customer #7208) has **completed development** of our automated DABS price update system and requires your technical configuration details for immediate integration with your SSCS system.
+Hills & Hollows LLC (Customer #6242) has **completed development** of our automated DABS price update system and requires your technical configuration details for immediate integration with your SSCS system.
 
 **🚀 OUR SYSTEM STATUS - COMPLETE AND READY:**
 
@@ -131,7 +131,7 @@ Please respond with:
 - **Primary Contact**: [Your Name/Title]
 - **Phone**: [Your Phone]
 - **Email**: [Your Email]
-- **Customer Account**: Hills & Hollows LLC (#7208)
+- **Customer Account**: Hills & Hollows LLC (#6242)
 
 We are ready to implement immediately upon receiving your configuration details.
 
@@ -152,7 +152,7 @@ Boulder, Utah Package Agency
 **Call**: (831) 755-1800 (Technical Support)
 
 **Script:**
-> "Hi, this is [Name] from Hills & Hollows LLC, customer #7208 in Boulder, Utah. We've completed development of our automated DABS price update system and need technical configuration details to integrate with your SSCS system. We have NAXML ItemSynch capability ready and can integrate via file upload, API, or database - we just need to know your preferred method and configuration details. This is urgent as we have staff working overtime on manual processing that we can eliminate immediately once configured. Can you connect me with your technical integration team?"
+> "Hi, this is [Name] from Hills & Hollows LLC, customer #6242 in Boulder, Utah. We've completed development of our automated DABS price update system and need technical configuration details to integrate with your SSCS system. We have NAXML ItemSynch capability ready and can integrate via file upload, API, or database - we just need to know your preferred method and configuration details. This is urgent as we have staff working overtime on manual processing that we can eliminate immediately once configured. Can you connect me with your technical integration team?"
 
 ### **Secondary Contacts**
 - **Sales Team**: (800) 972-7727, sales@sscsinc.com
@@ -169,7 +169,7 @@ Boulder, Utah Package Agency
 
 ### **Day 2: Escalation (if needed)**
 - Contact sales team for technical team connection
-- Reference customer account #7208
+- Reference customer account #6242
 - Emphasize business urgency and system readiness
 
 ### **Day 3: Alternative Approach (if needed)**

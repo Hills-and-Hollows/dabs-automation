@@ -1,0 +1,333 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ItemSynch version="2.0" timestamp="2025-08-25T15:15:25.405620Z" vendor="DABS">
+  <VendorInfo>
+    <VendorID>DABS</VendorID>
+    <VendorName>Utah Division of Alcoholic Beverage Control</VendorName>
+    <InvoiceNumber>DABS_ORDER_233817</InvoiceNumber>
+    <InvoiceDate>2025-08-25</InvoiceDate>
+    <TotalItems>26</TotalItems>
+    <StoreLocationID>HILLS_HOLLOWS_BOULDER</StoreLocationID>
+    <TransmissionDate>2025-08-25</TransmissionDate>
+  </VendorInfo>
+  <Items>
+    <Item>
+      <PLU>771160</PLU>
+      <ItemName>SIERRA NEVADA TORPEDO EXTRA IP</ItemName>
+      <Price>57.36</Price>
+      <Cost>43.02</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>771160</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>907923</PLU>
+      <ItemName>BARTON VODKA 1750ml - 035318</ItemName>
+      <Price>65.94</Price>
+      <Cost>49.45</Cost>
+      <Category>SPIRITS</Category>
+      <Size>1750ml</Size>
+      <VendorItemCode>907923</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>088548</PLU>
+      <ItemName>WOODCHUCK HARD CIDER</ItemName>
+      <Price>60.00</Price>
+      <Cost>45.00</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>088548</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>900888</PLU>
+      <ItemName>COINTREAU LIQUEUR 750ml - 064776</ItemName>
+      <Price>503.88</Price>
+      <Cost>377.91</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>900888</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>901977</PLU>
+      <ItemName>VENDANGE PINOT GRIGIO 500ml -</ItemName>
+      <Price>71.88</Price>
+      <Cost>53.91</Cost>
+      <Category>WINE</Category>
+      <Size>500ml</Size>
+      <VendorItemCode>901977</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>633746</PLU>
+      <ItemName>NATTY DADDY 355 ml - 918885</ItemName>
+      <Price>16.35</Price>
+      <Cost>12.26</Cost>
+      <Category>SPIRITS</Category>
+      <Size>355 ml</Size>
+      <VendorItemCode>633746</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>015626</PLU>
+      <ItemName>BLACK BOX CABERNET 3000ml -</ItemName>
+      <Price>137.94</Price>
+      <Cost>103.45</Cost>
+      <Category>WINE</Category>
+      <Size>3000ml</Size>
+      <VendorItemCode>015626</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>402913</PLU>
+      <ItemName>OSKAR BLUES DALES PALE ALE 355ml</ItemName>
+      <Price>48.96</Price>
+      <Cost>36.72</Cost>
+      <Category>BEER</Category>
+      <Size>355ml</Size>
+      <VendorItemCode>402913</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>949961</PLU>
+      <ItemName>ELYSIAN SPACE DUST IPA 355 ml -</ItemName>
+      <Price>63.60</Price>
+      <Cost>47.70</Cost>
+      <Category>BEER</Category>
+      <Size>355 ml</Size>
+      <VendorItemCode>949961</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>918765</PLU>
+      <ItemName>VENDANGE CABERNET SAUVIGNON</ItemName>
+      <Price>71.88</Price>
+      <Cost>53.91</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>918765</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>518328</PLU>
+      <ItemName>VENDANGE CHARDONNAY 500ml -</ItemName>
+      <Price>71.88</Price>
+      <Cost>53.91</Cost>
+      <Category>WINE</Category>
+      <Size>500ml</Size>
+      <VendorItemCode>518328</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>429149</PLU>
+      <ItemName>HOUSE WINE SAUVIGNON BLANC</ItemName>
+      <Price>91.96</Price>
+      <Cost>68.97</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>429149</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>575558</PLU>
+      <ItemName>BOTA BOX PINOT NOIR 3000ml -</ItemName>
+      <Price>71.97</Price>
+      <Cost>53.98</Cost>
+      <Category>WINE</Category>
+      <Size>3000ml</Size>
+      <VendorItemCode>575558</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>955363</PLU>
+      <ItemName>JACK DANIELS BLACK LABEL 750ml -</ItemName>
+      <Price>323.88</Price>
+      <Cost>242.91</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>955363</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>026826</PLU>
+      <ItemName>NEW BELGIUM VOO RANGER IPA</ItemName>
+      <Price>49.20</Price>
+      <Cost>36.90</Cost>
+      <Category>BEER</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>026826</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>947400</PLU>
+      <ItemName>CROWN ROYAL REGAL APPLE 750ml -</ItemName>
+      <Price>359.88</Price>
+      <Cost>269.91</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>947400</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>010807</PLU>
+      <ItemName>SAUZA HACIENDA GOLD 750ml -</ItemName>
+      <Price>191.88</Price>
+      <Cost>143.91</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>010807</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>089786</PLU>
+      <ItemName>ROHA THURSDAY IPA 355 ml - 918785</ItemName>
+      <Price>54.00</Price>
+      <Cost>40.50</Cost>
+      <Category>BEER</Category>
+      <Size>355 ml</Size>
+      <VendorItemCode>089786</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>771166</PLU>
+      <ItemName>Total Quantities: 37 Total Cost:</ItemName>
+      <Price>3918.65</Price>
+      <Cost>2938.99</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>771166</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>652230</PLU>
+      <ItemName>DAY OWL ROSE 750ml</ItemName>
+      <Price>155.88</Price>
+      <Cost>116.91</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>652230</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>035318</PLU>
+      <ItemName>BARTON VODKA 1750ml</ItemName>
+      <Price>65.94</Price>
+      <Cost>49.45</Cost>
+      <Category>SPIRITS</Category>
+      <Size>1750ml</Size>
+      <VendorItemCode>035318</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>064776</PLU>
+      <ItemName>COINTREAU LIQUEUR 750ml</ItemName>
+      <Price>503.88</Price>
+      <Cost>377.91</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>064776</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>918885</PLU>
+      <ItemName>NATTY DADDY 355 ml</ItemName>
+      <Price>16.35</Price>
+      <Cost>12.26</Cost>
+      <Category>SPIRITS</Category>
+      <Size>355 ml</Size>
+      <VendorItemCode>918885</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>035929</PLU>
+      <ItemName>FIVE WIVES VODKA 750ml</ItemName>
+      <Price>191.88</Price>
+      <Cost>143.91</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>035929</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>918785</PLU>
+      <ItemName>ROHA THURSDAY IPA 355 ml</ItemName>
+      <Price>54.00</Price>
+      <Cost>40.50</Cost>
+      <Category>BEER</Category>
+      <Size>355 ml</Size>
+      <VendorItemCode>918785</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>989177</PLU>
+      <ItemName>ICEHOUSE BEER 355ml</ItemName>
+      <Price>17.82</Price>
+      <Cost>13.37</Cost>
+      <Category>BEER</Category>
+      <Size>355ml</Size>
+      <VendorItemCode>989177</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:25.405620Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+  </Items>
+  <InvoiceTotals>
+    <SubTotal>5427.63</SubTotal>
+    <Tax>0.00</Tax>
+    <Total>5427.63</Total>
+    <ItemCount>26</ItemCount>
+    <RetailTotal>7236.84</RetailTotal>
+  </InvoiceTotals>
+</ItemSynch>

@@ -1,0 +1,38 @@
+---
+alwaysApply: true
+description: Response formatting and business value communication guidelines
+---
+
+# CONCISE RESPONSE FORMATTING RULE
+
+## MANDATORY RESPONSE STYLE
+- **Direct and focused**: Eliminate verbose explanations
+- **Minimal words**: Use least words while maintaining clarity
+- **Citations over repetition**: Reference files instead of repeating content
+- **No business value repetition**: User is aware of $28,000 annual value, 90% time reduction, etc.
+
+## REQUIRED ELEMENTS
+- ✅ **File links**: Always provide clickable [filename](mdc:path/to/file) links
+- ✅ **Context citations**: Reference documents instead of restating
+- ✅ **Technical details**: Include specific implementation details
+- ✅ **Status indicators**: Use clear ✅/❌/⚠️ status markers
+
+## FORBIDDEN ELEMENTS
+- ❌ **Business value repetition**: No mentions of time savings, cost benefits, automation value
+- ❌ **Verbose explanations**: No lengthy background context
+- ❌ **Redundant summaries**: No restating of known project goals
+- ❌ **Marketing language**: No "breakthrough," "game-changing," etc.
+
+## EXAMPLE FORMAT
+```
+## STATUS: ✅ READY
+
+**File**: [DABS_20250825_184407_ItemPrice.xml](mdc:src/edi/data/edi_output/DABS_20250825_184407_ItemPrice.xml)
+
+**Compliance**: 100% (75/75 checks) per [validation](mdc:scripts/validate_busdocinvoice_compliance.py)
+
+**Ready for**: v6242s1@edidelivery.com delivery
+```
+
+## IMPLEMENTATION
+Apply to all responses immediately. Focus on actionable information with minimal context.

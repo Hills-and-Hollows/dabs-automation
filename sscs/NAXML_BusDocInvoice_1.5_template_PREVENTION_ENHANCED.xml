@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ORDER 233808 PREVENTION ENHANCED: Conexxus NAXML BusDocInvoice 1.5 template -->
+<!-- CRITICAL: This template incorporates all Order 233808 prevention measures -->
+<!-- IMPORTANT: Do not include example values here. Fill only with production data. -->
+<NAXML-BusDoc
+  xmlns="http://www.naxml.org/Retail-EDI/Vocabulary/2003-10-16"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.naxml.org/Retail-EDI/Vocabulary/2003-10-16 NAXML-BusDocInvoice15.xsd">
+
+  <TransmissionHeader>
+    <!-- REQUIRED: unique ID per file - PREVENTION: Include order reference for traceability -->
+    <TransmissionId></TransmissionId>
+    <!-- REQUIRED: YYYY-MM-DD -->
+    <TransmissionDate></TransmissionDate>
+    <!-- REQUIRED: HH:MM:SS (24-hour) -->
+    <TransmissionTime></TransmissionTime>
+    <!-- REQUIRED: e.g., original | duplicate | cancel (choose one, do not include examples in value) -->
+    <TransmissionStatus></TransmissionStatus>
+  </TransmissionHeader>
+
+  <Parties>
+    <Supplier>
+      <!-- REQUIRED: supplier legal name -->
+      <Name></Name>
+      <!-- OPTIONAL: supplier identifier -->
+      <OrganizationId ident=""></OrganizationId>
+    </Supplier>
+
+    <Buyer>
+      <!-- REQUIRED: buyer legal name -->
+      <Name></Name>
+      <!-- OPTIONAL: buyer identifier -->
+      <OrganizationId ident=""></OrganizationId>
+    </Buyer>
+
+    <ShipTo ident="">
+      <!-- REQUIRED: ship-to/store display name -->
+      <Name></Name>
+    </ShipTo>
+  </Parties>
+
+  <Invoice>
+    <Location>
+      <!-- REQUIRED: site/store name with stable ident -->
+      <Name ident=""></Name>
+      <!-- PREVENTION ENHANCED: Store identification for Utah Package Agency compliance.
+           Use buyer-assigned site identifier (store code) for accurate SSCS mapping.
+           This element is CRITICAL for preventing delivery failures and ensuring
+           proper inventory allocation in multi-location scenarios. -->
+      <OrganizationId identType="StoreNumber" assignedBy="Buyer"></OrganizationId>
+    </Location>
+
+    <!-- REQUIRED: vendor's invoice number - PREVENTION: Must match source document exactly -->
+    <InvoiceNumber></InvoiceNumber>
+
+    <!-- REQUIRED: YYYY-MM-DD -->
+    <InvoiceDate></InvoiceDate>
+
+    <!-- REQUIRED: ISO-4217 currency code in 'code' attribute; element can be self-closed -->
+    <Currency code=""/>
+
+    <InvoiceDetail>
+      <!-- REPEAT THIS <LineItem> block per item -->
+      <!-- PREVENTION CRITICAL: Each LineItem must be validated against source data -->
+      <LineItem>
+        <InvoiceUnit>
+          <!-- REQUIRED: GTIN-14 (left-pad to 14 if starting from UPC-A 12) -->
+          <!-- PREVENTION: UPC must be verified through multi-source validation -->
+          <InvoiceUnitId identType="GTIN"></InvoiceUnitId>
+
+          <!-- PREVENTION ENHANCED: Vendor item number for DABS-to-SSCS mapping.
+               This element is CRITICAL for preventing EDI delivery failures.
+               Include the vendor item code, PLU, or DABS product code used in your
+               system to facilitate cross-reference between the invoice and SSCS
+               inventory master. This prevents the "item not found" errors that
+               cause delivery failures. For DABS orders, use the DABS SKU code. -->
+          <VendorItemCode></VendorItemCode>
+
+          <!-- REQUIRED: item description - PREVENTION: Must match source exactly -->
+          <InvoiceUnitDescription></InvoiceUnitDescription>
+
+          <!-- REQUIRED: delivered quantity; set the cstoreUOMBasis to the correct unit -->
+          <!-- PREVENTION CRITICAL: Case-to-unit conversion validation required -->
+          <InvoiceUnitQty cstoreUOMBasis=""></InvoiceUnitQty>
+
+          <!-- PREVENTION FRAMEWORK: CASE-TO-UNIT CONVERSION REQUIREMENTS
+               
+               CRITICAL FOR UTAH DABS COMPLIANCE:
+               Utah Package Agency requires individual unit reporting, not case quantities.
+               
+               CONVERSION PROCESS (MANDATORY):
+               1. Identify case size from DABS product data
+               2. Convert case quantity to individual units
+               3. Adjust unit cost accordingly (case_cost / case_size)
+               4. Validate mathematical integrity (total_cost preserved)
+               
+               EXAMPLE CONVERSION:
+               - DABS Order: 1 case of 12 bottles at $120.00 case cost
+               - Convert to: 12 units at $10.00 unit cost
+               - Validation: 1 × $120.00 = 12 × $10.00 ✓
+               
+               PREVENTION MEASURES:
+               - Source data validation: Verify case size accuracy
+               - Mathematical integrity: Ensure total cost preservation
+               - Audit trail: Log all conversions for Utah compliance
+               - Error detection: Alert on unusual conversion ratios
+               
+               This conversion prevents pricing errors like those in Order 233808
+               where case/unit mismatches caused $1026.72 vs $449.55 discrepancies. -->
+
+          <!-- REQUIRED: unit cost; currency attribute required -->
+          <!-- PREVENTION: Must reflect case-to-unit conversion if applicable -->
+          <InvoiceUnitCost currency=""></InvoiceUnitCost>
+
+          <!-- REQUIRED: extended amount before allowances -->
+          <!-- PREVENTION: Mathematical validation required -->
+          <LineItemGrossAmt></LineItemGrossAmt>
+
+          <!-- REQUIRED: net amount after allowances/charges (if none, equals gross) -->
+          <!-- PREVENTION: Must equal InvoiceUnitCost × InvoiceUnitQty -->
+          <LineItemNetAmt></LineItemNetAmt>
+        </InvoiceUnit>
+
+        <!-- OPTIONAL retail pricing (do not include if unknown) -->
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN"></RetailUnitId>
+          <RetailUnitQty></RetailUnitQty>
+          <RetailPrice currency=""></RetailPrice>
+        </RetailUnitPricing>
+      </LineItem>
+      <!-- /repeat -->
+    </InvoiceDetail>
+
+    <InvoiceSummary>
+      <InvoiceTotals>
+        <!-- REQUIRED: sum of all InvoiceUnitQty values -->
+        <!-- PREVENTION: Must equal sum of all line quantities -->
+        <TotalInvoiceUnits></TotalInvoiceUnits>
+        <!-- REQUIRED: currency attribute + sum of LineItemNetAmt -->
+        <!-- PREVENTION: Mathematical validation against line items required -->
+        <TotalLineItemNetAmt currency=""></TotalLineItemNetAmt>
+        <!-- REQUIRED: total taxes on invoice (0 if none) -->
+        <TotalTaxes></TotalTaxes>
+        <!-- REQUIRED: grand total due -->
+        <!-- PREVENTION: Must equal TotalLineItemNetAmt + TotalTaxes -->
+        <TotalInvoiceDueAmt currency=""></TotalInvoiceDueAmt>
+      </InvoiceTotals>
+    </InvoiceSummary>
+
+    <Terms>
+      <!-- OPTIONAL/RECOMMENDED: payment terms -->
+      <TermsType ident=""></TermsType>
+      <!-- OPTIONAL/RECOMMENDED: due date YYYY-MM-DD -->
+      <InvoiceDueDate></InvoiceDueDate>
+    </Terms>
+  </Invoice>
+</NAXML-BusDoc>
+
+<!-- ORDER 233808 PREVENTION VALIDATION CHECKLIST:
+     
+     ✅ SOURCE DATA VALIDATION:
+     - All items from source document included
+     - No items lost during extraction (prevent Crown Royal + Squatters scenario)
+     - Mathematical totals match source document exactly
+     
+     ✅ CASE-TO-UNIT CONVERSION:
+     - Case quantities converted to individual units for Utah compliance
+     - Unit costs adjusted proportionally
+     - Total cost preserved through conversion
+     
+     ✅ VENDOR ITEM MAPPING:
+     - VendorItemCode populated for all items
+     - DABS SKU codes included for SSCS cross-reference
+     - Mapping validated against SSCS inventory master
+     
+     ✅ UPC VERIFICATION:
+     - All GTINs verified through multi-source validation
+     - Check digits validated using GS1 Mod-10 algorithm
+     - UPC format compliance (14-digit GTIN) confirmed
+     
+     ✅ MATHEMATICAL INTEGRITY:
+     - LineItemNetAmt = InvoiceUnitCost × InvoiceUnitQty
+     - TotalLineItemNetAmt = Sum of all LineItemNetAmt
+     - TotalInvoiceDueAmt = TotalLineItemNetAmt + TotalTaxes
+     
+     ✅ SSCS COMPATIBILITY:
+     - BusDocInvoice format (not ItemSynch)
+     - Proper namespace declarations
+     - Required elements populated
+     - Optional elements used for enhanced mapping
+     
+     ✅ UTAH COMPLIANCE:
+     - 7-year audit trail capability
+     - Complete transaction traceability
+     - Package Agency reporting requirements met
+     - Individual unit reporting (not case quantities)
+-->

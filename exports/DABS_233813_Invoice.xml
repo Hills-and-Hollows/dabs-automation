@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ItemSynch version="2.0" timestamp="2025-08-26T01:49:46.717068Z" vendor="DABS">
+  <VendorInfo>
+    <VendorID>DABS</VendorID>
+    <VendorName>Utah Division of Alcoholic Beverage Control</VendorName>
+    <InvoiceNumber>DABS_20250826_014946</InvoiceNumber>
+    <InvoiceDate>2025-08-26</InvoiceDate>
+    <TotalItems>13</TotalItems>
+  </VendorInfo>
+  <Items>
+    <Item>
+      <PLU>017086</PLU>
+      <ItemName>BULLEIT BOURBON FRONTIER WHISK 750ml</ItemName>
+      <Price>32.99</Price>
+      <Cost>23.09</Cost>
+      <Category>Spirits</Category>
+      <VendorItemCode>DABS_017086</VendorItemCode>
+    </Item>
+    <Item>
+      <PLU>039271</PLU>
+      <ItemName>SUGAR HOUSE VODKA 1000ml</ItemName>
+      <Price>21.99</Price>
+      <Cost>15.39</Cost>
+      <Category>Spirits</Category>
+      <VendorItemCode>SH-VODKA-1000</VendorItemCode>
+    </Item>
+    <Item>
+      <PLU>068836</PLU>
+      <ItemName>ST GERMAIN ELDERFLOWER LIQUEUR 750ml</ItemName>
+      <Price>18.50</Price>
+      <Cost>12.95</Cost>
+      <Category>Liqueur</Category>
+      <VendorItemCode>STG-ELDER-750</VendorItemCode>
+    </Item>
+    <Item>
+      <PLU>087619</PLU>
+      <ItemName>ESPOLON BLANCO TEQUILA 750ml</ItemName>
+      <Price>32.82</Price>
+      <Cost>22.97</Cost>
+      <Category>Spirits</Category>
+      <VendorItemCode>DABS_087619</VendorItemCode>
+    </Item>
+    <Item>
+      <PLU>418330</PLU>
+      <ItemName>MATUA SAUVIGNON BLANC 750ml</ItemName>
+      <Price>12.99</Price>
+      <Cost>9.09</Cost>
+      <Category>Wine</Category>
+      <VendorItemCode>DABS_418330</VendorItemCode>
+    </Item>
+    <Item>
+      <PLU>419951</PLU>
+      <ItemName>19 CRIMES CABERNET SAUVIGNON 750ml</ItemName>
+      <Price>12.99</Price>
+      <Cost>9.09</Cost>
+      <Category>Wine</Category>
+      <VendorItemCode>DABS_419951</VendorItemCode>
+    </Item>
+    <Item>
+      <PLU>445303</PLU>
+      <ItemName>BOTA BOX NIGHTHAWK BLACK RED 3000ml</ItemName>
+      <Price>17.99</Price>
+      <Cost>12.59</Cost>
+      <Category>Wine</Category>
+      <VendorItemCode>DABS_445303</VendorItemCode>
+    </Item>
+    <Item>
+      <PLU>547295</PLU>
+      <ItemName>BOGLE CHARDONNAY 750ml</ItemName>
+      <Price>9.99</Price>
+      <Cost>6.99</Cost>
+      <Category>Wine</Category>
+      <VendorItemCode>DABS_547295</VendorItemCode>
+    </Item>
+    <Item>
+      <PLU>581015</PLU>
+      <ItemName>BOTA BOX PINOT GRIGIO 3000ml</ItemName>
+      <Price>17.99</Price>
+      <Cost>12.59</Cost>
+      <Category>Wine</Category>
+      <VendorItemCode>BOTA-PG-3L</VendorItemCode>
+    </Item>
+    <Item>
+      <PLU>917817</PLU>
+      <ItemName>RED ROCK ELEPHINO IPA 500ml</ItemName>
+      <Price>4.04</Price>
+      <Cost>2.83</Cost>
+      <Category>Beer</Category>
+      <VendorItemCode>RR-ELEPHINO-500</VendorItemCode>
+    </Item>
+    <Item>
+      <PLU>927483</PLU>
+      <ItemName>HIGHPOINT TRANSPLANT CIDER 355ml</ItemName>
+      <Price>2.55</Price>
+      <Cost>1.78</Cost>
+      <Category>Cider</Category>
+      <VendorItemCode>DABS_927483</VendorItemCode>
+    </Item>
+    <Item>
+      <PLU>989396</PLU>
+      <ItemName>GRAND TETON SWEETGRASS APA 355ml</ItemName>
+      <Price>1.62</Price>
+      <Cost>1.13</Cost>
+      <Category>Beer</Category>
+      <VendorItemCode>DABS_989396</VendorItemCode>
+    </Item>
+    <Item>
+      <PLU>989418</PLU>
+      <ItemName>RED ROCK FROHLICH PILS 500ml</ItemName>
+      <Price>4.04</Price>
+      <Cost>2.83</Cost>
+      <Category>Beer</Category>
+      <VendorItemCode>DABS_989418</VendorItemCode>
+    </Item>
+  </Items>
+</ItemSynch>

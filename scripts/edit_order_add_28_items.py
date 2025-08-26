@@ -1,343 +1,228 @@
 #!/usr/bin/env python3
 """
-Edit Existing DABS Order - Add All 28 Items
-Hills & Hollows LLC - Utah Package Agency
-Date: August 24, 2025
+Edit existing DABS order (by ID) and add items parsed from embedded text.
+Leaves order pending.
 
-TASK: Edit existing order (OrderId=233817) and add all 28 specified items
-WORKFLOW: Open order → Edit order → Add items one by one → Return for review
-PROVEN: Headless approach works consistently
+Usage: python3 scripts/edit_order_add_28_items.py --order 234216
 """
 
 import asyncio
-import json
-import logging
-import os
+import argparse
+import re
 import sys
 from datetime import datetime
 from pathlib import Path
-from playwright.async_api import async_playwright
+from typing import List, Dict
 
 # Add src to path
 sys.path.append(str(Path(__file__).parent.parent / "src"))
 
-# Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
+from integration.dabs_automated_ordering import DABSAutomatedOrdering  # noqa: E402
 
-async def edit_order_add_28_items():
-    """
-    Edit existing DABS order and add all 28 specified items
-    Following the proven successful workflow
-    """
-    
-    print("🎯 EDIT EXISTING DABS ORDER - ADD ALL 28 ITEMS")
-    print("=" * 60)
-    print("OrderId: 233817 (existing order from DABS)")
-    print("Workflow: Open → Edit → Add items → Return for review")
-    print("Method: Proven headless Playwright approach")
+RAW_ORDER_TEXT = """
+Description - Item Code	Unit Price	Quantity	Extended Price
+DENTED BRICK CRAFT GIN 1000ml - 029911	$113.94	1	$113.94
+UTOG RED EYE ALE 473 ml - 900821	$95.76	1	$95.76
+EPIC SPACE DEBRIS IPA 355ml - 923201	$65.28	1	$65.28
+EPIC CHASING GHOSTS HAZY DIPA CANS 473ml - 900286	$68.40	1	$68.40
+CASTLE ROCK CHARDONNAY CNTRL C 750ml - 552500	$143.88	1	$143.88
+PENDLETON CANADIAN WHISKY 375ml - 014194	$179.88	1	$179.88
+ICEHOUSE BEER 355ml - 989177	$17.82	5	$89.10
+BONTERRA CABERNET 750ml - 464685	$203.88	1	$203.88
+ODELL BIG SIPPIN IMPERIAL SOUR ALE 355ml - 927491	$71.76	1	$71.76
+TITOS HANDMADE VODKA 1000ml - 038177	$299.88	1	$299.88
+GRAND TETON SWEETGRASS APA 355 ml - 989396	$38.88	1	$38.88
+DESCHUTES FRESH SQUEEZED CAN 355ml - 919043	$71.76	1	$71.76
+WOODCHUCK HARD CIDER PEARSECCO 355ml - 900888	$60.00	1	$60.00
+PRODIGY BREWING THREE AMIGOS TRIPEL473ml - 924828	$95.76	1	$95.76
+SIERRA NEVADA PALE ALE 355ml - 989206	$47.76	1	$47.76
+UINTA TROP NOSH IPA 355 ml - 918916	$51.60	1	$51.60
+JOSH CELLARS HEARTH CABERNET 750ml - 478138	$143.88	1	$143.88
+LAGUNITAS IPA CAN 355 ml - 917389	$52.56	1	$52.56
+SPATEN PREMIUM LAGER 355ml - 989240	$54.00	1	$54.00
+DESCHUTES TROPICAL FRESH IPA 355ml - 929703	$71.76	1	$71.76
+BELLS TWO HEARTED IPA 355ml - 925376	$56.40	1	$56.40
+MTN WEST DESOLATION CIDER CAN 473ml - 921273	$126.96	1	$126.96
+FIELD RECORDINGS SKINS'22/23 750ml - 954341	$239.88	1	$239.88
+SEGURA VIUDAS BRUT 750ml - 733238	$167.88	1	$167.88
+HELPER BEER SLOW FADE 473ml - 926273	$108.00	1	$108.00
+RUTH LEWANDOWSKI ROSE'23 750ml - 949335	$275.88	1	$275.88
+PRODIGY BREWING INVERSION NE IPA 473ml - 924827	$83.76	1	$83.76
+LAGUNITAS IPA 355ml - 919658	$52.56	1	$52.56
+ODELL IPA 355 ml - 953843	$59.76	1	$59.76
+NEW BELGIUM VOODOO FRUIT FORCE - 925378	$56.40	1	$56.40
+MTN WEST COTTONWOOD DRY HOP CANS 473ml - 953985	$126.96	1	$126.96
+LEVEL CROSSING SUSS IT OUT RYE IPA 473ml - 955767	$84.00	1	$84.00
+SALTFIRE HEAVY METAL PARKING LOT 473ml - 922388	$94.80	1	$94.80
+NEW BELGIUM VOO RANGER IPA CANS 355 ml - 947400	$49.20	2	$98.40
+SALTFIRE FURY KOLSCH CAN 473ml - 901976	$71.76	1	$71.76
+OSKAR BLUES DALES PALE ALE 355ml - 949961	$48.96	2	$97.92
+LEVEL CROSSING DALLAS ALICE BELGIAN473ml - 900567	$75.60	1	$75.60
+MTN WEST RUBY HARD CIDER CANS 473ml - 953984	$126.96	1	$126.96
+TITOS HANDMADE VODKA 200 ml - 038179	$191.76	1	$191.76
+DENTED BRICK CRAFT RUM 1000 ml - 046206	$113.94	1	$113.94
+FOUNDERS BREWING BREAKFAST STOUT 355ml - 900269	$85.20	1	$85.20
+BROADBENT VINHO VERDE 750ml - 403760	$155.88	1	$155.88
+ESPOLON BLANCO TEQUILA 750ml - 087619	$383.88	1	$383.88
+NATTY DADDY 355 ml - 918885	$16.35	5	$81.75
+DESCHUTES FRESH HAZE IPA CAN 355 ml - 948026	$71.76	1	$71.76
+GILBEYS GIN PET 1750ml - 030238	$107.94	1	$107.94
+ELYSIAN SPACE DUST IPA 355 ml - 918765	$63.60	2	$127.20
+NEW BELGIUM VOODOO JUICE FORCE 355 ml - 918778	$56.40	1	$56.40
+GRUET BRUT NV 750ml - 771052	$263.88	1	$263.88
+OSKAR BLUES DOUBLE DALES 355 ml - 904445	$48.96	2	$97.92
+MODELO NEGRA DARK ALE 355 ml - 989012	$49.20	1	$49.20
+SIERRA NEVADA TORPEDO EXTRA IP 355ml - 907923	$57.36	1	$57.36
+MTN WEST SWEET ALICE CAN 473ml - 902702	$126.96	1	$126.96
+SIERRA NEVADA PALE ALE CANS 355ml - 919867	$47.76	1	$47.76
+HIGH WEST BOURBON 375 ml - 018603	$239.88	1	$239.88
+BEEHIVE/DESOLATION GIN RICKEY 355 ml - 955762	$86.16	2	$172.32
+EPIC LOS LOCOS LAGER 355 ml - 918705	$47.76	1	$47.76
+BEEHIVE/DESOLATION MOSCOW MULE 355 ml - 955763	$86.16	2	$172.32
+LAGUNITAS LIL SUMPIN SUMPIN CANS 355 ml - 919158	$52.56	1	$52.56
+LEFFE BLONDE ALE 330ml - 989359	$57.36	1	$57.36
+DESCHUTES BLACK BUTTE PORTER 355ml - 989261	$50.40	1	$50.40
+HORNITOS REPOSADO TEQUILA 750ml - 089836	$311.88	1	$311.88
+NEW BELGIUM VOODOO JUICY HAZE CAN 355 ml - 953285	$56.40	1	$56.40
+BEWILDER GECKO FINGERS - 925479	$90.96	1	$90.96
+ORIGINAL SIN BLACK WIDOW CIDER 355ml - 902930	$63.60	1	$63.60
+LEVEL CROSSING JAZZ LOON PILSNER 473 - 900566	$71.76	1	$71.76
+"""
+
+
+def parse_items(raw: str) -> List[Dict[str, object]]:
+    items: List[Dict[str, object]] = []
+    for line in raw.splitlines():
+        line = line.strip()
+        if not line or line.lower().startswith("description"):
+            continue
+        m = re.search(r"^(.*?)\s-\s(\d{6})\s+\$[\d,]+\.?\d*\s+(\d+)\s+\$[\d,]+\.?\d*", line)
+        if not m:
+            m = re.search(r"^(.*?)\s-\s(\d{6})\s+\$[\d,.]+\s+(\d+)\s+\$[\d,.]+", line)
+        if m:
+            product_name = m.group(1).strip()
+            code = m.group(2).strip()
+            qty = int(m.group(3))
+            items.append({
+                "item_code": code,
+                "product_name": product_name,
+                "quantity": qty,
+            })
+    return items
+
+
+async def run(order_id: str):
+    print("🎯 EDIT EXISTING DABS ORDER (Headless)")
+    print("=" * 70)
     print(f"Timestamp: {datetime.now().isoformat()}")
-    print()
-    
-    # EXACT 28 items as specified by user (with corrected order)
-    items_to_add = [
-        {'item_code': '018006', 'product_name': 'BUFFALO TRACE BOURBON 750ml', 'quantity': 1},
-        {'item_code': '900888', 'product_name': 'WOODCHUCK HARD CIDER PEARSECCO 355ml', 'quantity': 1},
-        {'item_code': '026826', 'product_name': 'JACK DANIELS BLACK LABEL 750ml', 'quantity': 1},
-        {'item_code': '901977', 'product_name': 'SALTFIRE CHARLOTTE SOMETIMES CAN 473ml', 'quantity': 1},
-        {'item_code': '035318', 'product_name': 'BARTON VODKA 1750ml', 'quantity': 1},
-        {'item_code': '907923', 'product_name': 'SIERRA NEVADA TORPEDO EXTRA IP 355ml', 'quantity': 1},
-        {'item_code': '035929', 'product_name': 'FIVE WIVES VODKA 750ml', 'quantity': 1},
-        {'item_code': '918765', 'product_name': 'ELYSIAN SPACE DUST IPA 355 ml', 'quantity': 1},
-        {'item_code': '015626', 'product_name': 'JAMESON IRISH WHISKEY 750ml', 'quantity': 1},
-        {'item_code': '771166', 'product_name': 'HOUSE WINE BRUT BUBBLES CAN', 'quantity': 1},
-        {'item_code': '064776', 'product_name': 'COINTREAU LIQUEUR 750ml', 'quantity': 1},
-        {'item_code': '918785', 'product_name': 'ROHA THURSDAY IPA 355 ml', 'quantity': 1},
-        {'item_code': '088548', 'product_name': 'HORNITOS PLATA TEQUILA 750ml', 'quantity': 1},
-        {'item_code': '918885', 'product_name': 'NATTY DADDY 355 ml', 'quantity': 6},
-        {'item_code': '089786', 'product_name': 'SAUZA HACIENDA GOLD 750ml', 'quantity': 1},
-        {'item_code': '947400', 'product_name': 'NEW BELGIUM VOO RANGER IPA CANS 355 ml', 'quantity': 2},
-        {'item_code': '402913', 'product_name': 'BLACK BOX CABERNET 3000ml', 'quantity': 1},
-        {'item_code': '949961', 'product_name': 'OSKAR BLUES DALES PALE ALE 355ml', 'quantity': 2},
-        {'item_code': '518328', 'product_name': 'VENDANGE CABERNET SAUVIGNON 500ml', 'quantity': 1},
-        {'item_code': '403296', 'product_name': 'BOTA BOX PINOT NOIR 3000ml', 'quantity': 1},
-        {'item_code': '955363', 'product_name': 'ROGUE BATSQUATCH HAZY IPA 355ml', 'quantity': 1},
-        {'item_code': '429149', 'product_name': 'VENDANGE CHARDONNAY 500ml', 'quantity': 1},
-        {'item_code': '989177', 'product_name': 'ICEHOUSE BEER 355ml', 'quantity': 3},
-        {'item_code': '652230', 'product_name': 'DAY OWL ROSE 750ml', 'quantity': 1},
-        {'item_code': '575558', 'product_name': 'HOUSE WINE SAUVIGNON BLANC BOX 3000ml', 'quantity': 2},
-        {'item_code': '633746', 'product_name': 'VENDANGE PINOT GRIGIO 500ml', 'quantity': 1},
-        {'item_code': '010807', 'product_name': 'CROWN ROYAL REGAL APPLE 750ml', 'quantity': 1},
-        {'item_code': '771160', 'product_name': 'HOUSE WINE ROSE BUBBLES CAN 355ml', 'quantity': 1}
-    ]
-    
-    total_quantity = sum(item['quantity'] for item in items_to_add)
-    print(f"📦 ITEMS TO ADD: {len(items_to_add)} products, {total_quantity} total units")
-    print()
-    
+    print(f"Order ID: {order_id}")
+
+    order_items = parse_items(RAW_ORDER_TEXT)
+    if not order_items:
+        print("❌ Failed to parse any items from the provided text")
+        sys.exit(1)
+
+    processor = None
     try:
-        # Load environment
-        env_file = Path(__file__).parent.parent / "config" / "dabs_ordering.env"
-        with open(env_file, 'r') as f:
-            for line in f:
-                if line.strip() and not line.startswith('#') and '=' in line:
-                    key, value = line.strip().split('=', 1)
-                    os.environ[key] = value
-        
-        playwright = await async_playwright().start()
-        browser = await playwright.chromium.launch(
-            headless=True,  # Proven to work without CAPTCHA
-            args=['--no-sandbox', '--disable-dev-shm-usage']
-        )
-        context = await browser.new_context()
-        page = await context.new_page()
-        
-        print("🔄 Step 1: Navigate directly to existing order...")
-        
-        # Navigate directly to the specific order URL provided by user
-        order_url = "https://webapps2.abc.utah.gov/ProdApps/OnlineOrders/Orders/DisplayOrder?OrderId=233817&So=SOO03078449"
-        
-        # First authenticate if needed
-        await page.goto("https://webapps2.abc.utah.gov/ProdApps/OnlineOrders/", 
-                       wait_until="domcontentloaded", timeout=60000)
-        
-        # Check if we need to login
-        username_field = await page.query_selector('input[name="UserName"]')
-        if username_field:
-            print("🔑 Authentication required...")
-            await page.fill('input[name="UserName"]', os.getenv('DABS_ORDERING_USERNAME', ''))
-            await page.fill('input[name="Password"]', os.getenv('DABS_ORDERING_PASSWORD', ''))
-            await page.click('button[type="submit"], input[type="submit"]')
-            await page.wait_for_timeout(3000)
-        
-        # Navigate to the specific order
-        print(f"🔄 Navigating to order: {order_url}")
-        await page.goto(order_url, wait_until="domcontentloaded", timeout=60000)
-        await page.wait_for_timeout(2000)
-        
-        print(f"✅ Current URL: {page.url}")
-        print(f"✅ Page Title: {await page.title()}")
-        
-        print("\n🔄 Step 2: Edit the order...")
-        
-        # Look for Edit button or link
-        edit_selectors = [
-            'text="Edit"',
-            'a:has-text("Edit")',
-            'button:has-text("Edit")',
-            'input[value="Edit"]',
-            '[title*="Edit"]'
-        ]
-        
-        edit_button = None
-        for selector in edit_selectors:
-            try:
-                element = await page.query_selector(selector)
-                if element and await element.is_visible():
-                    edit_button = element
-                    print(f"✅ Found edit button: {selector}")
-                    break
-            except:
-                continue
-        
-        if edit_button:
-            print("🔄 Clicking edit button...")
-            await edit_button.click()
-            await page.wait_for_timeout(3000)
-            print(f"✅ After edit click - URL: {page.url}")
-        else:
-            print("⚠️  Could not find edit button - may already be in edit mode")
-        
-        print("\n🔄 Step 3: Add items to order (proven workflow)...")
-        
-        items_successfully_added = 0
-        items_failed = []
-        
-        for i, item in enumerate(items_to_add, 1):
-            try:
-                print(f"\n➕ Item {i}/{len(items_to_add)}: Adding {item['item_code']} - {item['product_name']} (Qty: {item['quantity']})")
-                
-                # Look for search or item code input field
-                search_selectors = [
-                    'input[type="text"]',
-                    'input[name*="search"]',
-                    'input[name*="item"]',
-                    'input[name*="code"]',
-                    'input[placeholder*="search"]',
-                    'input[placeholder*="item"]'
-                ]
-                
-                search_field = None
-                for selector in search_selectors:
-                    try:
-                        element = await page.query_selector(selector)
-                        if element and await element.is_visible():
-                            search_field = element
-                            break
-                    except:
-                        continue
-                
-                if search_field:
-                    # Clear and enter item code
-                    await search_field.click()
-                    await page.keyboard.press('Control+a')  # Select all
-                    await search_field.fill(item['item_code'])
-                    
-                    # Try different ways to search
-                    await page.keyboard.press('Enter')
-                    await page.wait_for_timeout(2000)
-                    
-                    # Alternative: look for search button
-                    search_button = await page.query_selector('button:has-text("Search"), input[value*="Search"], button[type="submit"]')
-                    if search_button:
-                        await search_button.click()
-                        await page.wait_for_timeout(2000)
-                    
-                    # Look for the item in results and set quantity
-                    quantity_field = await page.query_selector('input[type="number"], input[name*="quantity"], input[name*="qty"]')
-                    if quantity_field:
-                        await quantity_field.click()
-                        await page.keyboard.press('Control+a')
-                        await quantity_field.fill(str(item['quantity']))
-                        await page.wait_for_timeout(500)
-                    
-                    # Look for Add to Order button
-                    add_selectors = [
-                        'button:has-text("Add")',
-                        'input[value*="Add"]',
-                        'button:has-text("Add to Order")',
-                        'a:has-text("Add")'
-                    ]
-                    
-                    add_button = None
-                    for selector in add_selectors:
-                        try:
-                            element = await page.query_selector(selector)
-                            if element and await element.is_visible():
-                                add_button = element
-                                break
-                        except:
-                            continue
-                    
-                    if add_button:
-                        await add_button.click()
-                        await page.wait_for_timeout(1500)  # Wait for item to be added
-                        items_successfully_added += 1
-                        print(f"   ✅ Successfully added: {item['product_name']}")
-                    else:
-                        print(f"   ❌ Could not find Add button for: {item['product_name']}")
-                        items_failed.append(item)
-                        
-                else:
-                    print(f"   ❌ Could not find search field for: {item['product_name']}")
-                    items_failed.append(item)
-                    
-            except Exception as e:
-                print(f"   ❌ Error adding {item['product_name']}: {e}")
-                items_failed.append(item)
-        
-        print(f"\n📊 ITEM ADDITION RESULTS:")
-        print(f"   ✅ Successfully Added: {items_successfully_added} / {len(items_to_add)} items")
-        print(f"   ❌ Failed to Add: {len(items_failed)} items")
-        
-        if items_failed:
-            print(f"\n⚠️  FAILED ITEMS:")
-            for item in items_failed:
-                print(f"   - {item['item_code']}: {item['product_name']} (Qty: {item['quantity']})")
-        
-        print("\n🔄 Step 4: Return to order view for review...")
-        
-        # Look for Save/Return/Done button to complete editing
-        completion_selectors = [
-            'button:has-text("Save")',
-            'button:has-text("Done")', 
-            'button:has-text("Return")',
-            'input[value*="Save"]',
-            'a:has-text("Return to Order")'
-        ]
-        
-        completion_button = None
-        for selector in completion_selectors:
-            try:
-                element = await page.query_selector(selector)
-                if element and await element.is_visible():
-                    completion_button = element
-                    break
-            except:
-                continue
-        
-        if completion_button:
-            print("✅ Returning to order view...")
-            await completion_button.click()
-            await page.wait_for_timeout(3000)
-        
-        print(f"✅ Final URL: {page.url}")
-        
-        # Generate audit trail
-        audit_data = {
-            "timestamp": datetime.now().isoformat(),
-            "task_id": "445939ca-47eb-457c-9c3f-73ac9449b251",
-            "order_id": "233817",
-            "workflow": "edit_existing_order",
-            "items_specified": len(items_to_add),
-            "items_successfully_added": items_successfully_added,
-            "items_failed": len(items_failed),
-            "success_rate": f"{(items_successfully_added/len(items_to_add)*100):.1f}%",
-            "method": "proven_headless_playwright",
-            "ready_for_review": True
-        }
-        
-        audit_file = Path("logs/order_edit_audit.jsonl")
-        audit_file.parent.mkdir(exist_ok=True)
-        with open(audit_file, 'a') as f:
-            f.write(json.dumps(audit_data) + '\n')
-        
-        return {
-            "success": items_successfully_added > 0,
-            "items_added": items_successfully_added,
-            "items_failed": len(items_failed),
-            "ready_for_review": True,
-            "audit_logged": True
-        }
-        
-    except Exception as e:
-        print(f"❌ Error: {e}")
-        return {"success": False, "error": str(e)}
-        
-    finally:
+        processor = DABSAutomatedOrdering(headless=True, timeout=120000)
+        await processor.initialize_automation_system()
+
+        # Ensure auth
+        auth_file = Path("dabs_auth.json")
+        if not auth_file.exists():
+            print("🔐 Performing headless login...")
+            ok = await processor.perform_dabs_login()
+            if not ok:
+                print("❌ Authentication failed")
+                sys.exit(2)
+
+        # Navigate directly to the open order and attempt editing
+        page = await processor.browser_context.new_page()
+        display_url = f"https://webapps2.abc.utah.gov/ProdApps/OnlineOrders/Orders/DisplayOrder?OrderId={order_id}"
+        await page.goto(display_url, wait_until="domcontentloaded")
+        await page.wait_for_timeout(1500)
+
+        # Find Edit button (validated pattern uses material-icons blue with tooltip)
         try:
-            await browser.close()
-            await playwright.stop()
-        except:
-            pass
+            edit_icon = await page.query_selector('[data-bs-original-title="Edit"], i.material-icons.blue')
+            if edit_icon:
+                await edit_icon.click()
+                await page.wait_for_timeout(1000)
+            else:
+                # Fallback Edit link text
+                await page.click('text=Edit')
+                await page.wait_for_timeout(1000)
+        except Exception:
+            # Fallback to edit URL if accessible
+            await page.goto(f"https://webapps2.abc.utah.gov/ProdApps/OnlineOrders/Orders/EditOrder?orderId={order_id}",
+                            wait_until="domcontentloaded")
+            await page.wait_for_timeout(1000)
+
+        # Add all items using the same internal method sequence as create flow
+        added = 0
+        for product in order_items:
+            try:
+                # Ensure All Items / search area is reachable
+                if await page.query_selector('text=All Items'):
+                    await page.click('text=All Items')
+                    await page.wait_for_timeout(500)
+                # Search by code only
+                search_selectors = [
+                    'input[type="search"][placeholder*="Item Code"]',
+                    'input[type="search"][placeholder*="Item"]',
+                    'input.form-control.form-control-sm',
+                    'input[type="search"]',
+                ]
+                filled = False
+                for sel in search_selectors:
+                    try:
+                        await page.wait_for_selector(sel, timeout=2000)
+                        await page.fill(sel, product['item_code'])
+                        filled = True
+                        break
+                    except Exception:
+                        continue
+                await page.wait_for_timeout(500)
+
+                # Quantity (only if >1)
+                if int(product['quantity']) != 1:
+                    qty_selectors = [
+                        'input.form-control.Normal11[id="quantity"][name="i.QuantityOrdered"]',
+                        'input[name*="QuantityOrdered"]',
+                        'input[id="quantity"]',
+                        'input.form-control[name*="Quantity"]'
+                    ]
+                    for qsel in qty_selectors:
+                        try:
+                            await page.wait_for_selector(qsel, timeout=1500)
+                            await page.click(qsel)
+                            await page.evaluate('(selector) => { const el = document.querySelector(selector); if (el) el.select(); }', qsel)
+                            await page.type(qsel, str(product['quantity']))
+                            break
+                        except Exception:
+                            continue
+
+                # Add to order
+                try:
+                    await page.click('a.btn.btn-primary.btn-sm[href*="EditOrder"]')
+                except Exception:
+                    await page.click('text=Add to Order')
+                await page.wait_for_timeout(500)
+                added += 1
+            except Exception:
+                continue
+
+        print(f"✅ Added {added} items to order {order_id}")
+    finally:
+        if processor:
+            await processor.cleanup()
+
 
 async def main():
-    """Execute order editing and item addition"""
-    
-    result = await edit_order_add_28_items()
-    
-    print("\n" + "=" * 60)
-    print("📊 TASK COMPLETION RESULTS")
-    print("=" * 60)
-    
-    if result.get("success"):
-        print("🎉 ORDER EDITING COMPLETED!")
-        print(f"📦 Items Added: {result.get('items_added', 0)} / 28 items")
-        print(f"❌ Items Failed: {result.get('items_failed', 0)} items")
-        print(f"📄 Audit Logged: {result.get('audit_logged', False)}")
-        print()
-        print("✅ READY FOR REVIEW")
-        print("📋 Order has been edited and items added")
-        print("🔗 Review at: https://webapps2.abc.utah.gov/ProdApps/OnlineOrders/Orders/DisplayOrder?OrderId=233817&So=SOO03078449")
-        
-    else:
-        print("❌ ORDER EDITING FAILED:")
-        if result.get('error'):
-            print(f"Error: {result.get('error')}")
-    
-    print("=" * 60)
-    
-    return result
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--order', required=True)
+    args = parser.parse_args()
+    await run(args.order)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     asyncio.run(main())

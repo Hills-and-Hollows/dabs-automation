@@ -99,7 +99,7 @@ Hills & Hollows LLC (Boulder, UT Package Agency) is implementing an automated in
 5. Email formatting requirements for EDI delivery
 
 **ACCOUNT DETAILS**:
-- Customer #: 7208 (Historical: #6242)
+- Customer #: 6242 (EDI customer number)
 - Username: v6242shawn
 - EDI Email: v6242s1@edidelivery.com (currently active)
 - Contact: Shawn Owen, Store Manager Relief

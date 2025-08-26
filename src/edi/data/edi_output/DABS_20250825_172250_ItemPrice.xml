@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ItemSynch version="2.0" timestamp="2025-08-25T15:12:38.424493Z" vendor="DABS">
+  <VendorInfo>
+    <VendorID>DABS</VendorID>
+    <VendorName>Utah Division of Alcoholic Beverage Control</VendorName>
+    <InvoiceNumber>233817</InvoiceNumber>
+    <InvoiceDate>2025-08-25</InvoiceDate>
+    <TotalItems>10</TotalItems>
+    <StoreLocationID>HILLS_HOLLOWS_BOULDER</StoreLocationID>
+    <TransmissionDate>2025-08-25</TransmissionDate>
+    <CustomerNumber>6242</CustomerNumber>
+
+    <EDIDeliveryEmail>v6242s1@edidelivery.com</EDIDeliveryEmail>
+  <DeliveryDate>2025-08-25</DeliveryDate><PurchaseOrderNumber>DABS_PO_20250825_001</PurchaseOrderNumber><Terms>NET30</Terms><BackupContactEmail>shawn@owenent.com</BackupContactEmail><VendorContactPhone>(801) 977-6800</VendorContactPhone><LocationID>01</LocationID><ProcessingStatus>Pending</ProcessingStatus></VendorInfo>
+  <Items>
+    <Item>
+      <PLU>039593</PLU>
+      <ItemName>SUGAR HOUSE VODKA 1750ml</ItemName>
+      <Price>227.94</Price>
+      <Cost>182.35</Cost>
+      <Category>SPIRITS</Category>
+      <Size>1750ml</Size>
+      <VendorItemCode>039593</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>615260026006</UPC>
+      <UPCVerified>true</UPCVerified>
+    <UPCSources>Utah DABS Numeric Price List</UPCSources><UPCStatus>VERIFIED</UPCStatus><Department>LIQUOR STR</Department><Taxable>true</Taxable><MinimumOrderQuantity>1</MinimumOrderQuantity><CaseSize>1</CaseSize><WeightPerUnit>1.75</WeightPerUnit><AlcoholContent>40.0</AlcoholContent><AgeRestricted>true</AgeRestricted><ProductClassification>ALCOHOLIC_BEVERAGE</ProductClassification><RegulatoryCategory>DISTILLED_SPIRITS</RegulatoryCategory><PackSize>12</PackSize><OrderQuantity>1.00</OrderQuantity><ExtendedCost>182.35</ExtendedCost><ExtendedPrice>227.94</ExtendedPrice><ProfitMargin>45.59</ProfitMargin><UnitMargin>45.59</UnitMargin><MarginPercent>25.0</MarginPercent><LocationID>01</LocationID><TotalUnits>12</TotalUnits><StockStatus>Available</StockStatus></Item>
+    <Item>
+      <PLU>087123</PLU>
+      <ItemName>ARETTE CLASICA BLANCO TEQUILA 1000ml</ItemName>
+      <Price>395.88</Price>
+      <Cost>316.70</Cost>
+      <Category>SPIRITS</Category>
+      <Size>1000ml</Size>
+      <VendorItemCode>087123</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>704228011212</UPC>
+      <UPCVerified>true</UPCVerified>
+    <UPCSources>Wine Made Easy, WineTransit, Willow Spirits</UPCSources><UPCStatus>VERIFIED</UPCStatus><Department>LIQUOR STR</Department><Taxable>true</Taxable><MinimumOrderQuantity>1</MinimumOrderQuantity><CaseSize>1</CaseSize><WeightPerUnit>1.0</WeightPerUnit><AlcoholContent>40.0</AlcoholContent><AgeRestricted>true</AgeRestricted><ProductClassification>ALCOHOLIC_BEVERAGE</ProductClassification><RegulatoryCategory>DISTILLED_SPIRITS</RegulatoryCategory><PackSize>12</PackSize><OrderQuantity>1.00</OrderQuantity><ExtendedCost>316.70</ExtendedCost><ExtendedPrice>395.88</ExtendedPrice><ProfitMargin>79.18</ProfitMargin><UnitMargin>79.18</UnitMargin><MarginPercent>25.0</MarginPercent><LocationID>01</LocationID><TotalUnits>12</TotalUnits><StockStatus>Available</StockStatus></Item>
+    <Item>
+      <PLU>523110</PLU>
+      <ItemName>WILLAMETTE VLY PINOT NOIR WL CLST 750ml</ItemName>
+      <Price>299.88</Price>
+      <Cost>239.90</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>523110</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>088534002492</UPC>
+      <UPCVerified>true</UPCVerified>
+      <UPCNote>Verified from BC Liquor Stores, UPCItemDB</UPCNote>
+    <UPCSources>BC Liquor Stores, UPCItemDB</UPCSources><UPCStatus>VERIFIED</UPCStatus><Department>WINE STR</Department><Taxable>true</Taxable><MinimumOrderQuantity>1</MinimumOrderQuantity><CaseSize>1</CaseSize><WeightPerUnit>0.75</WeightPerUnit><AlcoholContent>12.5</AlcoholContent><AgeRestricted>true</AgeRestricted><ProductClassification>ALCOHOLIC_BEVERAGE</ProductClassification><RegulatoryCategory>WINE</RegulatoryCategory><PackSize>12</PackSize><OrderQuantity>1.00</OrderQuantity><ExtendedCost>239.90</ExtendedCost><ExtendedPrice>299.88</ExtendedPrice><ProfitMargin>59.98</ProfitMargin><UnitMargin>59.98</UnitMargin><MarginPercent>25.0</MarginPercent><LocationID>01</LocationID><TotalUnits>12</TotalUnits><StockStatus>Available</StockStatus></Item>
+    <Item>
+      <PLU>580790</PLU>
+      <ItemName>KING ESTATE PINOT GRIS SIGNATURE 750ml</ItemName>
+      <Price>252.96</Price>
+      <Cost>202.37</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>580790</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>768675960127</UPC>
+      <UPCVerified>true</UPCVerified>
+      <UPCNote>Verified from Amazon, Kroger, BC Liquor, Fridley Liquor</UPCNote>
+    <UPCSources>Amazon, Kroger, BC Liquor, Fridley Liquor</UPCSources><UPCStatus>VERIFIED</UPCStatus><Department>WINE STR</Department><Taxable>true</Taxable><MinimumOrderQuantity>1</MinimumOrderQuantity><CaseSize>1</CaseSize><WeightPerUnit>0.75</WeightPerUnit><AlcoholContent>12.5</AlcoholContent><AgeRestricted>true</AgeRestricted><ProductClassification>ALCOHOLIC_BEVERAGE</ProductClassification><RegulatoryCategory>WINE</RegulatoryCategory><PackSize>12</PackSize><OrderQuantity>1.00</OrderQuantity><ExtendedCost>202.37</ExtendedCost><ExtendedPrice>252.96</ExtendedPrice><ProfitMargin>50.59</ProfitMargin><UnitMargin>50.59</UnitMargin><MarginPercent>25.0</MarginPercent><LocationID>01</LocationID><TotalUnits>12</TotalUnits><StockStatus>Available</StockStatus></Item>
+    <Item>
+      <PLU>733238</PLU>
+      <ItemName>SEGURA VIUDAS BRUT 750ml</ItemName>
+      <Price>167.88</Price>
+      <Cost>134.30</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>733238</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>033293690009</UPC>
+      <UPCVerified>true</UPCVerified>
+      <UPCNote>Verified from Target, WineDeals, Liquor Barn, WineMadeEasy</UPCNote>
+    <UPCSources>Target, WineDeals, Liquor Barn, WineMadeEasy</UPCSources><UPCStatus>VERIFIED</UPCStatus><Department>WINE STR</Department><Taxable>true</Taxable><MinimumOrderQuantity>1</MinimumOrderQuantity><CaseSize>1</CaseSize><WeightPerUnit>0.75</WeightPerUnit><AlcoholContent>12.5</AlcoholContent><AgeRestricted>true</AgeRestricted><ProductClassification>ALCOHOLIC_BEVERAGE</ProductClassification><RegulatoryCategory>WINE</RegulatoryCategory><PackSize>12</PackSize><OrderQuantity>1.00</OrderQuantity><ExtendedCost>134.30</ExtendedCost><ExtendedPrice>167.88</ExtendedPrice><ProfitMargin>33.58</ProfitMargin><UnitMargin>33.58</UnitMargin><MarginPercent>25.0</MarginPercent><LocationID>01</LocationID><TotalUnits>12</TotalUnits><StockStatus>Available</StockStatus></Item>
+    <Item>
+      <PLU>908418</PLU>
+      <ItemName>BUCKLIN BAMBINO ZIN'22 750ml</ItemName>
+      <Price>287.88</Price>
+      <Cost>230.30</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>908418</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>000004613947</UPC>
+      <UPCVerified>false</UPCVerified>
+      <UPCNote>Medium confidence - Community source only; seek retail verification or scan on receipt</UPCNote>
+    <UPCConfidence>MEDIUM</UPCConfidence><UPCStatus>UNVERIFIED</UPCStatus><Department>WINE STR</Department><Taxable>true</Taxable><MinimumOrderQuantity>1</MinimumOrderQuantity><CaseSize>1</CaseSize><WeightPerUnit>0.75</WeightPerUnit><AlcoholContent>12.5</AlcoholContent><AgeRestricted>true</AgeRestricted><ProductClassification>ALCOHOLIC_BEVERAGE</ProductClassification><RegulatoryCategory>WINE</RegulatoryCategory><PackSize>12</PackSize><OrderQuantity>1.00</OrderQuantity><ExtendedCost>230.30</ExtendedCost><ExtendedPrice>287.88</ExtendedPrice><ProfitMargin>57.58</ProfitMargin><UnitMargin>57.58</UnitMargin><MarginPercent>25.0</MarginPercent><LocationID>01</LocationID><TotalUnits>12</TotalUnits><StockStatus>Available</StockStatus></Item>
+    <Item>
+      <PLU>918761</PLU>
+      <ItemName>POE ROSÉ'23 750ml</ItemName>
+      <Price>251.88</Price>
+      <Cost>201.50</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>918761</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+      <UPCVerified>false</UPCVerified>
+      <UPCNote>Manual UPC lookup required for DABS code 918761</UPCNote>
+    <UPCStatus>REQUIRES_MANUAL_LOOKUP</UPCStatus><Department>WINE STR</Department><Taxable>true</Taxable><MinimumOrderQuantity>1</MinimumOrderQuantity><CaseSize>1</CaseSize><WeightPerUnit>0.75</WeightPerUnit><AlcoholContent>12.5</AlcoholContent><AgeRestricted>true</AgeRestricted><ProductClassification>ALCOHOLIC_BEVERAGE</ProductClassification><RegulatoryCategory>WINE</RegulatoryCategory><PackSize>12</PackSize><OrderQuantity>1.00</OrderQuantity><ExtendedCost>201.50</ExtendedCost><ExtendedPrice>251.88</ExtendedPrice><ProfitMargin>50.38</ProfitMargin><UnitMargin>50.38</UnitMargin><MarginPercent>25.0</MarginPercent><LocationID>01</LocationID><TotalUnits>12</TotalUnits><StockStatus>Available</StockStatus></Item>
+    <Item>
+      <PLU>918951</PLU>
+      <ItemName>LARCHAGO RIOJA RESERVE 750ml</ItemName>
+      <Price>275.88</Price>
+      <Cost>220.70</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>918951</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>8427646100864</UPC>
+      <UPCVerified>true</UPCVerified>
+      <UPCNote>Verified from Idaho ABC, PrivateCeller.es, CellarTracker</UPCNote><UPCSources>Idaho ABC, PrivateCeller.es, CellarTracker</UPCSources><UPCStatus>VERIFIED</UPCStatus><Department>WINE STR</Department><Taxable>true</Taxable><MinimumOrderQuantity>1</MinimumOrderQuantity><CaseSize>1</CaseSize><WeightPerUnit>0.75</WeightPerUnit><AlcoholContent>12.5</AlcoholContent><AgeRestricted>true</AgeRestricted><ProductClassification>ALCOHOLIC_BEVERAGE</ProductClassification><RegulatoryCategory>WINE</RegulatoryCategory><PackSize>12</PackSize><OrderQuantity>1.00</OrderQuantity><ExtendedCost>220.70</ExtendedCost><ExtendedPrice>275.88</ExtendedPrice><ProfitMargin>55.18</ProfitMargin><UnitMargin>55.18</UnitMargin><MarginPercent>25.0</MarginPercent><LocationID>01</LocationID><TotalUnits>12</TotalUnits><StockStatus>Available</StockStatus></Item>
+    <Item>
+      <PLU>919829</PLU>
+      <ItemName>LORENZA ROSE 750ml</ItemName>
+      <Price>239.88</Price>
+      <Cost>191.90</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>919829</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>865866000027</UPC>
+      <UPCVerified>true</UPCVerified>
+      <UPCNote>Verified from Primo Liquors (multiple locations)</UPCNote>
+    <UPCSources>Primo Liquors (multiple locations)</UPCSources><UPCStatus>VERIFIED</UPCStatus><Department>WINE STR</Department><Taxable>true</Taxable><MinimumOrderQuantity>1</MinimumOrderQuantity><CaseSize>1</CaseSize><WeightPerUnit>0.75</WeightPerUnit><AlcoholContent>12.5</AlcoholContent><AgeRestricted>true</AgeRestricted><ProductClassification>ALCOHOLIC_BEVERAGE</ProductClassification><RegulatoryCategory>WINE</RegulatoryCategory><PackSize>12</PackSize><OrderQuantity>1.00</OrderQuantity><ExtendedCost>191.90</ExtendedCost><ExtendedPrice>239.88</ExtendedPrice><ProfitMargin>47.98</ProfitMargin><UnitMargin>47.98</UnitMargin><MarginPercent>25.0</MarginPercent><LocationID>01</LocationID><TotalUnits>12</TotalUnits><StockStatus>Available</StockStatus></Item>
+    <Item>
+      <PLU>926272</PLU>
+      <ItemName>HELPER BEER CIRCLE BACK IPA 473ml</ItemName>
+      <Price>108.00</Price>
+      <Cost>86.40</Cost>
+      <Category>BEER</Category>
+      <Size>473ml</Size>
+      <VendorItemCode>926272</VendorItemCode>
+      <LastUpdated>2025-08-25T15:12:38.424493Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+      <UPCVerified>false</UPCVerified>
+      <UPCNote>Manual UPC lookup required for DABS code 926272</UPCNote>
+    <UPCStatus>REQUIRES_MANUAL_LOOKUP</UPCStatus><Department>BEER STR</Department><Taxable>true</Taxable><MinimumOrderQuantity>1</MinimumOrderQuantity><CaseSize>1</CaseSize><WeightPerUnit>0.473</WeightPerUnit><AlcoholContent>5.0</AlcoholContent><AgeRestricted>true</AgeRestricted><ProductClassification>ALCOHOLIC_BEVERAGE</ProductClassification><RegulatoryCategory>BEER</RegulatoryCategory><PackSize>24</PackSize><OrderQuantity>1.00</OrderQuantity><ExtendedCost>86.40</ExtendedCost><ExtendedPrice>108.00</ExtendedPrice><ProfitMargin>21.60</ProfitMargin><UnitMargin>21.60</UnitMargin><MarginPercent>25.0</MarginPercent><LocationID>01</LocationID><TotalUnits>24</TotalUnits><StockStatus>Available</StockStatus></Item>
+  </Items>
+  <InvoiceTotals>
+    <SubTotal>2006.42</SubTotal>
+    <Tax>0.00</Tax>
+    <Total>2006.42</Total>
+    <ItemCount>10</ItemCount>
+    <RetailTotal>2508.06</RetailTotal>
+  <TotalExtendedCost>2006.42</TotalExtendedCost><TotalExtendedPrice>2508.06</TotalExtendedPrice><TotalMargin>501.64</TotalMargin><OverallMarginPercent>25.0</OverallMarginPercent></InvoiceTotals>
+  <ProcessingInstructions>
+    <ImportType>ItemPrice</ImportType>
+    <UpdateExisting>true</UpdateExisting>
+    <CreateNew>false</CreateNew>
+    <NotifyOnCompletion>true</NotifyOnCompletion>
+    <UPCCoverage>80.0%</UPCCoverage>
+  </ProcessingInstructions>
+<ComplianceInformation><UtahPackageAgencyLicense>PA-539</UtahPackageAgencyLicense><ComplianceOfficer>Tessa Owen</ComplianceOfficer><AuditTrailID>AUDIT_20250825_164511</AuditTrailID><RetentionPeriod>7_YEARS</RetentionPeriod><ComplianceVersion>2025.08</ComplianceVersion><LastAuditDate>2025-08-01</LastAuditDate><NextAuditDue>2026-08-01</NextAuditDue><RegulatoryContact>shawn@owenent.com</RegulatoryContact><ComplianceFramework>UTAH_PACKAGE_AGENCY</ComplianceFramework><DataClassification>REGULATED_ALCOHOL_SALES</DataClassification><PrivacyLevel>BUSINESS_CONFIDENTIAL</PrivacyLevel><AuditFrequency>ANNUAL</AuditFrequency><ComplianceStatus>ACTIVE</ComplianceStatus><LastComplianceReview>2025-08-25</LastComplianceReview><ComplianceNotes>Automated DABS processing with full audit trail</ComplianceNotes><RegulatoryRequirements><MonthlyReporting>REQUIRED</MonthlyReporting><ReportingDeadline>10th_OF_FOLLOWING_MONTH</ReportingDeadline><AuditTrailRetention>7_YEARS</AuditTrailRetention><PriceChangeDocumentation>REQUIRED</PriceChangeDocumentation><InventoryReconciliation>MONTHLY</InventoryReconciliation><ComplianceReporting>AUTOMATED</ComplianceReporting><ErrorToleranceLevel>ZERO_TOLERANCE</ErrorToleranceLevel><DataIntegrityChecks>ENABLED</DataIntegrityChecks><BackupVerification>REQUIRED</BackupVerification></RegulatoryRequirements></ComplianceInformation></ItemSynch>

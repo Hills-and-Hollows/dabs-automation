@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NAXML-BusDoc version="1.5">
+  <TransmissionHeader>
+    <TransmissionId>DABS_DABS_ORDER_233808_20250825_182314</TransmissionId>
+    <TransmissionDate>2025-08-25</TransmissionDate>
+    <TransmissionTime>18:23:14</TransmissionTime>
+    <TransmissionStatus>original</TransmissionStatus>
+  </TransmissionHeader>
+
+  <Parties>
+    <Supplier>
+      <Name>Utah Division of Alcoholic Beverage Control</Name>
+      <OrganizationId ident="DABS">DABS</OrganizationId>
+    </Supplier>
+    <Buyer>
+      <Name>Hills &amp; Hollows LLC</Name>
+    </Buyer>
+    <ShipTo ident="HILLS_HOLLOWS_BOULDER">
+      <Name>Hills &amp; Hollows Package Agency</Name>
+    </ShipTo>
+  </Parties>
+
+  <Invoice>
+    <Location>
+      <Name ident="HILLS_HOLLOWS_BOULDER">Hills &amp; Hollows Package Agency</Name>
+      <OrganizationId identType="Location number" assignedBy="Buyer">v6242s1</OrganizationId>
+    </Location>
+
+    <InvoiceNumber>233808</InvoiceNumber>
+    <InvoiceDate>2025-08-25</InvoiceDate>
+    <Currency code="USD">USD</Currency>
+
+    <InvoiceDetail>
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="GTIN">00000000010801</InvoiceUnitId>
+          <InvoiceUnitDescription>UNDERWOOD BUBBLES OREGON</InvoiceUnitDescription>
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          <InvoiceUnitCost currency="USD">53.91</InvoiceUnitCost>
+          <LineItemGrossAmt>53.91</LineItemGrossAmt>
+          <LineItemNetAmt>53.91</LineItemNetAmt>
+        </InvoiceUnit>
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000010801</RetailUnitId>
+          <RetailUnitQty>1</RetailUnitQty>
+          <RetailPrice currency="USD">71.88</RetailPrice>
+        </RetailUnitPricing>
+      </LineItem>
+
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="GTIN">00000000776257</InvoiceUnitId>
+          <InvoiceUnitDescription>LORENZA ROSE 750ml - 919829</InvoiceUnitDescription>
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          <InvoiceUnitCost currency="USD">179.91</InvoiceUnitCost>
+          <LineItemGrossAmt>179.91</LineItemGrossAmt>
+          <LineItemNetAmt>179.91</LineItemNetAmt>
+        </InvoiceUnit>
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000776257</RetailUnitId>
+          <RetailUnitQty>1</RetailUnitQty>
+          <RetailPrice currency="USD">239.88</RetailPrice>
+        </RetailUnitPricing>
+      </LineItem>
+
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="GTIN">00000000922388</InvoiceUnitId>
+          <InvoiceUnitDescription>BOHEMIAN EXPORT LAGER 355ml -</InvoiceUnitDescription>
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          <InvoiceUnitCost currency="USD">35.82</InvoiceUnitCost>
+          <LineItemGrossAmt>35.82</LineItemGrossAmt>
+          <LineItemNetAmt>35.82</LineItemNetAmt>
+        </InvoiceUnit>
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000922388</RetailUnitId>
+          <RetailUnitQty>1</RetailUnitQty>
+          <RetailPrice currency="USD">47.76</RetailPrice>
+        </RetailUnitPricing>
+      </LineItem>
+
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="GTIN">00000000919821</InvoiceUnitId>
+          <InvoiceUnitDescription>LORENZA ROSE 750ml</InvoiceUnitDescription>
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          <InvoiceUnitCost currency="USD">179.91</InvoiceUnitCost>
+          <LineItemGrossAmt>179.91</LineItemGrossAmt>
+          <LineItemNetAmt>179.91</LineItemNetAmt>
+        </InvoiceUnit>
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000919821</RetailUnitId>
+          <RetailUnitQty>1</RetailUnitQty>
+          <RetailPrice currency="USD">239.88</RetailPrice>
+        </RetailUnitPricing>
+      </LineItem>
+
+      <InvoiceSummary>
+        <InvoiceTotals>
+          <TotalInvoiceUnits>4</TotalInvoiceUnits>
+          <TotalLineItemNetAmt currency="USD">449.55</TotalLineItemNetAmt>
+          <TotalTaxes>0.00</TotalTaxes>
+          <TotalInvoiceDueAmt currency="USD">449.55</TotalInvoiceDueAmt>
+        </InvoiceTotals>
+      </InvoiceSummary>
+
+      <Terms>
+        <TermsType ident="NET30">NET30</TermsType>
+        <InvoiceDueDate>2025-09-24</InvoiceDueDate>
+      </Terms>
+    </InvoiceDetail>
+  </Invoice>
+</NAXML-BusDoc>

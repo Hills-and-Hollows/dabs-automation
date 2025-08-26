@@ -1,0 +1,3887 @@
+<?xml version="1.0" ?>
+
+<NAXML-BusDoc version="1.5">
+
+  <Parties>
+
+    <Supplier>
+
+      <Name identType="DUNS" ident="943556183">United Natural Foods</Name>
+
+    </Supplier>
+
+    <Buyer>
+
+      <Name identType="CUSTOM" ident="HILLSHOLLOWS">HILLS AND HOLLOWS</Name>
+
+    </Buyer>
+
+    <ShipTo>
+
+      <Name ident="50076">HILLS AND HOLLOWS</Name>
+
+    </ShipTo>
+
+  </Parties>
+
+  <Invoice>
+
+    <Supplier>
+
+      <Name identType="DUNS" ident="943556183">United Natural Foods</Name>
+
+    </Supplier>
+
+    <Location>
+
+      <Name>No name</Name>
+
+      <Address>NoN3Address</Address>
+
+      <City>NoN4City</City>
+
+      <PostalCode>NoN4Zip</PostalCode>
+
+      <OrganizationId identType="Store Number" assignedBy="Seller">50076</OrganizationId>
+
+    </Location>
+
+    <InvoiceNumber>049962852-003</InvoiceNumber>
+
+    <InvoiceDate>2025-08-17</InvoiceDate>
+
+    <InvoiceDetail>
+
+      <LineItem count="1">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">88591</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00028833032555</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 ALV HDOG BUN WHT 6CT</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>29.8071</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00028833032555</RetailUnitId>
+
+          <RetailUnitId identType="VIN">88591</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="2">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">70821</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00749601012066</InvoiceUnitId>
+
+          <InvoiceUnitDescription>BER SOURDOUGH SPELT BRD</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>40.5921</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00749601012066</RetailUnitId>
+
+          <RetailUnitId identType="VIN">70821</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="3">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">23717</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00013764027138</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 DKB 21 WG THIN BREAD</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>54.1293</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00013764027138</RetailUnitId>
+
+          <RetailUnitId identType="VIN">23717</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">10</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="4">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">59409</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00854442007291</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG1 ALEX 100% GF A2 YGRT</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>35.2500</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00854442007291</RetailUnitId>
+
+          <RetailUnitId identType="VIN">59409</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="5">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">14172</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00025317586009</InvoiceUnitId>
+
+          <InvoiceUnitDescription>AF SLICED ROASTED TURKEY</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>66.3147</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00025317586009</RetailUnitId>
+
+          <RetailUnitId identType="VIN">14172</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="6">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">35511</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00025317118002</InvoiceUnitId>
+
+          <InvoiceUnitDescription>AF UNCRD BACON NO SUGAR</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>69.7477</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00025317118002</RetailUnitId>
+
+          <RetailUnitId identType="VIN">35511</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="7">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">46553</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00898328002246</InvoiceUnitId>
+
+          <InvoiceUnitDescription>CAVA HUMMAS TRADITIONAL</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>34.2125</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00898328002246</RetailUnitId>
+
+          <RetailUnitId identType="VIN">46553</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="8">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">17125</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00070852000282</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 CLVRSN HVY WHP CREAM</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">0</InvoiceUnitQty>
+
+          <InvoiceUnitCost>61.9677</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00070852000282</RetailUnitId>
+
+          <RetailUnitId identType="VIN">17125</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="9">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">83607</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00868138000435</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 FORAGE KMBCHA PEACH</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>25.3044</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00868138000435</RetailUnitId>
+
+          <RetailUnitId identType="VIN">83607</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="10">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">83613</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00868138000442</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 FORAGE KMBCHA BRY GR</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>25.3044</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00868138000442</RetailUnitId>
+
+          <RetailUnitId identType="VIN">83613</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="11">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">89016</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00868138000473</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 FORAGE KMBCHA GRPFRT</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>25.3044</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00868138000473</RetailUnitId>
+
+          <RetailUnitId identType="VIN">89016</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="12">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">00307</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00814558020331</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 FORG DF CSHW YOG PLN</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>37.2078</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00814558020331</RetailUnitId>
+
+          <RetailUnitId identType="VIN">00307</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="13">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">78635</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00859977005125</InvoiceUnitId>
+
+          <InvoiceUnitDescription>GDC CTGCHS 4% CLASSIC</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">0</InvoiceUnitQty>
+
+          <InvoiceUnitCost>22.1730</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00859977005125</RetailUnitId>
+
+          <RetailUnitId identType="VIN">78635</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="14">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">68342</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00860004748618</InvoiceUnitId>
+
+          <InvoiceUnitDescription>HANK GNGER HBSCUS KMBCHA</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>35.0977</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00860004748618</RetailUnitId>
+
+          <RetailUnitId identType="VIN">68342</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="15">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">25296</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00815652009017</InvoiceUnitId>
+
+          <InvoiceUnitDescription>NELLIE S SEA SALT BUTTER</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>54.6058</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00815652009017</RetailUnitId>
+
+          <RetailUnitId identType="VIN">25296</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="16">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">10290</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00093966510522</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 O.V. ULT HALF&amp;HALF</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>33.6000</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00093966510522</RetailUnitId>
+
+          <RetailUnitId identType="VIN">10290</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="17">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">13215</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00093966004397</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG1 O.V. UP WHL MILK CA</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">3</InvoiceUnitQty>
+
+          <InvoiceUnitCost>31.7800</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00093966004397</RetailUnitId>
+
+          <RetailUnitId identType="VIN">13215</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="18">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">17960</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00850027702469</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OLIPOP GINGER ALE SODA</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>24.2055</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00850027702469</RetailUnitId>
+
+          <RetailUnitId identType="VIN">17960</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="19">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">47105</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00815652002148</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 P&amp;G LARGE BROWN EGGS</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>57.2413</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00815652002148</RetailUnitId>
+
+          <RetailUnitId identType="VIN">47105</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">9</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="20">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">67784</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00868806000019</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 PPBTL CLD BRW ALM LT</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">2</InvoiceUnitQty>
+
+          <InvoiceUnitCost>18.7498</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00868806000019</RetailUnitId>
+
+          <RetailUnitId identType="VIN">67784</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="21">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">13956</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00811355002553</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 RUMIANO MONTEREY JCK</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>54.7900</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00811355002553</RetailUnitId>
+
+          <RetailUnitId identType="VIN">13956</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="22">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">13961</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00811355002522</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 RUMIANO MILD CHEDDAR</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>54.7900</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00811355002522</RetailUnitId>
+
+          <RetailUnitId identType="VIN">13961</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="23">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">36993</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00811355003932</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 RUMIANO GOUDA BAR</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>54.7900</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00811355003932</RetailUnitId>
+
+          <RetailUnitId identType="VIN">36993</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="24">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">45571</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00180626000216</InvoiceUnitId>
+
+          <InvoiceUnitDescription>STUMP COLD BREW COFF BTL</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>37.7627</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00180626000216</RetailUnitId>
+
+          <RetailUnitId identType="VIN">45571</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="25">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">51161</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00852921005004</InvoiceUnitId>
+
+          <InvoiceUnitDescription>WW WATERMELON JUICE</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">2</InvoiceUnitQty>
+
+          <InvoiceUnitCost>24.2444</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00852921005004</RetailUnitId>
+
+          <RetailUnitId identType="VIN">51161</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="26">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">78000</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00072609741851</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 ALDENS VAN BEAN ICRM</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>29.1750</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00072609741851</RetailUnitId>
+
+          <RetailUnitId identType="VIN">78000</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">3</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="27">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">72514</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00093966303490</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 O.P. BF RBEYE BNLSS</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">0</InvoiceUnitQty>
+
+          <InvoiceUnitCost>211.5090</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00093966303490</RetailUnitId>
+
+          <RetailUnitId identType="VIN">72514</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">8</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="28">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">63257</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00072830081115</InvoiceUnitId>
+
+          <InvoiceUnitDescription>TILLA CCHP CKIEDOGH ICRM</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">0</InvoiceUnitQty>
+
+          <InvoiceUnitCost>43.2859</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00072830081115</RetailUnitId>
+
+          <RetailUnitId identType="VIN">63257</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="29">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">09022</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00081475691535</InvoiceUnitId>
+
+          <InvoiceUnitDescription>AL DENTE EGG PAPPARDELLE</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>23.0190</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00081475691535</RetailUnitId>
+
+          <RetailUnitId identType="VIN">09022</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="30">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">03826</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00187132005018</InvoiceUnitId>
+
+          <InvoiceUnitDescription>ALAF EVDAY SHEA LTN LAV</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="EA">2</InvoiceUnitQty>
+
+          <InvoiceUnitCost>11.8547</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00187132005018</RetailUnitId>
+
+          <RetailUnitId identType="VIN">03826</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">1</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="31">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">31232</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00817670010556</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 A.E. TRFFL SSLT BOX</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>42.0800</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00817670010556</RetailUnitId>
+
+          <RetailUnitId identType="VIN">31232</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">60</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="32">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">54813</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00818780011938</InvoiceUnitId>
+
+          <InvoiceUnitDescription>ANG BCP SWT&amp;SALTY KTLCRN</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>38.7735</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00818780011938</RetailUnitId>
+
+          <RetailUnitId identType="VIN">54813</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="33">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">22563</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00071142000524</InvoiceUnitId>
+
+          <InvoiceUnitDescription>ARROW MTN SPRING WATER</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">3</InvoiceUnitQty>
+
+          <InvoiceUnitCost>12.7786</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00071142000524</RetailUnitId>
+
+          <RetailUnitId identType="VIN">22563</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="34">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">27275</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00071142000012</InvoiceUnitId>
+
+          <InvoiceUnitDescription>ARROW SPRING WATER</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">4</InvoiceUnitQty>
+
+          <InvoiceUnitCost>17.2229</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00071142000012</RetailUnitId>
+
+          <RetailUnitId identType="VIN">27275</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">18</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="35">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">27282</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00071142000098</InvoiceUnitId>
+
+          <InvoiceUnitDescription>ARROW MTN SPRING WATER</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">3</InvoiceUnitQty>
+
+          <InvoiceUnitCost>10.1042</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00071142000098</RetailUnitId>
+
+          <RetailUnitId identType="VIN">27282</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">2</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="36">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">86718</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00819898010400</InvoiceUnitId>
+
+          <InvoiceUnitDescription>BTN FUDGE MINT COOKIES</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>22.2950</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00819898010400</RetailUnitId>
+
+          <RetailUnitId identType="VIN">86718</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="37">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">86733</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00819898010394</InvoiceUnitId>
+
+          <InvoiceUnitDescription>BTN DBL CLSC CRM SNDWCH</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>18.8650</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00819898010394</RetailUnitId>
+
+          <RetailUnitId identType="VIN">86733</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="38">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">05513</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00014400600005</InvoiceUnitId>
+
+          <InvoiceUnitDescription>BALC REG MTH JAR W/LID</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">5</InvoiceUnitQty>
+
+          <InvoiceUnitCost>13.4788</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00014400600005</RetailUnitId>
+
+          <RetailUnitId identType="VIN">05513</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">1</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="39">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">20595</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00708163261077</InvoiceUnitId>
+
+          <InvoiceUnitDescription>BLDR WVY SR CRM CHD PTCH</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>38.9389</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00708163261077</RetailUnitId>
+
+          <RetailUnitId identType="VIN">20595</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="40">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">22314</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00708163118555</InvoiceUnitId>
+
+          <InvoiceUnitDescription>BLDR TTLY NAT CNY CHP</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>38.9389</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00708163118555</RetailUnitId>
+
+          <RetailUnitId identType="VIN">22314</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="41">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">22315</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00708163118562</InvoiceUnitId>
+
+          <InvoiceUnitDescription>BLDR HNY BBQ CNYN CHP</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>38.9389</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00708163118562</RetailUnitId>
+
+          <RetailUnitId identType="VIN">22315</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="42">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">49833</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00849547039018</InvoiceUnitId>
+
+          <InvoiceUnitDescription>B&amp;L DG FD LAMB ML BRN RC</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>45.8144</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00849547039018</RetailUnitId>
+
+          <RetailUnitId identType="VIN">49833</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">4</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="43">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">62445</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00850003797304</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 CLN CS YRBA ORG GNGR</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>24.6926</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00850003797304</RetailUnitId>
+
+          <RetailUnitId identType="VIN">62445</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="44">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">35484</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00850003797700</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 CLN YRBA MTE BLU BRY</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>24.6926</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00850003797700</RetailUnitId>
+
+          <RetailUnitId identType="VIN">35484</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="45">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">88766</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00850003797014</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 CLN CS YM BLACKBERRY</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>24.6926</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00850003797014</RetailUnitId>
+
+          <RetailUnitId identType="VIN">88766</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="46">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">88767</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00850003797021</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 CLN CS YMATE PEACH</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">2</InvoiceUnitQty>
+
+          <InvoiceUnitCost>24.6926</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00850003797021</RetailUnitId>
+
+          <RetailUnitId identType="VIN">88767</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="47">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">88769</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00850003797038</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 CLN CS YMATE LMN LIM</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>24.6926</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00850003797038</RetailUnitId>
+
+          <RetailUnitId identType="VIN">88769</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="48">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">25609</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00710282429320</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 CFF MPL SYR GR A DRK</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>144.2044</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00710282429320</RetailUnitId>
+
+          <RetailUnitId identType="VIN">25609</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="49">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">68231</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00072368510644</InvoiceUnitId>
+
+          <InvoiceUnitDescription>DELALLO MINI GNOCCHI</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>33.8332</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00072368510644</RetailUnitId>
+
+          <RetailUnitId identType="VIN">68231</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="50">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">15794</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00763027703322</InvoiceUnitId>
+
+          <InvoiceUnitDescription>DEWBK CHOC MNT CKIE THIN</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>22.8829</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00763027703322</RetailUnitId>
+
+          <RetailUnitId identType="VIN">15794</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="51">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">16503</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00763027701939</InvoiceUnitId>
+
+          <InvoiceUnitDescription>DEWBK CKY BROWNIE CRISP</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>22.8829</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00763027701939</RetailUnitId>
+
+          <RetailUnitId identType="VIN">16503</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="52">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">82245</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00019373951154</InvoiceUnitId>
+
+          <InvoiceUnitDescription>DR TUNG TBRSH ADLT SNPON</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="EA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>35.5935</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00019373951154</RetailUnitId>
+
+          <RetailUnitId identType="VIN">82245</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="53">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">19201</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00024182000283</InvoiceUnitId>
+
+          <InvoiceUnitDescription>EDEN TOASTED SESAME OIL</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>58.5736</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00024182000283</RetailUnitId>
+
+          <RetailUnitId identType="VIN">19201</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="54">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">46737</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00042563604080</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 FD YELLOW MUSTARD</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>29.4862</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00042563604080</RetailUnitId>
+
+          <RetailUnitId identType="VIN">46737</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="55">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">11410</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00042563603861</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 FD COCONUT OIL</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>34.9711</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00042563603861</RetailUnitId>
+
+          <RetailUnitId identType="VIN">11410</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="56">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">05788</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00042563603786</InvoiceUnitId>
+
+          <InvoiceUnitDescription>FD LIQ DSH DTRGNT FR&amp;CLR</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">0</InvoiceUnitQty>
+
+          <InvoiceUnitCost>42.7122</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00042563603786</RetailUnitId>
+
+          <RetailUnitId identType="VIN">05788</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="57">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">78243</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00852605008574</InvoiceUnitId>
+
+          <InvoiceUnitDescription>FILLOS BN SLSA ROJA TMLE</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>16.7853</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00852605008574</RetailUnitId>
+
+          <RetailUnitId identType="VIN">78243</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">7</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="58">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">73533</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00015839096827</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG3 GOE BLUE CORN CHIP</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>35.5059</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00015839096827</RetailUnitId>
+
+          <RetailUnitId identType="VIN">73533</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="59">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">56822</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00813199010503</InvoiceUnitId>
+
+          <InvoiceUnitDescription>GRN2 FACIAL TISSUE</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>45.7755</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00813199010503</RetailUnitId>
+
+          <RetailUnitId identType="VIN">56822</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">30</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="60">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">51404</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00071818020702</InvoiceUnitId>
+
+          <InvoiceUnitDescription>GUIT SANTE DK CCHIPS 72%</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>107.1889</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00071818020702</RetailUnitId>
+
+          <RetailUnitId identType="VIN">51404</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="61">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">75493</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00810815021035</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 HS WAFFLE HONEY</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="EA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>11.4730</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00810815021035</RetailUnitId>
+
+          <RetailUnitId identType="VIN">75493</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="62">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">75494</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00810815021097</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 HS WAFFLE VANILLA</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="EA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>11.4730</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00810815021097</RetailUnitId>
+
+          <RetailUnitId identType="VIN">75494</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="63">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">75495</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00810815021370</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 HS WFFL SLT CRML GF</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="EA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>11.4730</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00810815021370</RetailUnitId>
+
+          <RetailUnitId identType="VIN">75495</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="64">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">69680</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00865497000069</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 JBAR BAR PEANUT BTR</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="EA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>24.7404</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00865497000069</RetailUnitId>
+
+          <RetailUnitId identType="VIN">69680</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="65">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">60101</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00074682200300</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 KNUD CART GNGR TURM</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>36.7216</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00074682200300</RetailUnitId>
+
+          <RetailUnitId identType="VIN">60101</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="66">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">61801</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00074682000085</InvoiceUnitId>
+
+          <InvoiceUnitDescription>KNUD JUICE TART RED CHRY</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>46.1159</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00074682000085</RetailUnitId>
+
+          <RetailUnitId identType="VIN">61801</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="67">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">89101</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00074682103502</InvoiceUnitId>
+
+          <InvoiceUnitDescription>KNUD JCE JUST CRANBERRY</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>46.1159</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00074682103502</RetailUnitId>
+
+          <RetailUnitId identType="VIN">89101</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="68">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">04388</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00073360703416</InvoiceUnitId>
+
+          <InvoiceUnitDescription>LACROIX PURE SPK WATER</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>12.0201</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00073360703416</RetailUnitId>
+
+          <RetailUnitId identType="VIN">04388</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">2</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="69">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">84274</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00012993112110</InvoiceUnitId>
+
+          <InvoiceUnitDescription>LACROIX LMNCLLO SPK WTR</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>12.0201</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00012993112110</RetailUnitId>
+
+          <RetailUnitId identType="VIN">84274</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">2</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="70">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">84286</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00012993112103</InvoiceUnitId>
+
+          <InvoiceUnitDescription>LACROIX WTRMELON SPK WTR</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>12.0201</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00012993112103</RetailUnitId>
+
+          <RetailUnitId identType="VIN">84286</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">2</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="71">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">54478</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00863737000121</InvoiceUnitId>
+
+          <InvoiceUnitDescription>LIQUIDIV LMN LIME SNGLS</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="EA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>13.3718</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00863737000121</RetailUnitId>
+
+          <RetailUnitId identType="VIN">54478</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">8</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="72">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">80353</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00863323000351</InvoiceUnitId>
+
+          <InvoiceUnitDescription>LIQUIDIV ACAI BERRY SNGL</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="EA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>13.3718</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00863323000351</RetailUnitId>
+
+          <RetailUnitId identType="VIN">80353</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">8</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="73">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">80958</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00850021474805</InvoiceUnitId>
+
+          <InvoiceUnitDescription>LQIV DRNK MX TROP PUNCH</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="EA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>13.4691</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00850021474805</RetailUnitId>
+
+          <RetailUnitId identType="VIN">80958</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">8</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="74">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">87383</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00857946006258</InvoiceUnitId>
+
+          <InvoiceUnitDescription>LONLF BEEF BONE BRTH STK</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>32.1411</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00857946006258</RetailUnitId>
+
+          <RetailUnitId identType="VIN">87383</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="75">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">03459</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00708953651040</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG3 LOTUS SPCY KMCHI RMN</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>15.6475</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00708953651040</RetailUnitId>
+
+          <RetailUnitId identType="VIN">03459</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="76">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">33364</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00070641064129</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 MARUKAN RICE VINEGAR</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">2</InvoiceUnitQty>
+
+          <InvoiceUnitCost>19.5180</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00070641064129</RetailUnitId>
+
+          <RetailUnitId identType="VIN">33364</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="77">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">80564</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00858102004002</InvoiceUnitId>
+
+          <InvoiceUnitDescription>MATEO GRMT SALSA HOT</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>30.0113</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00858102004002</RetailUnitId>
+
+          <RetailUnitId identType="VIN">80564</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="78">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">14446</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00817939016565</InvoiceUnitId>
+
+          <InvoiceUnitDescription>MTHD FOMNG TUB TILE CLNR</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>44.0348</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00817939016565</RetailUnitId>
+
+          <RetailUnitId identType="VIN">14446</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">8</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="79">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">16951</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00030684790676</InvoiceUnitId>
+
+          <InvoiceUnitDescription>MIDEL GF GINGER SNAPS</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>35.2142</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00030684790676</RetailUnitId>
+
+          <RetailUnitId identType="VIN">16951</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">8</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="80">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">68477</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00793573682727</InvoiceUnitId>
+
+          <InvoiceUnitDescription>MICH SLTD MAPLE GRANOLA</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>40.8936</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00793573682727</RetailUnitId>
+
+          <RetailUnitId identType="VIN">68477</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="81">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">67624</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00819385023319</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 MTHAGN FRZDR INS COF</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>59.1863</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00819385023319</RetailUnitId>
+
+          <RetailUnitId identType="VIN">67624</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="82">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">22826</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00786969030080</InvoiceUnitId>
+
+          <InvoiceUnitDescription>NAPA GRND RSRV BALS VNGR</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>95.9371</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00786969030080</RetailUnitId>
+
+          <RetailUnitId identType="VIN">22826</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="83">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">60701</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00706173003533</InvoiceUnitId>
+
+          <InvoiceUnitDescription>NV PAPER TOWELS</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">0</InvoiceUnitQty>
+
+          <InvoiceUnitCost>57.4747</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00706173003533</RetailUnitId>
+
+          <RetailUnitId identType="VIN">60701</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">30</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="84">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">59691</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00757645021425</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG3 NMS O S CHOC CREME</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">0</InvoiceUnitQty>
+
+          <InvoiceUnitCost>26.4618</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00757645021425</RetailUnitId>
+
+          <RetailUnitId identType="VIN">59691</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="85">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">59692</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00757645021449</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG3 NMS O S MINT CREME</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">0</InvoiceUnitQty>
+
+          <InvoiceUnitCost>26.4618</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00757645021449</RetailUnitId>
+
+          <RetailUnitId identType="VIN">59692</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="86">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">16731</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00815874002032</InvoiceUnitId>
+
+          <InvoiceUnitDescription>NIX CONDOMS SPRINT TRIO</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="EA">2</InvoiceUnitQty>
+
+          <InvoiceUnitCost>2.3340</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00815874002032</RetailUnitId>
+
+          <RetailUnitId identType="VIN">16731</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">1</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="87">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">19378</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00680692101089</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 NUMI JASMINE GRN TEA</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>33.2011</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00680692101089</RetailUnitId>
+
+          <RetailUnitId identType="VIN">19378</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="88">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">67117</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00680692106145</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 NUMI HRB TEA IMMN BS</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>33.2303</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00680692106145</RetailUnitId>
+
+          <RetailUnitId identType="VIN">67117</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="89">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">39247</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00811660029900</InvoiceUnitId>
+
+          <InvoiceUnitDescription>NUUN DRNK TAB WILD STRAW</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="EA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>37.8405</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00811660029900</RetailUnitId>
+
+          <RetailUnitId identType="VIN">39247</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">8</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="90">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">66088</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00066380009231</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OKOCAT WOOD CLMPNG LITTR</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="EA">2</InvoiceUnitQty>
+
+          <InvoiceUnitCost>13.0606</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00066380009231</RetailUnitId>
+
+          <RetailUnitId identType="VIN">66088</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">1</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="91">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">36887</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00751228037155</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 OCC FT BRKFST GRND</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>66.0911</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00751228037155</RetailUnitId>
+
+          <RetailUnitId identType="VIN">36887</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="92">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">87751</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00751228037100</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 OCC JAVA LOVE GRND</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>66.0911</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00751228037100</RetailUnitId>
+
+          <RetailUnitId identType="VIN">87751</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="93">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">38963</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00810981022256</InvoiceUnitId>
+
+          <InvoiceUnitDescription>PATGNA SARDINE XVR OLV O</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="EA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>51.9509</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00810981022256</RetailUnitId>
+
+          <RetailUnitId identType="VIN">38963</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">10</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="94">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">38988</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00810981022294</InvoiceUnitId>
+
+          <InvoiceUnitDescription>PATGNA SARDINE CNUTCURRY</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="EA">0</InvoiceUnitQty>
+
+          <InvoiceUnitCost>51.9509</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00810981022294</RetailUnitId>
+
+          <RetailUnitId identType="VIN">38988</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">10</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="95">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">17770</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00850005100256</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 PPBTL GTEA LATE/MCHA</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">2</InvoiceUnitQty>
+
+          <InvoiceUnitCost>32.3842</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00850005100256</RetailUnitId>
+
+          <RetailUnitId identType="VIN">17770</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="96">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">17771</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00850005100263</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 PPBTL C/BRW CRMLATTE</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>32.3842</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00850005100263</RetailUnitId>
+
+          <RetailUnitId identType="VIN">17771</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="97">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">47157</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00857513007312</InvoiceUnitId>
+
+          <InvoiceUnitDescription>POSHI ARTICOKE MRNTD SNK</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>14.1012</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00857513007312</RetailUnitId>
+
+          <RetailUnitId identType="VIN">47157</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">10</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="98">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">47158</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00857513007305</InvoiceUnitId>
+
+          <InvoiceUnitDescription>POSHI ASPRGUS MRNTD SNK</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>14.0526</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00857513007305</RetailUnitId>
+
+          <RetailUnitId identType="VIN">47158</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">10</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="99">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">15133</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00850019179767</InvoiceUnitId>
+
+          <InvoiceUnitDescription>REC GRPFRT TNG SPK WTR</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">2</InvoiceUnitQty>
+
+          <InvoiceUnitCost>32.4717</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00850019179767</RetailUnitId>
+
+          <RetailUnitId identType="VIN">15133</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="100">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">15169</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00850019179248</InvoiceUnitId>
+
+          <InvoiceUnitDescription>REC BLOOD ORNG SPRKLNG</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">2</InvoiceUnitQty>
+
+          <InvoiceUnitCost>32.4717</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00850019179248</RetailUnitId>
+
+          <RetailUnitId identType="VIN">15169</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="101">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">15411</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00850019179743</InvoiceUnitId>
+
+          <InvoiceUnitDescription>REC SPRK WTR RASP LEM</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">2</InvoiceUnitQty>
+
+          <InvoiceUnitCost>32.4620</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00850019179743</RetailUnitId>
+
+          <RetailUnitId identType="VIN">15411</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="102">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">15412</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00850019179750</InvoiceUnitId>
+
+          <InvoiceUnitDescription>REC SPRK WTR LIME CIT</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>32.4620</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00850019179750</RetailUnitId>
+
+          <RetailUnitId identType="VIN">15412</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="103">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">76454</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00039978004734</InvoiceUnitId>
+
+          <InvoiceUnitDescription>BOBS BROWNIE MIX FUDGY</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>13.9748</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00039978004734</RetailUnitId>
+
+          <RetailUnitId identType="VIN">76454</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">4</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="104">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">61029</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00018788101406</InvoiceUnitId>
+
+          <InvoiceUnitDescription>REDMOND RS KSHR SLT/SHKR</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>27.3575</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00018788101406</RetailUnitId>
+
+          <RetailUnitId identType="VIN">61029</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="105">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">64189</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00850020705931</InvoiceUnitId>
+
+          <InvoiceUnitDescription>RVW LEOS SNDWCH CKYCREAM</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>28.7957</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00850020705931</RetailUnitId>
+
+          <RetailUnitId identType="VIN">64189</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="106">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">78345</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00859480006213</InvoiceUnitId>
+
+          <InvoiceUnitDescription>SAFE ELTE TNA CHLI LM SS</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>26.7141</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00859480006213</RetailUnitId>
+
+          <RetailUnitId identType="VIN">78345</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="107">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">57817</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00879114001810</InvoiceUnitId>
+
+          <InvoiceUnitDescription>SNCKW GUMMI BEARS CHAMOY</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>63.3875</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00879114001810</RetailUnitId>
+
+          <RetailUnitId identType="VIN">57817</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="108">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">59355</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00812659011050</InvoiceUnitId>
+
+          <InvoiceUnitDescription>S.T. LPBLM LEM CARDAMOM</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="EA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>18.6136</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00812659011050</RetailUnitId>
+
+          <RetailUnitId identType="VIN">59355</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="109">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">59386</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00812659011074</InvoiceUnitId>
+
+          <InvoiceUnitDescription>S.T. LPBLM VEGAN UNSCENT</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="EA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>18.6136</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00812659011074</RetailUnitId>
+
+          <RetailUnitId identType="VIN">59386</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="110">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">27382</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00850065443089</InvoiceUnitId>
+
+          <InvoiceUnitDescription>S.D GINGERALE SODA</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>23.2038</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00850065443089</RetailUnitId>
+
+          <RetailUnitId identType="VIN">27382</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="111">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">29332</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00850017142206</InvoiceUnitId>
+
+          <InvoiceUnitDescription>S.D SPK WTR BLD ORG TANG</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>18.6720</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00850017142206</RetailUnitId>
+
+          <RetailUnitId identType="VIN">29332</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">3</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="112">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">29335</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00856579002323</InvoiceUnitId>
+
+          <InvoiceUnitDescription>S.D SPRKLNG GRAPFRUIT</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>18.6720</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00856579002323</RetailUnitId>
+
+          <RetailUnitId identType="VIN">29335</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">3</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="113">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">50029</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00850017142459</InvoiceUnitId>
+
+          <InvoiceUnitDescription>S.D SPRKLNG WTR GRAPEADE</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>18.6720</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00850017142459</RetailUnitId>
+
+          <RetailUnitId identType="VIN">50029</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">3</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="114">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">76840</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00856579002675</InvoiceUnitId>
+
+          <InvoiceUnitDescription>S.D SPK HALF TEA&amp;HLF LEM</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>18.6720</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00856579002675</RetailUnitId>
+
+          <RetailUnitId identType="VIN">76840</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">3</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="115">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">45006</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00782733000280</InvoiceUnitId>
+
+          <InvoiceUnitDescription>TASTY MUSHROOM MASALA</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="EA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>20.7726</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00782733000280</RetailUnitId>
+
+          <RetailUnitId identType="VIN">45006</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="116">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">51194</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00608503050098</InvoiceUnitId>
+
+          <InvoiceUnitDescription>AT TAPE SELF-STICK</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="EA">0</InvoiceUnitQty>
+
+          <InvoiceUnitCost>4.4540</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00608503050098</RetailUnitId>
+
+          <RetailUnitId identType="VIN">51194</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">1</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="117">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">51197</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00608503050050</InvoiceUnitId>
+
+          <InvoiceUnitDescription>AT SUPER-STICK BANDAGES</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="EA">6</InvoiceUnitQty>
+
+          <InvoiceUnitCost>3.2578</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00608503050050</RetailUnitId>
+
+          <RetailUnitId identType="VIN">51197</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">1</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="118">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">89437</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00033617000552</InvoiceUnitId>
+
+          <InvoiceUnitDescription>WASA CRISP THIN RYE 100</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>36.1867</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00033617000552</RetailUnitId>
+
+          <RetailUnitId identType="VIN">89437</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="119">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">03739</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00819215021423</InvoiceUnitId>
+
+          <InvoiceUnitDescription>WTRLOO SPK WTR BLKBRY</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>12.2146</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00819215021423</RetailUnitId>
+
+          <RetailUnitId identType="VIN">03739</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">2</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="120">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">03740</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00819215021249</InvoiceUnitId>
+
+          <InvoiceUnitDescription>WTRLOO SPKLG WTR CHRY LM</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">2</InvoiceUnitQty>
+
+          <InvoiceUnitCost>12.2146</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00819215021249</RetailUnitId>
+
+          <RetailUnitId identType="VIN">03740</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">2</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="121">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">12609</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00819215021874</InvoiceUnitId>
+
+          <InvoiceUnitDescription>WTRLOO SPRK WTR SPC APPL</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">0</InvoiceUnitQty>
+
+          <InvoiceUnitCost>12.2146</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00819215021874</RetailUnitId>
+
+          <RetailUnitId identType="VIN">12609</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">2</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="122">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">45116</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00819215020464</InvoiceUnitId>
+
+          <InvoiceUnitDescription>WTRLOO SPRKLNG WTR GRAPE</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>12.2146</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00819215020464</RetailUnitId>
+
+          <RetailUnitId identType="VIN">45116</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">2</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="123">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">60496</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00819215020280</InvoiceUnitId>
+
+          <InvoiceUnitDescription>WTRLOO SPKLNG WTR LEMNLM</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">2</InvoiceUnitQty>
+
+          <InvoiceUnitCost>12.2146</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00819215020280</RetailUnitId>
+
+          <RetailUnitId identType="VIN">60496</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">2</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="124">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">60864</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00819215020266</InvoiceUnitId>
+
+          <InvoiceUnitDescription>WTRLOO SPRKLING WTR CHRY</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>12.2146</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00819215020266</RetailUnitId>
+
+          <RetailUnitId identType="VIN">60864</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">2</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="125">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">63141</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00819215020228</InvoiceUnitId>
+
+          <InvoiceUnitDescription>WTRLOO SPRKLNG WTR PEACH</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>12.2146</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00819215020228</RetailUnitId>
+
+          <RetailUnitId identType="VIN">63141</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">2</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="126">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">85558</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00819215023588</InvoiceUnitId>
+
+          <InvoiceUnitDescription>WTRLOO SPK WTR GUAVA BRY</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>12.2146</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00819215023588</RetailUnitId>
+
+          <RetailUnitId identType="VIN">85558</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">2</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="127">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">67925</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00829696001203</InvoiceUnitId>
+
+          <InvoiceUnitDescription>W P WILD ANCHOVIES /EVOO</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>26.4714</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00829696001203</RetailUnitId>
+
+          <RetailUnitId identType="VIN">67925</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="128">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">60179</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00829696001319</InvoiceUnitId>
+
+          <InvoiceUnitDescription>W P WILD SKIPJCK LT TUNA</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">0</InvoiceUnitQty>
+
+          <InvoiceUnitCost>55.6270</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00829696001319</RetailUnitId>
+
+          <RetailUnitId identType="VIN">60179</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">24</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="129">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">60301</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00829696004501</InvoiceUnitId>
+
+          <InvoiceUnitDescription>W P WLD TUNA BN/CORN SLD</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">0</InvoiceUnitQty>
+
+          <InvoiceUnitCost>35.3212</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00829696004501</RetailUnitId>
+
+          <RetailUnitId identType="VIN">60301</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">9</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="130">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">60304</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00829696004518</InvoiceUnitId>
+
+          <InvoiceUnitDescription>W P WLD TUNA QNA SALAD</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>35.3212</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00829696004518</RetailUnitId>
+
+          <RetailUnitId identType="VIN">60304</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">9</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="131">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">60307</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00829696004532</InvoiceUnitId>
+
+          <InvoiceUnitDescription>W P WLD TUNA WHT BN SLD</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>35.3212</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00829696004532</RetailUnitId>
+
+          <RetailUnitId identType="VIN">60307</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">9</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="132">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">64574</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00829696001371</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 W P SHREDDED BEEF</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">0</InvoiceUnitQty>
+
+          <InvoiceUnitCost>92.0179</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00829696001371</RetailUnitId>
+
+          <RetailUnitId identType="VIN">64574</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">24</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="133">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">06799</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00042563009472</InvoiceUnitId>
+
+          <InvoiceUnitDescription>WOOD YOGURT ALMONDS</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">0</InvoiceUnitQty>
+
+          <InvoiceUnitCost>49.2182</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00042563009472</RetailUnitId>
+
+          <RetailUnitId identType="VIN">06799</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">8</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="134">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">66287</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00042563018771</InvoiceUnitId>
+
+          <InvoiceUnitDescription>OG2 WOOD BAN STILL WATER</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">2</InvoiceUnitQty>
+
+          <InvoiceUnitCost>26.1699</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00042563018771</RetailUnitId>
+
+          <RetailUnitId identType="VIN">66287</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">12</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="135">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">01312</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00850032994149</InvoiceUnitId>
+
+          <InvoiceUnitDescription>YO AGUA SALSA</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>27.4731</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00850032994149</RetailUnitId>
+
+          <RetailUnitId identType="VIN">01312</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <LineItem count="136">
+
+        <InvoiceUnit>
+
+          <InvoiceUnitId identType="VIN">13432</InvoiceUnitId>
+
+          <InvoiceUnitId identType="GTIN">00860008724779</InvoiceUnitId>
+
+          <InvoiceUnitDescription>ZAC TORTILLA CHP CHLI LM</InvoiceUnitDescription>
+
+          <InvoiceUnitQty cstoreUOMBasis="CA">1</InvoiceUnitQty>
+
+          <InvoiceUnitCost>23.9332</InvoiceUnitCost>
+
+        </InvoiceUnit>
+
+        <RetailUnitPricing>
+
+          <RetailUnitId identType="GTIN">00860008724779</RetailUnitId>
+
+          <RetailUnitId identType="VIN">13432</RetailUnitId>
+
+          <RetailUnitQty identType="GTIN">6</RetailUnitQty>
+
+        </RetailUnitPricing>
+
+      </LineItem>
+
+      <InvoiceSummary>
+
+        <InvoiceTotals>
+
+          <TotalLineItemNetAmt identType="Debit">4343.6139</TotalLineItemNetAmt>
+
+          <AllowanceOrCharge>
+
+            <AllowanceOrChargeReason/>
+
+            <ChargeAmt>50.00</ChargeAmt>
+
+          </AllowanceOrCharge>
+
+          <TotalInvoiceDueAmt identType="Debit">4393.53</TotalInvoiceDueAmt>
+
+        </InvoiceTotals>
+
+      </InvoiceSummary>
+
+    </InvoiceDetail>
+
+  </Invoice>
+
+</NAXML-BusDoc>

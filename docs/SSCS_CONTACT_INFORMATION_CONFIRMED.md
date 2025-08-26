@@ -44,7 +44,7 @@
 
 ### **Customer Numbers** *(✅ CONFIRMED TRANSITION)*
 - **Historical Customer #**: 6242 *(Pre-February 2023)*
-- **Current Customer #**: 7208 *(Active since February 2023)*
+- **Customer #**: 6242 *(EDI customer number)*
 - **Transition Date**: January-February 2023
 
 ### **System Access Credentials**
@@ -72,7 +72,7 @@
 ### **Step 2: Technical Escalation (IF NEEDED)**
 **Main Line**: 1-800-972-7727
 - Request escalation to technical team
-- Reference Customer #7208 (current) / #6242 (historical)
+- Reference Customer #6242 (EDI customer number)
 - Mention Shon Allen relationship for account context
 
 ### **Step 3: Department-Specific (BACKUP)**
@@ -85,7 +85,7 @@
 ## 📧 **EMAIL TEMPLATE - SHON ALLEN ESCALATION**
 
 ```
-Subject: URGENT: Critical SSCS CDB File Import Bug - Hills & Hollows (Customer #7208)
+Subject: URGENT: Critical SSCS CDB File Import Bug - Hills & Hollows (Customer #6242)
 
 Dear Shon,
 
@@ -96,7 +96,7 @@ Our CDB File Import page is experiencing 404 errors when processing NAXML files,
 
 **Confirmed Account Details:**
 - Hills & Hollows LLC
-- Current Customer #: 7208 (Historical: #6242)  
+- Customer #: 6242 (EDI customer number)  
 - Username: v6242shawn / sunrayasp\v6242shawn
 - EDI Email: v6242s1@edidelivery.com (active for daily reports)
 
@@ -141,7 +141,7 @@ Hills & Hollows DABS Automation Team
 | Contact Type | Status | Confirmed Date | Source |
 |---|---|---|---|
 | Shon Allen (Primary) | ✅ CONFIRMED | Jan 16, 2025 | Email history |
-| Customer #7208 | ✅ CONFIRMED | Jan 16, 2025 | Feb 2023 transition |
+| Customer #6242 | ✅ CONFIRMED | Jan 16, 2025 | EDI customer number |
 | EDI v6242s1@edidelivery.com | ✅ ACTIVE | Jan 16, 2025 | July 2025 reports |
 | Main: 1-800-972-7727 | ✅ CONFIRMED | Jan 16, 2025 | Multiple sources |
 | Extension 4705 (Shipping) | ✅ CONFIRMED | Jan 16, 2025 | Email references |

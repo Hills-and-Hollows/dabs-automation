@@ -1,0 +1,79 @@
+{
+  "spirits_750ml": {
+    "category": "Spirits",
+    "container_type": "bottle",
+    "container_size": "750ml",
+    "units_per_case": 12,
+    "conversion_factor": "12",
+    "validation_range": [
+      "15.00",
+      "150.00"
+    ]
+  },
+  "spirits_1000ml": {
+    "category": "Spirits",
+    "container_type": "bottle",
+    "container_size": "1000ml",
+    "units_per_case": 6,
+    "conversion_factor": "6",
+    "validation_range": [
+      "20.00",
+      "200.00"
+    ]
+  },
+  "beer_355ml_can": {
+    "category": "Beer",
+    "container_type": "can",
+    "container_size": "355ml",
+    "units_per_case": 24,
+    "conversion_factor": "24",
+    "validation_range": [
+      "1.00",
+      "8.00"
+    ]
+  },
+  "beer_500ml_bottle": {
+    "category": "Beer",
+    "container_type": "bottle",
+    "container_size": "500ml",
+    "units_per_case": 12,
+    "conversion_factor": "12",
+    "validation_range": [
+      "2.00",
+      "12.00"
+    ]
+  },
+  "wine_750ml": {
+    "category": "Wine",
+    "container_type": "bottle",
+    "container_size": "750ml",
+    "units_per_case": 12,
+    "conversion_factor": "12",
+    "validation_range": [
+      "8.00",
+      "80.00"
+    ]
+  },
+  "wine_3000ml_box": {
+    "category": "Wine",
+    "container_type": "box",
+    "container_size": "3000ml",
+    "units_per_case": 4,
+    "conversion_factor": "4",
+    "validation_range": [
+      "12.00",
+      "50.00"
+    ]
+  },
+  "cider_355ml": {
+    "category": "Cider",
+    "container_type": "can",
+    "container_size": "355ml",
+    "units_per_case": 24,
+    "conversion_factor": "24",
+    "validation_range": [
+      "1.50",
+      "6.00"
+    ]
+  }
+}

@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ItemSynch version="2.0" timestamp="2025-08-25T15:15:30.721843Z" vendor="DABS">
+  <VendorInfo>
+    <VendorID>DABS</VendorID>
+    <VendorName>Utah Division of Alcoholic Beverage Control</VendorName>
+    <InvoiceNumber>PDF_20250825_151530</InvoiceNumber>
+    <InvoiceDate>2025-08-25</InvoiceDate>
+    <TotalItems>12</TotalItems>
+    <StoreLocationID>HILLS_HOLLOWS_BOULDER</StoreLocationID>
+    <TransmissionDate>2025-08-25</TransmissionDate>
+  </VendorInfo>
+  <Items>
+    <Item>
+      <PLU>547295</PLU>
+      <ItemName>BOGLE CHARDONNAY 750ml</ItemName>
+      <Price>119.88</Price>
+      <Cost>89.91</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>547295</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:30.721843Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>017086</PLU>
+      <ItemName>SUGAR HOUSE VODKA 1000ml -</ItemName>
+      <Price>131.94</Price>
+      <Cost>98.95</Cost>
+      <Category>SPIRITS</Category>
+      <Size>1000ml</Size>
+      <VendorItemCode>017086</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:30.721843Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>039271</PLU>
+      <ItemName>ST GERMAIN ELDERFLOWER</ItemName>
+      <Price>221.94</Price>
+      <Cost>166.45</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>039271</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:30.721843Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>066836</PLU>
+      <ItemName>ESPOLON BLANCO TEQUILA 750ml -</ItemName>
+      <Price>383.88</Price>
+      <Cost>287.91</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>066836</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:30.721843Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>087619</PLU>
+      <ItemName>MATUA SAUVIGNON BLANC 750ml -</ItemName>
+      <Price>155.88</Price>
+      <Cost>116.91</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>087619</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:30.721843Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>418330</PLU>
+      <ItemName>19 CRIMES CABERNET SAUVIGNON</ItemName>
+      <Price>155.88</Price>
+      <Cost>116.91</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>418330</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:30.721843Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>419951</PLU>
+      <ItemName>BOTA BOX NIGHTHAWK BLACK RED</ItemName>
+      <Price>71.97</Price>
+      <Cost>53.98</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>419951</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:30.721843Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>445303</PLU>
+      <ItemName>BOGLE CHARDONNAY 750ml - 547295</ItemName>
+      <Price>119.88</Price>
+      <Cost>89.91</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>445303</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:30.721843Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>561015</PLU>
+      <ItemName>RED ROCK ELEPHINO IPA 500ml -</ItemName>
+      <Price>48.48</Price>
+      <Cost>36.36</Cost>
+      <Category>BEER</Category>
+      <Size>500ml</Size>
+      <VendorItemCode>561015</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:30.721843Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>917817</PLU>
+      <ItemName>HIGHPOINT TRANSPLANT CIDER</ItemName>
+      <Price>61.20</Price>
+      <Cost>45.90</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>917817</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:30.721843Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>927483</PLU>
+      <ItemName>GRAND TETON SWEETGRASS APA</ItemName>
+      <Price>38.88</Price>
+      <Cost>29.16</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>927483</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:30.721843Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>989396</PLU>
+      <ItemName>RED ROCK FROHLICH PILS 500ml -</ItemName>
+      <Price>48.48</Price>
+      <Cost>36.36</Cost>
+      <Category>SPIRITS</Category>
+      <Size>500ml</Size>
+      <VendorItemCode>989396</VendorItemCode>
+      <LastUpdated>2025-08-25T15:15:30.721843Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+  </Items>
+  <InvoiceTotals>
+    <SubTotal>1168.72</SubTotal>
+    <Tax>0.00</Tax>
+    <Total>1168.72</Total>
+    <ItemCount>12</ItemCount>
+    <RetailTotal>1558.29</RetailTotal>
+  </InvoiceTotals>
+</ItemSynch>

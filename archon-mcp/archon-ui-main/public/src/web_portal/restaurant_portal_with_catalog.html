@@ -501,6 +501,16 @@
             transform: translateY(-2px);
         }
 
+        .invoice-btn.naxml {
+            background: #805ad5;
+            color: white;
+        }
+
+        .invoice-btn.naxml:hover {
+            background: #6b46c1;
+            transform: translateY(-2px);
+        }
+
         @media (max-width: 768px) {
             .main-content {
                 grid-template-columns: 1fr;
@@ -1440,6 +1450,9 @@ ${errorInfo ? `ERROR INFO:\n${errorInfo}` : ''}
                     <button class="invoice-btn email" onclick="emailInvoice()">
                         📧 Email Invoice
                     </button>
+                    <button class="invoice-btn naxml" onclick="generateNAXML()">
+                        📄 Generate NAXML
+                    </button>
                 </div>
             `;
             
@@ -1532,6 +1545,110 @@ Utah Package Agency`;
             // Create mailto link
             const mailtoLink = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             window.location.href = mailtoLink;
+        }
+
+        async function generateNAXML() {
+            // Send tracking email to shawn@owenent.com
+            await sendOrderTracking('NAXML_GENERATED');
+
+            const restaurantName = document.getElementById('restaurantName').value || 'Restaurant Customer';
+
+            // Generate transmission ID
+            const timestamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\..+/, '');
+            const transmissionId = `HILLS_HOLLOWS_${timestamp}_${timestamp}`;
+
+            // Calculate totals
+            let totalUnits = 0;
+            let totalCost = 0;
+
+            selectedProducts.forEach(item => {
+                totalUnits += item.quantity;
+                totalCost += item.price * item.quantity;
+            });
+
+            // Generate NAXML content matching Order 233813 format
+            const naxml = `<?xml version='1.0' encoding='utf-8'?>
+<NAXML-BusDoc>
+  <TransmissionHeader>
+    <TransmissionId>${transmissionId}</TransmissionId>
+    <TransmissionDate>${new Date().toISOString().split('T')[0]}</TransmissionDate>
+    <TransmissionTime>${new Date().toTimeString().split(' ')[0]}</TransmissionTime>
+    <TransmissionStatus>original</TransmissionStatus>
+  </TransmissionHeader>
+
+  <Parties>
+    <Supplier>
+      <Name>Utah Division of Alcoholic Beverage Control</Name>
+      <OrganizationId ident="DABS">DABS</OrganizationId>
+    </Supplier>
+    <Buyer>
+      <Name>${restaurantName}</Name>
+    </Buyer>
+    <ShipTo ident="HILLS_HOLLOWS_BOULDER">
+      <Name>Hills &amp; Hollows Package Agency</Name>
+    </ShipTo>
+  </Parties>
+
+  <Invoice>
+    <Location>
+      <Name ident="HILLS_HOLLOWS_BOULDER">Hills &amp; Hollows Package Agency</Name>
+    </Location>
+    <InvoiceNumber>HILLS_HOLLOWS_${timestamp}</InvoiceNumber>
+    <InvoiceDate>${new Date().toISOString().split('T')[0]}</InvoiceDate>
+    <Currency code="USD">USD</Currency>
+
+    <InvoiceDetail>
+${selectedProducts.map(item => {
+    const product = products.find(p => p.sku === item.sku);
+    const wholesaleCost = (item.price * 0.70).toFixed(2); // Estimate wholesale at 70% of retail
+    const lineTotal = (wholesaleCost * item.quantity).toFixed(2);
+
+    return `      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="VIN">${item.sku}</InvoiceUnitId><InvoiceUnitId identType="GTIN">${product?.upc || '0000000' + item.sku.padStart(5, '0')}</InvoiceUnitId>
+          <InvoiceUnitDescription>${item.product_name}</InvoiceUnitDescription>
+          <InvoiceUnitQty cstoreUOMBasis="each">${item.quantity}</InvoiceUnitQty>
+          <InvoiceUnitCost currency="USD">${wholesaleCost}</InvoiceUnitCost>
+          <LineItemGrossAmt>${lineTotal}</LineItemGrossAmt>
+          <LineItemNetAmt>${lineTotal}</LineItemNetAmt>
+        </InvoiceUnit>
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">${product?.upc || '0000000' + item.sku.padStart(5, '0')}</RetailUnitId>
+          <RetailUnitQty>${item.quantity}</RetailUnitQty>
+          <RetailPrice currency="USD">${item.price.toFixed(2)}</RetailPrice>
+        </RetailUnitPricing>
+      </LineItem>`;
+}).join('\n')}
+
+      <InvoiceSummary>
+        <InvoiceTotals>
+          <TotalInvoiceUnits>${totalUnits}</TotalInvoiceUnits>
+          <TotalLineItemNetAmt currency="USD">${(totalCost * 0.70).toFixed(2)}</TotalLineItemNetAmt>
+          <TotalTaxes>0.00</TotalTaxes>
+          <TotalInvoiceDueAmt currency="USD">${(totalCost * 0.70).toFixed(2)}</TotalInvoiceDueAmt>
+        </InvoiceTotals>
+      </InvoiceSummary>
+
+      <Terms>
+        <TermsType ident="NET30">NET30</TermsType>
+        <InvoiceDueDate>${new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]}</InvoiceDueDate>
+      </Terms>
+    </InvoiceDetail>
+  </Invoice>
+</NAXML-BusDoc>`;
+
+            // Create and download NAXML file
+            const blob = new Blob([naxml], { type: 'application/xml' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `HILLS_HOLLOWS_Invoice_${timestamp}.na.xml`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+
+            alert('NAXML invoice generated and downloaded! 📄\nReady for SSCS integration.');
         }
 
         // Utility function to debounce search input

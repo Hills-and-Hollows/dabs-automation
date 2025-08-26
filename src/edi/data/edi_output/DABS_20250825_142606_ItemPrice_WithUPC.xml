@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<NAXMLDocument version="1.0">
+  <Header>
+    <VendorID>HILLS_HOLLOWS_LLC</VendorID>
+    <LocationID>BOULDER_UT</LocationID>
+    <DocumentType>ItemPrice</DocumentType>
+    <Timestamp>2025-08-25T14:26:06.838884</Timestamp>
+    <OrderID>TEST_ORDER_001</OrderID>
+  </Header>
+  <Items>
+    <ItemCount>5</ItemCount>
+    <Item>
+      <PLU>039593</PLU>
+      <ItemName>ARETTE CLASICA BLANCO TEQUILA</ItemName>
+      <Price>395.88</Price>
+      <Quantity>1</Quantity>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <UPC status="not_found">MANUAL_REVIEW_REQUIRED</UPC>
+    </Item>
+    <Item>
+      <PLU>087123</PLU>
+      <ItemName>WILLAMETTE VLY PINOT NOIR WL</ItemName>
+      <Price>299.88</Price>
+      <Quantity>1</Quantity>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <UPC format="UPC-A">234884409929</UPC>
+      <VerifoneUPC format="11-digit">23488440992</VerifoneUPC>
+      <UPCVerification>
+        <Confidence>0.40</Confidence>
+        <Sources>specialized_alcohol_db</Sources>
+        <Verified>false</Verified>
+      </UPCVerification>
+    </Item>
+    <Item>
+      <PLU>523110</PLU>
+      <ItemName>KING ESTATE PINOT GRIS SIGNATURE</ItemName>
+      <Price>252.96</Price>
+      <Quantity>1</Quantity>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <UPC format="UPC-A">234884409929</UPC>
+      <VerifoneUPC format="11-digit">23488440992</VerifoneUPC>
+      <UPCVerification>
+        <Confidence>0.40</Confidence>
+        <Sources>specialized_alcohol_db</Sources>
+        <Verified>false</Verified>
+      </UPCVerification>
+    </Item>
+    <Item>
+      <PLU>580790</PLU>
+      <ItemName>SEGURA VIUDAS BRUT 750ml</ItemName>
+      <Price>167.88</Price>
+      <Quantity>1</Quantity>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <UPC format="UPC-A">234884409929</UPC>
+      <VerifoneUPC format="11-digit">23488440992</VerifoneUPC>
+      <UPCVerification>
+        <Confidence>0.40</Confidence>
+        <Sources>specialized_alcohol_db</Sources>
+        <Verified>false</Verified>
+      </UPCVerification>
+    </Item>
+    <Item>
+      <PLU>908418</PLU>
+      <ItemName>POE ROSÉ'23 750ml</ItemName>
+      <Price>251.88</Price>
+      <Quantity>1</Quantity>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <UPC format="UPC-A">234884409929</UPC>
+      <VerifoneUPC format="11-digit">23488440992</VerifoneUPC>
+      <UPCVerification>
+        <Confidence>0.40</Confidence>
+        <Sources>specialized_alcohol_db</Sources>
+        <Verified>false</Verified>
+      </UPCVerification>
+    </Item>
+  </Items>
+  <Summary>
+    <TotalItems>5</TotalItems>
+    <ItemsWithUPC>4</ItemsWithUPC>
+    <ItemsVerified>0</ItemsVerified>
+    <TotalValue>1368.48</TotalValue>
+    <UPCCoverageRate>80.0%</UPCCoverageRate>
+    <VerificationRate>0.0%</VerificationRate>
+  </Summary>
+</NAXMLDocument>

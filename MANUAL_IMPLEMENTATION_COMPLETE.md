@@ -133,11 +133,11 @@ scripts/
 
 ### **Email Template - Ready to Send**
 
-**Subject**: Hills & Hollows LLC (#7208) - Technical Integration Specifications Request - SYSTEM READY
+**Subject**: Hills & Hollows LLC (#6242) - Technical Integration Specifications Request - SYSTEM READY
 
 **Dear SSCS Technical Team,**
 
-Hills & Hollows LLC (Customer #7208) has **completed development** of our DABS price update automation system and requires final configuration details to integrate with your SSCS system.
+Hills & Hollows LLC (Customer #6242) has **completed development** of our DABS price update automation system and requires final configuration details to integrate with your SSCS system.
 
 **✅ OUR SYSTEM CAPABILITIES:**
 - Complete NAXML ItemSynch/ItemPrice file generation

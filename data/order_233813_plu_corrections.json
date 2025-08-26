@@ -1,0 +1,21 @@
+{
+  "plu_corrections": {
+    "017088": {
+      "current_plu": "017088",
+      "correct_plu": "017086",
+      "item_name": "BULLEIT BOURBON FRONTIER WHISK 750ml",
+      "issue": "PLU 017088 corresponds to 1.75L size, should be 017086 for 750ml",
+      "source": "PDF shows 017086, NAXML incorrectly uses 017088"
+    },
+    "068838": {
+      "current_plu": "068838", 
+      "correct_plu": "068836",
+      "item_name": "ST GERMAIN ELDERFLOWER LIQUEUR 750ml",
+      "issue": "PLU mismatch between PDF and NAXML",
+      "source": "PDF shows 068836, NAXML uses 068838"
+    }
+  },
+  "verification_status": "corrections_required",
+  "impact": "EDI delivery will fail if incorrect PLU codes are transmitted to SSCS",
+  "recommendation": "Correct PLU codes before BusDocInvoice conversion"
+}

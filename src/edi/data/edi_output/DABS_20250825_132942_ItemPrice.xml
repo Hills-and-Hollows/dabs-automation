@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ItemSynch version="2.0" timestamp="2025-08-25T13:29:42.691035Z" vendor="DABS">
+  <VendorInfo>
+    <VendorID>DABS</VendorID>
+    <VendorName>Utah Division of Alcoholic Beverage Control</VendorName>
+    <InvoiceNumber>DABS_TEST_001</InvoiceNumber>
+    <InvoiceDate>2025-08-25</InvoiceDate>
+    <TotalItems>3</TotalItems>
+    <StoreLocationID>HILLS_HOLLOWS_BOULDER</StoreLocationID>
+    <TransmissionDate>2025-08-25</TransmissionDate>
+  </VendorInfo>
+  <Items>
+    <Item>
+      <PLU>12345</PLU>
+      <ItemName>Tito's Handmade Vodka 750ml</ItemName>
+      <Price>24.99</Price>
+      <Cost>18.75</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>12345</VendorItemCode>
+      <LastUpdated>2025-08-25T13:29:42.691035Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>123456789012</UPC>
+    </Item>
+    <Item>
+      <PLU>67890</PLU>
+      <ItemName>Bacardi Mojito 1.75L</ItemName>
+      <Price>19.99</Price>
+      <Cost>15.25</Cost>
+      <Category>SPIRITS</Category>
+      <Size>1.75L</Size>
+      <VendorItemCode>67890</VendorItemCode>
+      <LastUpdated>2025-08-25T13:29:42.691035Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>678901234567</UPC>
+    </Item>
+    <Item>
+      <PLU>11111</PLU>
+      <ItemName>Kendall Jackson Chardonnay 750ml</ItemName>
+      <Price>16.99</Price>
+      <Cost>12.50</Cost>
+      <Category>WINE</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>11111</VendorItemCode>
+      <LastUpdated>2025-08-25T13:29:42.691035Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC>111111111111</UPC>
+    </Item>
+  </Items>
+  <InvoiceTotals>
+    <SubTotal>46.50</SubTotal>
+    <Tax>0.00</Tax>
+    <Total>46.50</Total>
+    <ItemCount>3</ItemCount>
+    <RetailTotal>61.97</RetailTotal>
+  </InvoiceTotals>
+</ItemSynch>

@@ -1,0 +1,21 @@
+{
+  "validation_result": {
+    "stage": "order_processing",
+    "success": true,
+    "items_expected": 13,
+    "items_found": 13,
+    "total_expected": "3962.78",
+    "total_found": "3962.78",
+    "missing_items": [],
+    "extra_items": [],
+    "discrepancies": [],
+    "timestamp": "2025-08-26T01:49:46.666594",
+    "source_hash": "0e83423ce726e015",
+    "validation_id": "VAL_20250826_014946_9153b26a"
+  },
+  "system_info": {
+    "timestamp": "2025-08-26T01:49:46.666872",
+    "validator_version": "1.0.0",
+    "compliance_standard": "Utah Package Agency 7-year retention"
+  }
+}

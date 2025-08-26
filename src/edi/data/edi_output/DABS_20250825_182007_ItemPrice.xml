@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NAXML-BusDoc>
+  <TransmissionHeader>
+    <TransmissionId>DABS_DABS_ORDER_233808_20250825_181953</TransmissionId>
+    
+        
+    <TransmissionDate>2025-08-25</TransmissionDate>
+    
+          
+    <TransmissionTime>18:19:53</TransmissionTime>
+    
+            
+    <TransmissionStatus>original</TransmissionStatus>
+    
+            
+  </TransmissionHeader>
+  
+            
+  <Parties>
+    <Supplier>
+      <Name>Utah Division of Alcoholic Beverage Control</Name>
+      
+                  
+      <OrganizationId ident="DABS">DABS</OrganizationId>
+      
+                  
+    </Supplier>
+    
+                  
+    <Buyer>
+      <Name>Hills &amp; Hollows LLC</Name>
+      
+                    
+    </Buyer>
+    
+                    
+    <ShipTo ident="HILLS_HOLLOWS_BOULDER">
+      <Name>Hills &amp; Hollows Package Agency</Name>
+      
+                      
+    </ShipTo>
+    
+                    
+  </Parties>
+  
+                    
+  <Invoice>
+    <Location>
+      <Name ident="HILLS_HOLLOWS_BOULDER">Hills &amp; Hollows Package Agency</Name>
+      
+                        
+    </Location>
+    
+                        
+    <InvoiceNumber>233808</InvoiceNumber>
+    
+                          
+    <InvoiceDate>2025-08-25</InvoiceDate>
+    
+                            
+    <Currency code="USD">USD</Currency>
+    
+                              
+    <InvoiceDetail>
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitDescription>UNDERWOOD BUBBLES OREGON</InvoiceUnitDescription>
+          
+                                      
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          
+                                        
+          <InvoiceUnitCost currency="USD">53.91</InvoiceUnitCost>
+          
+                                          
+          <LineItemGrossAmt>53.91</LineItemGrossAmt>
+          
+                                            
+          <LineItemNetAmt>53.91</LineItemNetAmt>
+          
+                                            
+        </InvoiceUnit>
+        
+                                            
+        <RetailUnitPricing>
+          <RetailUnitQty>1</RetailUnitQty>
+          
+                                                
+          <RetailPrice currency="USD">71.88</RetailPrice>
+          
+                                                
+        </RetailUnitPricing>
+        
+                                              
+      </LineItem>
+      
+                                              
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitDescription>LORENZA ROSE 750ml - 919829</InvoiceUnitDescription>
+          
+                                                    
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          
+                                                      
+          <InvoiceUnitCost currency="USD">179.91</InvoiceUnitCost>
+          
+                                                        
+          <LineItemGrossAmt>179.91</LineItemGrossAmt>
+          
+                                                          
+          <LineItemNetAmt>179.91</LineItemNetAmt>
+          
+                                                          
+        </InvoiceUnit>
+        
+                                                          
+        <RetailUnitPricing>
+          <RetailUnitQty>1</RetailUnitQty>
+          
+                                                              
+          <RetailPrice currency="USD">239.88</RetailPrice>
+          
+                                                              
+        </RetailUnitPricing>
+        
+                                                            
+      </LineItem>
+      
+                                                            
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitDescription>BOHEMIAN EXPORT LAGER 355ml -</InvoiceUnitDescription>
+          
+                                                                  
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          
+                                                                    
+          <InvoiceUnitCost currency="USD">35.82</InvoiceUnitCost>
+          
+                                                                      
+          <LineItemGrossAmt>35.82</LineItemGrossAmt>
+          
+                                                                        
+          <LineItemNetAmt>35.82</LineItemNetAmt>
+          
+                                                                        
+        </InvoiceUnit>
+        
+                                                                        
+        <RetailUnitPricing>
+          <RetailUnitQty>1</RetailUnitQty>
+          
+                                                                            
+          <RetailPrice currency="USD">47.76</RetailPrice>
+          
+                                                                            
+        </RetailUnitPricing>
+        
+                                                                          
+      </LineItem>
+      
+                                                                          
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitDescription>Total Quantities: 5 Total Cost:</InvoiceUnitDescription>
+          
+                                                                                
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          
+                                                                                  
+          <InvoiceUnitCost currency="USD">577.17</InvoiceUnitCost>
+          
+                                                                                    
+          <LineItemGrossAmt>577.17</LineItemGrossAmt>
+          
+                                                                                      
+          <LineItemNetAmt>577.17</LineItemNetAmt>
+          
+                                                                                      
+        </InvoiceUnit>
+        
+                                                                                      
+        <RetailUnitPricing>
+          <RetailUnitQty>1</RetailUnitQty>
+          
+                                                                                          
+          <RetailPrice currency="USD">769.56</RetailPrice>
+          
+                                                                                          
+        </RetailUnitPricing>
+        
+                                                                                        
+      </LineItem>
+      
+                                                                                        
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitDescription>LORENZA ROSE 750ml</InvoiceUnitDescription>
+          
+                                                                                              
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          
+                                                                                                
+          <InvoiceUnitCost currency="USD">179.91</InvoiceUnitCost>
+          
+                                                                                                  
+          <LineItemGrossAmt>179.91</LineItemGrossAmt>
+          
+                                                                                                    
+          <LineItemNetAmt>179.91</LineItemNetAmt>
+          
+                                                                                                    
+        </InvoiceUnit>
+        
+                                                                                                    
+        <RetailUnitPricing>
+          <RetailUnitQty>1</RetailUnitQty>
+          
+                                                                                                        
+          <RetailPrice currency="USD">239.88</RetailPrice>
+          
+                                                                                                        
+        </RetailUnitPricing>
+        
+                                                                                                      
+      </LineItem>
+      
+                                                                                                      
+      <InvoiceSummary>
+        <InvoiceTotals>
+          <TotalInvoiceUnits>5</TotalInvoiceUnits>
+          
+                                                                                                            
+          <TotalLineItemNetAmt currency="USD">1026.72</TotalLineItemNetAmt>
+          
+                                                                                                              
+          <TotalTaxes>0.00</TotalTaxes>
+          
+                                                                                                                
+          <TotalInvoiceDueAmt currency="USD">1026.72</TotalInvoiceDueAmt>
+          
+                                                                                                                
+        </InvoiceTotals>
+        
+                                                                                                              
+      </InvoiceSummary>
+      
+                                                                                                              
+      <Terms>
+        <TermsType ident="NET30">NET30</TermsType>
+        
+                                                                                                                  
+        <InvoiceDueDate>2025-09-24</InvoiceDueDate>
+        
+                                                                                                                  
+      </Terms>
+      
+                                                                                                                
+    </InvoiceDetail>
+    
+                                                                                                              
+  </Invoice>
+  
+                                                                                                            
+</NAXML-BusDoc>

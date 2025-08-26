@@ -371,11 +371,11 @@ class SSCSCPBConfigurator:
     
     def _generate_vendor_email_template(self) -> str:
         """Generate vendor contact email template"""
-        return """Subject: URGENT: Hills & Hollows LLC (#7208) - SSCS CPB DABS Vendor Configuration Required
+        return """Subject: URGENT: Hills & Hollows LLC (#6242) - SSCS CPB DABS Vendor Configuration Required
 
 Dear SSCS Technical Support Team,
 
-Hills & Hollows LLC (Customer #7208) has completed development of our automated DABS price update system and requires immediate configuration of the DABS vendor in your SSCS Centralized Product Browser (CPB) system.
+Hills & Hollows LLC (Customer #6242) has completed development of our automated DABS price update system and requires immediate configuration of the DABS vendor in your SSCS Centralized Product Browser (CPB) system.
 
 🚀 OUR SYSTEM STATUS - COMPLETE AND READY:
 

@@ -1,0 +1,40 @@
+{
+  "smtp_config": {
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "username": "${SMTP_USERNAME}",
+    "password": "${SMTP_PASSWORD}",
+    "use_tls": true
+  },
+  "alert_config": {
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "username": "${ALERT_SMTP_USERNAME}",
+    "password": "${ALERT_SMTP_PASSWORD}",
+    "alert_recipients": [
+      "tessa@hillsandhollowsmarket.com",
+      "heather@hillsandhollowsmarket.com",
+      "shawn.owen@owenent.com"
+    ],
+    "use_tls": true
+  },
+  "schedule": {
+    "monthly_day": 25,
+    "monthly_hour": 3,
+    "monthly_minute": 0,
+    "health_check_interval_minutes": 60
+  },
+  "thresholds": {
+    "max_processing_time_seconds": 1800,
+    "min_success_rate_percent": 95.0,
+    "max_error_count_daily": 5,
+    "min_disk_space_gb": 1.0,
+    "max_memory_usage_mb": 512
+  },
+  "business_config": {
+    "target_time_reduction_percent": 90,
+    "expected_item_count": 1239,
+    "utah_compliance_retention_years": 7,
+    "annual_value_target": 28000
+  }
+}

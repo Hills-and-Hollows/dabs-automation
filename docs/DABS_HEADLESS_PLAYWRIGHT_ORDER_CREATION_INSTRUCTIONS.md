@@ -56,6 +56,19 @@ if pending_check['has_pending_orders']:
     return handle_pending_order_conflict(pending_check)
 ```
 
+### Deleting the Open Order (Ops Quick Action)
+```bash
+# Headed (guaranteed success, shows browser)
+make dabs-delete-open-order-headed DABS_ORDER_ID=234102
+
+# Headless (uses hardened waits; optional ID targeting)
+make dabs-delete-open-order DABS_ORDER_ID=234102
+```
+Selectors used:
+- Delete trigger: `div.tableOpen tbody tr a.open-AddDialog.delete`
+- Confirm in modal: `#DeleteOrder input[type="submit"][value="Delete"]`
+Post-verification: reload Orders; assert row absence and banner removal.
+
 ### **STEP 1: Initialize DABS Processor** 
 ```python
 from src.integration.dabs_automated_ordering import DABSAutomatedOrdering

@@ -1,0 +1,59 @@
+{
+  "required_elements": [
+    "VendorInfo/VendorID",
+    "VendorInfo/VendorName",
+    "VendorInfo/InvoiceNumber",
+    "VendorInfo/InvoiceDate",
+    "Items/Item/PLU",
+    "Items/Item/ItemName",
+    "Items/Item/Price",
+    "Items/Item/Cost"
+  ],
+  "optional_elements": [
+    "Items/Item/UPC",
+    "Items/Item/VendorItemCode",
+    "Items/Item/Category",
+    "Items/Item/Size",
+    "Items/Item/Status"
+  ],
+  "data_constraints": {
+    "VendorID": {
+      "max_length": 20,
+      "pattern": "^[A-Z0-9]+$"
+    },
+    "InvoiceNumber": {
+      "max_length": 50,
+      "pattern": "^[A-Z0-9_-]+$"
+    },
+    "PLU": {
+      "max_length": 20,
+      "pattern": "^[0-9]+$"
+    },
+    "ItemName": {
+      "max_length": 50
+    },
+    "Price": {
+      "min_value": 0.01,
+      "max_value": 9999.99,
+      "decimal_places": 2
+    },
+    "Cost": {
+      "min_value": 0.01,
+      "max_value": 9999.99,
+      "decimal_places": 2
+    },
+    "UPC": {
+      "pattern": "^[0-9]{8,14}$"
+    }
+  },
+  "business_rules": {
+    "max_items_per_invoice": 1000,
+    "max_invoice_total": 100000.0,
+    "required_vendor_id": "DABS",
+    "supported_naxml_versions": [
+      "2.0"
+    ],
+    "price_cost_ratio_max": 10.0,
+    "price_cost_ratio_min": 1.1
+  }
+}

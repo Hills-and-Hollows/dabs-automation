@@ -1,0 +1,1062 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="origin-trial" content="A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Licensee Orders</title>
+    <link rel="icon" href="/ProdApps/OnlineOrders/images/DABSLogoCropped.png" sizes="32x32">
+    <link rel="stylesheet" href="/ProdApps/OnlineOrders/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/ProdApps/OnlineOrders/css/site.css">
+    <link rel="stylesheet" href="/ProdApps/OnlineOrders/css/dabcBootstrap.css">
+   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" type="text/css">
+    <style>
+        .dropdown-submenu .dropdown-menu {
+            display: none !important;
+        }
+        .dropdown-item {
+            font-family: "Source Sans Pro" !important;
+            color: black !important;
+            font-size: 1.50rem;
+        }
+
+        .nav-link {
+            font-family: "Source Sans Pro" !important;
+            color: #202020 !important;
+            text-transform: none !important;
+            font-weight: 600 !important;
+            font-size: 1.50rem !important;
+        }
+
+        .nav-link:hover  {
+            font-family: "Source Sans Pro" !important;
+            color: black !important;
+        }
+
+        .navbar-nav:hover .nav-link:hover {
+            border-radius: 20px;
+            background: #d7d7d7;
+        }
+
+        li {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        a {
+            margin-top: 1px;
+        }
+
+        .navbar-nav {
+            transition: ease-in !important;
+        }
+
+        .dropdown .dropdown-item:active, .dropdown .dropdown-item:hover {
+            font-family: "Source Sans Pro" !important;
+            font-size: 1.50rem;
+            color: #FF8882 !important;
+            font-weight: 600 !important;
+            border-radius: 100px;
+         }
+
+        .vl {
+            border-left: 6px solid black;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+        }
+
+        .dropdown-menu li {
+            position: relative;
+        }
+ 
+            .dropdown-submenu:hover > .dropdown-menu {
+            display: block !important;
+            position: absolute;
+            left: 100%;
+            top: -7px;
+        }
+
+    </style>
+
+<script type="text/javascript" async="" charset="utf-8" src="https://www.gstatic.com/recaptcha/releases/_mscDd1KHr60EWWbt2I_ULP0/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-LpPE17frK5ghpDNcL02QVoY7N6n375lMdZEBjkcA4rqimdzMm/XNiOx2MI2jTEkt"></script><script async="" src="https://apps.use2.us-gov-pure.cloud/genesys-bootstrap/genesys.min.js" charset="utf-8"></script><script src="https://apps.use2.us-gov-pure.cloud/journey/messenger-plugins/offersHelper.min.js" type="text/javascript" charset="UTF-8"></script></head>
+<body>
+
+    <div>
+        <div class="row" style="width:1000px">
+            <div class="col" style="margin-left:15px">
+                <img class="img-fluid" src="/ProdApps/OnlineOrders/images/Utah-Unbrand-DABS.png" style="width:13%; padding: 10px">
+                <a href="https://abs.utah.gov">
+                    <img class="img-fluid" src="/ProdApps/OnlineOrders/images/DABSLogo.png" style="width:23%">
+                </a>
+            </div>
+        </div>
+        <div class="row" id="menu">
+            <nav class="navbar navbar-expand-sm py-0" style="background:#f1f1f1">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown" id="myDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop Products</a>
+                        <ul class="dropdown-menu rounded">
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/shop-products/">Shop Now </a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/shop-products/find-store/">Find a Store</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/shop-products/">Special Orders</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/shop-products/allocatedandrare/">Allocated &amp; Rare High <wbr> Demand Products</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/shop-products/interactive-product-list/">Product Lists</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/shop-products/proudly-utah/">We are Proudly Utah</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown" id="myDropdown1">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Licenses &amp; Permits</a>
+                        <ul class="dropdown-menu rounded">
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/licenses-permits/license-information/">License Information</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/licenses-permits/licensee-orders/">Licensee Orders</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/licenses-permits/applications-renewals/">Application &amp; Renewals</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/licenses-permits/forms-resources/">Forms &amp; Resources</a></li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="#">Training &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &gt; </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="https://abs.utah.gov/licenses-permits/training/">Training Overview</a></li>
+                                    <li><a class="dropdown-item" href="https://abs.utah.gov/licenses-permits/training/training-sign-up/">Training Sign-Up</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/licenses-permits/licensing-system/">Licensing &amp; Permitting <wbr> System</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/licenses-permits/off-premise-products/">Off-Premise Retail <wbr> Products</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/licenses-permits/violation-grid/">Violation Grid</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown" id="myDropdown2">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vendors</a>
+                        <ul class="dropdown-menu rounded">
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/vendors/vendor-portal/">Vendor Portal</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/vendors/price-calculator/">Price Calculator</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/vendors/monthly-price-books/">Monthly Price Books</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/vendors/special-price-allowance/">Special Price Allowance</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/vendors/sales-analysis/">Sales Analysis</a></li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="#">Vendor Forms &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &gt; </a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="https://abs.utah.gov/vendors/vendor-forms/">Vendor Forms Overview</a></li>
+                                    <li><a class="dropdown-item" href="https://abs.utah.gov/vendors/vendor-forms/pod-program/">POD Program</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/wp-content/uploads/Vendor-Manual.pdf">Vendor Manual</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown" id="myDropdown3"><a class="nav-link" href="https://abs.utah.gov/safety-education/"> Safety &amp; Education </a></li>
+                    <li class="nav-item dropdown" id="myDropdown4">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Laws &amp; Policies</a>
+                        <ul class="dropdown-menu rounded">
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/laws-policies/statutes-rules/">Statutes &amp; Rules</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/laws-policies/purchasing-policies/">Purchasing Policies</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/laws-policies/price-list-policies/">Price List Policies</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/laws-policies/law-enforcement/">Law Enforcement</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown" id="myDropdown5">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About DABS</a>
+                        <ul class="dropdown-menu rounded">
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/about-dabs/dabs-service-first-department/">DABS: A Service-First <wbr> Department</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/about-dabs/contact-us/">Contact Us</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/about-dabs/news/">News &amp; Updates</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/about-dabs/dabs-commission/">DABS Commission</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/about-dabs/dabs-advisory-board/">DABS Advisory Board</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/about-dabs/residents-visitors/">Residents &amp; Visitors</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/about-dabs/annual-reports/">Annual Reports</a></li>
+                            <li><a class="dropdown-item" href="https://abs.utah.gov/about-dabs/fiscal-calendar/">Fiscal Calendar</a></li>
+                        </ul>
+                    </li>
+ 
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-1">
+            <p class="lead">
+                <img class="img-responsive">
+            </p>
+        </div>
+        <div class="col-md-10">
+            
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/ProdApps/OnlineOrders/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/ProdApps/OnlineOrders/lib/bootstrap/dist/js/bootstrap.min.js">
+    <script src="/ProdApps/OnlineOrders/lib/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="/ProdApps/OnlineOrders/css/Base.css" type="text/css">
+    <link rel="stylesheet" href="/ProdApps/OnlineOrders/css/RHDP.css" type="text/css">
+    <link rel="stylesheet" href="/ProdApps/OnlineOrders/css/dabcBootstrap.css" type="text/css">
+
+   
+    <script src="/ProdApps/OnlineOrders/js/EnablePopups.js"></script>
+    <style>
+
+        .dropdown-menu a:hover {
+            cursor: pointer;
+        }
+
+        table.table td a.delete {
+            color: #F44336;
+        }
+
+        .hint-text {
+            float: left;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        .dataTables_paginate ul li {
+            padding: 0px !important;
+            margin: 0px !important;
+            border: 0px !important;
+            float: right !important;
+        }
+
+        .dataTables_length select {
+            float: right;
+            order: 2;
+            margin-left: 10px;
+            font-size: small;
+            width: 45px;
+        }
+
+
+        .btn-secondary {
+            color: #fff;
+            background-color: #061B4F;
+            border-color: #061B4F;
+            border-radius: 10px;
+            box-shadow: 3px 3px 3px grey;
+        }
+
+        .btn-red {
+            color: #fff;
+            background-color: #a8190b;
+            border-color: #f24611;
+            border-radius: 10px;
+            box-shadow: 3px 3px 3px grey;
+        }
+        .button4 {
+            background-color: #e7e7e7;
+            color: black;
+            border-radius: 10px;
+        }
+
+        #NewProductName {
+            position: relative;
+            z-index: 10000;
+        }
+
+        .ui-widget {
+            font-family: "Abel", sans-serif !important;
+            color: #333333;
+            font-size: 11pt;
+        }
+
+        .ui-autocomplete.ui-widget {
+            z-index: 5000 !important;
+            height: 500px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            font-family: "Abel", sans-serif !important;
+            color: #333333;
+            font-size: 11pt;
+        }
+
+        .card-footer.card-custom {
+            background: white;
+            color: black
+        }
+
+        .material-icons.blue {
+            color: #41a39c;
+        }
+
+        .legend {
+            color: red;
+            font-size: large;
+        }
+    </style>
+
+    <script>
+
+        $(document).on("click", ".open-AddDialog", function () {
+            var myOrderId = $(this).data('id');
+            $(".modal-footer #orderId").val(myOrderId);
+            $('#DeleteOrder').modal('show');
+        });
+
+        $(document).on("click", ".copy-AddDialog", function () {
+            var OrderId = $(this).data('id');
+            var SalesId = $(this).data('sale-id');
+            $(".modal-footer #orderHeaderId").val(OrderId);
+            $(".modal-footer #salesNumber").val(SalesId);
+            $('#copyOrderConfirmation').modal('show');
+        });
+
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+
+  
+
+
+    <form id="printForm" method="post" action="/ProdApps/OnlineOrders/Orders/PrintSelectedOrders">
+        <input type="hidden" name="customerNo" value="PA-539" style="">
+    </form>
+    <div class="spacer20"></div>
+    <div class="container">
+        <div id="headerM" class="h1">
+            <h1 class="centered">Licensee Open Order Details</h1>
+        </div>
+        <div class="spacer10"></div>
+
+        <div id="headerM">
+                <h2 class="centered">Tessa Barkan - PA-539 </h2>
+
+        </div>
+        <div class="spacer10"></div>
+        <div id="headerM">
+            <h3 class="centered">HILLS AND HOLLOWS</h3>
+        </div>
+        <div class="spacer20"></div>
+        <div class="row">
+            <div class="dropdown text-right">
+                <button class="btn btn-primary dropdown-toggle text-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>  My Account &nbsp;<span class="caret"></span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-right" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/ProdApps/OnlineOrders/Account/UpdateAccount">Update Account</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/ProdApps/OnlineOrders">Sign Out</a>
+                </div>
+            </div>
+        </div>
+        <div class="spacer20"></div>
+
+            <div class="card">
+                <div class="card-header">
+                <p class="NormalBold12NoPad">Open Order</p>
+                </div>
+                <div class="card-body">
+                        <div class="tableOpen">
+                            <table class="table table-bordered table-responsive-lg" style="border-left: 1px solid; border-right: 1px solid; width: 100%; margin: 0 auto; margin-top: 25px;">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th class="col-sm-2">Order Id</th>
+                                        <th class="col-sm-2">Date Created</th>
+                                        <th class="col-sm-2">Store</th>
+                                        <th class="col-sm-2">Status</th>
+                                        <th class="col-sm-2">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <tr class="NormalGridView">
+                                        <td>234220</td>
+                                        <td>8/24/2025</td>
+                                            <td>Warehouse</td>
+                                            <td>Pending</td>
+                                            <td>
+                                                <a href="/ProdApps/OnlineOrders/Orders/EditOrder?OrderId=234220" class="edit" title="Edit"><i class="material-icons blue" data-toggle="tooltip" title="" data-bs-original-title="Edit"></i></a>
+                                                <a href="#DeleteOrder" data-id="234220" class="open-AddDialog delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="" data-bs-original-title="Delete"></i></a>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                <div class="spacer10"></div>
+                <p class="NormalBold12NoPad">Pending order must be submitted or deleted before a new order can be created.</p>
+                </div>
+            </div>
+            <div class="spacer20"></div>
+            <div class="card">
+                <div class="card-header">
+                    <p class="NormalBold12NoPad">Order History</p>
+                  
+                </div>
+                <div class="card-body">
+<form action="/ProdApps/OnlineOrders/searchorders" method="post" novalidate="novalidate">                    <div class="spacer10"></div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label class="NormalBold12NoPad float-start" for="Status">Status</label>
+                                <select class="form-control Normal11" data-val="true" data-val-required="The Status field is required." id="status" name="Status"><option value="">Select Status</option>
+<option selected="selected" value="0">All</option>
+<option value="2">Created</option>
+<option value="4">Complete</option>
+<option value="3">Canceled</option>
+</select>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label class="NormalBold12NoPad float-start" for="OrderDate">OrderDate</label>
+                                <input class="form-control Normal11" id="pickdate" name="OrderDate" placeholder="Select your order date" type="date" value="" style="">
+                                <input data-val="true" data-val-required="The LicenseeNo field is required." id="LicenseeNo" name="LicenseeNo" type="hidden" value="PA-539" style="">
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label class="NormalBold12NoPad float-start" for="SearchByOrderId">Order Id</label>
+                                <input class="form-control Normal11" id="searchOrderId" maxlength="10" name="SearchByOrderId" type="text" value="" style="">
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="spacer10"></div>
+                    <div class="row">
+                        <div class="col-lg-1 d-flex">
+                            <button class="btn btn-secondary" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</button> &nbsp; &nbsp;&nbsp;
+                            <a href="/ProdApps/OnlineOrders/Orders" class="btn button4 m-2"> Clear </a> 
+
+                        </div>
+                    </div>
+                    <div class="spacer10"></div>
+                        <a id="printSelectedButton" class="btn btn-orange"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print Selected
+                        </a>
+                        <div class="spacer10"></div>
+                        <div class="tableClosed">
+                            <div id="pastTable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="pastTable_length"><label>Show <select name="pastTable_length" aria-controls="pastTable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12"><table id="pastTable" class="table table-bordered table-responsive-lg dataTable no-footer" style="border-left: 1px solid; border-right: 1px solid; width: 100%; margin: 0 auto; margin-top: 25px;" role="grid" aria-describedby="pastTable_info">
+                                    <thead class="thead-light">
+                                        <tr role="row"><th class="col-sm-1 sorting_desc" tabindex="0" aria-controls="pastTable" rowspan="1" colspan="1" aria-sort="descending" aria-label="Check to Print: activate to sort column ascending" style="width: 65.2188px;">Check to Print</th><th class="col-sm-2 sorting" tabindex="0" aria-controls="pastTable" rowspan="1" colspan="1" aria-label="Order Id: activate to sort column ascending" style="width: 148.438px;">Order Id<i class="fa fa-fw fa-sort"></i></th><th class="col-sm-2 sorting" tabindex="0" aria-controls="pastTable" rowspan="1" colspan="1" aria-label="Sales Order: activate to sort column ascending" style="width: 148.438px;">Sales Order<i class="fa fa-fw fa-sort"></i></th><th class="col-sm-2 sorting" tabindex="0" aria-controls="pastTable" rowspan="1" colspan="1" aria-label="Date Submitted: activate to sort column ascending" style="width: 148.438px;">Date Submitted<i class="fa fa-fw fa-sort"></i></th><th class="col-sm-2 sorting" tabindex="0" aria-controls="pastTable" rowspan="1" colspan="1" aria-label="Store: activate to sort column ascending" style="width: 148.438px;">Store<i class="fa fa-fw fa-sort"></i></th><th class="col-sm-2 sorting" tabindex="0" aria-controls="pastTable" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 148.438px;">Status<i class="fa fa-fw fa-sort"></i></th><th class="col-sm-2 sorting" tabindex="0" aria-controls="pastTable" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 65.2578px;">Actions</th></tr>
+                                    </thead>
+                                    <tbody>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+
+                                    <tr class="NormalGridView odd" role="row">
+                                                <td class="sorting_1">
+                                                    <input data-val="true" data-val-required="The IsChecked field is required." id="IsChecked" name="IsChecked" type="checkbox" value="SOO03078449" style=""> 
+                                                </td>
+                                                
+                                                    <td>233817</td>
+                                               
+                                            <td>SOO03078449</td>
+                                                <td>8/22/2025</td>
+                                                <td>Warehouse</td>
+                       
+                                                <td>Complete</td>
+                                                <td>
+                                                    <a href="/ProdApps/OnlineOrders/Orders/DisplayOrder?OrderId=233817&amp;So=SOO03078449" class="view" title="" data-toggle="tooltip" data-bs-original-title="View"><i class="material-icons blue"></i></a>
+                                                </td>
+                                            </tr><tr class="NormalGridView even" role="row">
+                                                <td class="sorting_1">
+                                                    <input id="IsChecked" name="IsChecked" type="checkbox" value="SOO03078391" style=""> 
+                                                </td>
+                                                
+                                                    <td>233813</td>
+                                               
+                                            <td>SOO03078391</td>
+                                                <td>8/22/2025</td>
+                                                <td>Warehouse</td>
+                       
+                                                <td>Complete</td>
+                                                <td>
+                                                    <a href="/ProdApps/OnlineOrders/Orders/DisplayOrder?OrderId=233813&amp;So=SOO03078391" class="view" title="" data-toggle="tooltip" data-bs-original-title="View"><i class="material-icons blue"></i></a>
+                                                </td>
+                                            </tr><tr class="NormalGridView odd" role="row">
+                                                <td class="sorting_1">
+                                                    <input id="IsChecked" name="IsChecked" type="checkbox" value="SOO03078335" style=""> 
+                                                </td>
+                                                
+                                                    <td>233811</td>
+                                               
+                                            <td>SOO03078335</td>
+                                                <td>8/22/2025</td>
+                                                <td>Warehouse</td>
+                       
+                                                <td>Complete</td>
+                                                <td>
+                                                    <a href="/ProdApps/OnlineOrders/Orders/DisplayOrder?OrderId=233811&amp;So=SOO03078335" class="view" title="" data-toggle="tooltip" data-bs-original-title="View"><i class="material-icons blue"></i></a>
+                                                </td>
+                                            </tr><tr class="NormalGridView even" role="row">
+                                                <td class="sorting_1">
+                                                    <input id="IsChecked" name="IsChecked" type="checkbox" value="SOO03078329" style=""> 
+                                                </td>
+                                                
+                                                    <td>233808</td>
+                                               
+                                            <td>SOO03078329</td>
+                                                <td>8/22/2025</td>
+                                                <td>Warehouse</td>
+                       
+                                                <td>Complete</td>
+                                                <td>
+                                                    <a href="/ProdApps/OnlineOrders/Orders/DisplayOrder?OrderId=233808&amp;So=SOO03078329" class="view" title="" data-toggle="tooltip" data-bs-original-title="View"><i class="material-icons blue"></i></a>
+                                                </td>
+                                            </tr><tr class="NormalGridView odd" role="row">
+                                                <td class="sorting_1">
+                                                    <input id="IsChecked" name="IsChecked" type="checkbox" value="SOO03052520" style=""> 
+                                                </td>
+                                                
+                                                    <td>230653</td>
+                                               
+                                            <td>SOO03052520</td>
+                                                <td>8/8/2025</td>
+                                                <td>Warehouse</td>
+                       
+                                                <td>Complete</td>
+                                                <td>
+                                                    <a href="/ProdApps/OnlineOrders/Orders/DisplayOrder?OrderId=230653&amp;So=SOO03052520" class="view" title="" data-toggle="tooltip" data-bs-original-title="View"><i class="material-icons blue"></i></a>
+                                                </td>
+                                            </tr><tr class="NormalGridView even" role="row">
+                                                <td class="sorting_1">
+                                                    <input id="IsChecked" name="IsChecked" type="checkbox" value="SOO03052343" style=""> 
+                                                </td>
+                                                
+                                                    <td>230555</td>
+                                               
+                                            <td>SOO03052343</td>
+                                                <td>8/8/2025</td>
+                                                <td>Warehouse</td>
+                       
+                                                <td>Complete</td>
+                                                <td>
+                                                    <a href="/ProdApps/OnlineOrders/Orders/DisplayOrder?OrderId=230555&amp;So=SOO03052343" class="view" title="" data-toggle="tooltip" data-bs-original-title="View"><i class="material-icons blue"></i></a>
+                                                </td>
+                                            </tr><tr class="NormalGridView odd" role="row">
+                                                <td class="sorting_1">
+                                                    <input id="IsChecked" name="IsChecked" type="checkbox" value="SOO03028333" style=""> 
+                                                </td>
+                                                
+                                                    <td>227661</td>
+                                               
+                                            <td>SOO03028333</td>
+                                                <td>7/27/2025</td>
+                                                <td>Warehouse</td>
+                       
+                                                <td>Complete</td>
+                                                <td>
+                                                    <a href="/ProdApps/OnlineOrders/Orders/DisplayOrder?OrderId=227661&amp;So=SOO03028333" class="view" title="" data-toggle="tooltip" data-bs-original-title="View"><i class="material-icons blue"></i></a>
+                                                </td>
+                                            </tr><tr class="NormalGridView even" role="row">
+                                                <td class="sorting_1">
+                                                    <input id="IsChecked" name="IsChecked" type="checkbox" value="SOO03024311" style=""> 
+                                                </td>
+                                                
+                                                    <td>227389</td>
+                                               
+                                            <td>SOO03024311</td>
+                                                <td>7/25/2025</td>
+                                                <td>Warehouse</td>
+                       
+                                                <td>Complete</td>
+                                                <td>
+                                                    <a href="/ProdApps/OnlineOrders/Orders/DisplayOrder?OrderId=227389&amp;So=SOO03024311" class="view" title="" data-toggle="tooltip" data-bs-original-title="View"><i class="material-icons blue"></i></a>
+                                                </td>
+                                            </tr><tr class="NormalGridView odd" role="row">
+                                                <td class="sorting_1">
+                                                    <input id="IsChecked" name="IsChecked" type="checkbox" value="SOO03024272" style=""> 
+                                                </td>
+                                                
+                                                    <td>227386</td>
+                                               
+                                            <td>SOO03024272</td>
+                                                <td>7/25/2025</td>
+                                                <td>Warehouse</td>
+                       
+                                                <td>Complete</td>
+                                                <td>
+                                                    <a href="/ProdApps/OnlineOrders/Orders/DisplayOrder?OrderId=227386&amp;So=SOO03024272" class="view" title="" data-toggle="tooltip" data-bs-original-title="View"><i class="material-icons blue"></i></a>
+                                                </td>
+                                            </tr><tr class="NormalGridView even" role="row">
+                                                <td class="sorting_1">
+                                                    <input id="IsChecked" name="IsChecked" type="checkbox" value="SOO03021794" style=""> 
+                                                </td>
+                                                
+                                                    <td> </td>
+                                               
+                                            <td>SOO03021794</td>
+                                                <td>7/23/2025</td>
+                                                <td>0033</td>
+                       
+                                                <td>Complete</td>
+                                                <td>
+                                                    <a href="/ProdApps/OnlineOrders/Orders/DisplayOrder?OrderId=0&amp;So=SOO03021794" class="view" title="" data-toggle="tooltip" data-bs-original-title="View"><i class="material-icons blue"></i></a>
+                                                </td>
+                                            </tr></tbody>
+                                </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="pastTable_info" role="status" aria-live="polite">Showing 1 to 10 of 13 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="pastTable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="pastTable_previous"><a href="#" aria-controls="pastTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="pastTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="pastTable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item next" id="pastTable_next"><a href="#" aria-controls="pastTable" data-dt-idx="3" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+                            </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8Oem6dFpXfBIiPQf8N8YgTteJ9f9OkldrzZTigLjjpivpGHbku75goxHG5O_O074f3E7TBeldb3_kpmIoMaDyfDQvZUoi7yShWI0OgztWZsjFa82cQ-8SygbOL0S5I_xVFZeTD0bi3_Fw5SZMKV40cA" style=""><input name="IsChecked" type="hidden" value="false" style=""><input name="IsChecked" type="hidden" value="false" style=""><input name="IsChecked" type="hidden" value="false" style=""><input name="IsChecked" type="hidden" value="false" style=""><input name="IsChecked" type="hidden" value="false" style=""><input name="IsChecked" type="hidden" value="false" style=""><input name="IsChecked" type="hidden" value="false" style=""><input name="IsChecked" type="hidden" value="false" style=""><input name="IsChecked" type="hidden" value="false" style=""><input name="IsChecked" type="hidden" value="false" style=""><input name="IsChecked" type="hidden" value="false" style=""><input name="IsChecked" type="hidden" value="false" style=""><input name="IsChecked" type="hidden" value="false" style=""></form>              
+                </div>
+            </div>
+        <div class="spacer10"></div>
+    </div>
+    <div class="modal" style="z-index:999999 !important" id="paTypeModal" tabindex="-1" aria-labelledby="paTypeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="float-left" id="paTypeModalLabel">Package Agency Order Type</h3>
+                </div>
+                <div class="modal-body centered">
+                    <a class="btn btn-primary btn-lg" href="/ProdApps/OnlineOrders/Orders/CreateOrderPAW" role="button"> Warehouse</a>
+                    <div class="spacer20"></div>
+                    <a class="btn btn-secondary btn-lg" href="/ProdApps/OnlineOrders/Orders/CreateOrderPAS" role="button"> State Store</a>
+                </div>
+                <div class="modal-footer">
+                    <a id="closemodal" href="/ProdApps/OnlineOrders/Orders" type="button" class="btn button4">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<form action="/ProdApps/OnlineOrders/Orders/CopyPreviousOrder" method="post" novalidate="novalidate">        <div class="modal" style="z-index:999999 !important" id="copyOrderConfirmation" tabindex="-1" aria-labelledby="copyOrderConfirmationLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="float-left" id="paTypeModalLabel">Copy From Previous Order</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p class="Normal12BlackNoPad">Are you sure you want to copy this order?</p>
+                        <input data-val="true" data-val-required="The LicenseeNo field is required." id="LicenseeNo" name="LicenseeNo" type="hidden" value="PA-539" style="">
+                        <input id="User_Contact" name="User.Contact" type="hidden" value="Tessa Barkan" style="">
+                        <input id="User_Phone" name="User.Phone" type="hidden" value="4353357349" style="">
+                        <input id="User_Name" name="User.Name" type="hidden" value="HILLS AND HOLLOWS" style="">
+                        <input data-val="true" data-val-required="The LicenseeType field is required." id="LicenseeType" name="LicenseeType" type="hidden" value="P" style="">
+                        <input data-val="true" data-val-required="The IsMilitary field is required." id="IsMilitary" name="IsMilitary" type="hidden" value="False" style="">
+                    </div>
+                    <div class="modal-footer centered">
+                        <input class="form-control" data-val="true" data-val-required="The OrderHeaderId field is required." hidden="hidden" id="orderHeaderId" maxlength="50" name="OrderHeaderId" type="text" value="0" style="">
+                        <input class="form-control" data-val="true" data-val-required="The SalesOrderNumber field is required." hidden="hidden" id="salesNumber" maxlength="50" name="SalesOrderNumber" type="text" value="" style="">
+                        <a id="btnCancel" href="/ProdApps/OnlineOrders/Orders" type="button" class="btn button4">Cancel</a>
+                        <button type="button" class="btn button4 float-end disabled" style="margin-left: 10px; display: none" id="btnCancel1">Cancel</button>
+                        <button type="button" class="btn btn-primary float-end disabled" style="margin-left: 10px; display: none" id="btnWait">Copying..Please Wait..</button>
+                        <input type="submit" style="margin-left: 10px;" value="Copy Order" id="btnSubmit" class="btn btn-primary btn-lg" onclick="return stopMultipleSubmit();">
+                    </div>
+                </div>
+            </div>
+        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8Oem6dFpXfBIiPQf8N8YgTteJ9f9OkldrzZTigLjjpivpGHbku75goxHG5O_O074f3E7TBeldb3_kpmIoMaDyfDQvZUoi7yShWI0OgztWZsjFa82cQ-8SygbOL0S5I_xVFZeTD0bi3_Fw5SZMKV40cA" style=""></form>
+
+
+<form action="/ProdApps/OnlineOrders/Orders/CopyPreviousOrder" method="post" novalidate="novalidate">        <div class="modal" style="z-index:999999 !important" id="copyOrder" tabindex="-1" aria-labelledby="copyOrderLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="float-left" id="paTypeModalLabel">Copy From Previous Order</h3>
+                    </div>
+                    <div class="modal-body">
+                        <label class="NormalBold12NoPad text-start float-left" for="OrderHeaderId">OrderHeaderId</label>
+                        <select class="form-control Normal11" data-val="true" data-val-required="The OrderHeaderId field is required." id="orderid" name="OrderHeaderId"><option value="">Select Order to Copy</option>
+<option value="233817">(Order Date - 8/22/2025) Order Id - 233817</option>
+<option value="233813">(Order Date - 8/22/2025) Order Id - 233813</option>
+<option value="233811">(Order Date - 8/22/2025) Order Id - 233811</option>
+<option value="233808">(Order Date - 8/22/2025) Order Id - 233808</option>
+<option value="230653">(Order Date - 8/8/2025) Order Id - 230653</option>
+<option value="230555">(Order Date - 8/8/2025) Order Id - 230555</option>
+<option value="227661">(Order Date - 7/27/2025) Order Id - 227661</option>
+<option value="227389">(Order Date - 7/25/2025) Order Id - 227389</option>
+<option value="227386">(Order Date - 7/25/2025) Order Id - 227386</option>
+<option value="224455">(Order Date - 7/12/2025) Order Id - 224455</option>
+<option value="224332">(Order Date - 7/11/2025) Order Id - 224332</option>
+</select>
+                        <input data-val="true" data-val-required="The LicenseeNo field is required." id="LicenseeNo" name="LicenseeNo" type="hidden" value="PA-539" style="">
+                        <input id="User_Contact" name="User.Contact" type="hidden" value="Tessa Barkan" style="">
+                        <input id="User_Phone" name="User.Phone" type="hidden" value="4353357349" style="">
+                        <input id="User_Name" name="User.Name" type="hidden" value="HILLS AND HOLLOWS" style="">
+                        <input data-val="true" data-val-required="The LicenseeType field is required." id="LicenseeType" name="LicenseeType" type="hidden" value="P" style="">
+                        <input data-val="true" data-val-required="The IsMilitary field is required." id="IsMilitary" name="IsMilitary" type="hidden" value="False" style="">
+                    </div>
+                    <div class="modal-footer centered">
+                        <a id="btnCancel2" href="/ProdApps/OnlineOrders/Orders" type="button" class="btn button4">Cancel</a>
+                        <button type="button" class="btn button4 float-end disabled" style="margin-left: 10px; display: none" id="btnCancel3">Cancel</button>
+                        <button type="button" class="btn btn-primary float-end disabled" style="margin-left: 10px; display: none" id="btnWait1">Copying..Please Wait..</button>
+                        <input type="submit" style="margin-left: 10px;" value="Copy Order" id="btnSubmit1" class="btn btn-primary btn-lg" onclick="return stopMultipleSubmit1();">
+                    </div>
+                </div>
+            </div>
+        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8Oem6dFpXfBIiPQf8N8YgTteJ9f9OkldrzZTigLjjpivpGHbku75goxHG5O_O074f3E7TBeldb3_kpmIoMaDyfDQvZUoi7yShWI0OgztWZsjFa82cQ-8SygbOL0S5I_xVFZeTD0bi3_Fw5SZMKV40cA" style=""></form>   
+
+<form action="/ProdApps/OnlineOrders/Orders/DeleteOrder" method="post" novalidate="novalidate">        <div id="DeleteOrder" style="z-index:999999 !important" class="modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-confirm">
+                <div class="modal-content">
+                    <div class="modal-header flex-column">
+                        <div class="icon-box">
+                            <i class="material-icons"></i>
+                        </div>
+                        <h4 class="modal-title w-100 Normal12BlackNoPad">Are you sure?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="Normal11">Do you want to delete this entire order? Please Confirm.</p>
+                        <input data-val="true" data-val-required="The LicenseeNo field is required." id="LicenseeNo" name="LicenseeNo" type="hidden" value="PA-539" style="">
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <a id="closemodal" href="/ProdApps/OnlineOrders/Orders" type="button" class="btn button4">Cancel</a>
+                        <input class="form-control" data-val="true" data-val-required="The OrderId field is required." hidden="hidden" id="orderId" maxlength="50" name="OpenHeader.OrderId" type="text" value="234220" style="">
+                        <input type="submit" style="margin-left: 10px;" value="Delete" class="btn btn-red">
+                    </div>
+                </div>
+            </div>
+        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8Oem6dFpXfBIiPQf8N8YgTteJ9f9OkldrzZTigLjjpivpGHbku75goxHG5O_O074f3E7TBeldb3_kpmIoMaDyfDQvZUoi7yShWI0OgztWZsjFa82cQ-8SygbOL0S5I_xVFZeTD0bi3_Fw5SZMKV40cA" style=""></form>
+
+
+
+<script>
+    $(document).ready(function () {
+        $('#pastTable').DataTable({
+            order: [[0, 'desc']],
+            "bFilter": false
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    var isSubmitted = false;
+    function stopMultipleSubmit() {
+        if (!isSubmitted) {
+            $('#btnSubmit').hide();
+            $('#btnWait').show();
+            $('#btnCancel').hide();
+            $('#btnCancel1').show();
+            isSubmitted = true;
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+</script>
+
+<script type="text/javascript">
+    var isSubmitted = false;
+    function stopMultipleSubmit1() {
+        if (!isSubmitted) {
+            $('#btnSubmit1').hide();
+            $('#btnWait1').show();
+            $('#btnCancel2').hide();
+            $('#btnCancel3').show();
+            isSubmitted = true;
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('#printSelectedButton').click(function () {
+            var selectedOrderIds = [];
+
+            var checkboxes = $('#pastTable input[type="checkbox"]');
+            var checkedCheckboxes = checkboxes.filter(':checked');
+
+            if (checkedCheckboxes.length === 0) {
+                alert("Please check at least one checkbox to proceed to print.");
+                return; // Stop execution
+            }
+
+            checkedCheckboxes.each(function () {
+                var orderId = $(this).val();
+                selectedOrderIds.push(orderId);
+            });
+
+            for (var i = 0; i < selectedOrderIds.length; i++) {
+                $('<input>').attr({
+                    type: 'hidden',
+                    name: 'SelectedOrderIds[' + i + ']',
+                    value: selectedOrderIds[i]
+                }).appendTo('#printForm');
+            }
+
+            $('#printForm').submit();
+        });
+    });
+</script>
+        </div>
+        <div class="col-md-1">
+            <p class="lead">
+                <img class="img-responsive">
+            </p>
+        </div>
+
+    </div>
+    <div class="spacer100"></div>
+    <footer class="border-top footer text-muted mt-4">
+        <div class="container" style="margin-left: 6.25%">
+            <p>© 2025 - DABS Licensee Orders - 1.0.0.0 - Environment:Production</p>
+        </div>
+    </footer>
+    <script type="text/javascript" charset="utf-8">
+  (function (g, e, n, es, ys) {
+    g['_genesysJs'] = e;
+    g[e] = g[e] || function () {
+      (g[e].q = g[e].q || []).push(arguments)
+    };
+    g[e].t = 1 * new Date();
+    g[e].c = es;
+    ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
+  })(window, 'Genesys', 'https://apps.use2.us-gov-pure.cloud/genesys-bootstrap/genesys.min.js', {
+    environment: 'fedramp-use2-core',
+    deploymentId: 'd4ec30e3-1436-4b40-ac92-c74641cde237'
+  });
+</script>
+    <!-- Google tag (gtag.js) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-X5QN659TK4"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-X5QN659TK4'); </script>
+    <script>
+Genesys("subscribe", "Messenger.ready", function(o){
+        Genesys("command", "Messenger.close");});
+</script>
+    <script src="/ProdApps/OnlineOrders/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/ProdApps/OnlineOrders/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/ProdApps/OnlineOrders/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="/ProdApps/OnlineOrders/js/dabc.js"></script>
+    <script src="/ProdApps/OnlineOrders/js/bootstrap.min.js"></script>
+    
+        <script src="https://www.google.com/recaptcha/api.js">
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+        <!-- jQuery Datatable js -->
+        <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+        <!-- Bootstrap Datatable js -->
+        <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    
+
+
+
+<div id="genesys-thirdparty">
+  <style>
+      /** Initial iframe styles*/
+      .genesys-thirdparty-frame {
+          height: 0px;
+          width: 0px;
+          top: unset;
+          left: unset;
+          right: sideSpace;
+          bottom: bottomSpace;
+          z-index: 99999999;
+          border: none;
+          position: fixed;
+          display: none;
+      }
+  </style>
+  <iframe class="genesys-thirdparty-frame" id="genesys-thirdparty-frame" name="GenesysThirdpartyFrame" src="https://apps.use2.us-gov-pure.cloud/messenger/thirdparty-plugins.html"></iframe>
+</div><iframe src="https://apps.use2.us-gov-pure.cloud/genesys-bootstrap/hub.html" width="0" height="0" style="display: none; border: 0;" sandbox="allow-scripts allow-same-origin"></iframe><div id="genesys-messenger" class="genesys-app">
+  <style>
+    /** Initial iframe styles*/
+    .genesys-mxg-frame {
+      height: 0px;
+      max-height: 712px;
+      width: 0px;
+      top: unset;
+      left: unset;
+      right: 20px;
+      bottom: 12px;
+      z-index: 99999999;
+      border: none;
+      position: fixed;
+      margin:0!important;/**WEBMESS-1466: To overwrite the margins set by brand*/
+      min-height: initial!important; /**WEBMESS-1466: to override the min-height set by brand*/
+    }
+
+    .genesys-mxg-container-frame {
+      width: 0px;
+      height: 0px;
+      bottom: 92px
+    }
+
+    .genesys-mxg-expand {
+      max-height: 92%;
+    }
+
+    .genesys-mxg-frame-transition {
+      transition: all 300ms;
+    }
+
+    .genesys-mxg-frame-fullscreen {
+      width: 100% !important;
+      height: 100% !important;
+      max-height: 100%;
+      max-width: 100%;
+    }
+
+    /** Safari browser cannot be targeted using device pixel ratio for zoom **/
+    .mxg-desktop-mac-safari {
+      max-height: 80%;
+    }
+
+    .mxg-desktop-mac-firefox {
+      max-height: 80%;
+    }
+
+    .mxg-desktop-windows-firefox {
+      max-height: 80%;
+    }
+
+    .mxg-desktop-windows-chrome {
+      max-height: 80%;
+    }
+
+    /* Smartphones - potrait */
+    @media screen and (max-width: 600px),
+      screen and (max-device-width: 600px),
+      screen and (max-device-width: 600px) and (orientation: landscape),
+      screen and (max-device-height: 428px) and (orientation: landscape),
+      screen and (max-device-width: 711px) and (orientation: landscape) {
+      .genesys-mxg-responsive {
+        width: 0px;
+        height: 0px;
+        max-height: 100%;
+        max-width: 100%;
+      }
+
+      /* WEBMESS-1144: Set left, right and bottom to 0px to stop iframe expanding off screen on smaller devices */
+      .genesys-mxg-conversation {
+        height: 100% !important;
+        width: 100% !important;
+        left: 0px !important;
+        right: 0px !important;
+        bottom: 0px !important;
+      }
+
+      /* WEBMESS-1144: Set left, right and bottom to 0px to stop iframe expanding off screen on smaller devices */
+      .genesys-mxg-homescreen {
+        height: 100% !important;
+        width: 100% !important;
+        left: 0px !important;
+        right: 0px !important;
+        bottom: 0px !important;
+      }
+
+      .mxg-desktop-mac-firefox {
+        max-height: 98%;
+      }
+
+      .mxg-desktop-windows-chrome {
+        max-height: 100%!important;
+      }
+    }
+
+    /* Smartphones - landscape */
+    @media screen and (max-device-width: 600px) and (orientation: landscape),
+      screen and (max-device-width: 768px) and (orientation: landscape),
+      screen and (max-device-width: 823px) and (orientation: landscape){
+        .genesys-mxg-engage {
+          width: 380px;
+        }
+    }
+
+    /*mozilla specific media query*/
+    @-moz-document url-prefix() {
+      @media screen and (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.5) {
+        .mxg-desktop-windows-firefox {
+          max-height: 70%;
+        }
+      }
+      /* WEBMESS-1374: Reflow: Not meeting 400% zoom */
+      @media screen and (min--moz-device-pixel-ratio: 4) and (max--moz-device-pixel-ratio: 4) {
+        .mxg-desktop-windows-firefox {
+          max-height: 98%;
+        }
+      }
+    }
+
+    /*WEBMESS-938:From zoom level 150%, for home screen to maintain the visible height ( applicable for windows/mac chrome browser, edge)*/
+
+    @media all and (-webkit-min-device-pixel-ratio: 1.3) and (-webkit-max-device-pixel-ratio: 3.0) {
+      .mxg-desktop-windows-chrome {
+        max-height: 75%;
+      }
+    }
+
+    @media screen and (min-device-width: 1200px) and (max-device-width: 1920px) {
+
+      /* to avoid overlapping of launcher and messenger in the specified ranges (desktops/laptops) from 150%
+    desktops */
+
+      @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+        .mxg-desktop-windows-chrome {
+          max-height: 70%;
+        }
+        .mxg-desktop-mac-chrome {
+          max-height: 80%;
+        }
+      }
+
+      @media all and (-webkit-min-device-pixel-ratio: 1.875) and (-webkit-max-device-pixel-ratio: 2.5){
+
+        .mxg-desktop-windows-chrome {
+          max-height: 70% !important;
+        }
+
+        .mxg-desktop-mac-chrome {
+          max-height: 70% !important;
+        }
+      }
+
+      @media all and (-webkit-device-pixel-ratio: 3) {
+        .mxg-desktop-windows-chrome {
+          max-height: 80% !important;
+        }
+      }
+
+      @media all and (-webkit-device-pixel-ratio: 3.5) {
+        .mxg-desktop-windows-chrome {
+          max-height: 70% !important;
+        }
+      }
+      @media all and (-webkit-min-device-pixel-ratio: 2.6) and (-webkit-max-device-pixel-ratio: 3.5) {
+        /* Support for 300% zoom on windows, macOS: edge, chrome */
+        .mxg-desktop-mac-chrome {
+          max-height: 65%;
+        }
+      }
+
+      /* From 400% zoom */
+      @media all and (-webkit-min-device-pixel-ratio: 3.5) and (-webkit-max-device-pixel-ratio: 5) {
+        .mxg-desktop-mac-chrome {
+          max-height: 98% !important;
+        }
+
+        .genesys-mxg-homescreen {
+          height: 100% !important;
+          width: 100% !important;
+          left: 0px !important;
+          right: 0px !important;
+          bottom: 0px !important;
+        }
+      }
+
+      @media all and (-webkit-min-device-pixel-ratio: 6) {
+        .mxg-desktop-mac-chrome {
+          max-height: 98%;
+        }
+      }
+    }
+
+  </style>
+  <iframe allowfullscreen="" class="genesys-mxg-frame genesys-mxg-responsive genesys-mxg-launcher-frame" id="genesys-mxg-frame" title="Messenger Launcher" name="MessengerLauncherFrame" width="100%" scrolling="no" src="https://apps.use2.us-gov-pure.cloud/messenger/messenger.html" style="left: unset; right: 20px; bottom: 12px; width: 72px !important; height: 72px !important;"></iframe>
+  <iframe allowfullscreen="" class="genesys-mxg-frame genesys-mxg-responsive genesys-mxg-container-frame" id="genesys-mxg-container-frame" title="Messenger" name="MessengerFrame" width="100%" src="https://apps.use2.us-gov-pure.cloud/messenger/messenger-renderer.html" style="left: unset; right: 20px; bottom: 94px;"></iframe>
+
+</div></body></html>

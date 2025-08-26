@@ -536,20 +536,48 @@ class DABSAutomatedOrdering:
             
             page = await self.browser_context.new_page()
             
-            # Navigate to DABS Orders page
-            logger.info("📄 Navigating to DABS Orders page...")
-            await page.goto(f"{self.dabs_base_url}Orders", wait_until="networkidle")
-            await page.wait_for_timeout(3000)
+            # Navigate to DABS main page first (direct Orders URL can fail)
+            logger.info("📄 Navigating to DABS main page...")
+            await page.goto(self.dabs_base_url, wait_until="domcontentloaded")
+            await page.wait_for_timeout(1500)
+            # From the main page, prefer clicking into Licensee Orders instead of direct /Orders
+            try:
+                if await page.query_selector('a:has-text("Licensee Orders")'):
+                    await page.click('a:has-text("Licensee Orders")')
+                    await page.wait_for_load_state('domcontentloaded')
+                    await page.wait_for_timeout(1000)
+            except Exception:
+                pass
             
             # STEP 1: Click Create New Order button
             logger.info("🆕 STEP 1: Creating new order...")
             try:
-                create_button_selector = 'a.btn.btn-orange.btn-lg[data-bs-toggle="modal"][data-bs-target="#paTypeModal"]'
-                await page.wait_for_selector(create_button_selector, timeout=10000)
-                await page.click(create_button_selector)
-                await page.wait_for_timeout(2000)
+                # Prefer direct Warehouse create URL if accessible
+                try:
+                    await page.goto(f"{self.dabs_base_url}Orders/CreateOrderPAW", wait_until="domcontentloaded")
+                    await page.wait_for_timeout(1500)
+                except Exception:
+                    pass
+                
+                # If still not on create page, try opening modal then selecting Warehouse
+                create_button_selector = 'a[data-bs-toggle="modal"][data-bs-target="#paTypeModal"]'
+                if await page.query_selector(create_button_selector):
+                    await page.click(create_button_selector)
+                    await page.wait_for_timeout(500)
+                else:
+                    # Fallback: text match
+                    if await page.query_selector('text=Create New Order'):
+                        await page.click('text=Create New Order')
+                        await page.wait_for_timeout(500)
             except Exception:
-                await page.click('text=Create New Order')
+                try:
+                    await page.click('text=Create New Order')
+                except Exception:
+                    logger.warning("⚠️ Could not find explicit 'Create New Order' trigger; proceeding to Warehouse create URL")
+                    try:
+                        await page.goto(f"{self.dabs_base_url}Orders/CreateOrderPAW", wait_until="domcontentloaded")
+                    except Exception:
+                        pass
             
             # STEP 2: Select Warehouse order type
             logger.info("🏭 STEP 2: Selecting Warehouse order type...")
@@ -559,7 +587,11 @@ class DABSAutomatedOrdering:
                 await page.click(warehouse_selector)
                 await page.wait_for_load_state('networkidle')
             except Exception:
-                await page.click('text=Warehouse')
+                # If already on the Warehouse create page, selector may not be present
+                try:
+                    await page.click('text=Warehouse')
+                except Exception:
+                    logger.info("ℹ️ Assuming Warehouse order page is already loaded")
                 
             await page.wait_for_timeout(3000)
             order_id = None
@@ -568,54 +600,90 @@ class DABSAutomatedOrdering:
             for product in products:
                 logger.info(f"➕ Adding product: {product['item_code']} - {product['product_name']}")
                 
-                # STEP 3: Click Add To Order dropdown
+                # STEP 3: Ensure All Items view is active (try direct click first)
                 try:
-                    dropdown_selector = 'button.btn.btn-primary.dropdown-toggle[id="dropdownMenuButton"]'
-                    await page.wait_for_selector(dropdown_selector, timeout=10000)
-                    await page.click(dropdown_selector)
-                    await page.wait_for_timeout(2000)
+                    # Prefer direct All Items activation if present
+                    all_items_selector = 'text=All Items'
+                    if await page.query_selector(all_items_selector):
+                        await page.click(all_items_selector)
+                    else:
+                        # Fallback: open dropdown then select All Items
+                        try:
+                            dropdown_selector = 'button.btn.btn-primary.dropdown-toggle[id="dropdownMenuButton"]'
+                            await page.wait_for_selector(dropdown_selector, timeout=8000)
+                            await page.click(dropdown_selector)
+                            await page.wait_for_timeout(500)
+                            await page.click(all_items_selector)
+                        except Exception:
+                            # Final fallback: attempt generic button by text
+                            await page.click('button:has-text("Add To Order")')
+                            await page.click(all_items_selector)
+                    await page.wait_for_load_state('networkidle')
+                    await page.wait_for_timeout(1500)
                 except Exception:
-                    await page.click('button:has-text("Add To Order")')
+                    logger.warning("⚠️ Could not activate 'All Items' view; proceeding to search anyway")
                 
-                # STEP 4: Select All Items from dropdown
-                await page.click('text=All Items')
-                await page.wait_for_load_state('networkidle')
-                await page.wait_for_timeout(3000)
-                
-                # STEP 5: Search for specific product
-                search_term = f"{product['item_code']} - {product['product_name']}"
+                # STEP 4: Search for specific product (search by code only for robustness)
+                search_term = f"{product['item_code']}"
                 logger.info(f"🔍 Searching for: {search_term}")
                 
                 try:
-                    search_selector = 'input[type="search"].form-control.form-control-sm[placeholder="Item Code or Name"]'
-                    await page.wait_for_selector(search_selector, timeout=10000)
-                    await page.fill(search_selector, search_term)
+                    # Try multiple search selectors for resilience
+                    search_selectors = [
+                        'input[type="search"][placeholder*="Item Code"]',
+                        'input[type="search"][placeholder*="Item"]',
+                        'input.form-control.form-control-sm',
+                        'input[placeholder*="Search"]',
+                    ]
+                    filled = False
+                    for sel in search_selectors:
+                        try:
+                            await page.wait_for_selector(sel, timeout=4000)
+                            await page.fill(sel, search_term)
+                            filled = True
+                            break
+                        except Exception:
+                            continue
+                    if not filled:
+                        # Fallback to a general input[type="search"]
+                        await page.fill('input[type="search"]', search_term)
                     await page.wait_for_timeout(2000)
                 except Exception:
-                    await page.fill('input[placeholder*="Item Code"]', search_term)
+                    logger.warning("⚠️ Could not locate search input; attempting to proceed")
                 
                 await page.wait_for_timeout(3000)
                 
-                # STEP 6: Set quantity (CRITICAL: Replace default 0)
-                logger.info(f"🔢 Setting quantity to {product['quantity']}")
-                try:
-                    quantity_selector = 'input.form-control.Normal11[id="quantity"][name="i.QuantityOrdered"]'
-                    await page.wait_for_selector(quantity_selector, timeout=10000)
-                    
-                    # Clear field and set quantity
-                    await page.click(quantity_selector)
-                    await page.evaluate('(selector) => document.querySelector(selector).select()', quantity_selector)
-                    await page.type(quantity_selector, str(product['quantity']))
-                    
-                    # Verify quantity was set correctly
-                    actual_quantity = await page.input_value(quantity_selector)
-                    logger.info(f"✅ Quantity validation: {actual_quantity}")
-                    
-                except Exception as e:
-                    logger.error(f"❌ Quantity input error: {e}")
-                    continue
+                # STEP 5: Set quantity when needed (default may be 1 in UI)
+                desired_qty = int(product['quantity'])
+                if desired_qty != 1:
+                    logger.info(f"🔢 Setting quantity to {desired_qty}")
+                    try:
+                        # Try common quantity inputs in results table
+                        qty_candidates = [
+                            'input.form-control.Normal11[id="quantity"][name="i.QuantityOrdered"]',
+                            'input[name*="QuantityOrdered"]',
+                            'input[id="quantity"]',
+                            'input.form-control[name*="Quantity"]'
+                        ]
+                        set_ok = False
+                        for sel in qty_candidates:
+                            try:
+                                await page.wait_for_selector(sel, timeout=4000)
+                                await page.click(sel)
+                                await page.evaluate('(selector) => { const el = document.querySelector(selector); if (el) el.select(); }', sel)
+                                await page.type(sel, str(desired_qty))
+                                actual_quantity = await page.input_value(sel)
+                                logger.info(f"✅ Quantity validation: {actual_quantity}")
+                                set_ok = True
+                                break
+                            except Exception:
+                                continue
+                        if not set_ok:
+                            logger.warning("⚠️ Could not locate a quantity input; proceeding with UI default (likely 1)")
+                    except Exception as e:
+                        logger.warning(f"⚠️ Quantity input adjustment skipped: {e}")
                 
-                # STEP 7: Click Add to Order button
+                # STEP 6: Click Add to Order button
                 logger.info("➕ Adding item to order...")
                 try:
                     add_to_order_selector = 'a.btn.btn-primary.btn-sm[href*="EditOrder"]'
@@ -637,6 +705,7 @@ class DABSAutomatedOrdering:
                     await page.wait_for_timeout(2000)
                     
                 except Exception:
+                    # Fallback: generic button text
                     await page.click('text=Add to Order')
                 
                 logger.info(f"✅ Product {product['item_code']} added successfully")

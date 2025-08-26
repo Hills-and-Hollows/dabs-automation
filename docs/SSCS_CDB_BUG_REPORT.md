@@ -21,7 +21,7 @@
 - **Tool**: CDB (Computer Daily Books) File Import Utility
 - **URL**: `https://apps.sunrayasp.com/CDB-7-5-5-1248/Utils/Import`
 - **User Account**: v6242shawn / sunrayasp\v6242shawn (Hills & Hollows LLC)
-- **Customer Numbers**: Historical #6242 → Current #7208 (Feb 2023 transition)
+- **Customer Number**: #6242 (EDI customer number)
 - **EDI Email**: v6242s1@edidelivery.com (✅ CONFIRMED - Active for daily reports)
 - **Browser**: Safari (latest version)
 - **Date/Time**: August 23, 2025 

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NAXML-BusDoc>
+  <TransmissionHeader>
+    <TransmissionId>DABS_HILLS_HOLLOWS_20250826_032052_20250826_032052</TransmissionId>
+    <TransmissionDate>2025-08-26</TransmissionDate>
+    <TransmissionTime>03:20:52</TransmissionTime>
+    <TransmissionStatus>original</TransmissionStatus>
+  </TransmissionHeader>
+  <Parties>
+    <Supplier>
+      <Name>Utah Division of Alcoholic Beverage Control</Name>
+      <OrganizationId ident="DABS">DABS</OrganizationId>
+    </Supplier>
+    <Buyer>
+      <Name>Sample Restaurant</Name>
+    </Buyer>
+    <ShipTo ident="HILLS_HOLLOWS_BOULDER">
+      <Name>Hills &amp; Hollows Package Agency</Name>
+    </ShipTo>
+  </Parties>
+  <Invoice>
+    <Location>
+      <Name ident="HILLS_HOLLOWS_BOULDER">Hills &amp; Hollows Package Agency</Name>
+    </Location>
+    <InvoiceNumber>HILLS_HOLLOWS_20250826_032052</InvoiceNumber>
+    <InvoiceDate>2025-08-26</InvoiceDate>
+    <Currency code="USD">USD</Currency>
+    <InvoiceDetail>
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="VIN">017088</InvoiceUnitId>
+          <InvoiceUnitId identType="GTIN">00000000017082</InvoiceUnitId>
+          <InvoiceUnitDescription>BULLEIT BOURBON FRONTIER WHISK 750ml</InvoiceUnitDescription>
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          <InvoiceUnitCost currency="USD">23.09</InvoiceUnitCost>
+          <LineItemGrossAmt>23.09</LineItemGrossAmt>
+          <LineItemNetAmt>23.09</LineItemNetAmt>
+        </InvoiceUnit>
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000017082</RetailUnitId>
+          <RetailUnitQty>1</RetailUnitQty>
+          <RetailPrice currency="USD">32.99</RetailPrice>
+        </RetailUnitPricing>
+      </LineItem>
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="VIN">419951</InvoiceUnitId>
+          <InvoiceUnitId identType="GTIN">00000000419952</InvoiceUnitId>
+          <InvoiceUnitDescription>19 CRIMES CABERNET SAUVIGNON 750ml</InvoiceUnitDescription>
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          <InvoiceUnitCost currency="USD">9.09</InvoiceUnitCost>
+          <LineItemGrossAmt>9.09</LineItemGrossAmt>
+          <LineItemNetAmt>9.09</LineItemNetAmt>
+        </InvoiceUnit>
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000419952</RetailUnitId>
+          <RetailUnitQty>1</RetailUnitQty>
+          <RetailPrice currency="USD">12.99</RetailPrice>
+        </RetailUnitPricing>
+      </LineItem>
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="VIN">445303</InvoiceUnitId>
+          <InvoiceUnitId identType="GTIN">00000000445300</InvoiceUnitId>
+          <InvoiceUnitDescription>BOTA BOX NIGHTHAWK BLACK RED 3000ml</InvoiceUnitDescription>
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          <InvoiceUnitCost currency="USD">12.59</InvoiceUnitCost>
+          <LineItemGrossAmt>12.59</LineItemGrossAmt>
+          <LineItemNetAmt>12.59</LineItemNetAmt>
+        </InvoiceUnit>
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000445300</RetailUnitId>
+          <RetailUnitQty>1</RetailUnitQty>
+          <RetailPrice currency="USD">17.99</RetailPrice>
+        </RetailUnitPricing>
+      </LineItem>
+      <InvoiceSummary>
+        <InvoiceTotals>
+          <TotalInvoiceUnits>3</TotalInvoiceUnits>
+          <TotalLineItemNetAmt currency="USD">63.97</TotalLineItemNetAmt>
+          <TotalTaxes>0.00</TotalTaxes>
+          <TotalInvoiceDueAmt currency="USD">63.97</TotalInvoiceDueAmt>
+        </InvoiceTotals>
+      </InvoiceSummary>
+      <Terms>
+        <TermsType ident="NET30">NET30</TermsType>
+        <InvoiceDueDate>2025-09-25</InvoiceDueDate>
+      </Terms>
+    </InvoiceDetail>
+  </Invoice>
+</NAXML-BusDoc>

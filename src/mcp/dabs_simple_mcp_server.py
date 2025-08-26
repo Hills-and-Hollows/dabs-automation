@@ -275,6 +275,20 @@ class SimpleMCPServer:
                             "type": "boolean",
                             "description": "Confirm deletion (default: true)",
                             "default": True
+                        },
+                        "headed": {
+                            "type": "boolean",
+                            "description": "Run headed Playwright (recommended for reliability)",
+                            "default": False
+                        },
+                        "order_id": {
+                            "type": "string",
+                            "description": "Optional order id to target specific row"
+                        },
+                        "return_artifacts": {
+                            "type": "boolean",
+                            "description": "Include screenshot/HTML artifact paths in response",
+                            "default": True
                         }
                     },
                     "additionalProperties": False
@@ -311,6 +325,31 @@ class SimpleMCPServer:
                         "wait_for_result": {
                             "type": "boolean",
                             "description": "Wait for print dialog/PDF generation (default: true)",
+                            "default": True
+                        }
+                    },
+                    "additionalProperties": False
+                }
+            },
+            "dabs_ensure_clean_state": {
+                "name": "dabs_ensure_clean_state",
+                "description": "Ensure DABS is in a clean state (no pending order); deletes pending order if present",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "headed": {
+                            "type": "boolean",
+                            "description": "Run headed when deletion is required (recommended)",
+                            "default": True
+                        },
+                        "confirm": {
+                            "type": "boolean",
+                            "description": "Confirm deletion if needed",
+                            "default": True
+                        },
+                        "return_artifacts": {
+                            "type": "boolean",
+                            "description": "Include artifact file paths in response",
                             "default": True
                         }
                     },
@@ -408,20 +447,28 @@ class SimpleMCPServer:
                 result = await self._dabs_check_order_to_print(arguments)
             elif tool_name == "dabs_print_selected_orders":
                 result = await self._dabs_print_selected_orders(arguments)
+            elif tool_name == "dabs_ensure_clean_state":
+                result = await self._dabs_ensure_clean_state(arguments)
             else:
                 return self._create_error_response(request_id, f"Tool not implemented: {tool_name}")
             
+            standardized = self._standardize_tool_result(result, tool_name)
+            try:
+                self._audit_log("tool_call", tool_name, request_id, arguments, json.loads(standardized))
+            except Exception:
+                self._audit_log("tool_call", tool_name, request_id, arguments, None)
             return self._create_response(request_id, {
                 "content": [
                     {
                         "type": "text",
-                        "text": result
+                        "text": standardized
                     }
                 ]
             })
             
         except Exception as e:
             logger.error(f"Tool execution error for {tool_name}: {e}")
+            self._audit_log("tool_error", tool_name, request_id, arguments, {"error": str(e)})
             return self._create_error_response(request_id, f"Tool execution failed: {str(e)}")
     
     def _create_response(self, request_id: str, result: Any) -> Dict[str, Any]:
@@ -442,6 +489,72 @@ class SimpleMCPServer:
                 "message": message
             }
         }
+    
+    def _standardize_tool_result(self, raw_json: str, tool_name: str) -> str:
+        """Wrap any tool's raw JSON string into a standardized schema.
+        Schema fields: success, action, message, error, details, artifacts, timestamp
+        """
+        try:
+            data = json.loads(raw_json) if isinstance(raw_json, str) else (raw_json or {})
+        except Exception as e:
+            data = {
+                "success": False,
+                "error": f"Malformed tool result JSON: {str(e)}",
+                "original": raw_json,
+            }
+
+        success = bool(data.get("success", True))
+        action = data.get("action") or tool_name
+        message = data.get("message") or (f"Error: {data.get('error')}" if data.get("error") else "")
+        error = data.get("error")
+        artifacts = data.get("artifacts")
+        timestamp = data.get("timestamp") or datetime.utcnow().isoformat()
+
+        # Preserve remaining original fields under details
+        envelope_keys = {"success", "action", "message", "error", "artifacts", "timestamp"}
+        details = {k: v for k, v in data.items() if k not in envelope_keys}
+
+        standardized = {
+            "success": success,
+            "action": action,
+            "message": message,
+            "error": error,
+            "details": details,
+            "artifacts": artifacts,
+            "timestamp": timestamp,
+        }
+
+        return json.dumps(standardized, indent=2)
+
+    def _audit_log(self, event: str, tool_name: str, request_id: Any, arguments: Dict[str, Any], result: Dict[str, Any] = None) -> None:
+        """Write an audit entry for tool calls to logs/dabs_mcp_audit.log"""
+        try:
+            if os.getenv("DABS_MCP_AUDIT", "1") not in ("1", "true", "True"):  # allow disabling
+                return
+            logs_dir = Path("logs")
+            logs_dir.mkdir(parents=True, exist_ok=True)
+
+            # Shallow mask of sensitive fields
+            safe_args = {}
+            for k, v in (arguments or {}).items():
+                if any(s in k.lower() for s in ["password", "token", "secret"]):
+                    safe_args[k] = "***"
+                else:
+                    safe_args[k] = v
+
+            entry = {
+                "timestamp": datetime.utcnow().isoformat(),
+                "event": event,
+                "tool": tool_name,
+                "request_id": request_id,
+                "arguments": safe_args,
+                "result": result,
+            }
+            with (logs_dir / "dabs_mcp_audit.log").open("a", encoding="utf-8") as f:
+                f.write(json.dumps(entry) + "\n")
+        except Exception as _:
+            # Never raise from audit logging
+            pass
     
     # =============================================================================
     # DABS TOOL IMPLEMENTATIONS
@@ -1113,6 +1226,18 @@ class SimpleMCPServer:
                     "timestamp": datetime.utcnow().isoformat()
                 }, indent=2)
             
+            # Pre-state validation: must have a single pending open order
+            pre_state_json = await self._dabs_get_open_order({})
+            pre_state = json.loads(pre_state_json)
+            if not (pre_state.get("success") and pre_state.get("has_open_order")):
+                return json.dumps({
+                    "success": False,
+                    "error": "No open order to submit",
+                    "message": "Submission requires a single pending order",
+                    "pre_state": pre_state,
+                    "timestamp": datetime.utcnow().isoformat()
+                }, indent=2)
+
             logger.info("🚀 Submitting DABS order for processing")
             
             sys.path.append(str(Path(__file__).parent.parent))
@@ -1141,28 +1266,39 @@ class SimpleMCPServer:
                     
                     # Look for success indicators
                     success_message = await page.query_selector('.success, .confirmation, text="submitted"')
-                    if success_message:
+                    # Post-state validation: ensure no open order remains
+                    post_state_json = await self._dabs_get_open_order({})
+                    post_state = json.loads(post_state_json)
+                    clean = post_state.get("success") and not post_state.get("has_open_order")
+
+                    if success_message or clean:
                         return json.dumps({
                             "success": True,
+                            "action": "order_submitted",
                             "order_submitted": True,
-                            "message": "Order successfully submitted to DABS",
+                            "message": "Order successfully submitted to DABS" if success_message else "Submission completed (verified clean state)",
                             "note": "Quantities available were current as of the previous evening",
+                            "pre_state": pre_state,
+                            "post_state": post_state,
                             "timestamp": datetime.utcnow().isoformat()
                         }, indent=2)
                     
                     return json.dumps({
-                        "success": True,
-                        "order_submitted": True,
-                        "message": "Order submission initiated - check DABS system for confirmation",
+                        "success": False,
+                        "error": "Submission did not verify clean state",
+                        "order_submitted": False,
+                        "pre_state": pre_state,
+                        "post_state": post_state,
                         "timestamp": datetime.utcnow().isoformat()
                     }, indent=2)
                 
                 return json.dumps({
                     "success": False,
                     "error": "Submit Order button not found - no open order to submit",
+                    "pre_state": pre_state,
                     "timestamp": datetime.utcnow().isoformat()
                 }, indent=2)
-                
+            
         except Exception as e:
             logger.error(f"Submit order error: {e}")
             return json.dumps({
@@ -1445,17 +1581,74 @@ class SimpleMCPServer:
             }, indent=2)
     
     async def _dabs_delete_open_order(self, arguments: Dict[str, Any]) -> str:
-        """Click delete button to remove pending open order"""
+        """Click delete button to remove pending open order.
+        Supports headed mode via existing script and returns artifact paths.
+        Args:
+            confirm (bool): required confirmation
+            headed (bool): run headed (uses subprocess script path)
+            order_id (str|None): optional id to target row
+            return_artifacts (bool): include artifact file paths
+        """
         try:
             confirm = arguments.get("confirm", True)
+            headed = arguments.get("headed", False)
+            target_order_id = arguments.get("order_id")
+            return_artifacts = arguments.get("return_artifacts", True)
             
             if not confirm:
                 return json.dumps({
                     "success": False,
-                    "error": "Order deletion requires confirmation",
+                    "error": "Order deletion requires confirm=true",
+                    "timestamp": datetime.utcnow().isoformat()
+                }, indent=2)
+
+            # Safety: require either headed=true or return_artifacts=true for traceability on destructive ops
+            if not headed and not return_artifacts:
+                return json.dumps({
+                    "success": False,
+                    "error": "Destructive operation requires headed=true or return_artifacts=true for audit traceability",
                     "timestamp": datetime.utcnow().isoformat()
                 }, indent=2)
             
+            # If headed, route through existing robust script for maximum reliability
+            if headed:
+                try:
+                    import subprocess
+                    env = os.environ.copy()
+                    env["DABS_HEADLESS"] = "false"
+                    if target_order_id:
+                        env["DABS_ORDER_ID"] = str(target_order_id)
+
+                    # Run the script and capture output
+                    proc = subprocess.run(
+                        [sys.executable, str(Path("scripts") / "delete_dabs_order.py")],
+                        capture_output=True, text=True, env=env, cwd=str(Path(__file__).parent.parent.parent)
+                    )
+
+                    stdout = proc.stdout.strip()
+                    success = proc.returncode == 0
+
+                    # Artifact paths
+                    artifacts_dir = Path("data") / "playwright_screenshots"
+                    artifacts = {
+                        "before_png": str(artifacts_dir / "debug_dabs_interface.png"),
+                        "after_png": str(artifacts_dir / "debug_dabs_interface_after.png"),
+                        "before_html": str(artifacts_dir / "orders_list_headed.html"),
+                        "after_html": str(artifacts_dir / "orders_list_after.html")
+                    } if return_artifacts else None
+
+                    return json.dumps({
+                        "success": bool(success),
+                        "action": "order_deleted" if success else "order_delete_attempt",
+                        "message": "Headed deletion completed" if success else "Headed deletion finished with errors",
+                        "details": {"stdout": stdout[-2000:]},
+                        "artifacts": artifacts,
+                        "timestamp": datetime.utcnow().isoformat()
+                    }, indent=2)
+                except Exception as se:
+                    logger.error(f"Headed script execution failed: {se}")
+                    # Fall back to inline automation below
+
             logger.info("🗑️ Looking for pending open order to delete")
             
             sys.path.append(str(Path(__file__).parent.parent))
@@ -1507,7 +1700,26 @@ class SimpleMCPServer:
                 
                 logger.info(f"🗑️ Order to delete: {order_details}")
                 
-                # PRECISE DELETION SEQUENCE - Based on successful implementation
+                # If specific order id provided, try row-scoped anchor first
+                if target_order_id:
+                    try:
+                        row_delete = await page.query_selector(
+                            f'div.tableOpen tbody tr:has(td:has-text("{target_order_id}")) a.open-AddDialog.delete, '
+                            'a[href="#DeleteOrder"]'
+                        )
+                        if row_delete:
+                            await row_delete.click()
+                            await page.wait_for_selector('#DeleteOrder', timeout=5000)
+                            confirm_btn = await page.wait_for_selector(
+                                "#DeleteOrder input[type='submit'][value='Delete']",
+                                timeout=5000
+                            )
+                            await confirm_btn.click()
+                            await page.wait_for_timeout(2000)
+                    except Exception:
+                        pass
+
+                # PRECISE DELETION SEQUENCE - icon → red Delete
                 logger.info("🎯 Using proven deletion sequence: delete icon -> red Delete button")
                 
                 # STEP 1: Click the delete icon (trash can)
@@ -1582,6 +1794,20 @@ class SimpleMCPServer:
                     logger.error(f'❌ Error finding/clicking delete icon: {e}')
                     delete_successful = False
                 
+                # Capture artifacts in inline flow if requested
+                artifacts = None
+                if return_artifacts:
+                    try:
+                        artifacts_dir = Path("data") / "playwright_screenshots"
+                        artifacts = {
+                            "before_png": str(artifacts_dir / "debug_dabs_interface.png"),
+                            "after_png": str(artifacts_dir / "debug_dabs_interface_after.png"),
+                            "before_html": str(artifacts_dir / "orders_list_headless.html"),
+                            "after_html": str(artifacts_dir / "orders_list_after_headless.html")
+                        }
+                    except Exception:
+                        artifacts = None
+
                 # Return results based on deletion success
                 if delete_successful:
                     logger.info("✅ Order successfully deleted using precise deletion sequence")
@@ -1591,6 +1817,7 @@ class SimpleMCPServer:
                         "deleted_order": order_details,
                         "method": "precise_deletion_sequence",
                         "message": f"Successfully deleted order {order_details.get('order_id', 'unknown')} using proven deletion method",
+                        "artifacts": artifacts,
                         "timestamp": datetime.utcnow().isoformat()
                     }, indent=2)
                 else:
@@ -1605,6 +1832,7 @@ class SimpleMCPServer:
                             "Check if DABS interface has changed",
                             "Try manual deletion via DABS web interface"
                         ],
+                        "artifacts": artifacts,
                         "timestamp": datetime.utcnow().isoformat()
                     }, indent=2)
 
@@ -1916,6 +2144,71 @@ class SimpleMCPServer:
             return json.dumps({
                 "success": False,
                 "error": f"Print selected orders failed: {str(e)}",
+                "timestamp": datetime.utcnow().isoformat()
+            }, indent=2)
+
+    async def _dabs_ensure_clean_state(self, arguments: Dict[str, Any]) -> str:
+        """Ensure there is no pending order. Deletes it if present.
+        Args:
+            headed (bool): use headed mode when a deletion is required
+            confirm (bool): confirm deletion
+            return_artifacts (bool): include artifact paths
+        Returns normalized JSON with pre/post state and any deletion action.
+        """
+        headed = arguments.get("headed", True)
+        confirm = arguments.get("confirm", True)
+        return_artifacts = arguments.get("return_artifacts", True)
+
+        try:
+            # Check current state
+            pre_state_json = await self._dabs_get_open_order({})
+            pre_state = json.loads(pre_state_json)
+
+            action_taken = None
+            delete_result = None
+
+            if pre_state.get("success") and pre_state.get("has_open_order"):
+                if not confirm:
+                    return json.dumps({
+                        "success": False,
+                        "error": "Pending order exists; deletion requires confirm=true",
+                        "pre_state": pre_state,
+                        "timestamp": datetime.utcnow().isoformat()
+                    }, indent=2)
+
+                # Target specific order id if available
+                order_id = (pre_state.get("order") or {}).get("order_id")
+                delete_args = {
+                    "confirm": True,
+                    "headed": bool(headed),
+                    "order_id": order_id,
+                    "return_artifacts": return_artifacts
+                }
+                delete_result_json = await self._dabs_delete_open_order(delete_args)
+                delete_result = json.loads(delete_result_json)
+                action_taken = "deleted_pending_order" if delete_result.get("success") else "delete_attempt_failed"
+
+            # Post-check state
+            post_state_json = await self._dabs_get_open_order({})
+            post_state = json.loads(post_state_json)
+
+            clean = post_state.get("success") and not post_state.get("has_open_order")
+
+            return json.dumps({
+                "success": bool(clean),
+                "action": action_taken or "no_action_needed",
+                "message": "System is clean (no pending order)" if clean else "Pending order still present",
+                "pre_state": pre_state,
+                "post_state": post_state,
+                "delete_result": delete_result,
+                "timestamp": datetime.utcnow().isoformat()
+            }, indent=2)
+
+        except Exception as e:
+            logger.error(f"ensure_clean_state error: {e}")
+            return json.dumps({
+                "success": False,
+                "error": f"ensure_clean_state failed: {str(e)}",
                 "timestamp": datetime.utcnow().isoformat()
             }, indent=2)
     

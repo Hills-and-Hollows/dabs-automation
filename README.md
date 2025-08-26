@@ -57,6 +57,27 @@ start_hero_system.py
 
 ---
 
+## 🧹 Routine Ops: Delete Open DABS Order
+
+```bash
+# Headless (default). Optional: DABS_ORDER_ID=234102 to target the row
+make dabs-delete-open-order
+make dabs-delete-open-order DABS_ORDER_ID=234102
+
+# Headed/visible (recommended for operations)
+make dabs-delete-open-order-headed
+make dabs-delete-open-order-headed DABS_ORDER_ID=234102
+```
+
+Flow and verification:
+- Trigger selector: `div.tableOpen tbody tr a.open-AddDialog.delete`
+- Confirm in modal: `#DeleteOrder input[type="submit"][value="Delete"]` (not Cancel)
+- Post-condition: reload Orders; verify missing row and absence of the banner
+  “Pending order must be submitted or deleted before a new order can be created.”
+Artifacts saved to `data/playwright_screenshots/` (before/after screenshots and HTML).
+
+---
+
 ## 📊 System Architecture
 
 ```
@@ -134,6 +155,55 @@ make check-structure
 # Auto-fix structure violations
 make fix-structure
 ```
+
+### DABS Open Order Deletion
+```bash
+# Headless (default). Optional: DABS_ORDER_ID=234102 to target a specific row
+make dabs-delete-open-order
+
+# Headed (visible browser) for guaranteed success
+make dabs-delete-open-order-headed
+
+# Equivalent direct call
+# DABS_HEADLESS=false DABS_ORDER_ID=234102 python3 scripts/delete_dabs_order.py
+```
+
+Artifacts and verification:
+- Before/after screenshots and HTML captured in `data/playwright_screenshots/`
+- Script verifies: row removed and no pending-order banner present
+
+### MCP Triggers (DABS Ordering)
+Use the simplified MCP server (`src/mcp/dabs_simple_mcp_server.py`) to trigger automations via tools. Key tools and arguments:
+
+```json
+{
+  "name": "dabs_delete_open_order",
+  "arguments": {
+    "confirm": true,
+    "headed": false,
+    "order_id": "234102",
+    "return_artifacts": true
+  }
+}
+```
+
+- Safety: destructive operations require `confirm=true` AND either `headed=true` or `return_artifacts=true`.
+- Headed mode shells out to `scripts/delete_dabs_order.py`; both modes return artifact paths when `return_artifacts=true`.
+
+```json
+{
+  "name": "dabs_ensure_clean_state",
+  "arguments": {
+    "headed": true,
+    "confirm": true,
+    "return_artifacts": true
+  }
+}
+```
+
+Standardized response schema (all tools):
+- `success` (bool), `action` (string), `message` (string), `error` (string|optional),
+- `details` (object with tool-specific fields), `artifacts` (paths if requested), `timestamp` (ISO8601)
 
 ---
 

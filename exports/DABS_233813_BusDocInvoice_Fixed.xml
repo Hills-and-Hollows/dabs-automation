@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NAXML-BusDoc>
+  <TransmissionHeader>
+    <TransmissionId>DABS_DABS_20250826_014946_20250826_020218</TransmissionId>
+    
+        
+    <TransmissionDate>2025-08-25</TransmissionDate>
+    
+          
+    <TransmissionTime>02:02:18</TransmissionTime>
+    
+            
+    <TransmissionStatus>original</TransmissionStatus>
+    
+            
+  </TransmissionHeader>
+  
+            
+  <Parties>
+    <Supplier>
+      <Name>Utah Division of Alcoholic Beverage Control</Name>
+      
+                  
+      <OrganizationId ident="DABS">DABS</OrganizationId>
+      
+                  
+    </Supplier>
+    
+                  
+    <Buyer>
+      <Name>Hills &amp; Hollows LLC</Name>
+      
+                    
+    </Buyer>
+    
+                    
+    <ShipTo ident="HILLS_HOLLOWS_BOULDER">
+      <Name>Hills &amp; Hollows Package Agency</Name>
+      
+                      
+    </ShipTo>
+    
+                    
+  </Parties>
+  
+                    
+  <Invoice>
+    <Location>
+      <Name ident="HILLS_HOLLOWS_BOULDER">Hills &amp; Hollows Package Agency</Name>
+      
+                        
+    </Location>
+    
+                        
+    <InvoiceNumber>DABS_20250826_014946</InvoiceNumber>
+    
+                          
+    <InvoiceDate>2025-08-26</InvoiceDate>
+    
+                            
+    <Currency code="USD">USD</Currency>
+    
+                              
+    <InvoiceDetail>
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="GTIN">00000000017082</InvoiceUnitId>
+          
+                                      
+          <InvoiceUnitDescription>BULLEIT BOURBON FRONTIER WHISK 750ml</InvoiceUnitDescription>
+          
+                                        
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          
+                                          
+          <InvoiceUnitCost currency="USD">23.09</InvoiceUnitCost>
+          
+                                            
+          <LineItemGrossAmt>23.09</LineItemGrossAmt>
+          
+                                              
+          <LineItemNetAmt>23.09</LineItemNetAmt>
+          
+                                              
+        </InvoiceUnit>
+        
+                                              
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000017082</RetailUnitId>
+          
+                                                  
+          <RetailUnitQty>1</RetailUnitQty>
+          
+                                                    
+          <RetailPrice currency="USD">32.99</RetailPrice>
+          
+                                                    
+        </RetailUnitPricing>
+        
+                                                  
+      </LineItem>
+      
+                                                  
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="GTIN">00000000039279</InvoiceUnitId>
+          
+                                                        
+          <InvoiceUnitDescription>SUGAR HOUSE VODKA 1000ml</InvoiceUnitDescription>
+          
+                                                          
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          
+                                                            
+          <InvoiceUnitCost currency="USD">15.39</InvoiceUnitCost>
+          
+                                                              
+          <LineItemGrossAmt>15.39</LineItemGrossAmt>
+          
+                                                                
+          <LineItemNetAmt>15.39</LineItemNetAmt>
+          
+                                                                
+        </InvoiceUnit>
+        
+                                                                
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000039279</RetailUnitId>
+          
+                                                                    
+          <RetailUnitQty>1</RetailUnitQty>
+          
+                                                                      
+          <RetailPrice currency="USD">21.99</RetailPrice>
+          
+                                                                      
+        </RetailUnitPricing>
+        
+                                                                    
+      </LineItem>
+      
+                                                                    
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="GTIN">00000000068837</InvoiceUnitId>
+          
+                                                                          
+          <InvoiceUnitDescription>ST GERMAIN ELDERFLOWER LIQUEUR 750ml</InvoiceUnitDescription>
+          
+                                                                            
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          
+                                                                              
+          <InvoiceUnitCost currency="USD">12.95</InvoiceUnitCost>
+          
+                                                                                
+          <LineItemGrossAmt>12.95</LineItemGrossAmt>
+          
+                                                                                  
+          <LineItemNetAmt>12.95</LineItemNetAmt>
+          
+                                                                                  
+        </InvoiceUnit>
+        
+                                                                                  
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000068837</RetailUnitId>
+          
+                                                                                      
+          <RetailUnitQty>1</RetailUnitQty>
+          
+                                                                                        
+          <RetailPrice currency="USD">18.50</RetailPrice>
+          
+                                                                                        
+        </RetailUnitPricing>
+        
+                                                                                      
+      </LineItem>
+      
+                                                                                      
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="GTIN">00000000087610</InvoiceUnitId>
+          
+                                                                                            
+          <InvoiceUnitDescription>ESPOLON BLANCO TEQUILA 750ml</InvoiceUnitDescription>
+          
+                                                                                              
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          
+                                                                                                
+          <InvoiceUnitCost currency="USD">22.97</InvoiceUnitCost>
+          
+                                                                                                  
+          <LineItemGrossAmt>22.97</LineItemGrossAmt>
+          
+                                                                                                    
+          <LineItemNetAmt>22.97</LineItemNetAmt>
+          
+                                                                                                    
+        </InvoiceUnit>
+        
+                                                                                                    
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000087610</RetailUnitId>
+          
+                                                                                                        
+          <RetailUnitQty>1</RetailUnitQty>
+          
+                                                                                                          
+          <RetailPrice currency="USD">32.82</RetailPrice>
+          
+                                                                                                          
+        </RetailUnitPricing>
+        
+                                                                                                        
+      </LineItem>
+      
+                                                                                                        
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="GTIN">00000000418333</InvoiceUnitId>
+          
+                                                                                                              
+          <InvoiceUnitDescription>MATUA SAUVIGNON BLANC 750ml</InvoiceUnitDescription>
+          
+                                                                                                                
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          
+                                                                                                                  
+          <InvoiceUnitCost currency="USD">9.09</InvoiceUnitCost>
+          
+                                                                                                                    
+          <LineItemGrossAmt>9.09</LineItemGrossAmt>
+          
+                                                                                                                      
+          <LineItemNetAmt>9.09</LineItemNetAmt>
+          
+                                                                                                                      
+        </InvoiceUnit>
+        
+                                                                                                                      
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000418333</RetailUnitId>
+          
+                                                                                                                          
+          <RetailUnitQty>1</RetailUnitQty>
+          
+                                                                                                                            
+          <RetailPrice currency="USD">12.99</RetailPrice>
+          
+                                                                                                                            
+        </RetailUnitPricing>
+        
+                                                                                                                          
+      </LineItem>
+      
+                                                                                                                          
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="GTIN">00000000419952</InvoiceUnitId>
+          
+                                                                                                                                
+          <InvoiceUnitDescription>19 CRIMES CABERNET SAUVIGNON 750ml</InvoiceUnitDescription>
+          
+                                                                                                                                  
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          
+                                                                                                                                    
+          <InvoiceUnitCost currency="USD">9.09</InvoiceUnitCost>
+          
+                                                                                                                                      
+          <LineItemGrossAmt>9.09</LineItemGrossAmt>
+          
+                                                                                                                                        
+          <LineItemNetAmt>9.09</LineItemNetAmt>
+          
+                                                                                                                                        
+        </InvoiceUnit>
+        
+                                                                                                                                        
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000419952</RetailUnitId>
+          
+                                                                                                                                            
+          <RetailUnitQty>1</RetailUnitQty>
+          
+                                                                                                                                              
+          <RetailPrice currency="USD">12.99</RetailPrice>
+          
+                                                                                                                                              
+        </RetailUnitPricing>
+        
+                                                                                                                                            
+      </LineItem>
+      
+                                                                                                                                            
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="GTIN">00000000445300</InvoiceUnitId>
+          
+                                                                                                                                                  
+          <InvoiceUnitDescription>BOTA BOX NIGHTHAWK BLACK RED 3000ml</InvoiceUnitDescription>
+          
+                                                                                                                                                    
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          
+                                                                                                                                                      
+          <InvoiceUnitCost currency="USD">12.59</InvoiceUnitCost>
+          
+                                                                                                                                                        
+          <LineItemGrossAmt>12.59</LineItemGrossAmt>
+          
+                                                                                                                                                          
+          <LineItemNetAmt>12.59</LineItemNetAmt>
+          
+                                                                                                                                                          
+        </InvoiceUnit>
+        
+                                                                                                                                                          
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000445300</RetailUnitId>
+          
+                                                                                                                                                              
+          <RetailUnitQty>1</RetailUnitQty>
+          
+                                                                                                                                                                
+          <RetailPrice currency="USD">17.99</RetailPrice>
+          
+                                                                                                                                                                
+        </RetailUnitPricing>
+        
+                                                                                                                                                              
+      </LineItem>
+      
+                                                                                                                                                              
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="GTIN">00000000547291</InvoiceUnitId>
+          
+                                                                                                                                                                    
+          <InvoiceUnitDescription>BOGLE CHARDONNAY 750ml</InvoiceUnitDescription>
+          
+                                                                                                                                                                      
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          
+                                                                                                                                                                        
+          <InvoiceUnitCost currency="USD">6.99</InvoiceUnitCost>
+          
+                                                                                                                                                                          
+          <LineItemGrossAmt>6.99</LineItemGrossAmt>
+          
+                                                                                                                                                                            
+          <LineItemNetAmt>6.99</LineItemNetAmt>
+          
+                                                                                                                                                                            
+        </InvoiceUnit>
+        
+                                                                                                                                                                            
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000547291</RetailUnitId>
+          
+                                                                                                                                                                                
+          <RetailUnitQty>1</RetailUnitQty>
+          
+                                                                                                                                                                                  
+          <RetailPrice currency="USD">9.99</RetailPrice>
+          
+                                                                                                                                                                                  
+        </RetailUnitPricing>
+        
+                                                                                                                                                                                
+      </LineItem>
+      
+                                                                                                                                                                                
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="GTIN">00000000581019</InvoiceUnitId>
+          
+                                                                                                                                                                                      
+          <InvoiceUnitDescription>BOTA BOX PINOT GRIGIO 3000ml</InvoiceUnitDescription>
+          
+                                                                                                                                                                                        
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          
+                                                                                                                                                                                          
+          <InvoiceUnitCost currency="USD">12.59</InvoiceUnitCost>
+          
+                                                                                                                                                                                            
+          <LineItemGrossAmt>12.59</LineItemGrossAmt>
+          
+                                                                                                                                                                                              
+          <LineItemNetAmt>12.59</LineItemNetAmt>
+          
+                                                                                                                                                                                              
+        </InvoiceUnit>
+        
+                                                                                                                                                                                              
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000581019</RetailUnitId>
+          
+                                                                                                                                                                                                  
+          <RetailUnitQty>1</RetailUnitQty>
+          
+                                                                                                                                                                                                    
+          <RetailPrice currency="USD">17.99</RetailPrice>
+          
+                                                                                                                                                                                                    
+        </RetailUnitPricing>
+        
+                                                                                                                                                                                                  
+      </LineItem>
+      
+                                                                                                                                                                                                  
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="GTIN">00000000917816</InvoiceUnitId>
+          
+                                                                                                                                                                                                        
+          <InvoiceUnitDescription>RED ROCK ELEPHINO IPA 500ml</InvoiceUnitDescription>
+          
+                                                                                                                                                                                                          
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          
+                                                                                                                                                                                                            
+          <InvoiceUnitCost currency="USD">2.83</InvoiceUnitCost>
+          
+                                                                                                                                                                                                              
+          <LineItemGrossAmt>2.83</LineItemGrossAmt>
+          
+                                                                                                                                                                                                                
+          <LineItemNetAmt>2.83</LineItemNetAmt>
+          
+                                                                                                                                                                                                                
+        </InvoiceUnit>
+        
+                                                                                                                                                                                                                
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000917816</RetailUnitId>
+          
+                                                                                                                                                                                                                    
+          <RetailUnitQty>1</RetailUnitQty>
+          
+                                                                                                                                                                                                                      
+          <RetailPrice currency="USD">4.04</RetailPrice>
+          
+                                                                                                                                                                                                                      
+        </RetailUnitPricing>
+        
+                                                                                                                                                                                                                    
+      </LineItem>
+      
+                                                                                                                                                                                                                    
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="GTIN">00000000927488</InvoiceUnitId>
+          
+                                                                                                                                                                                                                          
+          <InvoiceUnitDescription>HIGHPOINT TRANSPLANT CIDER 355ml</InvoiceUnitDescription>
+          
+                                                                                                                                                                                                                            
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          
+                                                                                                                                                                                                                              
+          <InvoiceUnitCost currency="USD">1.78</InvoiceUnitCost>
+          
+                                                                                                                                                                                                                                
+          <LineItemGrossAmt>1.78</LineItemGrossAmt>
+          
+                                                                                                                                                                                                                                  
+          <LineItemNetAmt>1.78</LineItemNetAmt>
+          
+                                                                                                                                                                                                                                  
+        </InvoiceUnit>
+        
+                                                                                                                                                                                                                                  
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000927488</RetailUnitId>
+          
+                                                                                                                                                                                                                                      
+          <RetailUnitQty>1</RetailUnitQty>
+          
+                                                                                                                                                                                                                                        
+          <RetailPrice currency="USD">2.55</RetailPrice>
+          
+                                                                                                                                                                                                                                        
+        </RetailUnitPricing>
+        
+                                                                                                                                                                                                                                      
+      </LineItem>
+      
+                                                                                                                                                                                                                                      
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="GTIN">00000000989390</InvoiceUnitId>
+          
+                                                                                                                                                                                                                                            
+          <InvoiceUnitDescription>GRAND TETON SWEETGRASS APA 355ml</InvoiceUnitDescription>
+          
+                                                                                                                                                                                                                                              
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          
+                                                                                                                                                                                                                                                
+          <InvoiceUnitCost currency="USD">1.13</InvoiceUnitCost>
+          
+                                                                                                                                                                                                                                                  
+          <LineItemGrossAmt>1.13</LineItemGrossAmt>
+          
+                                                                                                                                                                                                                                                    
+          <LineItemNetAmt>1.13</LineItemNetAmt>
+          
+                                                                                                                                                                                                                                                    
+        </InvoiceUnit>
+        
+                                                                                                                                                                                                                                                    
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000989390</RetailUnitId>
+          
+                                                                                                                                                                                                                                                        
+          <RetailUnitQty>1</RetailUnitQty>
+          
+                                                                                                                                                                                                                                                          
+          <RetailPrice currency="USD">1.62</RetailPrice>
+          
+                                                                                                                                                                                                                                                          
+        </RetailUnitPricing>
+        
+                                                                                                                                                                                                                                                        
+      </LineItem>
+      
+                                                                                                                                                                                                                                                        
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="GTIN">00000000989415</InvoiceUnitId>
+          
+                                                                                                                                                                                                                                                              
+          <InvoiceUnitDescription>RED ROCK FROHLICH PILS 500ml</InvoiceUnitDescription>
+          
+                                                                                                                                                                                                                                                                
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
+          
+                                                                                                                                                                                                                                                                  
+          <InvoiceUnitCost currency="USD">2.83</InvoiceUnitCost>
+          
+                                                                                                                                                                                                                                                                    
+          <LineItemGrossAmt>2.83</LineItemGrossAmt>
+          
+                                                                                                                                                                                                                                                                      
+          <LineItemNetAmt>2.83</LineItemNetAmt>
+          
+                                                                                                                                                                                                                                                                      
+        </InvoiceUnit>
+        
+                                                                                                                                                                                                                                                                      
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000989415</RetailUnitId>
+          
+                                                                                                                                                                                                                                                                          
+          <RetailUnitQty>1</RetailUnitQty>
+          
+                                                                                                                                                                                                                                                                            
+          <RetailPrice currency="USD">4.04</RetailPrice>
+          
+                                                                                                                                                                                                                                                                            
+        </RetailUnitPricing>
+        
+                                                                                                                                                                                                                                                                          
+      </LineItem>
+      
+                                                                                                                                                                                                                                                                          
+      <InvoiceSummary>
+        <InvoiceTotals>
+          <TotalInvoiceUnits>0</TotalInvoiceUnits>
+          
+                                                                                                                                                                                                                                                                                
+          <TotalLineItemNetAmt currency="USD">0.00</TotalLineItemNetAmt>
+          
+                                                                                                                                                                                                                                                                                  
+          <TotalTaxes>0.00</TotalTaxes>
+          
+                                                                                                                                                                                                                                                                                    
+          <TotalInvoiceDueAmt currency="USD">0.00</TotalInvoiceDueAmt>
+          
+                                                                                                                                                                                                                                                                                    
+        </InvoiceTotals>
+        
+                                                                                                                                                                                                                                                                                  
+      </InvoiceSummary>
+      
+                                                                                                                                                                                                                                                                                  
+      <Terms>
+        <TermsType ident="NET30">NET30</TermsType>
+        
+                                                                                                                                                                                                                                                                                      
+        <InvoiceDueDate>2025-09-25</InvoiceDueDate>
+        
+                                                                                                                                                                                                                                                                                      
+      </Terms>
+      
+                                                                                                                                                                                                                                                                                    
+    </InvoiceDetail>
+    
+                                                                                                                                                                                                                                                                                  
+  </Invoice>
+  
+                                                                                                                                                                                                                                                                                
+</NAXML-BusDoc>

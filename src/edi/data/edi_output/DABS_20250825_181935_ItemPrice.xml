@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ItemSynch version="2.0" timestamp="2025-08-25T18:19:35.467070Z" vendor="DABS">
+  <VendorInfo>
+    <VendorID>DABS</VendorID>
+    <VendorName>Utah Division of Alcoholic Beverage Control</VendorName>
+    <InvoiceNumber>DABS_ORDER_233808</InvoiceNumber>
+    <InvoiceDate>2025-08-25</InvoiceDate>
+    <TotalItems>5</TotalItems>
+    <StoreLocationID>HILLS_HOLLOWS_BOULDER</StoreLocationID>
+    <TransmissionDate>2025-08-25</TransmissionDate>
+  </VendorInfo>
+  <Items>
+    <Item>
+      <PLU>010807</PLU>
+      <ItemName>UNDERWOOD BUBBLES OREGON</ItemName>
+      <Price>71.88</Price>
+      <Cost>53.91</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>010807</VendorItemCode>
+      <LastUpdated>2025-08-25T18:19:35.467070Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>776257</PLU>
+      <ItemName>LORENZA ROSE 750ml - 919829</ItemName>
+      <Price>239.88</Price>
+      <Cost>179.91</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>776257</VendorItemCode>
+      <LastUpdated>2025-08-25T18:19:35.467070Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>922389</PLU>
+      <ItemName>BOHEMIAN EXPORT LAGER 355ml -</ItemName>
+      <Price>47.76</Price>
+      <Cost>35.82</Cost>
+      <Category>BEER</Category>
+      <Size>355ml</Size>
+      <VendorItemCode>922389</VendorItemCode>
+      <LastUpdated>2025-08-25T18:19:35.467070Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>989392</PLU>
+      <ItemName>Total Quantities: 5 Total Cost:</ItemName>
+      <Price>769.56</Price>
+      <Cost>577.17</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>989392</VendorItemCode>
+      <LastUpdated>2025-08-25T18:19:35.467070Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+    <Item>
+      <PLU>919829</PLU>
+      <ItemName>LORENZA ROSE 750ml</ItemName>
+      <Price>239.88</Price>
+      <Cost>179.91</Cost>
+      <Category>SPIRITS</Category>
+      <Size>750ml</Size>
+      <VendorItemCode>919829</VendorItemCode>
+      <LastUpdated>2025-08-25T18:19:35.467070Z</LastUpdated>
+      <Status>Active</Status>
+      <UPC />
+    </Item>
+  </Items>
+  <InvoiceTotals>
+    <SubTotal>1026.72</SubTotal>
+    <Tax>0.00</Tax>
+    <Total>1026.72</Total>
+    <ItemCount>5</ItemCount>
+    <RetailTotal>1368.96</RetailTotal>
+  </InvoiceTotals>
+</ItemSynch>

@@ -1,0 +1,79 @@
+[
+  {
+    "dabs_code": "523110",
+    "name": "WILLAMETTE VLY PINOT NOIR WL CLST 750ml",
+    "upc_found": false,
+    "reason": "No UPC found in any database",
+    "search_terms_tried": [
+      "Willamette Valley Pinot Noir",
+      "Willamette Valley Wine",
+      "Oregon Pinot Noir"
+    ]
+  },
+  {
+    "dabs_code": "580790",
+    "name": "KING ESTATE PINOT GRIS SIGNATURE 750ml",
+    "upc_found": false,
+    "reason": "No UPC found in any database",
+    "search_terms_tried": [
+      "King Estate Pinot Gris",
+      "King Estate Signature",
+      "Oregon Pinot Gris"
+    ]
+  },
+  {
+    "dabs_code": "733238",
+    "name": "SEGURA VIUDAS BRUT 750ml",
+    "upc_found": false,
+    "reason": "No UPC found in any database",
+    "search_terms_tried": [
+      "Segura Viudas Brut",
+      "Segura Viudas Cava",
+      "Spanish Sparkling Wine"
+    ]
+  },
+  {
+    "dabs_code": "908418",
+    "name": "BUCKLIN BAMBINO ZIN'22 750ml",
+    "upc_found": false,
+    "reason": "No UPC found in any database",
+    "search_terms_tried": [
+      "Bucklin Bambino Zinfandel",
+      "Bucklin Zinfandel 2022",
+      "Sonoma Zinfandel"
+    ]
+  },
+  {
+    "dabs_code": "918951",
+    "name": "LARCHAGO RIOJA RESERVE 750ml",
+    "upc_found": false,
+    "reason": "No UPC found in any database",
+    "search_terms_tried": [
+      "Larchago Rioja Reserve",
+      "Larchago Rioja",
+      "Spanish Rioja Reserve"
+    ]
+  },
+  {
+    "dabs_code": "919829",
+    "name": "LORENZA ROSE 750ml",
+    "upc_found": false,
+    "reason": "No UPC found in any database",
+    "search_terms_tried": [
+      "Lorenza Rose",
+      "Lorenza Ros\u00e9",
+      "Italian Rose Wine"
+    ]
+  },
+  {
+    "dabs_code": "926272",
+    "name": "HELPER BEER CIRCLE BACK IPA 473ml",
+    "upc_found": false,
+    "reason": "No UPC found in any database",
+    "search_terms_tried": [
+      "Helper Beer Circle Back IPA",
+      "Helper Brewing Circle Back",
+      "Utah IPA"
+    ]
+  }
+]
