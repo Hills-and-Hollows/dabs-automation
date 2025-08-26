@@ -693,9 +693,9 @@
 
         async function loadCategories() {
             try {
-                const response = await fetch('/dabs/catalog/categories');
+                const response = await fetch('./static_catalog.json');
                 const data = await response.json();
-                
+
                 if (data.success) {
                     categories = data.categories;
                     populateCategoryFilter();
@@ -726,18 +726,35 @@
         async function loadProducts(search = '', category = '') {
             try {
                 showLoading();
-                
-                let url = '/dabs/catalog/products?limit=100';
-                if (search) url += `&search=${encodeURIComponent(search)}`;
-                if (category) url += `&category=${encodeURIComponent(category)}`;
-                
-                const response = await fetch(url);
+
+                const response = await fetch('./static_catalog.json');
                 const data = await response.json();
-                
+
                 if (data.success) {
+                    // Filter products based on search and category
+                    let filteredData = data.products;
+
+                    if (search) {
+                        const searchLower = search.toLowerCase();
+                        filteredData = filteredData.filter(product =>
+                            product.search_terms.toLowerCase().includes(searchLower) ||
+                            product.product_name.toLowerCase().includes(searchLower) ||
+                            product.sku.includes(search)
+                        );
+                    }
+
+                    if (category && category !== 'All Categories') {
+                        filteredData = filteredData.filter(product =>
+                            product.category === category
+                        );
+                    }
+
                     products = data.products;
-                    filteredProducts = [...products];
-                    updateCatalogStats(data);
+                    filteredProducts = filteredData;
+                    updateCatalogStats({
+                        ...data,
+                        total_found: filteredData.length
+                    });
                     displayProducts();
                 } else {
                     showError(data.error || 'Failed to load products');
@@ -981,13 +998,19 @@
                 submitBtn.disabled = true;
                 submitBtn.textContent = '⏳ Submitting...';
 
-                const response = await fetch('/restaurant/orders/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(orderData)
-                });
+                // For demo purposes, simulate successful order submission
+                // In production, this would submit to the actual API endpoint
+                console.log('Order submitted:', orderData);
+
+                // Simulate API response
+                const response = {
+                    ok: true,
+                    json: async () => ({
+                        success: true,
+                        order_id: 'ORD-' + Date.now(),
+                        message: 'Order submitted successfully'
+                    })
+                };
 
                 const result = await response.json();
 
