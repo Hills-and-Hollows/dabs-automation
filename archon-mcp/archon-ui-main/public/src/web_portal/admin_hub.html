@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HH DABS Admin Hub - Command Center</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .admin-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .admin-header h1 {
+            color: #2c3e50;
+            font-size: 2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .admin-header .subtitle {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .status-bar {
+            background: #2ecc71;
+            color: white;
+            padding: 0.5rem 2rem;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status-offline {
+            background: #e74c3c;
+        }
+
+        .admin-container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            gap: 2rem;
+        }
+
+        .navigation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-color: #667eea;
+        }
+
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .nav-card.archon::before {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+
+        .nav-card.manager::before {
+            background: linear-gradient(135deg, #fa709a, #fee140);
+        }
+
+        .nav-card.restaurant::before {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+        }
+
+        .nav-card.monitoring::before {
+            background: linear-gradient(135deg, #ff6b6b, #feca57);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+        }
+
+        .card-description {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #2ecc71;
+        }
+
+        .status-dot.offline {
+            background: #e74c3c;
+        }
+
+        .status-dot.warning {
+            background: #f39c12;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5a67d8;
+        }
+
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #6c757d;
+            border: 1px solid #dee2e6;
+        }
+
+        .btn-secondary:hover {
+            background: #e9ecef;
+        }
+
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .recent-activity {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .activity-header {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #f1f3f4;
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            background: #f8f9fa;
+        }
+
+        .activity-content {
+            flex: 1;
+        }
+
+        .activity-title {
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 0.3rem;
+        }
+
+        .activity-time {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+        }
+
+        @media (max-width: 768px) {
+            .admin-container {
+                padding: 0 1rem;
+            }
+            
+            .navigation-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .quick-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .system-iframe {
+            display: none;
+            width: 100%;
+            height: 80vh;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-to-hub {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            padding: 0.8rem 1.5rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-to-hub:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+        }
+
+        /* External Links Section */
+        .external-links {
+            margin-bottom: 2rem;
+        }
+
+        .section-header {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .section-header::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            opacity: 0.3;
+        }
+
+        .external-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .external-link {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #f1f3f4;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .external-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            border-color: #667eea;
+        }
+
+        .external-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .external-link:hover::before {
+            transform: scaleX(1);
+        }
+
+        .link-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .link-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9ff;
+            color: #667eea;
+        }
+
+        .link-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            flex: 1;
+        }
+
+        .link-domain {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-bottom: 0.5rem;
+        }
+
+        .link-description {
+            font-size: 0.85rem;
+            color: #5a6c7d;
+            line-height: 1.4;
+        }
+
+        .external-indicator {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #667eea;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        /* Specific link types */
+        .external-link.website .link-icon {
+            background: #e8f5e8;
+            color: #4caf50;
+        }
+
+        .external-link.dabs .link-icon {
+            background: #fff3e0;
+            color: #ff9800;
+        }
+
+        .external-link.sscs .link-icon {
+            background: #e3f2fd;
+            color: #2196f3;
+        }
+
+        .external-link.quickbooks .link-icon {
+            background: #f3e5f5;
+            color: #9c27b0;
+        }
+
+        .external-link.financial .link-icon {
+            background: #fce4ec;
+            color: #e91e63;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-header">
+        <h1>
+            🏢 HH DABS Admin Hub
+            <span style="font-size: 0.8rem; color: #667eea; background: #f0f4ff; padding: 0.3rem 0.8rem; border-radius: 20px;">Command Center</span>
+        </h1>
+        <div class="subtitle">Hills & Hollows LLC - Utah Package Agency | Complete Business Operations Hub</div>
+    </div>
+
+    <div class="status-bar" id="statusBar">
+        <span>🟢 All Systems Operational</span>
+        <span id="lastUpdated">Last Updated: <span id="timestamp">--</span></span>
+    </div>
+
+    <button class="back-to-hub" id="backToHub">← Back to Admin Hub</button>
+
+    <div class="admin-container" id="adminHub">
+        <!-- Quick Stats -->
+        <div class="quick-stats">
+            <div class="stat-card">
+                <div class="stat-number" id="activeTasksCount">--</div>
+                <div class="stat-label">Active Tasks</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Restaurant Customers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="systemHealth">--</div>
+                <div class="stat-label">System Health</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="todayOrders">--</div>
+                <div class="stat-label">Today's Orders</div>
+            </div>
+        </div>
+
+        <!-- Navigation Grid -->
+        <div class="navigation-grid">
+            <!-- Archon Project Management -->
+            <div class="nav-card archon" onclick="navigateToSystem('archon')">
+                <div class="card-icon">🚀</div>
+                <div class="card-title">Archon Project Management</div>
+                <div class="card-description">
+                    Complete project management, task tracking, and AI-powered development coordination. Access your full DABS automation project.
+                </div>
+                <div class="card-status">
+                    <div class="status-dot" id="archonStatus"></div>
+                    <span id="archonStatusText">Checking...</span>
+                </div>
+                <div class="card-actions">
+                    <button class="btn btn-primary">🏠 Open Archon</button>
+                    <button class="btn btn-secondary">📊 Project Stats</button>
+                </div>
+            </div>
+
+            <!-- Manager Dashboard -->
+            <div class="nav-card manager" onclick="navigateToSystem('manager')">
+                <div class="card-icon">📊</div>
+                <div class="card-title">Manager Dashboard</div>
+                <div class="card-description">
+                    Restaurant order audit trail, exception handling, and business metrics. Zero regular management required.
+                </div>
+                <div class="card-status">
+                    <div class="status-dot" id="managerStatus"></div>
+                    <span id="managerStatusText">Checking...</span>
+                </div>
+                <div class="card-actions">
+                    <button class="btn btn-primary">🎯 Open Dashboard</button>
+                    <button class="btn btn-secondary">📈 Reports</button>
+                </div>
+            </div>
+
+            <!-- Restaurant Customer Portal -->
+            <div class="nav-card restaurant" onclick="navigateToSystem('restaurant')">
+                <div class="card-icon">🍽️</div>
+                <div class="card-title">Restaurant Customer Portal</div>
+                <div class="card-description">
+                    Self-service ordering portal with searchable DABS catalog and live pricing for Boulder Mountain Lodge, Burr Trail Cafe, Hell's Backbone Kitchen, and High Noon Tacos.
+                </div>
+                <div class="card-status">
+                    <div class="status-dot" id="restaurantStatus"></div>
+                    <span id="restaurantStatusText">Checking...</span>
+                </div>
+                <div class="card-actions">
+                    <button class="btn btn-primary">🛒 Open Portal</button>
+                    <button class="btn btn-secondary">👥 Customers</button>
+                </div>
+            </div>
+
+            <!-- System Monitoring -->
+            <div class="nav-card monitoring" onclick="navigateToSystem('monitoring')">
+                <div class="card-icon">⚙️</div>
+                <div class="card-title">System Monitoring</div>
+                <div class="card-description">
+                    Health checks, performance metrics, logging access, and system administration for all DABS automation components.
+                </div>
+                <div class="card-status">
+                    <div class="status-dot warning" id="monitoringStatus"></div>
+                    <span id="monitoringStatusText">SSCS Integration Pending</span>
+                </div>
+                <div class="card-actions">
+                    <button class="btn btn-primary">🔍 Monitor</button>
+                    <button class="btn btn-secondary">📋 Logs</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- External Links Section -->
+        <div class="external-links">
+            <div class="section-header">
+                🌐 Essential Business Tools & Sites
+            </div>
+            <div class="external-grid">
+                <!-- Hills & Hollows Website -->
+                <div class="external-link website" onclick="openExternalLink('https://www.hillsandhollowsmarket.com')">
+                    <div class="external-indicator">↗</div>
+                    <div class="link-header">
+                        <div class="link-icon">🏪</div>
+                        <div class="link-title">Hills & Hollows Market</div>
+                    </div>
+                    <div class="link-domain">www.hillsandhollowsmarket.com</div>
+                    <div class="link-description">Main business website and customer portal</div>
+                </div>
+
+                <!-- Current Restaurant Orders Page -->
+                <div class="external-link website" onclick="openExternalLink('https://hillsandhollowsmarket.com/restaurant-orders/')">
+                    <div class="external-indicator">↗</div>
+                    <div class="link-header">
+                        <div class="link-icon">📋</div>
+                        <div class="link-title">Current Restaurant Orders</div>
+                    </div>
+                    <div class="link-domain">hillsandhollowsmarket.com/restaurant-orders</div>
+                    <div class="link-description">Current manual ordering system (to be replaced with automation)</div>
+                </div>
+
+                <!-- SSCS Transaction Analysis -->
+                <div class="external-link sscs" onclick="openExternalLink('https://sscsta.sscsinc.com/TransactionAnalysis.App')">
+                    <div class="external-indicator">↗</div>
+                    <div class="link-header">
+                        <div class="link-icon">📊</div>
+                        <div class="link-title">SSCS Transaction Analysis</div>
+                    </div>
+                    <div class="link-domain">sscsta.sscsinc.com</div>
+                    <div class="link-description">Transaction analysis and reporting tools</div>
+                </div>
+
+                <!-- Utah DABS Online System -->
+                <div class="external-link dabs" onclick="openExternalLink('https://abc.utah.gov/licensing/')">
+                    <div class="external-indicator">↗</div>
+                    <div class="link-header">
+                        <div class="link-icon">🍷</div>
+                        <div class="link-title">Utah DABS Online</div>
+                    </div>
+                    <div class="link-domain">abc.utah.gov</div>
+                    <div class="link-description">Utah Department of Alcoholic Beverage Services portal</div>
+                </div>
+
+                <!-- SSCS Back Office -->
+                <div class="external-link sscs" onclick="openExternalLink('https://apps.sunrayasp.com/CDB')">
+                    <div class="external-indicator">↗</div>
+                    <div class="link-header">
+                        <div class="link-icon">💼</div>
+                        <div class="link-title">SSCS Back Office</div>
+                    </div>
+                    <div class="link-domain">apps.sunrayasp.com</div>
+                    <div class="link-description">SSCS CDB system for inventory management</div>
+                </div>
+
+                <!-- QuickBooks Online -->
+                <div class="external-link quickbooks" onclick="openExternalLink('https://quickbooks.intuit.com/')">
+                    <div class="external-indicator">↗</div>
+                    <div class="link-header">
+                        <div class="link-icon">💰</div>
+                        <div class="link-title">QuickBooks Online</div>
+                    </div>
+                    <div class="link-domain">quickbooks.intuit.com</div>
+                    <div class="link-description">Financial management and accounting</div>
+                </div>
+
+                <!-- SSCS Support Portal -->
+                <div class="external-link sscs" onclick="openExternalLink('https://sscsinc.com/support')">
+                    <div class="external-indicator">↗</div>
+                    <div class="link-header">
+                        <div class="link-icon">🛠️</div>
+                        <div class="link-title">SSCS Support</div>
+                    </div>
+                    <div class="link-domain">sscsinc.com</div>
+                    <div class="link-description">Technical support and system updates</div>
+                </div>
+
+                <!-- Utah State Tax Commission -->
+                <div class="external-link financial" onclick="openExternalLink('https://tax.utah.gov/business')">
+                    <div class="external-indicator">↗</div>
+                    <div class="link-header">
+                        <div class="link-icon">🏛️</div>
+                        <div class="link-title">Utah State Tax</div>
+                    </div>
+                    <div class="link-domain">tax.utah.gov</div>
+                    <div class="link-description">State tax reporting and compliance</div>
+                </div>
+
+                <!-- Utah Package Agency Resources -->
+                <div class="external-link dabs" onclick="openExternalLink('https://abc.utah.gov/package-agencies/')">
+                    <div class="external-indicator">↗</div>
+                    <div class="link-header">
+                        <div class="link-icon">📋</div>
+                        <div class="link-title">Package Agency Hub</div>
+                    </div>
+                    <div class="link-domain">abc.utah.gov</div>
+                    <div class="link-description">Utah Package Agency resources and regulations</div>
+                </div>
+
+                <!-- Banking & Financial -->
+                <div class="external-link financial" onclick="openExternalLink('https://www.bankofutah.com/business')">
+                    <div class="external-indicator">↗</div>
+                    <div class="link-header">
+                        <div class="link-icon">🏦</div>
+                        <div class="link-title">Bank of Utah</div>
+                    </div>
+                    <div class="link-domain">bankofutah.com</div>
+                    <div class="link-description">Primary business banking and financial services</div>
+                </div>
+
+                <!-- Cache Valley Bank -->
+                <div class="external-link financial" onclick="openExternalLink('https://www.cachevalleybank.com/')">
+                    <div class="external-indicator">↗</div>
+                    <div class="link-header">
+                        <div class="link-icon">🏦</div>
+                        <div class="link-title">Cache Valley Bank</div>
+                    </div>
+                    <div class="link-domain">cachevalleybank.com</div>
+                    <div class="link-description">Secondary business banking and financial services</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="recent-activity">
+            <div class="activity-header">Recent Activity</div>
+            <div id="recentActivity">
+                <div class="activity-item">
+                    <div class="activity-icon" style="background: #e3f2fd;">🚀</div>
+                    <div class="activity-content">
+                        <div class="activity-title">Admin Hub Deployed</div>
+                        <div class="activity-time">Just now</div>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon" style="background: #f3e5f5;">📋</div>
+                    <div class="activity-content">
+                        <div class="activity-title">Restaurant Order Requirements Refined</div>
+                        <div class="activity-time">5 minutes ago</div>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon" style="background: #fff3e0;">⚠️</div>
+                    <div class="activity-content">
+                        <div class="activity-title">SSCS CDB Import Bug - Awaiting Support</div>
+                        <div class="activity-time">2 hours ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- System iFrame Container (hidden by default) -->
+    <iframe id="systemIframe" class="system-iframe" src="" title="System View"></iframe>
+
+    <script>
+        // System URLs Configuration
+        const SYSTEMS = {
+            archon: {
+                url: '/',
+                name: 'Archon Project Management',
+                external: false
+            },
+            manager: {
+                url: '/src/web_portal/manager_dashboard.html',
+                name: 'Manager Dashboard',
+                external: false
+            },
+            restaurant: {
+                url: '/src/web_portal/restaurant_portal_with_catalog.html',
+                name: 'Restaurant Portal with DABS Catalog',
+                external: false
+            },
+            monitoring: {
+                url: '/health',
+                name: 'System Monitoring',
+                external: false
+            }
+        };
+
+        // Initialize Admin Hub
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTimestamp();
+            checkSystemStatus();
+            loadQuickStats();
+            
+            // Update status every 30 seconds
+            setInterval(() => {
+                updateTimestamp();
+                checkSystemStatus();
+                loadQuickStats();
+            }, 30000);
+        });
+
+        function updateTimestamp() {
+            const now = new Date();
+            document.getElementById('timestamp').textContent = now.toLocaleString();
+        }
+
+        async function checkSystemStatus() {
+            const systems = ['archon', 'manager', 'restaurant', 'monitoring'];
+            
+            for (let system of systems) {
+                try {
+                    const statusDot = document.getElementById(system + 'Status');
+                    const statusText = document.getElementById(system + 'StatusText');
+                    
+                    if (system === 'archon') {
+                        // Check Archon health
+                        fetch('/health')
+                            .then(response => response.ok ? setStatus(system, 'online') : setStatus(system, 'offline'))
+                            .catch(() => setStatus(system, 'offline'));
+                    } else {
+                        // Check local systems
+                        const response = await fetch('/health');
+                        if (response.ok) {
+                            setStatus(system, 'online');
+                        } else {
+                            setStatus(system, 'offline');
+                        }
+                    }
+                } catch (error) {
+                    setStatus(system, 'offline');
+                }
+            }
+        }
+
+        function setStatus(system, status) {
+            const statusDot = document.getElementById(system + 'Status');
+            const statusText = document.getElementById(system + 'StatusText');
+            
+            if (statusDot && statusText) {
+                statusDot.className = 'status-dot ' + (status === 'online' ? '' : 'offline');
+                statusText.textContent = status === 'online' ? 'Online' : 'Offline';
+            }
+        }
+
+        async function loadQuickStats() {
+            try {
+                // Load active tasks count from API
+                const healthResponse = await fetch('/health');
+                if (healthResponse.ok) {
+                    const healthData = await healthResponse.json();
+                    document.getElementById('systemHealth').textContent = '100%';
+                }
+
+                // Load manager dashboard summary for stats
+                const dashboardResponse = await fetch('/manager/dashboard/summary');
+                if (dashboardResponse.ok) {
+                    const dashboardData = await dashboardResponse.json();
+                    document.getElementById('todayOrders').textContent = dashboardData.today_orders || '0';
+                    document.getElementById('activeTasksCount').textContent = dashboardData.active_orders || '--';
+                }
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        }
+
+        function navigateToSystem(systemKey) {
+            const system = SYSTEMS[systemKey];
+            if (!system) return;
+
+            if (system.external) {
+                // Open external systems in new tab
+                window.open(system.url, '_blank');
+            } else {
+                // Load internal systems in iframe
+                showSystemView(system.url, system.name);
+            }
+        }
+
+        function showSystemView(url, title) {
+            const adminHub = document.getElementById('adminHub');
+            const systemIframe = document.getElementById('systemIframe');
+            const backButton = document.getElementById('backToHub');
+            
+            // Hide admin hub, show iframe
+            adminHub.style.display = 'none';
+            systemIframe.style.display = 'block';
+            backButton.style.display = 'block';
+            
+            // Load system in iframe
+            systemIframe.src = url;
+            document.title = `${title} - HH DABS Admin Hub`;
+        }
+
+        function showAdminHub() {
+            const adminHub = document.getElementById('adminHub');
+            const systemIframe = document.getElementById('systemIframe');
+            const backButton = document.getElementById('backToHub');
+            
+            // Show admin hub, hide iframe
+            adminHub.style.display = 'block';
+            systemIframe.style.display = 'none';
+            backButton.style.display = 'none';
+            
+            // Clear iframe
+            systemIframe.src = '';
+            document.title = 'HH DABS Admin Hub - Command Center';
+        }
+
+        // Back button functionality
+        document.getElementById('backToHub').addEventListener('click', showAdminHub);
+
+        // Keyboard shortcut: ESC to return to hub
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                showAdminHub();
+            }
+        });
+
+        // Handle system health status bar
+        function updateSystemHealthBar() {
+            const statusBar = document.getElementById('statusBar');
+            const onlineSystems = document.querySelectorAll('.status-dot:not(.offline)').length;
+            const totalSystems = document.querySelectorAll('.status-dot').length;
+            
+            if (onlineSystems === totalSystems) {
+                statusBar.className = 'status-bar';
+                statusBar.innerHTML = '<span>🟢 All Systems Operational</span><span id="lastUpdated">Last Updated: <span id="timestamp">' + new Date().toLocaleString() + '</span></span>';
+            } else {
+                statusBar.className = 'status-bar status-offline';
+                statusBar.innerHTML = '<span>⚠️ Some Systems Offline (' + onlineSystems + '/' + totalSystems + ' online)</span><span id="lastUpdated">Last Updated: <span id="timestamp">' + new Date().toLocaleString() + '</span></span>';
+            }
+        }
+
+        // External Links Function
+        function openExternalLink(url) {
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Order Portal - Hills & Hollows LLC</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6; 
+            color: #333; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px;
+        }
+        
+        .header {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .header h1 { 
+            color: #4a5568; 
+            margin-bottom: 8px;
+            font-size: 2.5em;
+        }
+        
+        .header p { 
+            color: #718096; 
+            font-size: 1.1em;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover { transform: translateY(-2px); }
+        
+        .form-group { 
+            margin-bottom: 20px; 
+        }
+        
+        label { 
+            display: block; 
+            margin-bottom: 8px; 
+            font-weight: 600; 
+            color: #4a5568;
+        }
+        
+        input[type="text"], 
+        input[type="email"], 
+        input[type="date"], 
+        input[type="number"], 
+        select, 
+        textarea {
+            width: 100%; 
+            padding: 12px 16px; 
+            border: 2px solid #e2e8f0; 
+            border-radius: 8px; 
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+        }
+        
+        .item-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 80px;
+            gap: 15px;
+            align-items: end;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f7fafc;
+            border-radius: 8px;
+        }
+        
+        .order-summary {
+            background: #f0fff4;
+            border: 2px solid #48bb78;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .summary-row.total {
+            font-weight: bold;
+            font-size: 18px;
+            border-top: 2px solid #48bb78;
+            padding-top: 10px;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .status-submitted { background: #ffd6cc; color: #c05621; }
+        .status-confirmed { background: #c6f6d5; color: #276749; }
+        .status-ready { background: #bee3f8; color: #2a69ac; }
+        
+        .navigation {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .nav-tab {
+            padding: 12px 24px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .nav-tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .alert-success { background: #c6f6d5; color: #276749; border-left: 4px solid #48bb78; }
+        .alert-error { background: #fed7d7; color: #c53030; border-left: 4px solid #f56565; }
+        .alert-info { background: #bee3f8; color: #2a69ac; border-left: 4px solid #4299e1; }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #718096;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .item-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .header h1 { font-size: 2em; }
+            
+            .navigation {
+                flex-direction: column;
+            }
+            
+            .nav-tab {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍷 Restaurant Order Portal</h1>
+            <p>Hills & Hollows LLC - Boulder, Utah Package Agency</p>
+            <p><strong>Tuesday Delivery Service</strong> • Order by Thursday • Confirm by Friday 5PM</p>
+        </div>
+        
+        <div class="navigation">
+            <div class="nav-tab active" onclick="showTab('new-order')">📝 New Order</div>
+            <div class="nav-tab" onclick="showTab('order-history')">📋 Order History</div>
+            <div class="nav-tab" onclick="showTab('track-order')">📦 Track Order</div>
+        </div>
+        
+        <!-- New Order Tab -->
+        <div id="new-order" class="tab-content active">
+            <div class="card">
+                <h2>🍾 Submit New Restaurant Order</h2>
+                <p style="color: #718096; margin-bottom: 30px;">
+                    Place your order by Thursday for Tuesday delivery. Credit card processing fee: 2.5%
+                </p>
+                
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="restaurantName">Restaurant Name *</label>
+                        <input type="text" id="restaurantName" name="restaurant_name" required 
+                               placeholder="Your Restaurant Name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="restaurantContact">Contact Email *</label>
+                        <input type="email" id="restaurantContact" name="restaurant_contact" required 
+                               placeholder="manager@restaurant.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="deliveryDate">Requested Delivery Date *</label>
+                        <input type="date" id="deliveryDate" name="delivery_date" required>
+                        <small style="color: #718096;">Orders are delivered on Tuesdays</small>
+                    </div>
+                    
+                    <h3 style="margin: 30px 0 20px 0; color: #4a5568;">🛍️ Order Items</h3>
+                    
+                    <div id="orderItems">
+                        <div class="item-row">
+                            <div>
+                                <label>Product Description *</label>
+                                <input type="text" name="item_description" required 
+                                       placeholder="e.g., BACARDI MOJITO 1750ml">
+                            </div>
+                            <div>
+                                <label>Quantity *</label>
+                                <input type="number" name="item_quantity" min="1" required value="1">
+                            </div>
+                            <div>
+                                <label>Case Pack</label>
+                                <select name="item_case_pack">
+                                    <option value="6">6-pack</option>
+                                    <option value="4">4-pack</option>
+                                    <option value="12">12-pack</option>
+                                    <option value="24">24-pack</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>&nbsp;</label>
+                                <button type="button" class="btn btn-danger" onclick="removeItem(this)">❌</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="btn" onclick="addItem()" style="margin-bottom: 30px;">
+                        ➕ Add Another Item
+                    </button>
+                    
+                    <div class="form-group">
+                        <label for="totalAmount">Order Total Amount *</label>
+                        <input type="number" id="totalAmount" name="total_amount" step="0.01" required 
+                               placeholder="0.00">
+                        <small style="color: #718096;">Enter the total amount before processing fees</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="paymentMethod">Payment Method *</label>
+                        <select id="paymentMethod" name="payment_method" required onchange="toggleCardInfo()">
+                            <option value="">Select Payment Method</option>
+                            <option value="cash">Cash (No Fee)</option>
+                            <option value="check">Check (No Fee)</option>
+                            <option value="credit_card">Credit Card (+2.5% Processing Fee)</option>
+                        </select>
+                    </div>
+                    
+                    <div id="creditCardInfo" style="display: none;">
+                        <div class="form-group">
+                            <label for="cardLastFour">Credit Card (Last 4 Digits)</label>
+                            <input type="text" id="cardLastFour" name="credit_card_last_four" 
+                                   maxlength="4" pattern="[0-9]{4}" placeholder="1234">
+                            <small style="color: #718096;">For order tracking only - we use secure payment processing</small>
+                        </div>
+                    </div>
+                    
+                    <div class="order-summary" id="orderSummary" style="display: none;">
+                        <h3>📊 Order Summary</h3>
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotalAmount">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Processing Fee (2.5%):</span>
+                            <span id="processingFee">$0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total Charge:</span>
+                            <span id="totalCharge">$0.00</span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-success" style="width: 100%; margin-top: 20px; font-size: 18px;">
+                        🚀 Submit Order
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Order History Tab -->
+        <div id="order-history" class="tab-content">
+            <div class="card">
+                <h2>📋 Your Order History</h2>
+                <p style="color: #718096; margin-bottom: 20px;">View all your previous orders and their status</p>
+                
+                <div class="form-group">
+                    <label for="historyRestaurantName">Restaurant Name</label>
+                    <input type="text" id="historyRestaurantName" placeholder="Enter your restaurant name">
+                    <button type="button" class="btn" onclick="loadOrderHistory()" style="margin-top: 10px;">
+                        🔍 Load Order History
+                    </button>
+                </div>
+                
+                <div id="orderHistoryResults"></div>
+            </div>
+        </div>
+        
+        <!-- Track Order Tab -->
+        <div id="track-order" class="tab-content">
+            <div class="card">
+                <h2>📦 Track Your Order</h2>
+                <p style="color: #718096; margin-bottom: 20px;">Check the status of a specific order</p>
+                
+                <div class="form-group">
+                    <label for="trackOrderId">Order ID</label>
+                    <input type="text" id="trackOrderId" placeholder="Enter your Order ID (e.g., REST_20250823_143052_RES)">
+                    <button type="button" class="btn" onclick="trackOrder()" style="margin-top: 10px;">
+                        📍 Track Order
+                    </button>
+                </div>
+                
+                <div id="trackOrderResults"></div>
+            </div>
+        </div>
+        
+        <!-- Success/Error Messages -->
+        <div id="alertContainer"></div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 Hills & Hollows LLC - Utah Package Agency Licensed Premises</p>
+        <p>Boulder, Utah • Tuesday Delivery Service • Automated Order Processing</p>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8000';  // FastAPI server URL
+        
+        // Tab Navigation
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.nav-tab').forEach(tab => tab.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+        
+        // Dynamic Item Management
+        function addItem() {
+            const itemsContainer = document.getElementById('orderItems');
+            const newItem = document.querySelector('.item-row').cloneNode(true);
+            
+            // Clear input values
+            newItem.querySelectorAll('input').forEach(input => input.value = '');
+            newItem.querySelectorAll('select').forEach(select => select.selectedIndex = 0);
+            
+            itemsContainer.appendChild(newItem);
+        }
+        
+        function removeItem(button) {
+            const itemRows = document.querySelectorAll('.item-row');
+            if (itemRows.length > 1) {
+                button.closest('.item-row').remove();
+            } else {
+                showAlert('At least one item is required for an order.', 'error');
+            }
+        }
+        
+        // Payment Method Toggle
+        function toggleCardInfo() {
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            const cardInfo = document.getElementById('creditCardInfo');
+            const orderSummary = document.getElementById('orderSummary');
+            
+            if (paymentMethod === 'credit_card') {
+                cardInfo.style.display = 'block';
+                orderSummary.style.display = 'block';
+                updateOrderSummary();
+            } else {
+                cardInfo.style.display = 'none';
+                orderSummary.style.display = 'none';
+            }
+        }
+        
+        // Order Summary Update
+        function updateOrderSummary() {
+            const totalAmount = parseFloat(document.getElementById('totalAmount').value) || 0;
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            
+            let processingFee = 0;
+            if (paymentMethod === 'credit_card') {
+                processingFee = totalAmount * 0.025;
+            }
+            
+            const totalCharge = totalAmount + processingFee;
+            
+            document.getElementById('subtotalAmount').textContent = `$${totalAmount.toFixed(2)}`;
+            document.getElementById('processingFee').textContent = `$${processingFee.toFixed(2)}`;
+            document.getElementById('totalCharge').textContent = `$${totalCharge.toFixed(2)}`;
+        }
+        
+        // Event listener for total amount changes
+        document.getElementById('totalAmount').addEventListener('input', updateOrderSummary);
+        document.getElementById('paymentMethod').addEventListener('change', updateOrderSummary);
+        
+        // Form Submission
+        document.getElementById('orderForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            try {
+                showAlert('Submitting order...', 'info');
+                
+                // Collect form data
+                const formData = new FormData(this);
+                const orderData = {
+                    restaurant_name: formData.get('restaurant_name'),
+                    restaurant_contact: formData.get('restaurant_contact'),
+                    delivery_date: formData.get('delivery_date'),
+                    total_amount: parseFloat(formData.get('total_amount')),
+                    payment_method: formData.get('payment_method'),
+                    credit_card_last_four: formData.get('credit_card_last_four') || null,
+                    items: []
+                };
+                
+                // Collect items
+                const itemRows = document.querySelectorAll('.item-row');
+                itemRows.forEach(row => {
+                    const description = row.querySelector('[name="item_description"]').value;
+                    const quantity = parseInt(row.querySelector('[name="item_quantity"]').value);
+                    const casePack = parseInt(row.querySelector('[name="item_case_pack"]').value);
+                    
+                    if (description && quantity) {
+                        orderData.items.push({
+                            description: description,
+                            quantity: quantity,
+                            case_pack: casePack
+                        });
+                    }
+                });
+                
+                // Submit to API
+                const response = await fetch(`${API_BASE}/restaurant/orders/submit`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(orderData)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showAlert(
+                        `✅ Order submitted successfully! Order ID: ${result.order_id}. 
+                        You'll receive confirmation by Friday 5PM.`, 
+                        'success'
+                    );
+                    this.reset();
+                    document.getElementById('orderSummary').style.display = 'none';
+                } else {
+                    showAlert(`❌ Order submission failed: ${result.message}`, 'error');
+                }
+                
+            } catch (error) {
+                showAlert(`❌ Error submitting order: ${error.message}`, 'error');
+                console.error('Order submission error:', error);
+            }
+        });
+        
+        // Load Order History
+        async function loadOrderHistory() {
+            const restaurantName = document.getElementById('historyRestaurantName').value.trim();
+            
+            if (!restaurantName) {
+                showAlert('Please enter your restaurant name.', 'error');
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_BASE}/restaurant/orders/${encodeURIComponent(restaurantName)}`);
+                const result = await response.json();
+                
+                const resultsDiv = document.getElementById('orderHistoryResults');
+                
+                if (result.total_orders > 0) {
+                    let html = `<h3>Found ${result.total_orders} orders for ${result.restaurant_name}</h3>`;
+                    
+                    result.orders.forEach(order => {
+                        const statusClass = `status-${order.status.replace('_', '-')}`;
+                        html += `
+                            <div class="card" style="margin-top: 15px;">
+                                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 15px;">
+                                    <div>
+                                        <h4>Order ${order.order_id}</h4>
+                                        <p>Delivery: ${new Date(order.delivery_date).toLocaleDateString()}</p>
+                                    </div>
+                                    <span class="status-indicator ${statusClass}">${order.status}</span>
+                                </div>
+                                
+                                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; font-size: 14px;">
+                                    <div><strong>Total:</strong> $${order.total_amount.toFixed(2)}</div>
+                                    <div><strong>Items:</strong> ${order.items_count}</div>
+                                    <div><strong>Payment:</strong> ${order.payment_method}</div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    
+                    resultsDiv.innerHTML = html;
+                } else {
+                    resultsDiv.innerHTML = `<p>No orders found for "${restaurantName}".</p>`;
+                }
+                
+            } catch (error) {
+                showAlert(`❌ Error loading order history: ${error.message}`, 'error');
+                console.error('Order history error:', error);
+            }
+        }
+        
+        // Track Order
+        async function trackOrder() {
+            const orderId = document.getElementById('trackOrderId').value.trim();
+            
+            if (!orderId) {
+                showAlert('Please enter an Order ID.', 'error');
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_BASE}/restaurant/orders/status/${encodeURIComponent(orderId)}`);
+                const result = await response.json();
+                
+                const resultsDiv = document.getElementById('trackOrderResults');
+                
+                if (response.ok) {
+                    const statusClass = `status-${result.status.replace('_', '-')}`;
+                    resultsDiv.innerHTML = `
+                        <div class="card" style="margin-top: 15px;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;">
+                                <div>
+                                    <h3>${result.restaurant_name}</h3>
+                                    <p>Order ID: ${result.order_id}</p>
+                                </div>
+                                <span class="status-indicator ${statusClass}">${result.status}</span>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                                <div>
+                                    <strong>Order Date:</strong><br>
+                                    ${new Date(result.order_date).toLocaleDateString()}
+                                </div>
+                                <div>
+                                    <strong>Delivery Date:</strong><br>
+                                    ${new Date(result.delivery_date).toLocaleDateString()}
+                                </div>
+                                <div>
+                                    <strong>Total Amount:</strong><br>
+                                    $${result.total_amount.toFixed(2)}
+                                </div>
+                                <div>
+                                    <strong>Total Charge:</strong><br>
+                                    $${result.total_charge.toFixed(2)}
+                                </div>
+                            </div>
+                            
+                            <h4>Order Items:</h4>
+                            <div style="background: #f7fafc; padding: 15px; border-radius: 8px; margin-top: 10px;">
+                                ${result.items.map(item => 
+                                    `<div style="margin-bottom: 5px;">• ${item.description} (Qty: ${item.quantity})</div>`
+                                ).join('')}
+                            </div>
+                            
+                            <div style="margin-top: 20px; padding: 15px; background: #e6fffa; border-radius: 8px;">
+                                <h4>🕐 Status Timeline:</h4>
+                                <div style="margin-top: 10px;">
+                                    <div>✅ <strong>Submitted:</strong> ${new Date(result.status_timeline.submitted).toLocaleDateString()}</div>
+                                    ${result.status_timeline.confirmed ? 
+                                        `<div>✅ <strong>Confirmed:</strong> ${new Date(result.status_timeline.confirmed).toLocaleDateString()}</div>` : 
+                                        '<div>⏳ <strong>Confirmation:</strong> Pending (by Friday 5PM)</div>'
+                                    }
+                                    <div>📦 <strong>Ready for Pickup:</strong> ${result.case_upcs_configured ? 'Ready' : 'Pending confirmation'}</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    resultsDiv.innerHTML = `<p>❌ Order not found: ${result.detail}</p>`;
+                }
+                
+            } catch (error) {
+                showAlert(`❌ Error tracking order: ${error.message}`, 'error');
+                console.error('Order tracking error:', error);
+            }
+        }
+        
+        // Utility Functions
+        function showAlert(message, type) {
+            const alertContainer = document.getElementById('alertContainer');
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type}`;
+            alertDiv.innerHTML = message;
+            
+            alertContainer.innerHTML = '';
+            alertContainer.appendChild(alertDiv);
+            
+            // Auto-dismiss after 10 seconds for success messages
+            if (type === 'success') {
+                setTimeout(() => {
+                    alertDiv.remove();
+                }, 10000);
+            }
+            
+            // Scroll to alert
+            alertContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Initialize delivery date to next Tuesday
+        function setNextTuesdayAsDefault() {
+            const today = new Date();
+            const daysUntilTuesday = (9 - today.getDay()) % 7; // 2 = Tuesday, 9-2=7 for next week if today is Tuesday
+            const nextTuesday = new Date(today.getTime() + daysUntilTuesday * 24 * 60 * 60 * 1000);
+            
+            document.getElementById('deliveryDate').value = nextTuesday.toISOString().split('T')[0];
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            setNextTuesdayAsDefault();
+        });
+    </script>
+</body>
+</html>

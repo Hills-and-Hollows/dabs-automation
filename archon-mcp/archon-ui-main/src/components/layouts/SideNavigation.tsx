@@ -67,7 +67,7 @@ export const SideNavigation: React.FC<SideNavigationProps> = ({
     icon: <Settings className="h-5 w-5" />,
     label: 'Settings'
   }, {
-    path: 'http://localhost:8000/admin',
+    path: '/admin',
     icon: <ExternalLink className="h-5 w-5" />,
     label: 'HH DABS Admin Hub',
     external: true,

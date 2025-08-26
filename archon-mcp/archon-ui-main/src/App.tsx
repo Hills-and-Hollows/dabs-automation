@@ -12,6 +12,10 @@ import { ProjectPage } from './pages/ProjectPage';
 import { DisconnectScreenOverlay } from './components/DisconnectScreenOverlay';
 import { ErrorBoundaryWithBugReport } from './components/bug-report/ErrorBoundaryWithBugReport';
 import { serverHealthService } from './services/serverHealthService';
+import { AdminHubPage } from './pages/AdminHubPage';
+import { ManagerDashboardPage } from './pages/ManagerDashboardPage';
+import { RestaurantPortalPage } from './pages/RestaurantPortalPage';
+import { CustomersPage } from './pages/CustomersPage';
 
 const AppRoutes = () => {
   const { projectsEnabled } = useSettings();
@@ -27,6 +31,14 @@ const AppRoutes = () => {
       ) : (
         <Route path="/projects" element={<Navigate to="/" replace />} />
       )}
+      {/* Ordering System Routes */}
+      <Route path="/admin" element={<AdminHubPage />} />
+      <Route path="/admin_hub" element={<AdminHubPage />} />
+      <Route path="/dashboard" element={<ManagerDashboardPage />} />
+      <Route path="/manager" element={<ManagerDashboardPage />} />
+      <Route path="/portal" element={<RestaurantPortalPage />} />
+      <Route path="/restaurant" element={<RestaurantPortalPage />} />
+      <Route path="/customers" element={<CustomersPage />} />
     </Routes>
   );
 };
