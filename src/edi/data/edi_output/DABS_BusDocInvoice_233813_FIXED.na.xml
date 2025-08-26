@@ -1,991 +1,608 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ns0:NAXML-BusDoc xmlns:ns0="http://www.naxml.org/Retail-EDI/Vocabulary/2003-10-16">
-  <ns0:TransmissionHeader>
-    <ns0:TransmissionId>DABS_DABS_20250826_014946_20250826_020218</ns0:TransmissionId>
-    
+<?xml version='1.0' encoding='utf-8'?>
+<NAXML-BusDoc xmlns="http://www.naxml.org/Retail-EDI/Vocabulary/2003-10-16">
+  <TransmissionHeader>
+    <TransmissionId>DABS_DABS_20250826_014946_20250826_020218</TransmissionId>
     
         
-    
-    <ns0:TransmissionDate>2025-08-25</ns0:TransmissionDate>
-    
+    <TransmissionDate>2025-08-25</TransmissionDate>
     
           
-    
-    <ns0:TransmissionTime>02:02:18</ns0:TransmissionTime>
-    
+    <TransmissionTime>02:02:18</TransmissionTime>
     
             
-    
-    <ns0:TransmissionStatus>original</ns0:TransmissionStatus>
-    
+    <TransmissionStatus>original</TransmissionStatus>
     
             
-  
-  </ns0:TransmissionHeader>
-  
+  </TransmissionHeader>
   
             
-  
-  <ns0:Parties>
-    <ns0:Supplier>
-      <ns0:Name>Utah Division of Alcoholic Beverage Control</ns0:Name>
-      
+  <Parties>
+    <Supplier>
+      <Name>Utah Division of Alcoholic Beverage Control</Name>
       
                   
-      
-      <ns0:OrganizationId ident="DABS">DABS</ns0:OrganizationId>
-      
+      <OrganizationId ident="DABS">DABS</OrganizationId>
       
                   
-    
-    </ns0:Supplier>
-    
+    </Supplier>
     
                   
-    
-    <ns0:Buyer>
-      <ns0:Name>Hills &amp; Hollows LLC</ns0:Name>
-      
+    <Buyer>
+      <Name>Hills &amp; Hollows LLC</Name>
       
                     
-    
-    </ns0:Buyer>
-    
+    </Buyer>
     
                     
-    
-    <ns0:ShipTo ident="HILLS_HOLLOWS_BOULDER">
-      <ns0:Name>Hills &amp; Hollows Package Agency</ns0:Name>
-      
+    <ShipTo ident="HILLS_HOLLOWS_BOULDER">
+      <Name>Hills &amp; Hollows Package Agency</Name>
       
                       
-    
-    </ns0:ShipTo>
-    
+    </ShipTo>
     
                     
-  
-  </ns0:Parties>
-  
+  </Parties>
   
                     
-  
-  <ns0:Invoice>
-    <ns0:Location>
-      <ns0:Name ident="HILLS_HOLLOWS_BOULDER">Hills &amp; Hollows Package Agency</ns0:Name>
-      
+  <Invoice>
+    <Location>
+      <Name ident="HILLS_HOLLOWS_BOULDER">Hills &amp; Hollows Package Agency</Name>
       
                         
-    
-    </ns0:Location>
-    
+    </Location>
     
                         
-    
-    <ns0:InvoiceNumber>DABS_20250826_014946</ns0:InvoiceNumber>
-    
+    <InvoiceNumber>DABS_20250826_014946</InvoiceNumber>
     
                           
-    
-    <ns0:InvoiceDate>2025-08-26</ns0:InvoiceDate>
-    
+    <InvoiceDate>2025-08-26</InvoiceDate>
     
                             
-    
-    <ns0:Currency code="USD">USD</ns0:Currency>
-    
+    <Currency code="USD">USD</Currency>
     
                               
-    
-    <ns0:InvoiceDetail>
-      <ns0:LineItem>
-        <ns0:InvoiceUnit>
-          <ns0:InvoiceUnitId identType="VIN">017088</ns0:InvoiceUnitId>
-          <ns0:InvoiceUnitId identType="GTIN">00000000017082</ns0:InvoiceUnitId>
-          
+    <InvoiceDetail>
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="VIN">017088</InvoiceUnitId><InvoiceUnitId identType="GTIN">00000000017082</InvoiceUnitId>
           
                                       
-          
-          <ns0:InvoiceUnitDescription>BULLEIT BOURBON FRONTIER WHISK 750ml</ns0:InvoiceUnitDescription>
-          
+          <InvoiceUnitDescription>BULLEIT BOURBON FRONTIER WHISK 750ml</InvoiceUnitDescription>
           
                                         
-          
-          <ns0:InvoiceUnitQty cstoreUOMBasis="each">1</ns0:InvoiceUnitQty>
-          
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
           
                                           
-          
-          <ns0:InvoiceUnitCost currency="USD">23.09</ns0:InvoiceUnitCost>
-          
+          <InvoiceUnitCost currency="USD">23.09</InvoiceUnitCost>
           
                                             
-          
-          <ns0:LineItemGrossAmt currency="USD">23.09</ns0:LineItemGrossAmt>
-          
+          <LineItemGrossAmt currency="USD">23.09</LineItemGrossAmt>
           
                                               
-          
-          <ns0:LineItemNetAmt currency="USD">23.09</ns0:LineItemNetAmt>
-          
+          <LineItemNetAmt currency="USD">23.09</LineItemNetAmt>
           
                                               
-        
-        </ns0:InvoiceUnit>
-        
+        </InvoiceUnit>
         
                                               
-        
-        <ns0:RetailUnitPricing>
-          <ns0:RetailUnitId identType="GTIN">00000000017082</ns0:RetailUnitId>
-          
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000017082</RetailUnitId>
           
                                                   
-          
-          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
-          
+          <RetailUnitQty>1</RetailUnitQty>
           
                                                     
-          
-          <ns0:RetailPrice currency="USD">32.99</ns0:RetailPrice>
-          
+          <RetailPrice currency="USD">32.99</RetailPrice>
           
                                                     
-        
-        </ns0:RetailUnitPricing>
-        
+        </RetailUnitPricing>
         
                                                   
-      
-      </ns0:LineItem>
-      
+      </LineItem>
       
                                                   
-      
-      <ns0:LineItem>
-        <ns0:InvoiceUnit>
-          <ns0:InvoiceUnitId identType="VIN">039271</ns0:InvoiceUnitId>
-          <ns0:InvoiceUnitId identType="GTIN">00000000039279</ns0:InvoiceUnitId>
-          
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="VIN">039271</InvoiceUnitId><InvoiceUnitId identType="GTIN">00000000039279</InvoiceUnitId>
           
                                                         
-          
-          <ns0:InvoiceUnitDescription>SUGAR HOUSE VODKA 1000ml</ns0:InvoiceUnitDescription>
-          
+          <InvoiceUnitDescription>SUGAR HOUSE VODKA 1000ml</InvoiceUnitDescription>
           
                                                           
-          
-          <ns0:InvoiceUnitQty cstoreUOMBasis="each">1</ns0:InvoiceUnitQty>
-          
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
           
                                                             
-          
-          <ns0:InvoiceUnitCost currency="USD">15.39</ns0:InvoiceUnitCost>
-          
+          <InvoiceUnitCost currency="USD">15.39</InvoiceUnitCost>
           
                                                               
-          
-          <ns0:LineItemGrossAmt currency="USD">15.39</ns0:LineItemGrossAmt>
-          
+          <LineItemGrossAmt currency="USD">15.39</LineItemGrossAmt>
           
                                                                 
-          
-          <ns0:LineItemNetAmt currency="USD">15.39</ns0:LineItemNetAmt>
-          
+          <LineItemNetAmt currency="USD">15.39</LineItemNetAmt>
           
                                                                 
-        
-        </ns0:InvoiceUnit>
-        
+        </InvoiceUnit>
         
                                                                 
-        
-        <ns0:RetailUnitPricing>
-          <ns0:RetailUnitId identType="GTIN">00000000039279</ns0:RetailUnitId>
-          
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000039279</RetailUnitId>
           
                                                                     
-          
-          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
-          
+          <RetailUnitQty>1</RetailUnitQty>
           
                                                                       
-          
-          <ns0:RetailPrice currency="USD">21.99</ns0:RetailPrice>
-          
+          <RetailPrice currency="USD">21.99</RetailPrice>
           
                                                                       
-        
-        </ns0:RetailUnitPricing>
-        
+        </RetailUnitPricing>
         
                                                                     
-      
-      </ns0:LineItem>
-      
+      </LineItem>
       
                                                                     
-      
-      <ns0:LineItem>
-        <ns0:InvoiceUnit>
-          <ns0:InvoiceUnitId identType="VIN">068838</ns0:InvoiceUnitId>
-          <ns0:InvoiceUnitId identType="GTIN">00000000068837</ns0:InvoiceUnitId>
-          
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="VIN">068838</InvoiceUnitId><InvoiceUnitId identType="GTIN">00000000068837</InvoiceUnitId>
           
                                                                           
-          
-          <ns0:InvoiceUnitDescription>ST GERMAIN ELDERFLOWER LIQUEUR 750ml</ns0:InvoiceUnitDescription>
-          
+          <InvoiceUnitDescription>ST GERMAIN ELDERFLOWER LIQUEUR 750ml</InvoiceUnitDescription>
           
                                                                             
-          
-          <ns0:InvoiceUnitQty cstoreUOMBasis="each">1</ns0:InvoiceUnitQty>
-          
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
           
                                                                               
-          
-          <ns0:InvoiceUnitCost currency="USD">12.95</ns0:InvoiceUnitCost>
-          
+          <InvoiceUnitCost currency="USD">12.95</InvoiceUnitCost>
           
                                                                                 
-          
-          <ns0:LineItemGrossAmt currency="USD">12.95</ns0:LineItemGrossAmt>
-          
+          <LineItemGrossAmt currency="USD">12.95</LineItemGrossAmt>
           
                                                                                   
-          
-          <ns0:LineItemNetAmt currency="USD">12.95</ns0:LineItemNetAmt>
-          
+          <LineItemNetAmt currency="USD">12.95</LineItemNetAmt>
           
                                                                                   
-        
-        </ns0:InvoiceUnit>
-        
+        </InvoiceUnit>
         
                                                                                   
-        
-        <ns0:RetailUnitPricing>
-          <ns0:RetailUnitId identType="GTIN">00000000068837</ns0:RetailUnitId>
-          
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000068837</RetailUnitId>
           
                                                                                       
-          
-          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
-          
+          <RetailUnitQty>1</RetailUnitQty>
           
                                                                                         
-          
-          <ns0:RetailPrice currency="USD">18.50</ns0:RetailPrice>
-          
+          <RetailPrice currency="USD">18.50</RetailPrice>
           
                                                                                         
-        
-        </ns0:RetailUnitPricing>
-        
+        </RetailUnitPricing>
         
                                                                                       
-      
-      </ns0:LineItem>
-      
+      </LineItem>
       
                                                                                       
-      
-      <ns0:LineItem>
-        <ns0:InvoiceUnit>
-          <ns0:InvoiceUnitId identType="VIN">087619</ns0:InvoiceUnitId>
-          <ns0:InvoiceUnitId identType="GTIN">00000000087610</ns0:InvoiceUnitId>
-          
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="VIN">087619</InvoiceUnitId><InvoiceUnitId identType="GTIN">00000000087610</InvoiceUnitId>
           
                                                                                             
-          
-          <ns0:InvoiceUnitDescription>ESPOLON BLANCO TEQUILA 750ml</ns0:InvoiceUnitDescription>
-          
+          <InvoiceUnitDescription>ESPOLON BLANCO TEQUILA 750ml</InvoiceUnitDescription>
           
                                                                                               
-          
-          <ns0:InvoiceUnitQty cstoreUOMBasis="each">1</ns0:InvoiceUnitQty>
-          
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
           
                                                                                                 
-          
-          <ns0:InvoiceUnitCost currency="USD">22.97</ns0:InvoiceUnitCost>
-          
+          <InvoiceUnitCost currency="USD">22.97</InvoiceUnitCost>
           
                                                                                                   
-          
-          <ns0:LineItemGrossAmt currency="USD">22.97</ns0:LineItemGrossAmt>
-          
+          <LineItemGrossAmt currency="USD">22.97</LineItemGrossAmt>
           
                                                                                                     
-          
-          <ns0:LineItemNetAmt currency="USD">22.97</ns0:LineItemNetAmt>
-          
+          <LineItemNetAmt currency="USD">22.97</LineItemNetAmt>
           
                                                                                                     
-        
-        </ns0:InvoiceUnit>
-        
+        </InvoiceUnit>
         
                                                                                                     
-        
-        <ns0:RetailUnitPricing>
-          <ns0:RetailUnitId identType="GTIN">00000000087610</ns0:RetailUnitId>
-          
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000087610</RetailUnitId>
           
                                                                                                         
-          
-          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
-          
+          <RetailUnitQty>1</RetailUnitQty>
           
                                                                                                           
-          
-          <ns0:RetailPrice currency="USD">32.82</ns0:RetailPrice>
-          
+          <RetailPrice currency="USD">32.82</RetailPrice>
           
                                                                                                           
-        
-        </ns0:RetailUnitPricing>
-        
+        </RetailUnitPricing>
         
                                                                                                         
-      
-      </ns0:LineItem>
-      
+      </LineItem>
       
                                                                                                         
-      
-      <ns0:LineItem>
-        <ns0:InvoiceUnit>
-          <ns0:InvoiceUnitId identType="VIN">418330</ns0:InvoiceUnitId>
-          <ns0:InvoiceUnitId identType="GTIN">00000000418333</ns0:InvoiceUnitId>
-          
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="VIN">418330</InvoiceUnitId><InvoiceUnitId identType="GTIN">00000000418333</InvoiceUnitId>
           
                                                                                                               
-          
-          <ns0:InvoiceUnitDescription>MATUA SAUVIGNON BLANC 750ml</ns0:InvoiceUnitDescription>
-          
+          <InvoiceUnitDescription>MATUA SAUVIGNON BLANC 750ml</InvoiceUnitDescription>
           
                                                                                                                 
-          
-          <ns0:InvoiceUnitQty cstoreUOMBasis="each">1</ns0:InvoiceUnitQty>
-          
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
           
                                                                                                                   
-          
-          <ns0:InvoiceUnitCost currency="USD">9.09</ns0:InvoiceUnitCost>
-          
+          <InvoiceUnitCost currency="USD">9.09</InvoiceUnitCost>
           
                                                                                                                     
-          
-          <ns0:LineItemGrossAmt currency="USD">9.09</ns0:LineItemGrossAmt>
-          
+          <LineItemGrossAmt currency="USD">9.09</LineItemGrossAmt>
           
                                                                                                                       
-          
-          <ns0:LineItemNetAmt currency="USD">9.09</ns0:LineItemNetAmt>
-          
+          <LineItemNetAmt currency="USD">9.09</LineItemNetAmt>
           
                                                                                                                       
-        
-        </ns0:InvoiceUnit>
-        
+        </InvoiceUnit>
         
                                                                                                                       
-        
-        <ns0:RetailUnitPricing>
-          <ns0:RetailUnitId identType="GTIN">00000000418333</ns0:RetailUnitId>
-          
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000418333</RetailUnitId>
           
                                                                                                                           
-          
-          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
-          
+          <RetailUnitQty>1</RetailUnitQty>
           
                                                                                                                             
-          
-          <ns0:RetailPrice currency="USD">12.99</ns0:RetailPrice>
-          
+          <RetailPrice currency="USD">12.99</RetailPrice>
           
                                                                                                                             
-        
-        </ns0:RetailUnitPricing>
-        
+        </RetailUnitPricing>
         
                                                                                                                           
-      
-      </ns0:LineItem>
-      
+      </LineItem>
       
                                                                                                                           
-      
-      <ns0:LineItem>
-        <ns0:InvoiceUnit>
-          <ns0:InvoiceUnitId identType="VIN">419951</ns0:InvoiceUnitId>
-          <ns0:InvoiceUnitId identType="GTIN">00000000419952</ns0:InvoiceUnitId>
-          
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="VIN">419951</InvoiceUnitId><InvoiceUnitId identType="GTIN">00000000419952</InvoiceUnitId>
           
                                                                                                                                 
-          
-          <ns0:InvoiceUnitDescription>19 CRIMES CABERNET SAUVIGNON 750ml</ns0:InvoiceUnitDescription>
-          
+          <InvoiceUnitDescription>19 CRIMES CABERNET SAUVIGNON 750ml</InvoiceUnitDescription>
           
                                                                                                                                   
-          
-          <ns0:InvoiceUnitQty cstoreUOMBasis="each">1</ns0:InvoiceUnitQty>
-          
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
           
                                                                                                                                     
-          
-          <ns0:InvoiceUnitCost currency="USD">9.09</ns0:InvoiceUnitCost>
-          
+          <InvoiceUnitCost currency="USD">9.09</InvoiceUnitCost>
           
                                                                                                                                       
-          
-          <ns0:LineItemGrossAmt currency="USD">9.09</ns0:LineItemGrossAmt>
-          
+          <LineItemGrossAmt currency="USD">9.09</LineItemGrossAmt>
           
                                                                                                                                         
-          
-          <ns0:LineItemNetAmt currency="USD">9.09</ns0:LineItemNetAmt>
-          
+          <LineItemNetAmt currency="USD">9.09</LineItemNetAmt>
           
                                                                                                                                         
-        
-        </ns0:InvoiceUnit>
-        
+        </InvoiceUnit>
         
                                                                                                                                         
-        
-        <ns0:RetailUnitPricing>
-          <ns0:RetailUnitId identType="GTIN">00000000419952</ns0:RetailUnitId>
-          
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000419952</RetailUnitId>
           
                                                                                                                                             
-          
-          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
-          
+          <RetailUnitQty>1</RetailUnitQty>
           
                                                                                                                                               
-          
-          <ns0:RetailPrice currency="USD">12.99</ns0:RetailPrice>
-          
+          <RetailPrice currency="USD">12.99</RetailPrice>
           
                                                                                                                                               
-        
-        </ns0:RetailUnitPricing>
-        
+        </RetailUnitPricing>
         
                                                                                                                                             
-      
-      </ns0:LineItem>
-      
+      </LineItem>
       
                                                                                                                                             
-      
-      <ns0:LineItem>
-        <ns0:InvoiceUnit>
-          <ns0:InvoiceUnitId identType="VIN">445303</ns0:InvoiceUnitId>
-          <ns0:InvoiceUnitId identType="GTIN">00000000445300</ns0:InvoiceUnitId>
-          
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="VIN">445303</InvoiceUnitId><InvoiceUnitId identType="GTIN">00000000445300</InvoiceUnitId>
           
                                                                                                                                                   
-          
-          <ns0:InvoiceUnitDescription>BOTA BOX NIGHTHAWK BLACK RED 3000ml</ns0:InvoiceUnitDescription>
-          
+          <InvoiceUnitDescription>BOTA BOX NIGHTHAWK BLACK RED 3000ml</InvoiceUnitDescription>
           
                                                                                                                                                     
-          
-          <ns0:InvoiceUnitQty cstoreUOMBasis="each">1</ns0:InvoiceUnitQty>
-          
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
           
                                                                                                                                                       
-          
-          <ns0:InvoiceUnitCost currency="USD">12.59</ns0:InvoiceUnitCost>
-          
+          <InvoiceUnitCost currency="USD">12.59</InvoiceUnitCost>
           
                                                                                                                                                         
-          
-          <ns0:LineItemGrossAmt currency="USD">12.59</ns0:LineItemGrossAmt>
-          
+          <LineItemGrossAmt currency="USD">12.59</LineItemGrossAmt>
           
                                                                                                                                                           
-          
-          <ns0:LineItemNetAmt currency="USD">12.59</ns0:LineItemNetAmt>
-          
+          <LineItemNetAmt currency="USD">12.59</LineItemNetAmt>
           
                                                                                                                                                           
-        
-        </ns0:InvoiceUnit>
-        
+        </InvoiceUnit>
         
                                                                                                                                                           
-        
-        <ns0:RetailUnitPricing>
-          <ns0:RetailUnitId identType="GTIN">00000000445300</ns0:RetailUnitId>
-          
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000445300</RetailUnitId>
           
                                                                                                                                                               
-          
-          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
-          
+          <RetailUnitQty>1</RetailUnitQty>
           
                                                                                                                                                                 
-          
-          <ns0:RetailPrice currency="USD">17.99</ns0:RetailPrice>
-          
+          <RetailPrice currency="USD">17.99</RetailPrice>
           
                                                                                                                                                                 
-        
-        </ns0:RetailUnitPricing>
-        
+        </RetailUnitPricing>
         
                                                                                                                                                               
-      
-      </ns0:LineItem>
-      
+      </LineItem>
       
                                                                                                                                                               
-      
-      <ns0:LineItem>
-        <ns0:InvoiceUnit>
-          <ns0:InvoiceUnitId identType="VIN">547295</ns0:InvoiceUnitId>
-          <ns0:InvoiceUnitId identType="GTIN">00000000547291</ns0:InvoiceUnitId>
-          
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="VIN">547295</InvoiceUnitId><InvoiceUnitId identType="GTIN">00000000547291</InvoiceUnitId>
           
                                                                                                                                                                     
-          
-          <ns0:InvoiceUnitDescription>BOGLE CHARDONNAY 750ml</ns0:InvoiceUnitDescription>
-          
+          <InvoiceUnitDescription>BOGLE CHARDONNAY 750ml</InvoiceUnitDescription>
           
                                                                                                                                                                       
-          
-          <ns0:InvoiceUnitQty cstoreUOMBasis="each">1</ns0:InvoiceUnitQty>
-          
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
           
                                                                                                                                                                         
-          
-          <ns0:InvoiceUnitCost currency="USD">6.99</ns0:InvoiceUnitCost>
-          
+          <InvoiceUnitCost currency="USD">6.99</InvoiceUnitCost>
           
                                                                                                                                                                           
-          
-          <ns0:LineItemGrossAmt currency="USD">6.99</ns0:LineItemGrossAmt>
-          
+          <LineItemGrossAmt currency="USD">6.99</LineItemGrossAmt>
           
                                                                                                                                                                             
-          
-          <ns0:LineItemNetAmt currency="USD">6.99</ns0:LineItemNetAmt>
-          
+          <LineItemNetAmt currency="USD">6.99</LineItemNetAmt>
           
                                                                                                                                                                             
-        
-        </ns0:InvoiceUnit>
-        
+        </InvoiceUnit>
         
                                                                                                                                                                             
-        
-        <ns0:RetailUnitPricing>
-          <ns0:RetailUnitId identType="GTIN">00000000547291</ns0:RetailUnitId>
-          
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000547291</RetailUnitId>
           
                                                                                                                                                                                 
-          
-          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
-          
+          <RetailUnitQty>1</RetailUnitQty>
           
                                                                                                                                                                                   
-          
-          <ns0:RetailPrice currency="USD">9.99</ns0:RetailPrice>
-          
+          <RetailPrice currency="USD">9.99</RetailPrice>
           
                                                                                                                                                                                   
-        
-        </ns0:RetailUnitPricing>
-        
+        </RetailUnitPricing>
         
                                                                                                                                                                                 
-      
-      </ns0:LineItem>
-      
+      </LineItem>
       
                                                                                                                                                                                 
-      
-      <ns0:LineItem>
-        <ns0:InvoiceUnit>
-          <ns0:InvoiceUnitId identType="VIN">581015</ns0:InvoiceUnitId>
-          <ns0:InvoiceUnitId identType="GTIN">00000000581019</ns0:InvoiceUnitId>
-          
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="VIN">581015</InvoiceUnitId><InvoiceUnitId identType="GTIN">00000000581019</InvoiceUnitId>
           
                                                                                                                                                                                       
-          
-          <ns0:InvoiceUnitDescription>BOTA BOX PINOT GRIGIO 3000ml</ns0:InvoiceUnitDescription>
-          
+          <InvoiceUnitDescription>BOTA BOX PINOT GRIGIO 3000ml</InvoiceUnitDescription>
           
                                                                                                                                                                                         
-          
-          <ns0:InvoiceUnitQty cstoreUOMBasis="each">1</ns0:InvoiceUnitQty>
-          
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
           
                                                                                                                                                                                           
-          
-          <ns0:InvoiceUnitCost currency="USD">12.59</ns0:InvoiceUnitCost>
-          
+          <InvoiceUnitCost currency="USD">12.59</InvoiceUnitCost>
           
                                                                                                                                                                                             
-          
-          <ns0:LineItemGrossAmt currency="USD">12.59</ns0:LineItemGrossAmt>
-          
+          <LineItemGrossAmt currency="USD">12.59</LineItemGrossAmt>
           
                                                                                                                                                                                               
-          
-          <ns0:LineItemNetAmt currency="USD">12.59</ns0:LineItemNetAmt>
-          
+          <LineItemNetAmt currency="USD">12.59</LineItemNetAmt>
           
                                                                                                                                                                                               
-        
-        </ns0:InvoiceUnit>
-        
+        </InvoiceUnit>
         
                                                                                                                                                                                               
-        
-        <ns0:RetailUnitPricing>
-          <ns0:RetailUnitId identType="GTIN">00000000581019</ns0:RetailUnitId>
-          
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000581019</RetailUnitId>
           
                                                                                                                                                                                                   
-          
-          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
-          
+          <RetailUnitQty>1</RetailUnitQty>
           
                                                                                                                                                                                                     
-          
-          <ns0:RetailPrice currency="USD">17.99</ns0:RetailPrice>
-          
+          <RetailPrice currency="USD">17.99</RetailPrice>
           
                                                                                                                                                                                                     
-        
-        </ns0:RetailUnitPricing>
-        
+        </RetailUnitPricing>
         
                                                                                                                                                                                                   
-      
-      </ns0:LineItem>
-      
+      </LineItem>
       
                                                                                                                                                                                                   
-      
-      <ns0:LineItem>
-        <ns0:InvoiceUnit>
-          <ns0:InvoiceUnitId identType="VIN">917817</ns0:InvoiceUnitId>
-          <ns0:InvoiceUnitId identType="GTIN">00000000917816</ns0:InvoiceUnitId>
-          
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="VIN">917817</InvoiceUnitId><InvoiceUnitId identType="GTIN">00000000917816</InvoiceUnitId>
           
                                                                                                                                                                                                         
-          
-          <ns0:InvoiceUnitDescription>RED ROCK ELEPHINO IPA 500ml</ns0:InvoiceUnitDescription>
-          
+          <InvoiceUnitDescription>RED ROCK ELEPHINO IPA 500ml</InvoiceUnitDescription>
           
                                                                                                                                                                                                           
-          
-          <ns0:InvoiceUnitQty cstoreUOMBasis="each">1</ns0:InvoiceUnitQty>
-          
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
           
                                                                                                                                                                                                             
-          
-          <ns0:InvoiceUnitCost currency="USD">2.83</ns0:InvoiceUnitCost>
-          
+          <InvoiceUnitCost currency="USD">2.83</InvoiceUnitCost>
           
                                                                                                                                                                                                               
-          
-          <ns0:LineItemGrossAmt currency="USD">2.83</ns0:LineItemGrossAmt>
-          
+          <LineItemGrossAmt currency="USD">2.83</LineItemGrossAmt>
           
                                                                                                                                                                                                                 
-          
-          <ns0:LineItemNetAmt currency="USD">2.83</ns0:LineItemNetAmt>
-          
+          <LineItemNetAmt currency="USD">2.83</LineItemNetAmt>
           
                                                                                                                                                                                                                 
-        
-        </ns0:InvoiceUnit>
-        
+        </InvoiceUnit>
         
                                                                                                                                                                                                                 
-        
-        <ns0:RetailUnitPricing>
-          <ns0:RetailUnitId identType="GTIN">00000000917816</ns0:RetailUnitId>
-          
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000917816</RetailUnitId>
           
                                                                                                                                                                                                                     
-          
-          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
-          
+          <RetailUnitQty>1</RetailUnitQty>
           
                                                                                                                                                                                                                       
-          
-          <ns0:RetailPrice currency="USD">4.04</ns0:RetailPrice>
-          
+          <RetailPrice currency="USD">4.04</RetailPrice>
           
                                                                                                                                                                                                                       
-        
-        </ns0:RetailUnitPricing>
-        
+        </RetailUnitPricing>
         
                                                                                                                                                                                                                     
-      
-      </ns0:LineItem>
-      
+      </LineItem>
       
                                                                                                                                                                                                                     
-      
-      <ns0:LineItem>
-        <ns0:InvoiceUnit>
-          <ns0:InvoiceUnitId identType="VIN">927483</ns0:InvoiceUnitId>
-          <ns0:InvoiceUnitId identType="GTIN">00000000927488</ns0:InvoiceUnitId>
-          
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="VIN">927483</InvoiceUnitId><InvoiceUnitId identType="GTIN">00000000927488</InvoiceUnitId>
           
                                                                                                                                                                                                                           
-          
-          <ns0:InvoiceUnitDescription>HIGHPOINT TRANSPLANT CIDER 355ml</ns0:InvoiceUnitDescription>
-          
+          <InvoiceUnitDescription>HIGHPOINT TRANSPLANT CIDER 355ml</InvoiceUnitDescription>
           
                                                                                                                                                                                                                             
-          
-          <ns0:InvoiceUnitQty cstoreUOMBasis="each">1</ns0:InvoiceUnitQty>
-          
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
           
                                                                                                                                                                                                                               
-          
-          <ns0:InvoiceUnitCost currency="USD">1.78</ns0:InvoiceUnitCost>
-          
+          <InvoiceUnitCost currency="USD">1.78</InvoiceUnitCost>
           
                                                                                                                                                                                                                                 
-          
-          <ns0:LineItemGrossAmt currency="USD">1.78</ns0:LineItemGrossAmt>
-          
+          <LineItemGrossAmt currency="USD">1.78</LineItemGrossAmt>
           
                                                                                                                                                                                                                                   
-          
-          <ns0:LineItemNetAmt currency="USD">1.78</ns0:LineItemNetAmt>
-          
+          <LineItemNetAmt currency="USD">1.78</LineItemNetAmt>
           
                                                                                                                                                                                                                                   
-        
-        </ns0:InvoiceUnit>
-        
+        </InvoiceUnit>
         
                                                                                                                                                                                                                                   
-        
-        <ns0:RetailUnitPricing>
-          <ns0:RetailUnitId identType="GTIN">00000000927488</ns0:RetailUnitId>
-          
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000927488</RetailUnitId>
           
                                                                                                                                                                                                                                       
-          
-          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
-          
+          <RetailUnitQty>1</RetailUnitQty>
           
                                                                                                                                                                                                                                         
-          
-          <ns0:RetailPrice currency="USD">2.55</ns0:RetailPrice>
-          
+          <RetailPrice currency="USD">2.55</RetailPrice>
           
                                                                                                                                                                                                                                         
-        
-        </ns0:RetailUnitPricing>
-        
+        </RetailUnitPricing>
         
                                                                                                                                                                                                                                       
-      
-      </ns0:LineItem>
-      
+      </LineItem>
       
                                                                                                                                                                                                                                       
-      
-      <ns0:LineItem>
-        <ns0:InvoiceUnit>
-          <ns0:InvoiceUnitId identType="VIN">989396</ns0:InvoiceUnitId>
-          <ns0:InvoiceUnitId identType="GTIN">00000000989390</ns0:InvoiceUnitId>
-          
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="VIN">989396</InvoiceUnitId><InvoiceUnitId identType="GTIN">00000000989390</InvoiceUnitId>
           
                                                                                                                                                                                                                                             
-          
-          <ns0:InvoiceUnitDescription>GRAND TETON SWEETGRASS APA 355ml</ns0:InvoiceUnitDescription>
-          
+          <InvoiceUnitDescription>GRAND TETON SWEETGRASS APA 355ml</InvoiceUnitDescription>
           
                                                                                                                                                                                                                                               
-          
-          <ns0:InvoiceUnitQty cstoreUOMBasis="each">1</ns0:InvoiceUnitQty>
-          
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
           
                                                                                                                                                                                                                                                 
-          
-          <ns0:InvoiceUnitCost currency="USD">1.13</ns0:InvoiceUnitCost>
-          
+          <InvoiceUnitCost currency="USD">1.13</InvoiceUnitCost>
           
                                                                                                                                                                                                                                                   
-          
-          <ns0:LineItemGrossAmt currency="USD">1.13</ns0:LineItemGrossAmt>
-          
+          <LineItemGrossAmt currency="USD">1.13</LineItemGrossAmt>
           
                                                                                                                                                                                                                                                     
-          
-          <ns0:LineItemNetAmt currency="USD">1.13</ns0:LineItemNetAmt>
-          
+          <LineItemNetAmt currency="USD">1.13</LineItemNetAmt>
           
                                                                                                                                                                                                                                                     
-        
-        </ns0:InvoiceUnit>
-        
+        </InvoiceUnit>
         
                                                                                                                                                                                                                                                     
-        
-        <ns0:RetailUnitPricing>
-          <ns0:RetailUnitId identType="GTIN">00000000989390</ns0:RetailUnitId>
-          
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000989390</RetailUnitId>
           
                                                                                                                                                                                                                                                         
-          
-          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
-          
+          <RetailUnitQty>1</RetailUnitQty>
           
                                                                                                                                                                                                                                                           
-          
-          <ns0:RetailPrice currency="USD">1.62</ns0:RetailPrice>
-          
+          <RetailPrice currency="USD">1.62</RetailPrice>
           
                                                                                                                                                                                                                                                           
-        
-        </ns0:RetailUnitPricing>
-        
+        </RetailUnitPricing>
         
                                                                                                                                                                                                                                                         
-      
-      </ns0:LineItem>
-      
+      </LineItem>
       
                                                                                                                                                                                                                                                         
-      
-      <ns0:LineItem>
-        <ns0:InvoiceUnit>
-          <ns0:InvoiceUnitId identType="VIN">989418</ns0:InvoiceUnitId>
-          <ns0:InvoiceUnitId identType="GTIN">00000000989415</ns0:InvoiceUnitId>
-          
+      <LineItem>
+        <InvoiceUnit>
+          <InvoiceUnitId identType="VIN">989418</InvoiceUnitId><InvoiceUnitId identType="GTIN">00000000989415</InvoiceUnitId>
           
                                                                                                                                                                                                                                                               
-          
-          <ns0:InvoiceUnitDescription>RED ROCK FROHLICH PILS 500ml</ns0:InvoiceUnitDescription>
-          
+          <InvoiceUnitDescription>RED ROCK FROHLICH PILS 500ml</InvoiceUnitDescription>
           
                                                                                                                                                                                                                                                                 
-          
-          <ns0:InvoiceUnitQty cstoreUOMBasis="each">1</ns0:InvoiceUnitQty>
-          
+          <InvoiceUnitQty cstoreUOMBasis="each">1</InvoiceUnitQty>
           
                                                                                                                                                                                                                                                                   
-          
-          <ns0:InvoiceUnitCost currency="USD">2.83</ns0:InvoiceUnitCost>
-          
+          <InvoiceUnitCost currency="USD">2.83</InvoiceUnitCost>
           
                                                                                                                                                                                                                                                                     
-          
-          <ns0:LineItemGrossAmt currency="USD">2.83</ns0:LineItemGrossAmt>
-          
+          <LineItemGrossAmt currency="USD">2.83</LineItemGrossAmt>
           
                                                                                                                                                                                                                                                                       
-          
-          <ns0:LineItemNetAmt currency="USD">2.83</ns0:LineItemNetAmt>
-          
+          <LineItemNetAmt currency="USD">2.83</LineItemNetAmt>
           
                                                                                                                                                                                                                                                                       
-        
-        </ns0:InvoiceUnit>
-        
+        </InvoiceUnit>
         
                                                                                                                                                                                                                                                                       
-        
-        <ns0:RetailUnitPricing>
-          <ns0:RetailUnitId identType="GTIN">00000000989415</ns0:RetailUnitId>
-          
+        <RetailUnitPricing>
+          <RetailUnitId identType="GTIN">00000000989415</RetailUnitId>
           
                                                                                                                                                                                                                                                                           
-          
-          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
-          
+          <RetailUnitQty>1</RetailUnitQty>
           
                                                                                                                                                                                                                                                                             
-          
-          <ns0:RetailPrice currency="USD">4.04</ns0:RetailPrice>
-          
+          <RetailPrice currency="USD">4.04</RetailPrice>
           
                                                                                                                                                                                                                                                                             
-        
-        </ns0:RetailUnitPricing>
-        
+        </RetailUnitPricing>
         
                                                                                                                                                                                                                                                                           
-      
-      </ns0:LineItem>
-      
+      </LineItem>
       
                                                                                                                                                                                                                                                                           
-      
-      <ns0:InvoiceSummary>
-        <ns0:InvoiceTotals>
-          <ns0:TotalInvoiceUnits>13</ns0:TotalInvoiceUnits>
-          
+      <InvoiceSummary>
+        <InvoiceTotals>
+          <TotalInvoiceUnits>13</TotalInvoiceUnits>
           
                                                                                                                                                                                                                                                                                 
-          
-          <ns0:TotalLineItemNetAmt currency="USD">133.32</ns0:TotalLineItemNetAmt>
-          
+          <TotalLineItemNetAmt currency="USD">133.32</TotalLineItemNetAmt>
           
                                                                                                                                                                                                                                                                                   
-          
-          <ns0:TotalTaxes currency="USD">0.00</ns0:TotalTaxes>
-          
+          <TotalTaxes currency="USD">0.00</TotalTaxes>
           
                                                                                                                                                                                                                                                                                     
-          
-          <ns0:TotalInvoiceDueAmt currency="USD">133.32</ns0:TotalInvoiceDueAmt>
-          
+          <TotalInvoiceDueAmt currency="USD">133.32</TotalInvoiceDueAmt>
           
                                                                                                                                                                                                                                                                                     
-        
-        </ns0:InvoiceTotals>
-        
+        </InvoiceTotals>
         
                                                                                                                                                                                                                                                                                   
-      
-      </ns0:InvoiceSummary>
-      
+      </InvoiceSummary>
       
                                                                                                                                                                                                                                                                                   
-      
-      <ns0:Terms>
-        <ns0:TermsType ident="NET30">NET30</ns0:TermsType>
-        
+      <Terms>
+        <TermsType ident="NET30">NET30</TermsType>
         
                                                                                                                                                                                                                                                                                       
-        
-        <ns0:InvoiceDueDate>2025-09-25</ns0:InvoiceDueDate>
-        
+        <InvoiceDueDate>2025-09-25</InvoiceDueDate>
         
                                                                                                                                                                                                                                                                                       
-      
-      </ns0:Terms>
-      
+      </Terms>
       
                                                                                                                                                                                                                                                                                     
-    
-    </ns0:InvoiceDetail>
-    
+    </InvoiceDetail>
     
                                                                                                                                                                                                                                                                                   
-  
-  </ns0:Invoice>
-  
+  </Invoice>
   
                                                                                                                                                                                                                                                                                 
-
-</ns0:NAXML-BusDoc>
+</NAXML-BusDoc>
