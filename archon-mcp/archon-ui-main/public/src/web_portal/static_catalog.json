@@ -13,6 +13,7 @@
     {
       "sku": "018006",
       "vendor_item_code": "018006",
+      "upc": "080686018001",
       "product_name": "BUFFALO TRACE BOURBON 750ml",
       "description": "BUFFALO TRACE BOURBON 750ml",
       "category": "SPIRITS",
@@ -24,7 +25,8 @@
     },
     {
       "sku": "026826",
-      "vendor_item_code": "026826", 
+      "vendor_item_code": "026826",
+      "upc": "082184268261",
       "product_name": "JACK DANIELS BLACK LABEL 750ml",
       "description": "JACK DANIELS BLACK LABEL 750ml",
       "category": "SPIRITS",
@@ -37,8 +39,9 @@
     {
       "sku": "035318",
       "vendor_item_code": "035318",
+      "upc": "080686353188",
       "product_name": "BARTON VODKA 1750ml",
-      "description": "BARTON VODKA 1750ml", 
+      "description": "BARTON VODKA 1750ml",
       "category": "SPIRITS",
       "price": 19.99,
       "size": "1750ml",
@@ -49,9 +52,10 @@
     {
       "sku": "035929",
       "vendor_item_code": "035929",
+      "upc": "859824003592",
       "product_name": "FIVE WIVES VODKA 750ml",
       "description": "FIVE WIVES VODKA 750ml",
-      "category": "SPIRITS", 
+      "category": "SPIRITS",
       "price": 24.99,
       "size": "750ml",
       "status": "Active",
@@ -61,11 +65,12 @@
     {
       "sku": "015626",
       "vendor_item_code": "015626",
+      "upc": "080432156261",
       "product_name": "JAMESON IRISH WHISKEY 750ml",
       "description": "JAMESON IRISH WHISKEY 750ml",
       "category": "SPIRITS",
       "price": 32.99,
-      "size": "750ml", 
+      "size": "750ml",
       "status": "Active",
       "effective_date": "2025-01-01",
       "search_terms": "jameson irish whiskey ireland 750ml spirits"
@@ -73,6 +78,7 @@
     {
       "sku": "064776",
       "vendor_item_code": "064776",
+      "upc": "087236647766",
       "product_name": "COINTREAU LIQUEUR 750ml",
       "description": "COINTREAU LIQUEUR 750ml",
       "category": "SPIRITS",
@@ -85,6 +91,7 @@
     {
       "sku": "088548",
       "vendor_item_code": "088548",
+      "upc": "080686885481",
       "product_name": "HORNITOS PLATA TEQUILA 750ml",
       "description": "HORNITOS PLATA TEQUILA 750ml",
       "category": "SPIRITS",
@@ -97,6 +104,7 @@
     {
       "sku": "089786",
       "vendor_item_code": "089786",
+      "upc": "080686897866",
       "product_name": "SAUZA HACIENDA GOLD 750ml",
       "description": "SAUZA HACIENDA GOLD 750ml",
       "category": "SPIRITS",
@@ -109,6 +117,7 @@
     {
       "sku": "010807",
       "vendor_item_code": "010807",
+      "upc": "080686108078",
       "product_name": "CROWN ROYAL REGAL APPLE 750ml",
       "description": "CROWN ROYAL REGAL APPLE 750ml",
       "category": "SPIRITS",
@@ -121,6 +130,7 @@
     {
       "sku": "771166",
       "vendor_item_code": "771166",
+      "upc": "850006711666",
       "product_name": "HOUSE WINE BRUT BUBBLES CAN 355ml",
       "description": "HOUSE WINE BRUT BUBBLES CAN 355ml",
       "category": "WINE",
@@ -133,6 +143,7 @@
     {
       "sku": "402913",
       "vendor_item_code": "402913",
+      "upc": "085000029138",
       "product_name": "BLACK BOX CABERNET 3000ml",
       "description": "BLACK BOX CABERNET 3000ml",
       "category": "WINE",
@@ -145,6 +156,7 @@
     {
       "sku": "518328",
       "vendor_item_code": "518328",
+      "upc": "085000518328",
       "product_name": "VENDANGE CABERNET SAUVIGNON 500ml",
       "description": "VENDANGE CABERNET SAUVIGNON 500ml",
       "category": "WINE",
@@ -157,6 +169,7 @@
     {
       "sku": "403296",
       "vendor_item_code": "403296",
+      "upc": "085000032968",
       "product_name": "BOTA BOX PINOT NOIR 3000ml",
       "description": "BOTA BOX PINOT NOIR 3000ml",
       "category": "WINE",
@@ -169,6 +182,7 @@
     {
       "sku": "429149",
       "vendor_item_code": "429149",
+      "upc": "085000429149",
       "product_name": "VENDANGE CHARDONNAY 500ml",
       "description": "VENDANGE CHARDONNAY 500ml",
       "category": "WINE",
@@ -181,6 +195,7 @@
     {
       "sku": "652230",
       "vendor_item_code": "652230",
+      "upc": "850006522301",
       "product_name": "DAY OWL ROSE 750ml",
       "description": "DAY OWL ROSE 750ml",
       "category": "WINE",
@@ -193,6 +208,7 @@
     {
       "sku": "575558",
       "vendor_item_code": "575558",
+      "upc": "850006755581",
       "product_name": "HOUSE WINE SAUVIGNON BLANC BOX 3000ml",
       "description": "HOUSE WINE SAUVIGNON BLANC BOX 3000ml",
       "category": "WINE",
@@ -205,6 +221,7 @@
     {
       "sku": "633746",
       "vendor_item_code": "633746",
+      "upc": "085000633746",
       "product_name": "VENDANGE PINOT GRIGIO 500ml",
       "description": "VENDANGE PINOT GRIGIO 500ml",
       "category": "WINE",
@@ -217,6 +234,7 @@
     {
       "sku": "771160",
       "vendor_item_code": "771160",
+      "upc": "850006711601",
       "product_name": "HOUSE WINE ROSE BUBBLES CAN 355ml",
       "description": "HOUSE WINE ROSE BUBBLES CAN 355ml",
       "category": "WINE",
@@ -229,6 +247,7 @@
     {
       "sku": "900888",
       "vendor_item_code": "900888",
+      "upc": "835813008888",
       "product_name": "WOODCHUCK HARD CIDER PEARSECCO 355ml",
       "description": "WOODCHUCK HARD CIDER PEARSECCO 355ml",
       "category": "BEER",
@@ -241,6 +260,7 @@
     {
       "sku": "901977",
       "vendor_item_code": "901977",
+      "upc": "850019779771",
       "product_name": "SALTFIRE CHARLOTTE SOMETIMES CAN 473ml",
       "description": "SALTFIRE CHARLOTTE SOMETIMES CAN 473ml",
       "category": "BEER",
@@ -253,6 +273,7 @@
     {
       "sku": "907923",
       "vendor_item_code": "907923",
+      "upc": "083783375237",
       "product_name": "SIERRA NEVADA TORPEDO EXTRA IPA 355ml",
       "description": "SIERRA NEVADA TORPEDO EXTRA IPA 355ml",
       "category": "BEER",
@@ -265,6 +286,7 @@
     {
       "sku": "918765",
       "vendor_item_code": "918765",
+      "upc": "042820187651",
       "product_name": "ELYSIAN SPACE DUST IPA 355ml",
       "description": "ELYSIAN SPACE DUST IPA 355ml",
       "category": "BEER",
@@ -277,6 +299,7 @@
     {
       "sku": "918785",
       "vendor_item_code": "918785",
+      "upc": "850019787851",
       "product_name": "ROHA THURSDAY IPA 355ml",
       "description": "ROHA THURSDAY IPA 355ml",
       "category": "BEER",
@@ -289,6 +312,7 @@
     {
       "sku": "918885",
       "vendor_item_code": "918885",
+      "upc": "018200188855",
       "product_name": "NATTY DADDY 355ml",
       "description": "NATTY DADDY 355ml",
       "category": "BEER",
@@ -301,6 +325,7 @@
     {
       "sku": "947400",
       "vendor_item_code": "947400",
+      "upc": "854781004740",
       "product_name": "NEW BELGIUM VOO RANGER IPA CANS 355ml",
       "description": "NEW BELGIUM VOO RANGER IPA CANS 355ml",
       "category": "BEER",
@@ -313,6 +338,7 @@
     {
       "sku": "949961",
       "vendor_item_code": "949961",
+      "upc": "854781004996",
       "product_name": "OSKAR BLUES DALES PALE ALE 355ml",
       "description": "OSKAR BLUES DALES PALE ALE 355ml",
       "category": "BEER",
@@ -325,6 +351,7 @@
     {
       "sku": "955363",
       "vendor_item_code": "955363",
+      "upc": "749826553638",
       "product_name": "ROGUE BATSQUATCH HAZY IPA 355ml",
       "description": "ROGUE BATSQUATCH HAZY IPA 355ml",
       "category": "BEER",
@@ -337,6 +364,7 @@
     {
       "sku": "989177",
       "vendor_item_code": "989177",
+      "upc": "018200891779",
       "product_name": "ICEHOUSE BEER 355ml",
       "description": "ICEHOUSE BEER 355ml",
       "category": "BEER",
