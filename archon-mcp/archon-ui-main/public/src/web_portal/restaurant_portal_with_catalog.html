@@ -921,8 +921,8 @@ ${errorInfo ? `ERROR INFO:\n${errorInfo}` : ''}
 
         async function loadCategories() {
             try {
-                console.log('Loading categories from complete official DABS catalog...');
-                const response = await fetch('/src/web_portal/complete_official_dabs_catalog.json');
+                console.log('Loading categories from category-enhanced DABS catalog...');
+                const response = await fetch('/src/web_portal/category_enhanced_dabs_catalog.json');
                 console.log('Categories response status:', response.status);
 
                 if (!response.ok) {
@@ -968,7 +968,7 @@ ${errorInfo ? `ERROR INFO:\n${errorInfo}` : ''}
                 console.log('Loading products with search:', search, 'category:', category);
                 showLoading();
 
-                const response = await fetch('/src/web_portal/complete_official_dabs_catalog.json');
+                const response = await fetch('/src/web_portal/category_enhanced_dabs_catalog.json');
                 console.log('Products response status:', response.status);
 
                 if (!response.ok) {
