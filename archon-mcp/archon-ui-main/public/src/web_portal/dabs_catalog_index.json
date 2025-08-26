@@ -1,0 +1,34 @@
+{
+  "catalogs": {
+    "ultimate_complete": {
+      "name": "Ultimate Complete DABS Catalog",
+      "description": "Complete dataset with all products and maximum detail",
+      "products": 12884,
+      "use_case": "Complete auditing, technical integration, full dataset",
+      "file": "ultimate_complete_dabs_catalog.json",
+      "compressed_file": "ultimate_complete_dabs_catalog_compressed.json"
+    },
+    "restaurant_optimized": {
+      "name": "Restaurant-Optimized Catalog",
+      "description": "Filtered for restaurant use with professional organization",
+      "products": 9127,
+      "use_case": "Restaurant portal, customer ordering, menu planning",
+      "file": "restaurant_optimized_dabs_catalog.json",
+      "compressed_file": "restaurant_optimized_dabs_catalog_compressed.json"
+    },
+    "active_only": {
+      "name": "Active Products Only",
+      "description": "Currently available products for immediate ordering",
+      "products": 4887,
+      "use_case": "Fast loading, immediate availability",
+      "file": "active_only_dabs_catalog.json",
+      "compressed_file": "active_only_dabs_catalog_compressed.json"
+    }
+  },
+  "recommendation": {
+    "restaurant_portal": "restaurant_optimized_dabs_catalog.json",
+    "complete_dataset": "ultimate_complete_dabs_catalog.json",
+    "fast_loading": "active_only_dabs_catalog.json"
+  },
+  "last_updated": "2025-08-26T03:49:59.620912"
+}

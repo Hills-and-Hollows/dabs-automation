@@ -1,249 +1,248 @@
-<?xml version="1.0" ?>
-<NAXML-BusDoc xmlns="http://www.naxml.org/Retail-EDI/Vocabulary/2003-10-16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.naxml.org/Retail-EDI/Vocabulary/2003-10-16 http://www.naxml.org/Retail-EDI/Vocabulary/2003-10-16/NAXML-BusDoc.xsd">
-  <TransmissionHeader>
-    <TransmissionId>DABS_233813_20250826_033535</TransmissionId>
-    <TransmissionDate>2025-08-26</TransmissionDate>
-    <TransmissionTime>03:35:35</TransmissionTime>
-    <TransmissionStatus>original</TransmissionStatus>
-  </TransmissionHeader>
-  <Parties>
-    <Supplier>
-      <Name>Utah Division of Alcoholic Beverage Control</Name>
-      <OrganizationId ident="DABS">DABS</OrganizationId>
-    </Supplier>
-    <Buyer>
-      <Name>Hills &amp; Hollows Market</Name>
-      <OrganizationId ident="6242">6242</OrganizationId>
-    </Buyer>
-  </Parties>
-  <Invoice>
-    <InvoiceHeader>
-      <InvoiceNumber>233813</InvoiceNumber>
-      <InvoiceDate>2025-08-26</InvoiceDate>
-      <TransmissionDate>2025-08-26</TransmissionDate>
-      <Currency code="USD">USD</Currency>
-    </InvoiceHeader>
-    <InvoiceDetail>
-      <LineItem>
-        <InvoiceUnit>
-          <InvoiceUnitId identType="VIN">017086</InvoiceUnitId>
-          <InvoiceUnitId identType="GTIN">00000000017080</InvoiceUnitId>
-          <InvoiceUnitDescription>BULLEIT BOURBON FRONTIER WHISK 750ml</InvoiceUnitDescription>
-          <InvoiceUnitQty cstoreUOMBasis="each">24</InvoiceUnitQty>
-          <InvoiceUnitCost currency="USD">32.99</InvoiceUnitCost>
-          <LineItemGrossAmt currency="USD">791.76</LineItemGrossAmt>
-          <LineItemNetAmt currency="USD">791.76</LineItemNetAmt>
-        </InvoiceUnit>
-        <RetailUnitPricing>
-          <RetailUnitId identType="GTIN">00000000017080</RetailUnitId>
-          <RetailUnitQty>1</RetailUnitQty>
-          <RetailPrice currency="USD">42.89</RetailPrice>
-        </RetailUnitPricing>
-      </LineItem>
-      <LineItem>
-        <InvoiceUnit>
-          <InvoiceUnitId identType="VIN">039271</InvoiceUnitId>
-          <InvoiceUnitId identType="GTIN">00000000039276</InvoiceUnitId>
-          <InvoiceUnitDescription>SUGAR HOUSE VODKA 1000ml</InvoiceUnitDescription>
-          <InvoiceUnitQty cstoreUOMBasis="each">6</InvoiceUnitQty>
-          <InvoiceUnitCost currency="USD">21.99</InvoiceUnitCost>
-          <LineItemGrossAmt currency="USD">131.94</LineItemGrossAmt>
-          <LineItemNetAmt currency="USD">131.94</LineItemNetAmt>
-        </InvoiceUnit>
-        <RetailUnitPricing>
-          <RetailUnitId identType="GTIN">00000000039276</RetailUnitId>
-          <RetailUnitQty>1</RetailUnitQty>
-          <RetailPrice currency="USD">28.59</RetailPrice>
-        </RetailUnitPricing>
-      </LineItem>
-      <LineItem>
-        <InvoiceUnit>
-          <InvoiceUnitId identType="VIN">068836</InvoiceUnitId>
-          <InvoiceUnitId identType="GTIN">00000000068830</InvoiceUnitId>
-          <InvoiceUnitDescription>ST GERMAIN ELDERFLOWER LIQUEUR 750ml</InvoiceUnitDescription>
-          <InvoiceUnitQty cstoreUOMBasis="each">6</InvoiceUnitQty>
-          <InvoiceUnitCost currency="USD">36.99</InvoiceUnitCost>
-          <LineItemGrossAmt currency="USD">221.94</LineItemGrossAmt>
-          <LineItemNetAmt currency="USD">221.94</LineItemNetAmt>
-        </InvoiceUnit>
-        <RetailUnitPricing>
-          <RetailUnitId identType="GTIN">00000000068830</RetailUnitId>
-          <RetailUnitQty>1</RetailUnitQty>
-          <RetailPrice currency="USD">48.09</RetailPrice>
-        </RetailUnitPricing>
-      </LineItem>
-      <LineItem>
-        <InvoiceUnit>
-          <InvoiceUnitId identType="VIN">087619</InvoiceUnitId>
-          <InvoiceUnitId identType="GTIN">00000000087611</InvoiceUnitId>
-          <InvoiceUnitDescription>ESPOLON BLANCO TEQUILA 750ml</InvoiceUnitDescription>
-          <InvoiceUnitQty cstoreUOMBasis="each">24</InvoiceUnitQty>
-          <InvoiceUnitCost currency="USD">32.82</InvoiceUnitCost>
-          <LineItemGrossAmt currency="USD">787.76</LineItemGrossAmt>
-          <LineItemNetAmt currency="USD">787.76</LineItemNetAmt>
-        </InvoiceUnit>
-        <RetailUnitPricing>
-          <RetailUnitId identType="GTIN">00000000087611</RetailUnitId>
-          <RetailUnitQty>1</RetailUnitQty>
-          <RetailPrice currency="USD">42.67</RetailPrice>
-        </RetailUnitPricing>
-      </LineItem>
-      <LineItem>
-        <InvoiceUnit>
-          <InvoiceUnitId identType="VIN">418330</InvoiceUnitId>
-          <InvoiceUnitId identType="GTIN">00000000418336</InvoiceUnitId>
-          <InvoiceUnitDescription>MATUA SAUVIGNON BLANC 750ml</InvoiceUnitDescription>
-          <InvoiceUnitQty cstoreUOMBasis="each">24</InvoiceUnitQty>
-          <InvoiceUnitCost currency="USD">12.99</InvoiceUnitCost>
-          <LineItemGrossAmt currency="USD">311.76</LineItemGrossAmt>
-          <LineItemNetAmt currency="USD">311.76</LineItemNetAmt>
-        </InvoiceUnit>
-        <RetailUnitPricing>
-          <RetailUnitId identType="GTIN">00000000418336</RetailUnitId>
-          <RetailUnitQty>1</RetailUnitQty>
-          <RetailPrice currency="USD">16.89</RetailPrice>
-        </RetailUnitPricing>
-      </LineItem>
-      <LineItem>
-        <InvoiceUnit>
-          <InvoiceUnitId identType="VIN">419951</InvoiceUnitId>
-          <InvoiceUnitId identType="GTIN">00000000419957</InvoiceUnitId>
-          <InvoiceUnitDescription>19 CRIMES CABERNET SAUVIGNON 750ml</InvoiceUnitDescription>
-          <InvoiceUnitQty cstoreUOMBasis="each">36</InvoiceUnitQty>
-          <InvoiceUnitCost currency="USD">12.99</InvoiceUnitCost>
-          <LineItemGrossAmt currency="USD">467.64</LineItemGrossAmt>
-          <LineItemNetAmt currency="USD">467.64</LineItemNetAmt>
-        </InvoiceUnit>
-        <RetailUnitPricing>
-          <RetailUnitId identType="GTIN">00000000419957</RetailUnitId>
-          <RetailUnitQty>1</RetailUnitQty>
-          <RetailPrice currency="USD">16.89</RetailPrice>
-        </RetailUnitPricing>
-      </LineItem>
-      <LineItem>
-        <InvoiceUnit>
-          <InvoiceUnitId identType="VIN">445303</InvoiceUnitId>
-          <InvoiceUnitId identType="GTIN">00000000445300</InvoiceUnitId>
-          <InvoiceUnitDescription>BOTA BOX NIGHTHAWK BLACK RED 3000ml</InvoiceUnitDescription>
-          <InvoiceUnitQty cstoreUOMBasis="each">12</InvoiceUnitQty>
-          <InvoiceUnitCost currency="USD">17.99</InvoiceUnitCost>
-          <LineItemGrossAmt currency="USD">215.91</LineItemGrossAmt>
-          <LineItemNetAmt currency="USD">215.91</LineItemNetAmt>
-        </InvoiceUnit>
-        <RetailUnitPricing>
-          <RetailUnitId identType="GTIN">00000000445300</RetailUnitId>
-          <RetailUnitQty>1</RetailUnitQty>
-          <RetailPrice currency="USD">23.39</RetailPrice>
-        </RetailUnitPricing>
-      </LineItem>
-      <LineItem>
-        <InvoiceUnit>
-          <InvoiceUnitId identType="VIN">547295</InvoiceUnitId>
-          <InvoiceUnitId identType="GTIN">00000000547290</InvoiceUnitId>
-          <InvoiceUnitDescription>BOGLE CHARDONNAY 750ml</InvoiceUnitDescription>
-          <InvoiceUnitQty cstoreUOMBasis="each">24</InvoiceUnitQty>
-          <InvoiceUnitCost currency="USD">9.99</InvoiceUnitCost>
-          <LineItemGrossAmt currency="USD">239.76</LineItemGrossAmt>
-          <LineItemNetAmt currency="USD">239.76</LineItemNetAmt>
-        </InvoiceUnit>
-        <RetailUnitPricing>
-          <RetailUnitId identType="GTIN">00000000547290</RetailUnitId>
-          <RetailUnitQty>1</RetailUnitQty>
-          <RetailPrice currency="USD">12.99</RetailPrice>
-        </RetailUnitPricing>
-      </LineItem>
-      <LineItem>
-        <InvoiceUnit>
-          <InvoiceUnitId identType="VIN">581015</InvoiceUnitId>
-          <InvoiceUnitId identType="GTIN">00000000581010</InvoiceUnitId>
-          <InvoiceUnitDescription>BOTA BOX PINOT GRIGIO 3000ml</InvoiceUnitDescription>
-          <InvoiceUnitQty cstoreUOMBasis="each">12</InvoiceUnitQty>
-          <InvoiceUnitCost currency="USD">17.99</InvoiceUnitCost>
-          <LineItemGrossAmt currency="USD">215.91</LineItemGrossAmt>
-          <LineItemNetAmt currency="USD">215.91</LineItemNetAmt>
-        </InvoiceUnit>
-        <RetailUnitPricing>
-          <RetailUnitId identType="GTIN">00000000581010</RetailUnitId>
-          <RetailUnitQty>1</RetailUnitQty>
-          <RetailPrice currency="USD">23.39</RetailPrice>
-        </RetailUnitPricing>
-      </LineItem>
-      <LineItem>
-        <InvoiceUnit>
-          <InvoiceUnitId identType="VIN">917817</InvoiceUnitId>
-          <InvoiceUnitId identType="GTIN">00000000917817</InvoiceUnitId>
-          <InvoiceUnitDescription>RED ROCK ELEPHINO IPA 500ml</InvoiceUnitDescription>
-          <InvoiceUnitQty cstoreUOMBasis="each">48</InvoiceUnitQty>
-          <InvoiceUnitCost currency="USD">4.04</InvoiceUnitCost>
-          <LineItemGrossAmt currency="USD">193.92</LineItemGrossAmt>
-          <LineItemNetAmt currency="USD">193.92</LineItemNetAmt>
-        </InvoiceUnit>
-        <RetailUnitPricing>
-          <RetailUnitId identType="GTIN">00000000917817</RetailUnitId>
-          <RetailUnitQty>1</RetailUnitQty>
-          <RetailPrice currency="USD">5.25</RetailPrice>
-        </RetailUnitPricing>
-      </LineItem>
-      <LineItem>
-        <InvoiceUnit>
-          <InvoiceUnitId identType="VIN">927483</InvoiceUnitId>
-          <InvoiceUnitId identType="GTIN">00000000927486</InvoiceUnitId>
-          <InvoiceUnitDescription>HIGHPOINT TRANSPLANT CIDER 355ml</InvoiceUnitDescription>
-          <InvoiceUnitQty cstoreUOMBasis="each">48</InvoiceUnitQty>
-          <InvoiceUnitCost currency="USD">2.55</InvoiceUnitCost>
-          <LineItemGrossAmt currency="USD">122.40</LineItemGrossAmt>
-          <LineItemNetAmt currency="USD">122.40</LineItemNetAmt>
-        </InvoiceUnit>
-        <RetailUnitPricing>
-          <RetailUnitId identType="GTIN">00000000927486</RetailUnitId>
-          <RetailUnitQty>1</RetailUnitQty>
-          <RetailPrice currency="USD">3.32</RetailPrice>
-        </RetailUnitPricing>
-      </LineItem>
-      <LineItem>
-        <InvoiceUnit>
-          <InvoiceUnitId identType="VIN">989396</InvoiceUnitId>
-          <InvoiceUnitId identType="GTIN">00000000989399</InvoiceUnitId>
-          <InvoiceUnitDescription>GRAND TETON SWEETGRASS APA 355ml</InvoiceUnitDescription>
-          <InvoiceUnitQty cstoreUOMBasis="each">72</InvoiceUnitQty>
-          <InvoiceUnitCost currency="USD">1.62</InvoiceUnitCost>
-          <LineItemGrossAmt currency="USD">116.64</LineItemGrossAmt>
-          <LineItemNetAmt currency="USD">116.64</LineItemNetAmt>
-        </InvoiceUnit>
-        <RetailUnitPricing>
-          <RetailUnitId identType="GTIN">00000000989399</RetailUnitId>
-          <RetailUnitQty>1</RetailUnitQty>
-          <RetailPrice currency="USD">2.11</RetailPrice>
-        </RetailUnitPricing>
-      </LineItem>
-      <LineItem>
-        <InvoiceUnit>
-          <InvoiceUnitId identType="VIN">989418</InvoiceUnitId>
-          <InvoiceUnitId identType="GTIN">00000000989416</InvoiceUnitId>
-          <InvoiceUnitDescription>RED ROCK FROHLICH PILS 500ml</InvoiceUnitDescription>
-          <InvoiceUnitQty cstoreUOMBasis="each">36</InvoiceUnitQty>
-          <InvoiceUnitCost currency="USD">4.04</InvoiceUnitCost>
-          <LineItemGrossAmt currency="USD">145.44</LineItemGrossAmt>
-          <LineItemNetAmt currency="USD">145.44</LineItemNetAmt>
-        </InvoiceUnit>
-        <RetailUnitPricing>
-          <RetailUnitId identType="GTIN">00000000989416</RetailUnitId>
-          <RetailUnitQty>1</RetailUnitQty>
-          <RetailPrice currency="USD">5.25</RetailPrice>
-        </RetailUnitPricing>
-      </LineItem>
-    </InvoiceDetail>
-    <InvoiceSummary>
-      <InvoiceTotals>
-        <TotalInvoiceUnits>372</TotalInvoiceUnits>
-        <TotalLineItemNetAmt currency="USD">3962.78</TotalLineItemNetAmt>
-        <TotalTaxes currency="USD">0.00</TotalTaxes>
-        <TotalInvoiceDueAmt currency="USD">3962.78</TotalInvoiceDueAmt>
-      </InvoiceTotals>
-    </InvoiceSummary>
-    <Terms>
-      <TermsType ident="NET30">NET30</TermsType>
-      <InvoiceDueDate>2025-09-25</InvoiceDueDate>
-    </Terms>
-  </Invoice>
-</NAXML-BusDoc>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:NAXML-BusDoc xmlns:ns0="http://www.naxml.org/Retail-EDI/Vocabulary/2003-10-16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.naxml.org/Retail-EDI/Vocabulary/2003-10-16 http://www.naxml.org/Retail-EDI/Vocabulary/2003-10-16/NAXML-BusDoc.xsd">
+  <ns0:TransmissionHeader>
+    <ns0:TransmissionId>DABS_233813_20250826_033535</ns0:TransmissionId>
+    <ns0:TransmissionDate>2025-08-26</ns0:TransmissionDate>
+    <ns0:TransmissionTime>03:35:35</ns0:TransmissionTime>
+    <ns0:TransmissionStatus>original</ns0:TransmissionStatus>
+  </ns0:TransmissionHeader>
+  <ns0:Parties>
+    <ns0:Supplier>
+      <ns0:Name>Utah Division of Alcoholic Beverage Control</ns0:Name>
+      <ns0:OrganizationId ident="DABS">DABS</ns0:OrganizationId>
+    </ns0:Supplier>
+    <ns0:Buyer>
+      <ns0:Name>Hills &amp; Hollows Market</ns0:Name>
+      <ns0:OrganizationId ident="6242">6242</ns0:OrganizationId>
+    </ns0:Buyer>
+  </ns0:Parties>
+  <ns0:Invoice>
+    <ns0:InvoiceHeader>
+      <ns0:InvoiceNumber>233813</ns0:InvoiceNumber>
+      <ns0:InvoiceDate>2025-08-26</ns0:InvoiceDate>
+      <ns0:Currency code="USD">USD</ns0:Currency>
+    </ns0:InvoiceHeader>
+    <ns0:InvoiceDetail>
+      <ns0:LineItem>
+        <ns0:InvoiceUnit>
+          <ns0:InvoiceUnitId identType="VIN">017086</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitId identType="GTIN">00000000017082</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitDescription>BULLEIT BOURBON FRONTIER WHISK 750ml</ns0:InvoiceUnitDescription>
+          <ns0:InvoiceUnitQty cstoreUOMBasis="each">24</ns0:InvoiceUnitQty>
+          <ns0:InvoiceUnitCost currency="USD">32.99</ns0:InvoiceUnitCost>
+          <ns0:LineItemGrossAmt currency="USD">791.76</ns0:LineItemGrossAmt>
+          <ns0:LineItemNetAmt currency="USD">791.76</ns0:LineItemNetAmt>
+        </ns0:InvoiceUnit>
+        <ns0:RetailUnitPricing>
+          <ns0:RetailUnitId identType="GTIN">00000000017082</ns0:RetailUnitId>
+          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
+          <ns0:RetailPrice currency="USD">42.89</ns0:RetailPrice>
+        </ns0:RetailUnitPricing>
+      </ns0:LineItem>
+      <ns0:LineItem>
+        <ns0:InvoiceUnit>
+          <ns0:InvoiceUnitId identType="VIN">039271</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitId identType="GTIN">00000000039279</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitDescription>SUGAR HOUSE VODKA 1000ml</ns0:InvoiceUnitDescription>
+          <ns0:InvoiceUnitQty cstoreUOMBasis="each">6</ns0:InvoiceUnitQty>
+          <ns0:InvoiceUnitCost currency="USD">21.99</ns0:InvoiceUnitCost>
+          <ns0:LineItemGrossAmt currency="USD">131.94</ns0:LineItemGrossAmt>
+          <ns0:LineItemNetAmt currency="USD">131.94</ns0:LineItemNetAmt>
+        </ns0:InvoiceUnit>
+        <ns0:RetailUnitPricing>
+          <ns0:RetailUnitId identType="GTIN">00000000039279</ns0:RetailUnitId>
+          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
+          <ns0:RetailPrice currency="USD">28.59</ns0:RetailPrice>
+        </ns0:RetailUnitPricing>
+      </ns0:LineItem>
+      <ns0:LineItem>
+        <ns0:InvoiceUnit>
+          <ns0:InvoiceUnitId identType="VIN">068836</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitId identType="GTIN">00000000068837</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitDescription>ST GERMAIN ELDERFLOWER LIQUEUR 750ml</ns0:InvoiceUnitDescription>
+          <ns0:InvoiceUnitQty cstoreUOMBasis="each">6</ns0:InvoiceUnitQty>
+          <ns0:InvoiceUnitCost currency="USD">36.99</ns0:InvoiceUnitCost>
+          <ns0:LineItemGrossAmt currency="USD">221.94</ns0:LineItemGrossAmt>
+          <ns0:LineItemNetAmt currency="USD">221.94</ns0:LineItemNetAmt>
+        </ns0:InvoiceUnit>
+        <ns0:RetailUnitPricing>
+          <ns0:RetailUnitId identType="GTIN">00000000068837</ns0:RetailUnitId>
+          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
+          <ns0:RetailPrice currency="USD">48.09</ns0:RetailPrice>
+        </ns0:RetailUnitPricing>
+      </ns0:LineItem>
+      <ns0:LineItem>
+        <ns0:InvoiceUnit>
+          <ns0:InvoiceUnitId identType="VIN">087619</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitId identType="GTIN">00000000087610</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitDescription>ESPOLON BLANCO TEQUILA 750ml</ns0:InvoiceUnitDescription>
+          <ns0:InvoiceUnitQty cstoreUOMBasis="each">24</ns0:InvoiceUnitQty>
+          <ns0:InvoiceUnitCost currency="USD">32.82</ns0:InvoiceUnitCost>
+          <ns0:LineItemGrossAmt currency="USD">787.76</ns0:LineItemGrossAmt>
+          <ns0:LineItemNetAmt currency="USD">787.76</ns0:LineItemNetAmt>
+        </ns0:InvoiceUnit>
+        <ns0:RetailUnitPricing>
+          <ns0:RetailUnitId identType="GTIN">00000000087610</ns0:RetailUnitId>
+          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
+          <ns0:RetailPrice currency="USD">42.67</ns0:RetailPrice>
+        </ns0:RetailUnitPricing>
+      </ns0:LineItem>
+      <ns0:LineItem>
+        <ns0:InvoiceUnit>
+          <ns0:InvoiceUnitId identType="VIN">418330</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitId identType="GTIN">00000000418333</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitDescription>MATUA SAUVIGNON BLANC 750ml</ns0:InvoiceUnitDescription>
+          <ns0:InvoiceUnitQty cstoreUOMBasis="each">24</ns0:InvoiceUnitQty>
+          <ns0:InvoiceUnitCost currency="USD">12.99</ns0:InvoiceUnitCost>
+          <ns0:LineItemGrossAmt currency="USD">311.76</ns0:LineItemGrossAmt>
+          <ns0:LineItemNetAmt currency="USD">311.76</ns0:LineItemNetAmt>
+        </ns0:InvoiceUnit>
+        <ns0:RetailUnitPricing>
+          <ns0:RetailUnitId identType="GTIN">00000000418333</ns0:RetailUnitId>
+          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
+          <ns0:RetailPrice currency="USD">16.89</ns0:RetailPrice>
+        </ns0:RetailUnitPricing>
+      </ns0:LineItem>
+      <ns0:LineItem>
+        <ns0:InvoiceUnit>
+          <ns0:InvoiceUnitId identType="VIN">419951</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitId identType="GTIN">00000000419952</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitDescription>19 CRIMES CABERNET SAUVIGNON 750ml</ns0:InvoiceUnitDescription>
+          <ns0:InvoiceUnitQty cstoreUOMBasis="each">36</ns0:InvoiceUnitQty>
+          <ns0:InvoiceUnitCost currency="USD">12.99</ns0:InvoiceUnitCost>
+          <ns0:LineItemGrossAmt currency="USD">467.64</ns0:LineItemGrossAmt>
+          <ns0:LineItemNetAmt currency="USD">467.64</ns0:LineItemNetAmt>
+        </ns0:InvoiceUnit>
+        <ns0:RetailUnitPricing>
+          <ns0:RetailUnitId identType="GTIN">00000000419952</ns0:RetailUnitId>
+          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
+          <ns0:RetailPrice currency="USD">16.89</ns0:RetailPrice>
+        </ns0:RetailUnitPricing>
+      </ns0:LineItem>
+      <ns0:LineItem>
+        <ns0:InvoiceUnit>
+          <ns0:InvoiceUnitId identType="VIN">445303</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitId identType="GTIN">00000000445300</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitDescription>BOTA BOX NIGHTHAWK BLACK RED 3000ml</ns0:InvoiceUnitDescription>
+          <ns0:InvoiceUnitQty cstoreUOMBasis="each">12</ns0:InvoiceUnitQty>
+          <ns0:InvoiceUnitCost currency="USD">17.99</ns0:InvoiceUnitCost>
+          <ns0:LineItemGrossAmt currency="USD">215.91</ns0:LineItemGrossAmt>
+          <ns0:LineItemNetAmt currency="USD">215.91</ns0:LineItemNetAmt>
+        </ns0:InvoiceUnit>
+        <ns0:RetailUnitPricing>
+          <ns0:RetailUnitId identType="GTIN">00000000445300</ns0:RetailUnitId>
+          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
+          <ns0:RetailPrice currency="USD">23.39</ns0:RetailPrice>
+        </ns0:RetailUnitPricing>
+      </ns0:LineItem>
+      <ns0:LineItem>
+        <ns0:InvoiceUnit>
+          <ns0:InvoiceUnitId identType="VIN">547295</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitId identType="GTIN">00000000547291</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitDescription>BOGLE CHARDONNAY 750ml</ns0:InvoiceUnitDescription>
+          <ns0:InvoiceUnitQty cstoreUOMBasis="each">24</ns0:InvoiceUnitQty>
+          <ns0:InvoiceUnitCost currency="USD">9.99</ns0:InvoiceUnitCost>
+          <ns0:LineItemGrossAmt currency="USD">239.76</ns0:LineItemGrossAmt>
+          <ns0:LineItemNetAmt currency="USD">239.76</ns0:LineItemNetAmt>
+        </ns0:InvoiceUnit>
+        <ns0:RetailUnitPricing>
+          <ns0:RetailUnitId identType="GTIN">00000000547291</ns0:RetailUnitId>
+          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
+          <ns0:RetailPrice currency="USD">12.99</ns0:RetailPrice>
+        </ns0:RetailUnitPricing>
+      </ns0:LineItem>
+      <ns0:LineItem>
+        <ns0:InvoiceUnit>
+          <ns0:InvoiceUnitId identType="VIN">581015</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitId identType="GTIN">00000000581019</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitDescription>BOTA BOX PINOT GRIGIO 3000ml</ns0:InvoiceUnitDescription>
+          <ns0:InvoiceUnitQty cstoreUOMBasis="each">12</ns0:InvoiceUnitQty>
+          <ns0:InvoiceUnitCost currency="USD">17.99</ns0:InvoiceUnitCost>
+          <ns0:LineItemGrossAmt currency="USD">215.91</ns0:LineItemGrossAmt>
+          <ns0:LineItemNetAmt currency="USD">215.91</ns0:LineItemNetAmt>
+        </ns0:InvoiceUnit>
+        <ns0:RetailUnitPricing>
+          <ns0:RetailUnitId identType="GTIN">00000000581019</ns0:RetailUnitId>
+          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
+          <ns0:RetailPrice currency="USD">23.39</ns0:RetailPrice>
+        </ns0:RetailUnitPricing>
+      </ns0:LineItem>
+      <ns0:LineItem>
+        <ns0:InvoiceUnit>
+          <ns0:InvoiceUnitId identType="VIN">917817</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitId identType="GTIN">00000000917816</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitDescription>RED ROCK ELEPHINO IPA 500ml</ns0:InvoiceUnitDescription>
+          <ns0:InvoiceUnitQty cstoreUOMBasis="each">48</ns0:InvoiceUnitQty>
+          <ns0:InvoiceUnitCost currency="USD">4.04</ns0:InvoiceUnitCost>
+          <ns0:LineItemGrossAmt currency="USD">193.92</ns0:LineItemGrossAmt>
+          <ns0:LineItemNetAmt currency="USD">193.92</ns0:LineItemNetAmt>
+        </ns0:InvoiceUnit>
+        <ns0:RetailUnitPricing>
+          <ns0:RetailUnitId identType="GTIN">00000000917816</ns0:RetailUnitId>
+          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
+          <ns0:RetailPrice currency="USD">5.25</ns0:RetailPrice>
+        </ns0:RetailUnitPricing>
+      </ns0:LineItem>
+      <ns0:LineItem>
+        <ns0:InvoiceUnit>
+          <ns0:InvoiceUnitId identType="VIN">927483</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitId identType="GTIN">00000000927488</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitDescription>HIGHPOINT TRANSPLANT CIDER 355ml</ns0:InvoiceUnitDescription>
+          <ns0:InvoiceUnitQty cstoreUOMBasis="each">48</ns0:InvoiceUnitQty>
+          <ns0:InvoiceUnitCost currency="USD">2.55</ns0:InvoiceUnitCost>
+          <ns0:LineItemGrossAmt currency="USD">122.40</ns0:LineItemGrossAmt>
+          <ns0:LineItemNetAmt currency="USD">122.40</ns0:LineItemNetAmt>
+        </ns0:InvoiceUnit>
+        <ns0:RetailUnitPricing>
+          <ns0:RetailUnitId identType="GTIN">00000000927488</ns0:RetailUnitId>
+          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
+          <ns0:RetailPrice currency="USD">3.32</ns0:RetailPrice>
+        </ns0:RetailUnitPricing>
+      </ns0:LineItem>
+      <ns0:LineItem>
+        <ns0:InvoiceUnit>
+          <ns0:InvoiceUnitId identType="VIN">989396</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitId identType="GTIN">00000000989390</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitDescription>GRAND TETON SWEETGRASS APA 355ml</ns0:InvoiceUnitDescription>
+          <ns0:InvoiceUnitQty cstoreUOMBasis="each">72</ns0:InvoiceUnitQty>
+          <ns0:InvoiceUnitCost currency="USD">1.62</ns0:InvoiceUnitCost>
+          <ns0:LineItemGrossAmt currency="USD">116.64</ns0:LineItemGrossAmt>
+          <ns0:LineItemNetAmt currency="USD">116.64</ns0:LineItemNetAmt>
+        </ns0:InvoiceUnit>
+        <ns0:RetailUnitPricing>
+          <ns0:RetailUnitId identType="GTIN">00000000989390</ns0:RetailUnitId>
+          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
+          <ns0:RetailPrice currency="USD">2.11</ns0:RetailPrice>
+        </ns0:RetailUnitPricing>
+      </ns0:LineItem>
+      <ns0:LineItem>
+        <ns0:InvoiceUnit>
+          <ns0:InvoiceUnitId identType="VIN">989418</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitId identType="GTIN">00000000989415</ns0:InvoiceUnitId>
+          <ns0:InvoiceUnitDescription>RED ROCK FROHLICH PILS 500ml</ns0:InvoiceUnitDescription>
+          <ns0:InvoiceUnitQty cstoreUOMBasis="each">36</ns0:InvoiceUnitQty>
+          <ns0:InvoiceUnitCost currency="USD">4.04</ns0:InvoiceUnitCost>
+          <ns0:LineItemGrossAmt currency="USD">145.44</ns0:LineItemGrossAmt>
+          <ns0:LineItemNetAmt currency="USD">145.44</ns0:LineItemNetAmt>
+        </ns0:InvoiceUnit>
+        <ns0:RetailUnitPricing>
+          <ns0:RetailUnitId identType="GTIN">00000000989415</ns0:RetailUnitId>
+          <ns0:RetailUnitQty>1</ns0:RetailUnitQty>
+          <ns0:RetailPrice currency="USD">5.25</ns0:RetailPrice>
+        </ns0:RetailUnitPricing>
+      </ns0:LineItem>
+    </ns0:InvoiceDetail>
+    <ns0:InvoiceSummary>
+      <ns0:InvoiceTotals>
+        <ns0:TotalInvoiceUnits>372</ns0:TotalInvoiceUnits>
+        <ns0:TotalLineItemNetAmt currency="USD">3962.78</ns0:TotalLineItemNetAmt>
+        <ns0:TotalTaxes currency="USD">0.00</ns0:TotalTaxes>
+        <ns0:TotalInvoiceDueAmt currency="USD">3962.78</ns0:TotalInvoiceDueAmt>
+      </ns0:InvoiceTotals>
+    </ns0:InvoiceSummary>
+    <ns0:Terms>
+      <ns0:TermsType ident="NET30">NET30</ns0:TermsType>
+      <ns0:InvoiceDueDate>2025-09-25</ns0:InvoiceDueDate>
+    </ns0:Terms>
+  </ns0:Invoice>
+</ns0:NAXML-BusDoc>

@@ -563,7 +563,7 @@
                 <div class="catalog-header">
                     <h2>🍷 DABS Product Catalog</h2>
                     <div class="catalog-stats" id="catalogStats">
-                        Loading products...
+                        Loading optimal catalog...
                     </div>
                 </div>
                 
@@ -727,6 +727,37 @@
         let filteredProducts = [];
         let selectedProducts = [];
         let categories = [];
+        let catalogTier = 'restaurant_optimized'; // Default tier
+        let catalogIndex = null;
+
+        // Smart catalog selection based on device and connection
+        async function selectOptimalCatalog() {
+            try {
+                // Load catalog index
+                const indexResponse = await fetch('/src/web_portal/dabs_catalog_index.json');
+                catalogIndex = await indexResponse.json();
+
+                // Detect device and connection capabilities
+                const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                const isSlowConnection = navigator.connection && navigator.connection.effectiveType &&
+                                       ['slow-2g', '2g'].includes(navigator.connection.effectiveType);
+
+                // Select optimal catalog tier
+                if (isSlowConnection || isMobile) {
+                    catalogTier = 'active_only';
+                    console.log('📱 Mobile/slow connection detected - using Active Only catalog (4,887 products)');
+                } else {
+                    catalogTier = 'restaurant_optimized';
+                    console.log('🖥️ Desktop/fast connection - using Restaurant Optimized catalog (9,127 products)');
+                }
+
+                return catalogTier;
+
+            } catch (error) {
+                console.warn('Failed to load catalog index, using default:', error);
+                return 'restaurant_optimized';
+            }
+        }
 
         // Case sizing function based on DABS packaging standards
         function getCaseSize(product) {
@@ -921,8 +952,13 @@ ${errorInfo ? `ERROR INFO:\n${errorInfo}` : ''}
 
         async function loadCategories() {
             try {
-                console.log('Loading categories from category-enhanced DABS catalog...');
-                const response = await fetch('/src/web_portal/category_enhanced_dabs_catalog.json');
+                // Select optimal catalog first
+                const selectedTier = await selectOptimalCatalog();
+                const catalogFile = catalogIndex?.catalogs[selectedTier]?.compressed_file ||
+                                  'restaurant_optimized_dabs_catalog_compressed.json';
+
+                console.log(`Loading categories from ${selectedTier} DABS catalog...`);
+                const response = await fetch(`/src/web_portal/${catalogFile}`);
                 console.log('Categories response status:', response.status);
 
                 if (!response.ok) {
@@ -968,7 +1004,11 @@ ${errorInfo ? `ERROR INFO:\n${errorInfo}` : ''}
                 console.log('Loading products with search:', search, 'category:', category);
                 showLoading();
 
-                const response = await fetch('/src/web_portal/category_enhanced_dabs_catalog.json');
+                // Use the same catalog tier as categories
+                const catalogFile = catalogIndex?.catalogs[catalogTier]?.compressed_file ||
+                                  'restaurant_optimized_dabs_catalog_compressed.json';
+
+                const response = await fetch(`/src/web_portal/${catalogFile}`);
                 console.log('Products response status:', response.status);
 
                 if (!response.ok) {
@@ -1015,8 +1055,15 @@ ${errorInfo ? `ERROR INFO:\n${errorInfo}` : ''}
 
         function updateCatalogStats(data) {
             const statsElement = document.getElementById('catalogStats');
-            statsElement.textContent = `${data.total_found} of ${data.total_available} products`;
-            
+
+            // Get tier information
+            const tierInfo = catalogIndex?.catalogs[catalogTier];
+            const tierName = tierInfo ? tierInfo.name.replace('DABS Catalog', '').trim() : 'Restaurant';
+            const tierIcon = catalogTier === 'active_only' ? '⚡' :
+                           catalogTier === 'restaurant_optimized' ? '🏪' : '📊';
+
+            statsElement.textContent = `${tierIcon} ${data.total_found} of ${data.total_available} products • ${tierName}`;
+
             if (data.last_updated) {
                 const lastUpdated = new Date(data.last_updated).toLocaleDateString();
                 statsElement.textContent += ` • Updated ${lastUpdated}`;
