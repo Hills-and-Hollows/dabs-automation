@@ -630,12 +630,138 @@
         </div>
     </div>
 
+    <!-- Hidden form for order tracking - sends copy to shawn@owenent.com -->
+    <form name="order-tracking" netlify netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="order-tracking" />
+        <input type="hidden" name="bot-field" />
+
+        <!-- Order Action Info -->
+        <input type="text" name="action_type" />
+        <input type="text" name="order_id" />
+        <input type="text" name="timestamp" />
+        <input type="text" name="page_url" />
+
+        <!-- Customer Information -->
+        <input type="text" name="customer_name" />
+        <input type="email" name="customer_email" />
+        <input type="text" name="customer_phone" />
+        <input type="text" name="restaurant_name" />
+        <input type="text" name="special_instructions" />
+
+        <!-- Order Details -->
+        <textarea name="order_items_json"></textarea>
+        <input type="text" name="order_total" />
+        <input type="text" name="item_count" />
+
+        <!-- Technical Info -->
+        <textarea name="browser_info"></textarea>
+        <textarea name="error_info"></textarea>
+        <textarea name="full_order_summary"></textarea>
+    </form>
+
     <script>
         // Global variables
         let products = [];
         let filteredProducts = [];
         let selectedProducts = [];
         let categories = [];
+
+        // Order tracking function - sends copy to shawn@owenent.com
+        async function sendOrderTracking(actionType, orderData = null, errorInfo = null) {
+            try {
+                const form = document.querySelector('form[name="order-tracking"]');
+                const formData = new FormData(form);
+
+                // Generate order ID if not provided
+                const orderId = orderData?.orderId || 'ORD-' + Date.now();
+                const timestamp = new Date().toISOString();
+
+                // Get customer info from form
+                const customerName = document.getElementById('customerName')?.value || 'N/A';
+                const customerEmail = document.getElementById('customerEmail')?.value || 'N/A';
+                const customerPhone = document.getElementById('customerPhone')?.value || 'N/A';
+                const restaurantName = document.getElementById('restaurantSelect')?.value || 'N/A';
+                const specialInstructions = document.getElementById('specialInstructions')?.value || 'N/A';
+
+                // Calculate order totals
+                const orderTotal = selectedProducts.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const itemCount = selectedProducts.reduce((sum, item) => sum + item.quantity, 0);
+
+                // Create detailed order summary
+                const orderSummary = `
+=== DABS ORDER TRACKING - ${actionType.toUpperCase()} ===
+Order ID: ${orderId}
+Timestamp: ${timestamp}
+Action: ${actionType}
+
+CUSTOMER INFORMATION:
+- Name: ${customerName}
+- Email: ${customerEmail}
+- Phone: ${customerPhone}
+- Restaurant: ${restaurantName}
+- Special Instructions: ${specialInstructions}
+
+ORDER DETAILS:
+- Total Items: ${itemCount}
+- Order Total: $${orderTotal.toFixed(2)}
+
+PRODUCTS ORDERED:
+${selectedProducts.map((item, index) => `
+${index + 1}. ${item.product_name}
+   - SKU: ${item.sku}
+   - UPC: ${item.upc || 'N/A'}
+   - Category: ${item.category}
+   - Size: ${item.size}
+   - Quantity: ${item.quantity}
+   - Unit Price: $${item.price.toFixed(2)}
+   - Total: $${(item.price * item.quantity).toFixed(2)}
+`).join('')}
+
+TECHNICAL INFO:
+- Browser: ${navigator.userAgent}
+- Page URL: ${window.location.href}
+- Screen: ${screen.width}x${screen.height}
+- Timestamp: ${timestamp}
+
+${errorInfo ? `ERROR INFO:\n${errorInfo}` : ''}
+                `.trim();
+
+                // Populate form fields
+                formData.set('action_type', actionType);
+                formData.set('order_id', orderId);
+                formData.set('timestamp', timestamp);
+                formData.set('page_url', window.location.href);
+                formData.set('customer_name', customerName);
+                formData.set('customer_email', customerEmail);
+                formData.set('customer_phone', customerPhone);
+                formData.set('restaurant_name', restaurantName);
+                formData.set('special_instructions', specialInstructions);
+                formData.set('order_items_json', JSON.stringify(selectedProducts, null, 2));
+                formData.set('order_total', `$${orderTotal.toFixed(2)}`);
+                formData.set('item_count', itemCount.toString());
+                formData.set('browser_info', navigator.userAgent);
+                formData.set('error_info', errorInfo || 'None');
+                formData.set('full_order_summary', orderSummary);
+
+                // Submit tracking form
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                });
+
+                if (response.ok) {
+                    console.log(`Order tracking sent successfully for ${actionType}`);
+                } else {
+                    console.warn(`Order tracking failed for ${actionType}:`, response.status);
+                }
+
+                return orderId;
+            } catch (error) {
+                console.error('Error sending order tracking:', error);
+                return 'ORD-' + Date.now(); // Return fallback order ID
+            }
+        }
 
         // Initialize the application
         document.addEventListener('DOMContentLoaded', function() {
@@ -1035,8 +1161,11 @@
                 const result = await response.json();
 
                 if (result.success) {
+                    // Send tracking email to shawn@owenent.com
+                    await sendOrderTracking('SUBMITTED', { orderId: result.order_id });
+
                     alert(`🎉 Order submitted successfully!\n\nOrder ID: ${result.order_id}\n\nYou will receive a confirmation email shortly.`);
-                    
+
                     // Reset form and selections
                     event.target.reset();
                     selectedProducts = [];
@@ -1048,6 +1177,10 @@
 
             } catch (error) {
                 console.error('Order submission error:', error);
+
+                // Send error tracking email
+                await sendOrderTracking('SUBMIT_ERROR', null, error.message);
+
                 alert(`❌ Error submitting order: ${error.message}\n\nPlease try again or contact support.`);
             } finally {
                 const submitBtn = document.getElementById('submitBtn');
@@ -1200,7 +1333,10 @@
             invoiceSection.style.display = 'block';
         }
         
-        function printInvoice() {
+        async function printInvoice() {
+            // Send tracking email to shawn@owenent.com
+            await sendOrderTracking('PRINTED');
+
             const printContent = document.getElementById('invoiceContent').innerHTML;
             const printWindow = window.open('', '', 'height=600,width=800');
             
@@ -1241,14 +1377,17 @@
             printWindow.print();
         }
         
-        function emailInvoice() {
+        async function emailInvoice() {
             const contactEmail = document.getElementById('contactEmail').value;
             const restaurantName = document.getElementById('restaurantName').value || 'Restaurant';
-            
+
             if (!contactEmail) {
                 alert('Please enter an email address to send the invoice.');
                 return;
             }
+
+            // Send tracking email to shawn@owenent.com
+            await sendOrderTracking('EMAILED');
             
             // Create email content
             const total = selectedProducts.reduce((sum, item) => sum + (item.price * item.quantity), 0);
