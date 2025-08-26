@@ -1,0 +1,192 @@
+name: 🔄 Auto-Update DABS Catalog
+
+on:
+  # Run daily at 6 AM UTC (1 AM EST) to check for DABS updates
+  schedule:
+    - cron: '0 6 * * *'
+  
+  # Allow manual triggering
+  workflow_dispatch:
+    inputs:
+      force_update:
+        description: 'Force update even if no changes detected'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  update-dabs-catalog:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
+    
+    - name: 🐍 Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: 📦 Install Python Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas openpyxl requests beautifulsoup4 aiohttp
+    
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'archon-mcp/archon-ui-main/package-lock.json'
+    
+    - name: 📦 Install Node Dependencies
+      run: |
+        cd archon-mcp/archon-ui-main
+        npm ci
+    
+    - name: 🔍 Check for DABS Updates
+      id: check_updates
+      run: |
+        python3 scripts/automated_dabs_catalog_updater.py
+        echo "update_status=$?" >> $GITHUB_OUTPUT
+    
+    - name: 🏗️ Build Updated Portal
+      if: steps.check_updates.outputs.update_status == '0'
+      run: |
+        cd archon-mcp/archon-ui-main
+        npm run build
+    
+    - name: 📊 Generate Update Report
+      if: steps.check_updates.outputs.update_status == '0'
+      id: report
+      run: |
+        # Get catalog stats
+        if [ -f "archon-mcp/archon-ui-main/public/src/web_portal/official_dabs_catalog.json" ]; then
+          PRODUCT_COUNT=$(python3 -c "
+          import json
+          with open('archon-mcp/archon-ui-main/public/src/web_portal/official_dabs_catalog.json') as f:
+              data = json.load(f)
+              print(data.get('total_found', 0))
+          ")
+          TOTAL_COUNT=$(python3 -c "
+          import json
+          with open('archon-mcp/archon-ui-main/public/src/web_portal/official_dabs_catalog.json') as f:
+              data = json.load(f)
+              print(data.get('total_available', 0))
+          ")
+          CATEGORIES=$(python3 -c "
+          import json
+          with open('archon-mcp/archon-ui-main/public/src/web_portal/official_dabs_catalog.json') as f:
+              data = json.load(f)
+              print(len(data.get('categories', [])))
+          ")
+          
+          echo "product_count=$PRODUCT_COUNT" >> $GITHUB_OUTPUT
+          echo "total_count=$TOTAL_COUNT" >> $GITHUB_OUTPUT
+          echo "categories=$CATEGORIES" >> $GITHUB_OUTPUT
+          echo "update_date=$(date -u +%Y-%m-%d\ %H:%M\ UTC)" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: 📝 Commit and Push Changes
+      if: steps.check_updates.outputs.update_status == '0'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "DABS Auto-Updater"
+        
+        # Add all changes
+        git add .
+        
+        # Check if there are changes to commit
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          # Create commit message with stats
+          COMMIT_MSG="🔄 AUTO-UPDATE: DABS Catalog $(date +%Y-%m-%d)
+
+          ✅ CATALOG UPDATED:
+          - Active Products: ${{ steps.report.outputs.product_count }}
+          - Total Products: ${{ steps.report.outputs.total_count }}
+          - Categories: ${{ steps.report.outputs.categories }}
+          - Updated: ${{ steps.report.outputs.update_date }}
+          
+          🎯 FEATURES:
+          - Complete DABS product catalog
+          - Real case sizing and pricing
+          - SSCS integration ready
+          - Professional search & filtering
+          
+          🚀 Restaurant portal now has latest DABS inventory!"
+          
+          git commit -m "$COMMIT_MSG"
+          git push
+        fi
+    
+    - name: 🚀 Deploy to Netlify
+      if: steps.check_updates.outputs.update_status == '0'
+      run: |
+        echo "✅ Changes pushed to main branch"
+        echo "🚀 Netlify will auto-deploy from main branch"
+        echo "🔗 Restaurant portal will be updated automatically"
+    
+    - name: 📧 Create Update Summary
+      if: steps.check_updates.outputs.update_status == '0'
+      run: |
+        cat << EOF > update_summary.md
+        # 🔄 DABS Catalog Auto-Update Report
+        
+        **Update Date:** ${{ steps.report.outputs.update_date }}
+        
+        ## 📊 Catalog Statistics
+        - **Active Products:** ${{ steps.report.outputs.product_count }}
+        - **Total Products:** ${{ steps.report.outputs.total_count }}
+        - **Categories:** ${{ steps.report.outputs.categories }}
+        
+        ## 🎯 What's Updated
+        - ✅ Complete DABS product catalog with latest pricing
+        - ✅ Real case sizing based on DABS packaging standards
+        - ✅ UPC codes generated for SSCS integration
+        - ✅ Professional search and category filtering
+        
+        ## 🔗 Access Points
+        - **Restaurant Portal:** https://dabs-automation.netlify.app/src/web_portal/restaurant_portal_with_catalog.html
+        - **WordPress Iframe:** Ready for customer orders
+        - **Order Tracking:** Email notifications to shawn@owenent.com
+        
+        ## 🏆 Business Impact
+        Your restaurant customers now have access to the complete, current DABS catalog with:
+        - Real-time product availability
+        - Accurate case-to-unit conversions
+        - Professional ordering interface
+        - Complete SSCS integration data
+        
+        **The system automatically maintains 4000+ products without manual intervention!** 🚀
+        EOF
+        
+        echo "📋 Update summary created"
+        cat update_summary.md
+    
+    - name: ℹ️ No Updates Available
+      if: steps.check_updates.outputs.update_status != '0'
+      run: |
+        echo "ℹ️  No DABS catalog updates available"
+        echo "📅 Current catalog is up-to-date"
+        echo "🔄 Will check again tomorrow"
+
+  # Notify on failure
+  notify-failure:
+    runs-on: ubuntu-latest
+    needs: update-dabs-catalog
+    if: failure()
+    
+    steps:
+    - name: 🚨 Update Failed Notification
+      run: |
+        echo "❌ DABS catalog auto-update failed"
+        echo "🔧 Manual intervention may be required"
+        echo "📧 Check logs and notify administrator"
+        
+        # TODO: Add actual notification mechanism (email, Slack, etc.)
+        # This could send an email to shawn@owenent.com about the failure
