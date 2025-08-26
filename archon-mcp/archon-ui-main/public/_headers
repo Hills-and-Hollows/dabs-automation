@@ -1,0 +1,39 @@
+# Netlify Headers Configuration
+# Allow iframe embedding for WordPress integration
+
+/*
+  # Remove X-Frame-Options to allow iframe embedding
+  ! X-Frame-Options
+  
+  # Set Content Security Policy to allow iframe embedding from WordPress domains
+  Content-Security-Policy: frame-ancestors 'self' https://hillsandhollowsmarket.com https://*.hillsandhollowsmarket.com https://wordpress.com https://*.wordpress.com https://*.wpengine.com https://*.wpenginepowered.com https://*.wp.com https://localhost:* http://localhost:*
+  
+  # Allow cross-origin requests for API calls
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+  Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With
+  
+  # Security headers (but allow iframe embedding)
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  
+  # Cache control for static assets
+  Cache-Control: public, max-age=31536000
+
+# Specific headers for the restaurant portal
+/src/web_portal/*
+  # Allow iframe embedding specifically for restaurant portal
+  Content-Security-Policy: frame-ancestors 'self' https://hillsandhollowsmarket.com https://*.hillsandhollowsmarket.com https://wordpress.com https://*.wordpress.com https://*.wpengine.com https://*.wpenginepowered.com https://*.wp.com https://localhost:* http://localhost:* *
+  
+  # Remove any frame blocking
+  ! X-Frame-Options
+  
+  # Allow all origins for development and testing
+  Access-Control-Allow-Origin: *
+
+# JSON files should be accessible
+/src/web_portal/*.json
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300

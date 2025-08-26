@@ -44,16 +44,37 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    # Security headers
-    X-Frame-Options = "DENY"
+    # Security headers - ALLOW iframe embedding for WordPress integration
+    # X-Frame-Options = "DENY" # REMOVED to allow iframe embedding
     X-Content-Type-Options = "nosniff"
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    
-    # CORS headers for API communication
-    Access-Control-Allow-Origin = "https://dabs-automation-production.up.railway.app"
+
+    # Allow iframe embedding from WordPress and common domains
+    Content-Security-Policy = "frame-ancestors 'self' https://hillsandhollowsmarket.com https://*.hillsandhollowsmarket.com https://wordpress.com https://*.wordpress.com https://*.wpengine.com https://*.wpenginepowered.com https://*.wp.com https://localhost:* http://localhost:* *;"
+
+    # CORS headers for API communication - allow all origins for iframe embedding
+    Access-Control-Allow-Origin = "*"
     Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
-    Access-Control-Allow-Headers = "Content-Type, Authorization"
+    Access-Control-Allow-Headers = "Content-Type, Authorization, X-Requested-With"
+
+# Specific headers for restaurant portal - ALLOW iframe embedding
+[[headers]]
+  for = "/src/web_portal/*"
+  [headers.values]
+    # Explicitly allow iframe embedding for restaurant portal
+    Content-Security-Policy = "frame-ancestors *;"
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization, X-Requested-With"
+
+# JSON files for catalog data
+[[headers]]
+  for = "/src/web_portal/*.json"
+  [headers.values]
+    Content-Type = "application/json"
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=300"
 
 [[headers]]
   for = "/static/*"
