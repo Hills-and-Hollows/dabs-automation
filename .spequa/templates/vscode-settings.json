@@ -1,0 +1,14 @@
+{
+    "chat.promptFilesRecommendations": {
+        "spequa.constitution": true,
+        "spequa.spequa": true,
+        "spequa.plan": true,
+        "spequa.tasks": true,
+        "spequa.implement": true
+    },
+    "chat.tools.terminal.autoApprove": {
+        ".spequa/scripts/bash/": true,
+        ".spequa/scripts/powershell/": true
+    }
+}
+

@@ -1,0 +1,10 @@
+# Spequa Project Configuration — dabs-automation
+# Python/FastAPI + SQLAlchemy + Celery/APScheduler
+# Utah DABS liquor price automation for H&H Package Agency.
+
+primary: python
+test_command: "pytest"
+package_manager: "pip"
+branch_prefix: "dabs/"
+project_root: "."
+spec_dir: "specs"
