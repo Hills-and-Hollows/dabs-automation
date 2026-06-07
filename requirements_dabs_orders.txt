@@ -21,7 +21,7 @@ PyPDF2>=3.0.1
 # Data Analysis and Visualization
 matplotlib>=3.7.1
 seaborn>=0.12.2
-openpyxl>=3.1.2
+openpyxl>=3.1.5
 xlsxwriter>=3.1.2
 
 # Environment and Configuration
