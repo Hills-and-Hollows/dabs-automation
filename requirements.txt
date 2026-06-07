@@ -110,7 +110,7 @@ paramiko==3.3.1                 # SSH/SFTP for file transfers
 # ============================================================================
 reportlab==4.0.7                # PDF report generation
 matplotlib==3.8.2               # Chart generation
-jinja2==3.1.2                   # Template rendering
+jinja2==3.1.6                   # Template rendering
 
 # ============================================================================
 # BACKGROUND PROCESSING & SCHEDULING  
