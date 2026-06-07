@@ -3,7 +3,7 @@
 
 # PydanticAI for agent framework
 pydantic-ai>=0.0.13
-pydantic>=2.0.0
+pydantic>=2.13.4
 
 # Web framework for agent server
 fastapi>=0.104.0
