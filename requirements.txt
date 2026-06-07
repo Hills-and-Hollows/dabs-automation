@@ -96,7 +96,7 @@ pytz==2023.3                    # Timezone handling
 # ============================================================================
 # tabula-py==2.8.2                # PDF table extraction (install if needed)
 # pdfplumber==0.10.0              # PDF text extraction (install if needed)  
-xmltodict==0.13.0               # XML parsing (state system APIs)
+xmltodict==1.0.4               # XML parsing (state system APIs)
 
 # ============================================================================
 # POS SYSTEM INTEGRATIONS
