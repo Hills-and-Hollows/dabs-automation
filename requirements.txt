@@ -16,7 +16,7 @@ python-multipart==0.0.6         # Form data parsing
 psycopg2-binary==2.9.9          # PostgreSQL adapter
 sqlalchemy==2.0.23              # ORM and database toolkit
 alembic==1.12.1                 # Database migration tool
-redis==5.0.1                    # Redis caching client
+redis==8.0.0                    # Redis caching client
 celery==5.3.4                   # Background task processing
 
 # ============================================================================
