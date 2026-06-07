@@ -38,13 +38,18 @@ except ImportError:
         AuditEventType = None
 
 # Configure logging
+_log_handlers = [logging.StreamHandler()]
+_log_path = Path('/Volumes/Expansion/4. CURSOR/DABC Pricing - Inventory/logs/dabs_processor.log')
+try:
+    _log_path.parent.mkdir(parents=True, exist_ok=True)
+    _log_handlers.insert(0, logging.FileHandler(_log_path))
+except OSError:
+    # Log directory unavailable (e.g. CI or non-dev machines); stream logging only
+    pass
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('/Volumes/Expansion/4. CURSOR/DABC Pricing - Inventory/logs/dabs_processor.log'),
-        logging.StreamHandler()
-    ]
+    handlers=_log_handlers,
 )
 
 logger = logging.getLogger(__name__)
