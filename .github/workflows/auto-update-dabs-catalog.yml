@@ -36,7 +36,7 @@ jobs:
         pip install pandas openpyxl requests beautifulsoup4 aiohttp
     
     - name: 🟢 Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v6
       with:
         node-version: '18'
         cache: 'npm'
