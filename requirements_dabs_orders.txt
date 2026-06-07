@@ -46,7 +46,7 @@ marshmallow>=3.19.0
 tenacity>=8.2.2
 
 # Cron Job Management (for scheduling)
-python-crontab>=2.7.1
+python-crontab>=3.3.0
 
 # Performance Monitoring
 psutil>=5.9.5
