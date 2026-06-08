@@ -40,7 +40,7 @@ webdriver-manager>=3.8.6
 
 # Data Validation
 pydantic>=2.13.4
-marshmallow>=3.19.0
+marshmallow>=4.3.0
 
 # Retry Logic and Error Handling
 tenacity>=8.2.2
