@@ -16,7 +16,7 @@ supabase==2.15.1
 asyncpg>=0.29.0
 
 # AI/ML libraries (ALL ML models belong here)
-openai==1.71.0
+openai==2.41.0
 # sentence-transformers>=4.1.0  # For reranking and advanced embeddings
 # torch>=2.0.0  # Required by sentence-transformers
 # transformers>=4.30.0  # Required by sentence-transformers
