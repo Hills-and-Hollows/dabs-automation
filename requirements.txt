@@ -137,7 +137,7 @@ plotly==5.17.0                  # Interactive charts
 # ============================================================================
 gunicorn==21.2.0                # WSGI server
 supervisor==4.2.5               # Process monitoring
-python-daemon==3.0.1            # Daemon process support
+python-daemon==3.1.2            # Daemon process support
 
 # ============================================================================
 # VERSION CONSTRAINTS & COMPATIBILITY
