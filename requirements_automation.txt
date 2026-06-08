@@ -45,7 +45,7 @@ python-crontab==3.3.0
 schedule==1.2.0
 # Testing
 pytest==7.4.3
-pytest-asyncio==0.21.1
+pytest-asyncio==1.4.0
 pytest-mock==3.12.0
 # Logging & Monitoring
 structlog==23.2.0
