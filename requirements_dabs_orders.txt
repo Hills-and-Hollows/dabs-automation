@@ -33,7 +33,7 @@ python-dateutil>=2.8.2
 pytz>=2023.3
 
 # Logging and Monitoring
-loguru>=0.7.0
+loguru>=0.7.3
 
 # Optional Chrome Driver Management
 webdriver-manager>=3.8.6
