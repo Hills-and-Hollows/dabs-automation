@@ -43,7 +43,7 @@ python-jose[cryptography]==3.3.0 # JWT token handling
 # CONFIGURATION & ENVIRONMENT
 # ============================================================================
 python-dotenv==1.0.0            # Environment variables (.env files)
-pydantic-settings==2.0.3        # Settings management
+pydantic-settings==2.14.1        # Settings management
 click==8.1.7                    # CLI tool framework
 
 # ============================================================================
