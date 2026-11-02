@@ -11,4 +11,6 @@ Intended skills to author later (separate Approve; not in this PR):
 | Bond renewal | Package-agency bond / insurance cycle | TODO — none exist yet |
 | Portal filings | DABS / OpenGov filing packets | TODO — none exist yet |
 
-Ask-first still applies: do not file, order, license, pay, send, sign, or merge while authoring.
+t441u: authoring skill *docs* in this tree may merge when final (report after). Live file / order / license is still ask-first. Skill rows stay **TODO** until separately implemented.
+
+Ask-first still: do not file, order, license, pay, send, or sign while authoring. Docs/kb merges of skill *docs* may proceed when **final** (t441u).

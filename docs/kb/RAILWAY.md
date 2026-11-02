@@ -13,6 +13,7 @@ Twin consolidate (Balancing Rock `dabs-automation` ghost vs Hills Hollows DABS B
 - **If** deployed to Railway: MUST be hosted at `www.[APP_NAME].hillsandhollowsmarket.com`.
 - Next twin-consolidate EDG **must** include a domain plan under that hostname pattern.
 - No Railway mutate (no domain attach, no env write, no redeploy) without a **new** Shawn Approve.
+- t441u: twin cleanup that is **proven-final** may proceed; Railway mutate that spends or exposes is still ask-first.
 
 Do not invent `[APP_NAME]` values here. Do not attach the hostname in this PR.
 
