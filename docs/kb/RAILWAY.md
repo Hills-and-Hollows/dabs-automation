@@ -1,13 +1,19 @@
 # Railway (stub — no deploy)
 
-Known project **names** only. Status is **TBD** pending a live Railway read. This PR does **not** deploy, mutate services, or change env vars.
+## Frozen: PEER_NOT_INTEGRATE (Shawn Approve t434s2287)
 
-| Project name | Status |
+DABS Railway stays a **peer** app. Do **not** fold it into sscs-qbo-sync.
+
+Twin consolidate (Balancing Rock `dabs-automation` ghost vs Hills Hollows DABS Backend) and Atlassian/Confluence connector = **separate Approves only**. This PR does **not** mutate Railway and does **not** InstallPlugin.
+
+## Live inventory receipt (conceptual)
+
+Cite the live Railway inventory as: **three Balancing Rock projects + offline knowledge-base shell**.
+
+| Project name | Receipt note |
 |---|---|
-| dabs-automation | TBD (live Railway read) |
-| Hills Hollows DABS Backend | TBD (live Railway read) |
-| Single Source Chat DABS | TBD (live Railway read) |
+| Hills Hollows DABS Backend | has vars / no domain |
+| dabs-automation (Balancing Rock ghost) | has neither vars nor domain |
+| Single Source Chat DABS | last deploy **FAILED** |
 
-**Owner EDG (not in this PR):** integrate-vs-connect. Do not mutate Railway topology here. Owner decides whether services are integrated into one project or connected across projects.
-
-No Railway URLs, service IDs, or tokens are recorded in this stub.
+No Railway mutate, no domain attach, no env write, no redeploy from this PR. No Railway URLs, service IDs, or tokens are recorded here.

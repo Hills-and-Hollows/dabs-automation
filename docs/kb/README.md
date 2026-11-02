@@ -21,7 +21,7 @@ Receipt timestamp: `2026-11-02T10:55:00-07:00` (phase0 inventory JSON). Statuses
 | Topic | Hand off to |
 |---|---|
 | Liquor / sales-tax | Tax Filings Catch-up |
-| CDBWin / QBO day books | sscs-qbo-sync + Omachi |
+| CDBWin / QBO day books | sscs-qbo-sync + Omachi (**PEER_NOT_INTEGRATE:** DABS Railway stays a peer — do not fold into sscs-qbo-sync; Shawn Approve t434s2287) |
 | Settlement cash SoR | Peer ops #64 (this repo is **not** cash SoR) |
 | Cash-flow context | HH Cash Flow |
 
@@ -33,7 +33,7 @@ Do **not** file, order, license, pay, send, sign, or merge without an explicit S
 
 ## Confluence — Missing / Blocked
 
-**Status: Missing / Blocked.** Atlassian connector is not installed yet. Do **not** invent Confluence URLs or treat wiki pages as Proven. Revisit after the connector exists.
+**Status: Missing / Blocked.** Atlassian connector is not installed yet. Connector install = **separate Approve only** (no InstallPlugin from this PR). Do **not** invent Confluence URLs or treat wiki pages as Proven.
 
 ## Drive deepen (in progress)
 
