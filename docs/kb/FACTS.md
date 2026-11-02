@@ -68,4 +68,4 @@ Scorecard GAP-004 (still Open) asks QBO to reflect amended monthly compensation 
 
 ## Skills
 
-**Unknown / none yet.** Receipt `hh-dabs-skills` is **Missing** (none in workflows). See [SKILLS.md](SKILLS.md).
+**Proven** — four skills authored (`dabs-ordering-prep`, `dabs-settlement-reconcile`, `dabs-bond-renewal`, `dabs-portal-filings`); still no live file/order without Approve. See [SKILLS.md](SKILLS.md).
