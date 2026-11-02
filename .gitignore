@@ -10,6 +10,10 @@
 .env.staging
 .env.development
 *.env
+.env.quickbooks
+.env.*
+!.env.example
+!.env.*.example
 
 # API Keys & Credentials
 config/secrets/
