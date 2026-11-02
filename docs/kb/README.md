@@ -20,6 +20,19 @@ Separate apps are OK **only** if they stay in sync as **one HH business** (ops, 
 
 See [HANDOFFS.md](HANDOFFS.md) and [RAILWAY.md](RAILWAY.md). This PR does **not** attach domains or mutate Railway.
 
+## BINDING — Shawn Approve t441u (continue-when-final)
+
+Never wait on Shawn for testing, QA E2E, merging, or cleanup when work is **final** and creates **no new bugs**. Continue when ready; **report after**.
+
+| Rule | Binding |
+|---|---|
+| Continue-when-final | Testing, QA E2E, merging, and cleanup may proceed when work is **final** and creates **no new bugs**; report after |
+| Docs/kb + twin cleanup | Docs/kb merges and twin cleanup that is **proven-final** may proceed without pre-merge Approve; report after |
+| Ask-first still | send / pay / sign / file / delete / license-order / Railway mutate that spends or exposes |
+| Does **not** authorize | Railway mutate that spends/exposes, InstallPlugin, file/order/license, or pay/send/sign |
+
+See [HANDOFFS.md](HANDOFFS.md), [RAILWAY.md](RAILWAY.md), and [SKILLS.md](SKILLS.md).
+
 ## Inventory and peer Pages
 
 | Artifact | URL |
@@ -43,7 +56,11 @@ See [HANDOFFS.md](HANDOFFS.md).
 
 ## Ask-first (hard stop)
 
-Do **not** file, order, license, pay, send, sign, or merge without an explicit Shawn Approve. This PR is docs only.
+Hard-stop: do **not** send, pay, sign, file, delete, license-order, or Railway-mutate that spends or exposes without an explicit Shawn Approve.
+
+Docs/kb merges may proceed when work is **final** and creates **no new bugs** (t441u); report after. This PR is docs only.
+
+t441u does **not** authorize Railway mutate that spends/exposes, InstallPlugin, file/order/license, or pay/send/sign.
 
 ## Confluence — Missing / Blocked
 
@@ -59,7 +76,7 @@ Live Google Drive read of the Proven scorecard and Stale bond tracker is recorde
 |---|---|
 | [SOURCES.md](SOURCES.md) | Proven / Stale / Missing / Proven-candidate index |
 | [FACTS.md](FACTS.md) | Facts from Proven receipt + live deepen citations only |
-| [SKILLS.md](SKILLS.md) | Intended skills (none exist yet) |
-| [HANDOFFS.md](HANDOFFS.md) | Peer map + t436u BINDING |
-| [RAILWAY.md](RAILWAY.md) | Peer Railway stub + t436u hostname (no deploy) |
+| [SKILLS.md](SKILLS.md) | Intended skills (none exist yet); t441u docs-merge OK when final |
+| [HANDOFFS.md](HANDOFFS.md) | Peer map + t436u BINDING + t441u |
+| [RAILWAY.md](RAILWAY.md) | Peer Railway stub + t436u hostname (no deploy) + t441u |
 | [SECURITY-ROTATE.md](SECURITY-ROTATE.md) | Credential rotate guidance |

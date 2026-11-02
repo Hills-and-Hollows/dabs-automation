@@ -1,6 +1,6 @@
 # Peer handoffs
 
-This repo indexes PA-539 knowledge. It does not own tax filings, day-book sync, or cash forecast. Ask-first: file / order / license / pay / send / sign / merge.
+This repo indexes PA-539 knowledge. It does not own tax filings, day-book sync, or cash forecast. Ask-first still: send / pay / sign / file / delete / license-order / Railway mutate that spends or exposes. Docs/kb merges that are **final** and create **no new bugs** may proceed under t441u; report after.
 
 ## BINDING — Shawn Approve t436u (hosting / domain)
 
@@ -9,6 +9,10 @@ This repo indexes PA-539 knowledge. It does not own tax filings, day-book sync, 
 - If an app is deployed to Railway, it **MUST** be hosted at `www.[APP_NAME].hillsandhollowsmarket.com`.
 - The next twin-consolidate EDG **must** include a domain plan under that hostname pattern.
 - This is a peer note only. Do **not** attach domains or mutate Railway from this PR.
+
+## PEER — t441u (twin cleanup)
+
+Twin cleanup that is **proven-final** may proceed under t441u without pre-merge Approve; report after. Still **no** Railway mutate that spends or exposes without Approve. Next twin-consolidate EDG still needs the t436u domain plan (`www.[APP_NAME].hillsandhollowsmarket.com`).
 
 ## PEER_NOT_INTEGRATE (Shawn Approve t434s2287)
 
