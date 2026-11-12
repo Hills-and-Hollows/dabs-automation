@@ -2,7 +2,7 @@
 
 Copied from the phase0 inventory receipt (`2026-11-02T10:55:00-07:00`) for fleet [#65](https://github.com/ShawnOwen/fleet-board/issues/65), then amended by the 2026-11-02 Drive deepen (receipt `2026-11-02T10:48:00-07:00`; live Google Drive read of scorecard, bond tracker, and Travelers PDF metadata).
 
-**Inventory receipt:** phase0 `2026-11-02T10:55:00-07:00`; frozen in docs/kb via #46 (`73c18365`); deepen #47 (`dad15b2`).
+**Inventory receipt:** phase0 `2026-11-02T10:55:00-07:00`; frozen in docs/kb via #46 (`73c18365`); deepen receipt `2026-11-02T10:48:00-07:00` (receipt records #46; #47 / `dad15b2` is the squash that landed it).
 
 Counts: Proven 5 / Stale 5 / Missing 5 / **Proven-candidate 1**. Do **not** invent new statuses. Do **not** invent official DABS rules (`official-dabs-rules` stays Missing).
 

@@ -2,7 +2,7 @@
 
 Cite [SOURCES.md](SOURCES.md). Do not copy regulatory text or invent DABS rules (`official-dabs-rules` is Missing).
 
-Inventory receipt: phase0 `2026-11-02T10:55:00-07:00`; docs/kb #46 (`73c18365`); deepen #47 (`dad15b2`) receipt `2026-11-02T10:48:00-07:00`.
+Inventory receipt: phase0 `2026-11-02T10:55:00-07:00`; docs/kb #46 (`73c18365`); deepen receipt `2026-11-02T10:48:00-07:00` (receipt records #46; #47 / `dad15b2` is the squash that landed it).
 
 Deepen: live Google Drive read 2026-11-02 of `drive-compliance-scorecard`, `drive-bond-insurance-tracker`, and `drive-travelers-108566928` metadata.
 

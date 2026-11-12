@@ -40,7 +40,7 @@ See [HANDOFFS.md](HANDOFFS.md), [RAILWAY.md](RAILWAY.md), and [SKILLS.md](SKILLS
 | Artifact | Primary receipt |
 |---|---|
 | Fleet #65 | https://github.com/ShawnOwen/fleet-board/issues/65 (receipt comment `#issuecomment-6583982494`) |
-| Inventory (this SoR) | phase0 receipt `2026-11-02T10:55:00-07:00`; SoR layout #46 (`73c18365`); deepen #47 (`dad15b2`) receipt `2026-11-02T10:48:00-07:00` |
+| Inventory (this SoR) | phase0 receipt `2026-11-02T10:55:00-07:00`; SoR layout #46 (`73c18365`); deepen receipt `2026-11-02T10:48:00-07:00` (receipt records #46; #47 / `dad15b2` is the squash that landed it) |
 | Peer ops #64 (cash SoR) | unverified – Page draft only (settlement amounts in this repo cite `gmail-mercury-abc-finet`) |
 
 Phase0 receipt: `2026-11-02T10:55:00-07:00`. Deepen receipt: `2026-11-02T10:48:00-07:00`. Live Drive re-read: `2026-11-02` (scorecard + bond tracker + Travelers PDF metadata). Statuses in [SOURCES.md](SOURCES.md) stay Proven / Stale / Missing / **Proven-candidate** — do not invent new labels.
