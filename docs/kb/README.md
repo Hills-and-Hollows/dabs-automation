@@ -1,5 +1,7 @@
 # Hills & Hollows DABS knowledge SoR
 
+Grok Bot Pages are drafts; merged repo docs are canonical.
+
 **Purpose:** single source of record for Hills & Hollows LLC Utah DABS **PA-539** package agency knowledge in this repo.
 
 Agents must **cite live sources** from [SOURCES.md](SOURCES.md) and **never guess** license, order, cash, bond, or filing facts. If a fact is not Proven in the inventory receipt or a later live re-read, mark it **Unknown**.
@@ -33,13 +35,13 @@ Never wait on Shawn for testing, QA E2E, merging, or cleanup when work is **fina
 
 See [HANDOFFS.md](HANDOFFS.md), [RAILWAY.md](RAILWAY.md), and [SKILLS.md](SKILLS.md).
 
-## Inventory and peer Pages
+## Inventory and peer receipts
 
-| Artifact | URL |
+| Artifact | Primary receipt |
 |---|---|
-| Fleet #65 | https://github.com/ShawnOwen/fleet-board/issues/65 |
-| Inventory Page (this SoR receipt) | https://cursor.com/canvas/store-a64ca9c3-bb59-4536-9469-209a5d979449/2bcfdf4f-54b8-4d7f-96fc-9441a886051e |
-| Peer ops Page #64 | https://cursor.com/canvas/store-a64ca9c3-bb59-4536-9469-209a5d979449/66ccb63a-3928-4439-839c-94c9170a454c |
+| Fleet #65 | https://github.com/ShawnOwen/fleet-board/issues/65 (receipt comment `#issuecomment-6583982494`) |
+| Inventory (this SoR) | phase0 receipt `2026-11-02T10:55:00-07:00`; SoR layout #46 (`73c18365`); deepen receipt `2026-11-02T10:48:00-07:00` (receipt records #46; #47 / `dad15b2` is the squash that landed it) |
+| Peer ops #64 (cash SoR) | unverified – Page draft only (settlement amounts in this repo cite `gmail-mercury-abc-finet`) |
 
 Phase0 receipt: `2026-11-02T10:55:00-07:00`. Deepen receipt: `2026-11-02T10:48:00-07:00`. Live Drive re-read: `2026-11-02` (scorecard + bond tracker + Travelers PDF metadata). Statuses in [SOURCES.md](SOURCES.md) stay Proven / Stale / Missing / **Proven-candidate** — do not invent new labels.
 

@@ -20,7 +20,7 @@ DABS Railway stays a **peer** app — do **not** fold it into sscs-qbo-sync. Twi
 
 | Peer | Role | Notes |
 |---|---|---|
-| Fleet #64 ops Page | Peer operations SoR | https://cursor.com/canvas/store-a64ca9c3-bb59-4536-9469-209a5d979449/66ccb63a-3928-4439-839c-94c9170a454c — settlement cash SoR lives here, not in this repo |
+| Fleet #64 ops Page | Peer operations SoR | unverified – Page draft only. Settlement cash SoR in this repo cites `gmail-mercury-abc-finet` (phase0 receipt `2026-11-02T10:55:00-07:00`); this repo is **not** the cash SoR |
 | Tax Filings Catch-up | Liquor / sales-tax filings | Hand off; do not file from this tree |
 | sscs-qbo-sync | CDBWin / QBO day books | Hand off with Omachi. Peer only — **not** a Railway merge target. Stay in sync as one HH business (t436u); do not fold DABS into this repo |
 | Omachi | CDBWin / QBO day-book companion | Hand off with sscs-qbo-sync |
