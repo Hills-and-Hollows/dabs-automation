@@ -2,7 +2,7 @@
 
 Copied from the phase0 inventory receipt (`2026-11-02T10:55:00-07:00`) for fleet [#65](https://github.com/ShawnOwen/fleet-board/issues/65), then amended by the 2026-11-02 Drive deepen (receipt `2026-11-02T10:48:00-07:00`; live Google Drive read of scorecard, bond tracker, and Travelers PDF metadata).
 
-**Inventory Page:** https://cursor.com/canvas/store-a64ca9c3-bb59-4536-9469-209a5d979449/2bcfdf4f-54b8-4d7f-96fc-9441a886051e
+**Inventory receipt:** phase0 `2026-11-02T10:55:00-07:00`; frozen in docs/kb via #46 (`73c18365`); deepen #47 (`dad15b2`).
 
 Counts: Proven 5 / Stale 5 / Missing 5 / **Proven-candidate 1**. Do **not** invent new statuses. Do **not** invent official DABS rules (`official-dabs-rules` stays Missing).
 
@@ -13,7 +13,7 @@ Counts: Proven 5 / Stale 5 / Missing 5 / **Proven-candidate 1**. Do **not** inve
 | `drive-compliance-scorecard` | https://docs.google.com/spreadsheets/d/1rt1CRoT0LX3EJnTbbIxvzJD5ydIEEY_ewkfeMtUMmXs | Live Drive read 2026-11-02. Sheet title: *DABS Compliance Scorecard - Log Tracker (Hills and Hollows LLC)*. Drive `modifiedTime` `2026-11-02T14:58:19Z`. Latest Run Log row: **RUN-2026-11-02-01** Result **PASS**, Total 100, FAIL 0, N/V 0, **Open Gaps Count=0**. Instructions tab names **Portal: Utah DABS OpenGov**. Gap Tracker still lists **Status=Open** for GAP-001–004 from RUN-2026-06-21-01 — do **not** silently close. |
 | `gmail-mercury-abc-finet` | gmail | ABC ACH 5310: 10-05 23513.70, 09-25 2397.39, 06-30 18597.57; FINET 1324: 5558.00 on 10-28, 09-28, 08-28, 07-30, 07-15; peer FYI HH Forecast Fact Check Phase0 2.8; SoR is #64 |
 | `gmail-opengov-licensing` | gmail `noreply@opengov.com` | PA-539 + OP-1297 attachment notices 09-28, 10-05, 10-06 |
-| `fleet-64-ops-page` | https://cursor.com/canvas/store-a64ca9c3-bb59-4536-9469-209a5d979449/66ccb63a-3928-4439-839c-94c9170a454c | peer SoR |
+| `fleet-64-ops-page` | unverified – Page draft only | peer SoR pointer only; no peer-ops receipt file in this repo. Settlement amounts Proven via `gmail-mercury-abc-finet` |
 | `box-utah-tap-liquor` | `/workspace/overnight-portfolio/tax/utah-tap/` | `DABS-LIQUOR-CONFIRM-RECIPIENT-FINDINGS-2026-11-02.md` |
 
 ## Stale

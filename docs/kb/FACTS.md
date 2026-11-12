@@ -2,7 +2,7 @@
 
 Cite [SOURCES.md](SOURCES.md). Do not copy regulatory text or invent DABS rules (`official-dabs-rules` is Missing).
 
-Inventory Page: https://cursor.com/canvas/store-a64ca9c3-bb59-4536-9469-209a5d979449/2bcfdf4f-54b8-4d7f-96fc-9441a886051e
+Inventory receipt: phase0 `2026-11-02T10:55:00-07:00`; docs/kb #46 (`73c18365`); deepen #47 (`dad15b2`) receipt `2026-11-02T10:48:00-07:00`.
 
 Deepen: live Google Drive read 2026-11-02 of `drive-compliance-scorecard`, `drive-bond-insurance-tracker`, and `drive-travelers-108566928` metadata.
 
@@ -37,7 +37,7 @@ Deepen: live Google Drive read 2026-11-02 of `drive-compliance-scorecard`, `driv
 
 ## Settlement cash
 
-**Proven-with-peer-SoR-#64** (`gmail-mercury-abc-finet`). This repo is **not** the cash SoR. Cite peer ops Page #64: https://cursor.com/canvas/store-a64ca9c3-bb59-4536-9469-209a5d979449/66ccb63a-3928-4439-839c-94c9170a454c (peer FYI: HH Forecast Fact Check Phase0 2.8).
+**Proven-with-peer-SoR-#64** (`gmail-mercury-abc-finet`). This repo is **not** the cash SoR. Peer ops #64 Page: unverified – Page draft only (peer FYI: HH Forecast Fact Check Phase0 2.8).
 
 Mail-verified amounts from the receipt:
 
